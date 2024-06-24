@@ -1,0 +1,890 @@
+[
+    {
+        "keywords": "Aquifer fungi, aquifer microbes; microbial functional guilds; aquifer chemical data; aquatic fungi, aquatic microbes",
+        "keyword": "habitat"
+    },
+    {
+        "keywords": "Hydrochemistry, limestone, triassic, fractured rock, karst, groundwater quality aquifer",
+        "keyword": "pedological"
+    },
+    {
+        "keywords": "aquatic colloids, groundwater, karst, fractured rock aquifers, carbonate dissortation, karstification",
+        "keyword": "eukaryotic"
+    },
+    {
+        "keywords": "Mobile organic matter, groundwater physiochemical parameters",
+        "keyword": "supply"
+    },
+    {
+        "keywords": "conduce, agriculture",
+        "keyword": "setting"
+    },
+    {
+        "keywords": "Continuity of strata",
+        "keyword": "precipitation"
+    },
+    {
+        "keywords": "source / catchment / infiltration areas",
+        "keyword": "subsoil"
+    },
+    {
+        "keywords": "groundwater comparison, chemistry, fractures, secondary minerals",
+        "keyword": "mineral-organic"
+    },
+    {
+        "keywords": "-",
+        "keyword": "eukaryote"
+    },
+    {
+        "keywords": "-",
+        "keyword": "snowmelt"
+    },
+    {
+        "keywords": "Heterogenity, vegetation, biodiversity, terrain, hydrology, management, legacy",
+        "keyword": "peptide"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "environmental"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "sampling"
+    },
+    {
+        "keywords": "Archaea, soil, groundwater, species",
+        "keyword": "active"
+    },
+    {
+        "keywords": "geochemistry, microbe, diversity, groundwater",
+        "keyword": "aboveground"
+    },
+    {
+        "keywords": "PH of water samples, oxygen content",
+        "keyword": "sterilized"
+    },
+    {
+        "keywords": "rainfall, throughfall, electric conductivity",
+        "keyword": "community"
+    },
+    {
+        "keywords": "Grasshoppers, proteome, gut microbiome, intestinal hact (?), mono-culture, microbial community, feces",
+        "keyword": "quality"
+    },
+    {
+        "keywords": "Geology, soil, geochemistry, parent material, bacteria, archaea, nitrogen-cycling, denitrifiers, ammonia-oxidisers",
+        "keyword": "size"
+    },
+    {
+        "keywords": "surface signals, groundwater",
+        "keyword": "chemical"
+    },
+    {
+        "keywords": "surface signals",
+        "keyword": "plant"
+    },
+    {
+        "keywords": "biological signals",
+        "keyword": "viral"
+    },
+    {
+        "keywords": "Key Wand, aquifer microbiome, soil microbiome, aquifer and soil",
+        "keyword": "glaciated"
+    },
+    {
+        "keywords": "cross kingdom microbial communities in the aquifer, idem in soil",
+        "keyword": "biocolloid"
+    },
+    {
+        "keywords": "fungi and autolithoantatrophy (?)",
+        "keyword": "fungal"
+    },
+    {
+        "keywords": "Microbes, Subsurface, aquifer rocks, biodiversity, attached",
+        "keyword": "forest"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "functional"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "C"
+    },
+    {
+        "keywords": "Wetter, kammerforst, r\u00fcckschau, 14 Tage, Niederschlag",
+        "keyword": "activity"
+    },
+    {
+        "keywords": "groundwater protection, groundwater vulnerability, groundwater contamination",
+        "keyword": "permeable"
+    },
+    {
+        "keywords": "CO2 fixation pathways, rubisco, biodiversity, rare species, sequencing error",
+        "keyword": "pore"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "integrative"
+    },
+    {
+        "keywords": "seepage water, precipitation, discharge, climatic parameters, infiltration, water balance, groundwater chemistry, tracer",
+        "keyword": "soil"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "virus"
+    },
+    {
+        "keywords": "Microbial dynamics, temporal, spatial, Hainich CZ, Microbial communities, links",
+        "keyword": "marine"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "clay"
+    },
+    {
+        "keywords": "CO2 isotopes, Mid-infrared isotope ratio sensors",
+        "keyword": "diversity"
+    },
+    {
+        "keywords": "Molecular markers, nitrogen transformation, pristine aquifers, biogeochemical process, bacteria, denitrifiers, anammox, ammonia oxidisers, nitrosphira",
+        "keyword": "S"
+    },
+    {
+        "keywords": "Marine phage, transport, soil-tracer, ecosystem fractioning, phage, deposition, soil",
+        "keyword": "alkali"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "abiotic"
+    },
+    {
+        "keywords": "DOM, miz, composition, molecular formular, check all existing parameters, depth, soil profile, depth profile, molecular formular, elemental composition possible, compounds / substances / molecules",
+        "keyword": "composition"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "protist"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "temperature"
+    },
+    {
+        "keywords": "Anammox, iron reducer, ladderane",
+        "keyword": "particle"
+    },
+    {
+        "keywords": "Aquifers, DOC, DOC composition, heterotrophs, grasland, consuming, water precipitation, soils, altering, Co2 fixation, autotrophy, abundance, pathways, anoxic aquifers",
+        "keyword": "phage"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "top-soil"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "genetic"
+    },
+    {
+        "keywords": "Marine phages, Breakthrough curves, tracers",
+        "keyword": "sedimentary"
+    },
+    {
+        "keywords": "bacteria,  community composition,  community structure,  temporal changes,  upper aquifer,  lower aquifer,  oxic, anoxic,  sequencing,  16 S RNA genes,  functional genes, microorganisms",
+        "keyword": "gradient"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "stygofauna"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "subsurface"
+    },
+    {
+        "keywords": "Spatial redistribution,  soil organic,  flow ,  rapid (vertical) transport",
+        "keyword": "MALDI-MSI"
+    },
+    {
+        "keywords": "Gas analysis,  microbial processes,  soil microorganisms",
+        "keyword": "component"
+    },
+    {
+        "keywords": "Range/correlation length,  throughfall,  soil water,  forest,  waste flow hotspots,  bypass flow,  forest soil,  hydrology,  soil hydraulic parameters, LAI,  topography,  canopy structure,  architecture,  soil texture",
+        "keyword": "fast"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "stemflow"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "contaminant"
+    },
+    {
+        "keywords": "GW,  Metabolites,  Metabolism,  NOM,  DOM",
+        "keyword": "Si"
+    },
+    {
+        "keywords": "Bacteria,  Compound,  metabolization,  H.Z.Y, Bauoxic,  oxic,  Biota,  Alyla",
+        "keyword": "dataset"
+    },
+    {
+        "keywords": "Filtrated volume,  DNA concentration/ amount",
+        "keyword": "antecedent"
+    },
+    {
+        "keywords": "energy metabolism, autotrophy,  heterotrophy,  CO2-fixation,  flow cytometry,  cell count",
+        "keyword": "mycelium"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "longterm"
+    },
+    {
+        "keywords": "hydraulic properties,  Muschelkalk,  fractured flow,  lateral flow,  preferential flow,  Karst/carstified,  marlstone/Mergel,  residence time,  transit time,  evapotranspiration,  pedrophysical properties/relationships, georadar/GPR,  electrical resistivity/ERT,  dielectric constant,  seismic retraction,  bacterial membranes,  membrane properties,  surface properties microorganisms, size microorganisms,  colloidal transport",
+        "keyword": "project"
+    },
+    {
+        "keywords": "well, hydrogeochemical data, mean value",
+        "keyword": "source"
+    },
+    {
+        "keywords": "DOC, DIC, well, concentration, time",
+        "keyword": "surface-derived"
+    },
+    {
+        "keywords": "soil organic carbon, soil nitrogen, soil solution, mineral soil, organic layer, throughfall, stemflow, forest, grassland (pasture), agriculture, long term effect, Hainich site",
+        "keyword": "pedosphere"
+    },
+    {
+        "keywords": "Hainich CZE, soil properties, PLFA, DOM, Earthworms, Bacteria, Fungi, Rain events",
+        "keyword": "acid"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "virome"
+    },
+    {
+        "keywords": "agriculture, fertilizers, nitrogen, pesticides",
+        "keyword": "terrestrial"
+    },
+    {
+        "keywords": "vegetation cover, vegetation type, tree species, leaf area index, soil type, soil carbon content, soil porosity, soil water content, throughfall, through fall, stemflow, stem flow, net precipitation, rain, soil water flow, preferential flow, drainage, percolation, correlation length",
+        "keyword": "agricultural"
+    },
+    {
+        "keywords": "B horizon, CO2 fixation, isotope signature, redox,  radiocarbon age, soil organic matter, soil horizon, DOC, bioturbation, pore space, bulk density",
+        "keyword": "signal"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "substrate"
+    },
+    {
+        "keywords": "Production & consumption of trace gases, compensation mixing ratio, VOC's, microbial guilds,  C-/N isotopes, GHG's (greenhouse gases)",
+        "keyword": "organism"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "moisture"
+    },
+    {
+        "keywords": "N cycle, desnitrification, forest (beech), N leaching, microbial communities",
+        "keyword": "LDI-MS"
+    },
+    {
+        "keywords": "N cycle, dry deposition, wet deposition, winter, summer, low temperature",
+        "keyword": "proximity"
+    },
+    {
+        "keywords": "water input,  throughfall,  forest floor,  forest infiltration,  percolation,  water balance",
+        "keyword": "ecohydrological"
+    },
+    {
+        "keywords": "Hydrogeochemical characterization, Hainich aquifers, multilevelsystem, connectivity",
+        "keyword": "throughfall"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "thunderstorm"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "alkylaromatic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "distance"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "production"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "lithology"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "vertical"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Iron"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "lipid"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "recycled"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "bacterial"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "plot"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "rate"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "root"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "gas"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "nanosized"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "colloidal"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "molecular"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "microbe"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "factor"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "organic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Fe"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "SCCZ"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "harvest"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "characteristics"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "biota"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "substance"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "mobile"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "consumption"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "contamination"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "functioning"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "environment"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "material"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "DNA"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "time"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "aquifer"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "stem"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Manganese"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "atmosphere"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "downward"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "isotopic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "cycling"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "extant"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "type"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "carbohydrate"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "variation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Cycloidesbank"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "carbon"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "biofilm"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "fingerprint"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "weather"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "property"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "model"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "flow"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "between"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "pest"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "oxygenated"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "method"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "gene"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "karst"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "system"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "alkyl"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "signature"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "pattern"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "isotope"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "formation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "matter"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "distribution"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "variability"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "cycle"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "layer"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "local"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "spectrometric"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "landuse"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "stygobiotic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "event"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "observation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "groundwater"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "climate"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "transformation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "grassland"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "heterogeneity"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "fraction"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "infestation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "site"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "hot-spot"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "milieu"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "depth"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "alluvial"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "fungi"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "species"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "microorganism"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "observable"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "organo-mineral"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Pleistocene"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "inundation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "bacteria"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "passage"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "RNA"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "physicochemical"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "tillage"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Hainich"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "solution"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "insect"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "host"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "oxygen"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Trochitenkalk"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "incoming"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "N-heterocycle"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "uptake"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "alkaline"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "meter"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "tree"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "dry"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "biomarker"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "herbivore"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "water"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "biotic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "core"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "belowground"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "condition"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "marker"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "transect"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "effect"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "herbivory"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "acidic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "centimeter"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "heat"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "Mn"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "altitude"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "colloid"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "vegetation"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "geology"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "differential"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "network"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "flux"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "land"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "rainfall"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "process"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "amount"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "biodiversity"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "concentration"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "transport"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "velocity"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "aerobic"
+    },
+    {
+        "keywords": NaN,
+        "keyword": "structure"
+    }
+]
