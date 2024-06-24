@@ -1,1 +1,1 @@
-# NeOn-GPTAquaDiveOntology
+# NeOn-GPT AquaDive Ontology
