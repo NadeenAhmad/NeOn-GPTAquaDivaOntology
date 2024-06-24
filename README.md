@@ -7,4 +7,9 @@ Welcome to the AquaDiva Ontology repository! This project utilizes the NeOn-GPT 
 - AquaDiva.xml: Same ontology as AquaDiva2.ttl but in owl/xml syntax.
 - NeOnGPTPrompts.json: Prompts to GPT-4 to generate the AquaDiva ontology based on the NeOn-GPT methodology in json.
 - keywords.xlsx: AquaDiva keywords .xlsx file
-- keywordsAC.json: AquaDiva keywords .json file 
+- keywordsAC.json: AquaDiva keywords .json file
+
+  # NeOn-GPT workflow for AquaDive Ontology
+
+<a href="https://i.ibb.co/ZY4ZwmN/Neon-GPTNadeen-Fathallah-pptx-2.png" />
+<img src="https://i.ibb.co/ZY4ZwmN/Neon-GPTNadeen-Fathallah-pptx-2.png" />
