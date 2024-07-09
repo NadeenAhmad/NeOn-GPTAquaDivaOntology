@@ -1,0 +1,1670 @@
+@prefix : <http://example.org/aquadiva#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/aquadiva#> .
+
+<http://example.org/aquadiva4> rdf:type owl:Ontology ;
+                                owl:imports <http://example.org/aquadiva> ;
+                                dct:description "An ontology for integrating and annotating diverse datasets in groundwater ecosystems research, covering hydrogeology, microbial ecology, geochemistry, and karst systems."@en ;
+                                dct:title "AquaDiva Ontology" ;
+                                owl:versionInfo "1.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/aquadiva#hasOrganicMatterContent
+:hasOrganicMatterContent rdfs:domain :SoilOrganicMatter ;
+                         rdfs:range xsd:percentage .
+
+
+###  http://example.org/aquadiva#hasSoilMoistureContent
+:hasSoilMoistureContent rdfs:domain :SoilChemistry ;
+                        rdfs:range xsd:percentage .
+
+
+###  http://example.org/aquadiva#interactWith
+:interactWith rdf:type owl:ObjectProperty ,
+                       owl:SymmetricProperty ;
+              rdfs:label "interact with" .
+
+
+###  http://example.org/aquadiva#interactsWith
+:interactsWith rdf:type owl:ReflexiveProperty ;
+               rdfs:label "interacts with" .
+
+
+###  http://example.org/aquadiva#isAffectedBy
+:isAffectedBy rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty ;
+              rdfs:label "is affected by" .
+
+
+###  http://example.org/aquadiva#isAssociatedWith
+:isAssociatedWith rdf:type owl:ObjectProperty ,
+                           owl:SymmetricProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:label "is associated with" .
+
+
+###  http://example.org/aquadiva#isRelatedTo
+:isRelatedTo rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ,
+                      owl:ReflexiveProperty ;
+             rdfs:label "is related to" .
+
+
+###  http://example.org/aquadiva#occursIn
+:occursIn rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ;
+          rdfs:label "occurs in" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/aquadiva#hasAnnualRainfall
+:hasAnnualRainfall rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :GroundwaterPrecipitation ;
+                   rdfs:range xsd:float ;
+                   rdfs:label "has annual rainfall" .
+
+
+###  http://example.org/aquadiva#hasAquiferDepth
+:hasAquiferDepth rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :AquiferSystem ;
+                 rdfs:range xsd:float ;
+                 rdfs:label "has aquifer depth" .
+
+
+###  http://example.org/aquadiva#hasBiodiversityIndex
+:hasBiodiversityIndex rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Biodiversity ;
+                      rdfs:range xsd:float ;
+                      rdfs:label "has biodiversity index" .
+
+
+###  http://example.org/aquadiva#hasCO2EmissionRate
+:hasCO2EmissionRate rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :GroundwaterEcosystem ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "has CO2 emission rate" .
+
+
+###  http://example.org/aquadiva#hasChemicalConcentration
+:hasChemicalConcentration rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Groundwater ;
+                          rdfs:range xsd:float ;
+                          rdfs:label "has chemical concentration" .
+
+
+###  http://example.org/aquadiva#hasInfiltrationRate
+:hasInfiltrationRate rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :InfiltrationArea ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "has infiltration rate" .
+
+
+###  http://example.org/aquadiva#hasManagementEffectivenessScore
+:hasManagementEffectivenessScore rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :ManagementPractice ;
+                                 rdfs:range xsd:float ;
+                                 rdfs:label "has management effectiveness score" .
+
+
+###  http://example.org/aquadiva#hasMicrobialDensity
+:hasMicrobialDensity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Microbes ;
+                     rdfs:range xsd:positiveInteger ;
+                     rdfs:label "has microbial density" .
+
+
+###  http://example.org/aquadiva#hasMineralDensity
+:hasMineralDensity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Mineral ;
+                   rdfs:range xsd:float ;
+                   rdfs:label "has mineral density" .
+
+
+###  http://example.org/aquadiva#hasNitrogenLevel
+:hasNitrogenLevel rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :NitrogenCycle ;
+                  rdfs:range xsd:float ;
+                  rdfs:label "has nitrogen level" .
+
+
+###  http://example.org/aquadiva#hasOrganicMatterContent
+:hasOrganicMatterContent rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/aquadiva#hasPHLevel
+:hasPHLevel rdf:type owl:DatatypeProperty ;
+            rdfs:domain :GroundwaterChemistry ;
+            rdfs:range xsd:float ;
+            rdfs:label "has pH level" .
+
+
+###  http://example.org/aquadiva#hasPermeabilityIndex
+:hasPermeabilityIndex rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Permeability ;
+                      rdfs:range xsd:float ;
+                      rdfs:label "has permeability index" .
+
+
+###  http://example.org/aquadiva#hasPollutionLevel
+:hasPollutionLevel rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :GroundwaterContamination ;
+                   rdfs:range xsd:float ;
+                   rdfs:label "has pollution level" .
+
+
+###  http://example.org/aquadiva#hasRockPorosity
+:hasRockPorosity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :RockType ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:label "has rock porosity" .
+
+
+###  http://example.org/aquadiva#hasSoilMoistureContent
+:hasSoilMoistureContent rdf:type owl:DatatypeProperty .
+
+
+###  http://example.org/aquadiva#hasSpeciesCount
+:hasSpeciesCount rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :RareSpeciesBiodiversity ;
+                 rdfs:range xsd:positiveInteger ;
+                 rdfs:label "has species count" .
+
+
+###  http://example.org/aquadiva#hasTemperature
+:hasTemperature rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Groundwater ;
+                rdfs:range xsd:decimal ;
+                rdfs:label "has temperature" .
+
+
+###  http://example.org/aquadiva#hasTraceGasConcentration
+:hasTraceGasConcentration rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :TraceGas ;
+                          rdfs:range xsd:float ;
+                          rdfs:label "has trace gas concentration" .
+
+
+###  http://example.org/aquadiva#hasVegetationDensity
+:hasVegetationDensity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Vegetation ;
+                      rdfs:range xsd:positiveInteger ;
+                      rdfs:label "has vegetation density" .
+
+
+###  http://example.org/aquadiva#hasWaterFlowSpeed
+:hasWaterFlowSpeed rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :WaterFlow ;
+                   rdfs:range xsd:float ;
+                   rdfs:label "has water flow speed" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/aquadiva#AbioticFactor
+:AbioticFactor rdf:type owl:Class ;
+               owl:equivalentClass :NonLivingFactor ;
+               rdfs:subClassOf :EcologicalFactor ;
+               owl:disjointWith :BioticFactor ;
+               rdfs:comment "Non-living chemical and physical parts of the environment that affect living organisms and the functioning of ecosystems." ;
+               rdfs:label "Abiotic Factor" .
+
+
+###  http://example.org/aquadiva#AgriculturalActivity
+:AgriculturalActivity rdf:type owl:Class ;
+                      owl:equivalentClass :Agriculture ;
+                      rdfs:subClassOf :LandUseActivity ;
+                      owl:disjointWith :UrbanActivity ;
+                      rdfs:comment "Farming practices and operations that can impact environmental quality, including groundwater systems, through the use of fertilizers, pesticides, and water management." ;
+                      rdfs:label "Agricultural Activity" .
+
+
+###  http://example.org/aquadiva#AgriculturalArea
+:AgriculturalArea owl:equivalentClass :IndustrialAgricultureArea .
+
+
+###  http://example.org/aquadiva#AgriculturalPractice
+:AgriculturalPractice rdf:type owl:Class ;
+                      owl:equivalentClass :FarmingPractice ;
+                      rdfs:subClassOf :LandUseActivity ;
+                      owl:disjointWith :NonAgriculturalPractice ;
+                      rdfs:comment "Methods and techniques employed in cultivation and livestock rearing, which impact environmental quality and productivity." ;
+                      rdfs:label "Agricultural Practice" .
+
+
+###  http://example.org/aquadiva#AmazonRainforestSoil
+:AmazonRainforestSoil rdf:type owl:Class ;
+                      owl:equivalentClass :RainforestSoil ;
+                      rdfs:subClassOf :Soil ;
+                      owl:disjointWith :NonRainforestSoil .
+
+
+###  http://example.org/aquadiva#AnalysisMethod
+:AnalysisMethod rdf:type owl:Class ;
+                owl:equivalentClass :SampleAnalysisMethod ;
+                rdfs:subClassOf :Method ;
+                owl:disjointWith :NonAnalysisMethod ;
+                rdfs:comment "Techniques used to examine samples in order to discover their composition, structure, or properties, often used in scientific research." ;
+                rdfs:label "Analysis Method" .
+
+
+###  http://example.org/aquadiva#AquaticFungi
+:AquaticFungi rdf:type owl:Class ;
+              owl:equivalentClass :AquaticMicroorganism ,
+                                  :Fungi ;
+              rdfs:subClassOf :Fungi ;
+              owl:disjointWith :TerrestrialFungi ;
+              rdfs:label "Aquatic Fungi" .
+
+
+###  http://example.org/aquadiva#AquaticMicrobes
+:AquaticMicrobes rdf:type owl:Class ;
+                 owl:disjointWith :TerrestrialMicrobes ;
+                 rdfs:label "Aquatic Microbes" .
+
+
+###  http://example.org/aquadiva#AquaticMicrobialCommunity
+:AquaticMicrobialCommunity rdf:type owl:Class ;
+                           owl:equivalentClass :MicrobialCommunity ;
+                           rdfs:subClassOf :Community ;
+                           owl:disjointWith :TerrestrialMicrobialCommunity .
+
+
+###  http://example.org/aquadiva#AquaticSystem
+:AquaticSystem owl:disjointWith :AquiferSystem .
+
+
+###  http://example.org/aquadiva#AquiferChemistry
+:AquiferChemistry rdf:type owl:Class ;
+                  owl:equivalentClass :Hydrochemistry ;
+                  rdfs:subClassOf :Geochemistry ;
+                  owl:disjointWith :SoilChemistry ;
+                  rdfs:comment "Chemical characteristics and processes occurring within an aquifer, including solute transport and reactions." ;
+                  rdfs:label "Aquifer Chemistry" .
+
+
+###  http://example.org/aquadiva#AquiferComparison
+:AquiferComparison owl:equivalentClass :GroundwaterComparison .
+
+
+###  http://example.org/aquadiva#AquiferEcosystem
+:AquiferEcosystem owl:equivalentClass :GroundwaterEcosystem .
+
+
+###  http://example.org/aquadiva#AquiferFungiSample
+:AquiferFungiSample rdf:type owl:Class ;
+                    owl:equivalentClass :FungiSample ;
+                    rdfs:subClassOf :Fungi ;
+                    owl:disjointWith :NonFungiSample .
+
+
+###  http://example.org/aquadiva#AquiferProtection
+:AquiferProtection owl:equivalentClass :GroundwaterProtection .
+
+
+###  http://example.org/aquadiva#AquiferRechargeZone
+:AquiferRechargeZone owl:equivalentClass :RechargeZone .
+
+
+###  http://example.org/aquadiva#AquiferSystem
+:AquiferSystem rdf:type owl:Class ;
+               owl:equivalentClass :ChalkAquifer ,
+                                   :GroundwaterSystem ;
+               rdfs:subClassOf :HydrogeologicalSystem ;
+               rdfs:comment "An underground layer of water-bearing permeable rock or materials such as gravel, sand, or silt." ;
+               rdfs:label "Aquifer System" .
+
+
+###  http://example.org/aquadiva#AquiferWater
+:AquiferWater owl:equivalentClass :Groundwater .
+
+
+###  http://example.org/aquadiva#ArtificialStrata
+:ArtificialStrata owl:disjointWith :GeologicalStrata .
+
+
+###  http://example.org/aquadiva#ArtificialSurface
+:ArtificialSurface owl:disjointWith :Vegetation .
+
+
+###  http://example.org/aquadiva#AtmosphericTraceGas
+:AtmosphericTraceGas owl:equivalentClass :TraceGas .
+
+
+###  http://example.org/aquadiva#Bacteria
+:Bacteria owl:disjointWith :Fungi .
+
+
+###  http://example.org/aquadiva#BacterialCulture
+:BacterialCulture owl:equivalentClass :SubsurfaceBacterialCulture .
+
+
+###  http://example.org/aquadiva#BareGround
+:BareGround owl:disjointWith :VegetationCover .
+
+
+###  http://example.org/aquadiva#Biodiversity
+:Biodiversity rdf:type owl:Class ;
+              owl:equivalentClass :EcologicalDiversity ;
+              rdfs:subClassOf :EcologicalMetric ;
+              owl:disjointWith :Monoculture ;
+              rdfs:comment "The variety and variability of life forms within a given ecosystem, region, or on the entire Earth, important in assessing the health and function of ecosystems." ;
+              rdfs:label "Biodiversity" .
+
+
+###  http://example.org/aquadiva#BiogeochemicalCycle
+:BiogeochemicalCycle owl:equivalentClass :NitrogenCycle .
+
+
+###  http://example.org/aquadiva#BiologicalCompound
+:BiologicalCompound owl:disjointWith :ChemicalCompound .
+
+
+###  http://example.org/aquadiva#Biomarker
+:Biomarker owl:equivalentClass :MolecularMarker .
+
+
+###  http://example.org/aquadiva#BioticFactor
+:BioticFactor rdf:type owl:Class ;
+              owl:equivalentClass :LivingFactor ;
+              rdfs:subClassOf :EcologicalFactor ;
+              rdfs:comment "A living element of an ecosystem that influences or interacts with other organisms and the environment, such as plants, animals, and microorganisms." ;
+              rdfs:label "Biotic Factor" .
+
+
+###  http://example.org/aquadiva#Bioturbation
+:Bioturbation rdf:type owl:Class ;
+              owl:equivalentClass :SoilDisturbance ;
+              rdfs:subClassOf :EcologicalProcess ;
+              owl:disjointWith :Sedimentation ;
+              rdfs:comment "The disturbance of sedimentary deposits by living organisms, often affecting soil composition and structure." ;
+              rdfs:label "Bioturbation" .
+
+
+###  http://example.org/aquadiva#CO2EmissionPathway
+:CO2EmissionPathway owl:disjointWith :CO2FixationPathway .
+
+
+###  http://example.org/aquadiva#CO2FixationPathway
+:CO2FixationPathway rdf:type owl:Class ;
+                    owl:equivalentClass :CarbonFixationPathway ;
+                    rdfs:subClassOf :BiochemicalPathway ;
+                    rdfs:comment "Biochemical routes by which CO2 is converted into organic molecules by living organisms, crucial for carbon cycling and storage." ;
+                    rdfs:label "CO2 Fixation Pathway" .
+
+
+###  http://example.org/aquadiva#CO2ReductionPathway
+:CO2ReductionPathway rdf:type owl:Class ;
+                     owl:equivalentClass :CarbonFixationPathway ;
+                     rdfs:subClassOf :BiochemicalPathway ;
+                     owl:disjointWith :NonCarbonFixationPathway .
+
+
+###  http://example.org/aquadiva#CarbonCycle
+:CarbonCycle owl:disjointWith :NitrogenCycle .
+
+
+###  http://example.org/aquadiva#CarbonateDissolution
+:CarbonateDissolution rdf:type owl:Class ;
+                      owl:equivalentClass :CarbonateDissortation ;
+                      rdfs:subClassOf :ChemicalProcess ;
+                      owl:disjointWith :SilicateDissolution ;
+                      rdfs:comment "A process where carbonate minerals (e.g., calcite, dolomite) dissolve in water, significantly affecting karst aquifer systems." ;
+                      rdfs:label "Carbonate Dissolution" .
+
+
+###  http://example.org/aquadiva#CarbonateDissortation
+:CarbonateDissortation rdf:type owl:Class ;
+                       owl:equivalentClass :CarbonateProcess ;
+                       rdfs:subClassOf :ChemicalProcess ;
+                       owl:disjointWith :NonCarbonateProcess ;
+                       rdfs:label "Carbonate Dissortation" .
+
+
+###  http://example.org/aquadiva#CatchmentArea
+:CatchmentArea rdf:type owl:Class ;
+               owl:equivalentClass :HydrologicalCatchment ;
+               rdfs:subClassOf :HydrologicalUnit ;
+               owl:disjointWith :NonCatchment ,
+                                :NonCatchmentArea ;
+               rdfs:comment "The area from which rainfall and surface water flow into a particular river, lake, or reservoir." ;
+               rdfs:label "Catchment Area" .
+
+
+###  http://example.org/aquadiva#ChalkAquifer
+:ChalkAquifer rdf:type owl:Class ;
+              owl:equivalentClass :LimestoneAquifer ;
+              rdfs:subClassOf :AquiferSystem ;
+              owl:disjointWith :NonAquiferSystem .
+
+
+###  http://example.org/aquadiva#ChemicalCompound
+:ChemicalCompound rdf:type owl:Class ;
+                  rdfs:subClassOf :GroundwaterChemical ;
+                  rdfs:comment "A substance consisting of two or more different elements chemically bonded together, found in groundwater." ;
+                  rdfs:label "Chemical Compound" .
+
+
+###  http://example.org/aquadiva#ChemicalData
+:ChemicalData owl:equivalentClass :MolecularFormula .
+
+
+###  http://example.org/aquadiva#ChemicalMarker
+:ChemicalMarker owl:equivalentClass :Miz .
+
+
+###  http://example.org/aquadiva#ChronologicalPattern
+:ChronologicalPattern owl:equivalentClass :TemporalPattern .
+
+
+###  http://example.org/aquadiva#CleanSite
+:CleanSite owl:disjointWith :ContaminatedSite .
+
+
+###  http://example.org/aquadiva#CommonSpeciesBiodiversity
+:CommonSpeciesBiodiversity owl:disjointWith :RareSpeciesBiodiversity .
+
+
+###  http://example.org/aquadiva#CommonSpeciesDiversity
+:CommonSpeciesDiversity owl:disjointWith :RareSpeciesBiodiversity .
+
+
+###  http://example.org/aquadiva#ComplexAquiferSystem
+:ComplexAquiferSystem owl:equivalentClass :MultilevelGroundwaterSystem .
+
+
+###  http://example.org/aquadiva#ConductivityStudy
+:ConductivityStudy owl:equivalentClass :HydraulicConductivityStudy .
+
+
+###  http://example.org/aquadiva#ConstantCondition
+:ConstantCondition owl:disjointWith :SeasonalVariation .
+
+
+###  http://example.org/aquadiva#Consumption
+:Consumption rdf:type owl:Class ;
+             owl:equivalentClass :EcologicalConsumption ;
+             rdfs:subClassOf :EcologicalProcess ;
+             owl:disjointWith :Production ;
+             rdfs:comment "The use or depletion of resources or energy, commonly in biological contexts such as metabolism or ecological interactions." ;
+             rdfs:label "Consumption" .
+
+
+###  http://example.org/aquadiva#ContaminatedSite
+:ContaminatedSite rdf:type owl:Class ;
+                  owl:equivalentClass :PollutedSite ;
+                  rdfs:subClassOf :Site .
+
+
+###  http://example.org/aquadiva#Contamination
+:Contamination owl:equivalentClass :GroundwaterContamination .
+
+
+###  http://example.org/aquadiva#CriticalZone
+:CriticalZone owl:equivalentClass :HainichCriticalZone .
+
+
+###  http://example.org/aquadiva#CriticalZoneObservatory
+:CriticalZoneObservatory owl:equivalentClass :HainichCZObservatory .
+
+
+###  http://example.org/aquadiva#DOM
+:DOM rdf:type owl:Class ;
+     owl:equivalentClass :DissolvedOrganicMatter ;
+     rdfs:subClassOf :OrganicMatter ;
+     owl:disjointWith :POM ;
+     rdfs:comment "Dissolved organic matter in water, which includes a complex mixture of organic compounds that affects water chemistry and microbial activity." ;
+     rdfs:label "DOM" .
+
+
+###  http://example.org/aquadiva#Decomposition
+:Decomposition owl:disjointWith :Production .
+
+
+###  http://example.org/aquadiva#DeepAquifer
+:DeepAquifer rdf:type owl:Class ;
+             owl:equivalentClass :SubsurfaceAquifer ;
+             rdfs:subClassOf :AquiferSystem ;
+             owl:disjointWith :ShallowAquifer .
+
+
+###  http://example.org/aquadiva#DesertEcosystem
+:DesertEcosystem owl:disjointWith :ForestEcosystem .
+
+
+###  http://example.org/aquadiva#DesertSpring
+:DesertSpring rdf:type owl:Class ;
+              owl:equivalentClass :Spring ;
+              rdfs:subClassOf :WaterSource ;
+              owl:disjointWith :NonSpring .
+
+
+###  http://example.org/aquadiva#DrySoil
+:DrySoil owl:disjointWith :SoilWaterContent .
+
+
+###  http://example.org/aquadiva#EcologicalProduction
+:EcologicalProduction owl:equivalentClass :Production .
+
+
+###  http://example.org/aquadiva#EcologicalSignal
+:EcologicalSignal owl:equivalentClass :EnvironmentalSignal .
+
+
+###  http://example.org/aquadiva#EmpiricalFormula
+:EmpiricalFormula owl:disjointWith :MolecularFormula .
+
+
+###  http://example.org/aquadiva#EnergyMetabolismPathway
+:EnergyMetabolismPathway rdf:type owl:Class ;
+                         owl:equivalentClass :MetabolicPathway ;
+                         rdfs:subClassOf :BiochemicalPathway ;
+                         owl:disjointWith :NonMetabolicPathway ;
+                         rdfs:comment "Biochemical routes by which organisms transform energy from one form to another, crucial for cellular processes and ecological dynamics." ;
+                         rdfs:label "Energy Metabolism Pathway" .
+
+
+###  http://example.org/aquadiva#EnvironmentalManagement
+:EnvironmentalManagement owl:equivalentClass :ManagementPractice .
+
+
+###  http://example.org/aquadiva#EnvironmentalSignal
+:EnvironmentalSignal rdf:type owl:Class ;
+                     rdfs:subClassOf :Signal ;
+                     owl:disjointWith :Noise ;
+                     rdfs:comment "Natural or anthropogenic indicators that provide information about environmental conditions or changes, used for monitoring and management purposes." ;
+                     rdfs:label "Environmental Signal" .
+
+
+###  http://example.org/aquadiva#EnvironmentalVulnerability
+:EnvironmentalVulnerability owl:equivalentClass :GroundwaterVulnerability .
+
+
+###  http://example.org/aquadiva#FixedOrganicMatter
+:FixedOrganicMatter owl:disjointWith :MobileOrganicMatter .
+
+
+###  http://example.org/aquadiva#FlatSurface
+:FlatSurface owl:disjointWith :Terrain .
+
+
+###  http://example.org/aquadiva#ForestEcosystem
+:ForestEcosystem rdf:type owl:Class ;
+                 owl:equivalentClass :ForestEnvironment ;
+                 rdfs:subClassOf :Ecosystem ;
+                 rdfs:comment "An ecological system within a forest setting, encompassing the interactions among plants, animals, microorganisms, and their environment." ;
+                 rdfs:label "Forest Ecosystem" .
+
+
+###  http://example.org/aquadiva#ForestHabitat
+:ForestHabitat owl:equivalentClass :ForestMicrohabitat .
+
+
+###  http://example.org/aquadiva#ForestMicrohabitat
+:ForestMicrohabitat rdf:type owl:Class ;
+                    rdfs:subClassOf :Microhabitat ;
+                    owl:disjointWith :NonForestHabitat .
+
+
+###  http://example.org/aquadiva#FracturedAquifer
+:FracturedAquifer owl:equivalentClass :FracturedRockAquifer .
+
+
+###  http://example.org/aquadiva#FracturedRock
+:FracturedRock rdf:type owl:Class ;
+               owl:equivalentClass :RockFracture ;
+               rdfs:subClassOf :GeologicalStrata ;
+               owl:disjointWith :SolidRock ;
+               rdfs:comment "Rock formations that have significant fracture systems, influencing groundwater flow and storage." ;
+               rdfs:label "Fractured Rock" .
+
+
+###  http://example.org/aquadiva#FracturedRockAquifer
+:FracturedRockAquifer rdf:type owl:Class ;
+                      rdfs:subClassOf :Aquifer ;
+                      owl:disjointWith :KarstAquifer ,
+                                       :SolidRockAquifer .
+
+
+###  http://example.org/aquadiva#Fungi
+:Fungi rdf:type owl:Class ;
+       rdfs:subClassOf :Microorganism ;
+       owl:disjointWith :Microbes ;
+       rdfs:label "Fungi" .
+
+
+###  http://example.org/aquadiva#GeochemicalCharacterizationMethod
+:GeochemicalCharacterizationMethod owl:equivalentClass :HydrogeochemicalCharacterizationMethod .
+
+
+###  http://example.org/aquadiva#Geochemistry
+:Geochemistry rdf:type owl:Class ;
+              owl:equivalentClass :GeologicalChemistry ;
+              rdfs:subClassOf :EarthScience ;
+              owl:disjointWith :NonGeochemistry ;
+              rdfs:label "Geochemistry" .
+
+
+###  http://example.org/aquadiva#GeologicalMaterial
+:GeologicalMaterial owl:equivalentClass :RockType .
+
+
+###  http://example.org/aquadiva#GeologicalMineral
+:GeologicalMineral owl:equivalentClass :Mineral .
+
+
+###  http://example.org/aquadiva#GeologicalStrata
+:GeologicalStrata rdf:type owl:Class ;
+                  owl:equivalentClass :Strata ;
+                  rdfs:subClassOf :Strata ;
+                  rdfs:comment "Layers of sedimentary rock or soil with consistent characteristics that can influence groundwater movement and storage." ;
+                  rdfs:label "Geological Strata" .
+
+
+###  http://example.org/aquadiva#GeospatialPattern
+:GeospatialPattern owl:equivalentClass :SpatialPattern .
+
+
+###  http://example.org/aquadiva#Groundwater
+:Groundwater rdf:type owl:Class ;
+             owl:equivalentClass :HighCalciumWater ;
+             rdfs:subClassOf :Water ;
+             owl:disjointWith :SurfaceWater ;
+             rdfs:comment "Water located beneath the earth's surface in soil pore spaces and in the fractures of rock formations." ;
+             rdfs:label "Groundwater" .
+
+
+###  http://example.org/aquadiva#GroundwaterChemistry
+:GroundwaterChemistry rdf:type owl:Class ;
+                      owl:equivalentClass :Hydrochemistry ;
+                      rdfs:subClassOf :Geochemistry ;
+                      owl:disjointWith :SurfaceWaterChemistry ;
+                      rdfs:comment "The chemical composition and properties of groundwater, including solutes and gases, which affect its quality and ecological role." ;
+                      rdfs:label "Groundwater Chemistry" .
+
+
+###  http://example.org/aquadiva#GroundwaterComparison
+:GroundwaterComparison rdf:type owl:Class ;
+                       rdfs:subClassOf :GroundwaterStudy ;
+                       owl:disjointWith :SurfaceWaterComparison ;
+                       rdfs:label "Groundwater Comparison" .
+
+
+###  http://example.org/aquadiva#GroundwaterContamination
+:GroundwaterContamination rdf:type owl:Class ;
+                          rdfs:subClassOf :Contamination ;
+                          owl:disjointWith :GroundwaterPurity ;
+                          rdfs:comment "The presence of harmful substances in groundwater, which can compromise water quality and ecosystem health." ;
+                          rdfs:label "Groundwater Contamination" .
+
+
+###  http://example.org/aquadiva#GroundwaterEcosystem
+:GroundwaterEcosystem rdf:type owl:Class ;
+                      rdfs:subClassOf :Ecosystem ;
+                      owl:disjointWith :SurfaceWaterEcosystem ;
+                      rdfs:comment "An ecological system located below the earth's surface, encompassing interactions among water, microorganisms, chemicals, and geological materials." ;
+                      rdfs:label "Groundwater Ecosystem" .
+
+
+###  http://example.org/aquadiva#GroundwaterFlow
+:GroundwaterFlow rdf:type owl:Class ;
+                 owl:equivalentClass :SubsurfaceWaterFlow ;
+                 rdfs:subClassOf :HydrologicalProcess ;
+                 owl:disjointWith :SurfaceWaterFlow ;
+                 rdfs:comment "The movement of water through aquifer systems, driven by gradients in pressure and elevation, crucial for water supply and ecosystem support." ;
+                 rdfs:label "Groundwater Flow" .
+
+
+###  http://example.org/aquadiva#GroundwaterPhysiochemicalParameters
+:GroundwaterPhysiochemicalParameters rdf:type owl:Class ;
+                                     owl:equivalentClass :PhysiochemicalParameters ;
+                                     rdfs:subClassOf :PhysiochemicalParameters ;
+                                     owl:disjointWith :NonPhysiochemicalParameters ;
+                                     rdfs:label "Groundwater Physiochemical Parameters" .
+
+
+###  http://example.org/aquadiva#GroundwaterPrecipitation
+:GroundwaterPrecipitation rdf:type owl:Class ;
+                          owl:equivalentClass :HydroPrecipitation ;
+                          rdfs:subClassOf :Precipitation ;
+                          owl:disjointWith :SurfacePrecipitation ;
+                          rdfs:comment "The process where water precipitates, either through chemical means within groundwater systems or as a part of the hydrological cycle impacting groundwater recharge." ;
+                          rdfs:label "Groundwater Precipitation" .
+
+
+###  http://example.org/aquadiva#GroundwaterProtection
+:GroundwaterProtection rdf:type owl:Class ;
+                       rdfs:subClassOf :EnvironmentalProtection ;
+                       owl:disjointWith :NonProtection ;
+                       rdfs:label "Groundwater Protection" .
+
+
+###  http://example.org/aquadiva#GroundwaterQuality
+:GroundwaterQuality rdf:type owl:Class ;
+                    owl:equivalentClass :WaterQuality ;
+                    rdfs:subClassOf :Groundwater ;
+                    owl:disjointWith :SurfaceWaterQuality ;
+                    rdfs:comment "The condition of groundwater, often assessed by chemical, physical, and biological parameters to determine suitability for use." ;
+                    rdfs:label "Groundwater Quality" .
+
+
+###  http://example.org/aquadiva#GroundwaterSecurity
+:GroundwaterSecurity owl:disjointWith :GroundwaterVulnerability .
+
+
+###  http://example.org/aquadiva#GroundwaterSoilInteraction
+:GroundwaterSoilInteraction owl:equivalentClass :SoilGroundwaterInteraction .
+
+
+###  http://example.org/aquadiva#GroundwaterVulnerability
+:GroundwaterVulnerability rdf:type owl:Class ;
+                          rdfs:subClassOf :EnvironmentalVulnerability ;
+                          rdfs:comment "The susceptibility of groundwater to contamination, influenced by geological, hydrological, and chemical factors." ;
+                          rdfs:label "Groundwater Vulnerability" .
+
+
+###  http://example.org/aquadiva#HainichCZObservatory
+:HainichCZObservatory rdf:type owl:Class ;
+                      rdfs:subClassOf :Observatory ;
+                      owl:disjointWith :NonCriticalZoneObservatory .
+
+
+###  http://example.org/aquadiva#HainichCriticalZone
+:HainichCriticalZone rdf:type owl:Class ;
+                     rdfs:subClassOf :CriticalZone ;
+                     owl:disjointWith :NonCriticalZone ;
+                     rdfs:comment "A specific geographic area used for studying the critical zone, which includes the earth's outer skin where interactions occur between the lithosphere, atmosphere, hydrosphere, and biosphere." ;
+                     rdfs:label "Hainich Critical Zone" .
+
+
+###  http://example.org/aquadiva#HighCalciumWater
+:HighCalciumWater rdf:type owl:Class ;
+                  rdfs:subClassOf :Groundwater ;
+                  owl:disjointWith :LowCalciumWater .
+
+
+###  http://example.org/aquadiva#HydraulicConductivityStudy
+:HydraulicConductivityStudy rdf:type owl:Class ;
+                            rdfs:subClassOf :HydrologicalStudy ;
+                            owl:disjointWith :NonConductivityStudy .
+
+
+###  http://example.org/aquadiva#HydraulicProperty
+:HydraulicProperty rdf:type owl:Class ;
+                   owl:equivalentClass :WaterFlowProperty ;
+                   rdfs:subClassOf :Property ;
+                   owl:disjointWith :NonHydraulicProperty ;
+                   rdfs:comment "Properties of materials related to the movement and storage of fluids, particularly water, essential in hydrogeology and civil engineering." ;
+                   rdfs:label "Hydraulic Property" .
+
+
+###  http://example.org/aquadiva#Hydrochemistry
+:Hydrochemistry rdf:type owl:Class ;
+                owl:equivalentClass :WaterChemistry ;
+                rdfs:subClassOf :Geochemistry ;
+                owl:disjointWith :NonHydrochemistry ;
+                rdfs:label "Hydrochemistry" .
+
+
+###  http://example.org/aquadiva#HydrogeochemicalCharacterizationMethod
+:HydrogeochemicalCharacterizationMethod rdf:type owl:Class ;
+                                        rdfs:subClassOf :CharacterizationMethod ;
+                                        owl:disjointWith :NonCharacterizationMethod ;
+                                        rdfs:comment "Techniques used to assess the chemical properties and interactions in groundwater systems, important for understanding water quality and geological impacts." ;
+                                        rdfs:label "Hydrogeochemical Characterization Method" .
+
+
+###  http://example.org/aquadiva#HydrogeologicalProperty
+:HydrogeologicalProperty owl:equivalentClass :Permeability .
+
+
+###  http://example.org/aquadiva#HydrologicalFlow
+:HydrologicalFlow owl:equivalentClass :WaterFlow .
+
+
+###  http://example.org/aquadiva#HydrologicalInfiltration
+:HydrologicalInfiltration owl:equivalentClass :InfiltrationArea .
+
+
+###  http://example.org/aquadiva#HydrologicalInput
+:HydrologicalInput owl:equivalentClass :WaterInput .
+
+
+###  http://example.org/aquadiva#HydrologicalProperty
+:HydrologicalProperty rdf:type owl:Class ;
+                      owl:equivalentClass :WaterProperty ;
+                      rdfs:subClassOf :Property ;
+                      owl:disjointWith :NonHydrologicalProperty ;
+                      rdfs:comment "Characteristics of the movement, distribution, and quality of water through the Earth's atmosphere and surface, key to understanding hydrological cycles and systems." ;
+                      rdfs:label "Hydrological Property" .
+
+
+###  http://example.org/aquadiva#HydrologicalTracerStudy
+:HydrologicalTracerStudy owl:equivalentClass :SoilTracerStudy .
+
+
+###  http://example.org/aquadiva#Impermeability
+:Impermeability owl:disjointWith :Permeability .
+
+
+###  http://example.org/aquadiva#ImpermeableArea
+:ImpermeableArea owl:disjointWith :InfiltrationArea .
+
+
+###  http://example.org/aquadiva#IndustrialAgricultureArea
+:IndustrialAgricultureArea rdf:type owl:Class ;
+                           rdfs:subClassOf :AgriculturalArea ;
+                           owl:disjointWith :NonAgriculturalArea .
+
+
+###  http://example.org/aquadiva#InfiltrationArea
+:InfiltrationArea rdf:type owl:Class ;
+                  rdfs:subClassOf :HydrologicalUnit ;
+                  owl:disjointWith :NonInfiltrationArea ;
+                  rdfs:comment "Areas of land where water permeates the soil surface to enter an aquifer, significantly impacting groundwater recharge and quality." ;
+                  rdfs:label "Infiltration Area" .
+
+
+###  http://example.org/aquadiva#InorganicGroundwaterComponent
+:InorganicGroundwaterComponent owl:disjointWith :OrganicGroundwaterComponent .
+
+
+###  http://example.org/aquadiva#InorganicMatter
+:InorganicMatter owl:disjointWith :SoilOrganicMatter .
+
+
+###  http://example.org/aquadiva#JurassicAquifer
+:JurassicAquifer owl:disjointWith :TriassicAquifer .
+
+
+###  http://example.org/aquadiva#Karst
+:Karst rdf:type owl:Class ;
+       owl:equivalentClass :KarstFormation ,
+                           :KarstSystem ;
+       rdfs:subClassOf :GeologicalFormation ;
+       owl:disjointWith :NonKarstFormation ;
+       rdfs:label "Karst" .
+
+
+###  http://example.org/aquadiva#KarstAquifer
+:KarstAquifer rdf:type owl:Class ;
+              owl:equivalentClass :KarstAquiferSystem ;
+              rdfs:subClassOf :AquiferSystem ;
+              rdfs:comment "A type of aquifer characterized by soluble rock layers like limestone, leading to distinctive topographies and hydrology due to dissolution and water flow." ;
+              rdfs:label "Karst Aquifer" .
+
+
+###  http://example.org/aquadiva#KarstAquiferSystem
+:KarstAquiferSystem rdf:type owl:Class ;
+                    rdfs:subClassOf :AquiferSystem ;
+                    owl:disjointWith :NonKarstAquifer .
+
+
+###  http://example.org/aquadiva#KarstProcess
+:KarstProcess owl:equivalentClass :Karstification .
+
+
+###  http://example.org/aquadiva#KarstSpringWater
+:KarstSpringWater rdf:type owl:Class ;
+                  owl:equivalentClass :KarstWater ;
+                  rdfs:subClassOf :Water ;
+                  owl:disjointWith :NonKarstWater .
+
+
+###  http://example.org/aquadiva#KarstSystem
+:KarstSystem rdf:type owl:Class ;
+             rdfs:subClassOf :GeologicalStrata ;
+             owl:disjointWith :NonKarstSystem ;
+             rdfs:comment "A geological system formed from the dissolution of soluble rocks including limestone, dolomite, and gypsum, characterized by sinkholes, caves, and underground drainage." ;
+             rdfs:label "Karst System" .
+
+
+###  http://example.org/aquadiva#Karstification
+:Karstification rdf:type owl:Class ;
+                rdfs:subClassOf :GeologicalProcess ;
+                owl:disjointWith :NonKarstProcess ;
+                rdfs:comment "The process of creating karst landscapes through the dissolution of soluble rocks, leading to features like caves and underground rivers." ;
+                rdfs:label "Karstification" .
+
+
+###  http://example.org/aquadiva#Landform
+:Landform owl:equivalentClass :Terrain .
+
+
+###  http://example.org/aquadiva#Limestone
+:Limestone rdf:type owl:Class ;
+           owl:equivalentClass :SedimentaryRock ;
+           rdfs:subClassOf :RockType ;
+           owl:disjointWith :NonSedimentaryRock ;
+           rdfs:label "Limestone" .
+
+
+###  http://example.org/aquadiva#LimestoneAquifer
+:LimestoneAquifer rdf:type owl:Class ;
+                  rdfs:subClassOf :AquiferSystem ;
+                  rdfs:comment "An aquifer consisting predominantly of limestone, which is highly permeable due to the presence of dissolution-formed conduits." ;
+                  rdfs:label "Limestone Aquifer" .
+
+
+###  http://example.org/aquadiva#MajorGas
+:MajorGas owl:disjointWith :TraceGas .
+
+
+###  http://example.org/aquadiva#ManagementPractice
+:ManagementPractice rdf:type owl:Class ;
+                    rdfs:subClassOf :LandManagement ;
+                    owl:disjointWith :NonManagementPractice ;
+                    rdfs:comment "Approaches and techniques used in managing natural resources and environmental quality, including water resources." ;
+                    rdfs:label "Management Practice" .
+
+
+###  http://example.org/aquadiva#MarinePhage
+:MarinePhage rdf:type owl:Class ;
+             owl:equivalentClass :WaterPhage ;
+             rdfs:subClassOf :Phage ;
+             owl:disjointWith :TerrestrialPhage ;
+             rdfs:comment "Viruses that infect marine bacteria, playing roles in marine ecosystems by influencing bacterial populations and nutrient cycles." ;
+             rdfs:label "Marine Phage" .
+
+
+###  http://example.org/aquadiva#Microbes
+:Microbes rdf:type owl:Class ;
+          rdfs:subClassOf :AquaticMicrobes ,
+                          :GroundwaterMicrobes ;
+          rdfs:comment "Organisms that are microscopic, such as bacteria, archaea, and certain fungi, present in the aquifer systems." ;
+          rdfs:label "Microbes" .
+
+
+###  http://example.org/aquadiva#MicrobialCommunity
+:MicrobialCommunity rdf:type owl:Class ;
+                    owl:equivalentClass :MicrobialGroup ;
+                    rdfs:subClassOf :Community ;
+                    owl:disjointWith :PlantCommunity ;
+                    rdfs:comment "A community of microorganisms, including bacteria, fungi, and viruses, living in a shared environment, influencing ecological processes and cycles." ;
+                    rdfs:label "Microbial Community" .
+
+
+###  http://example.org/aquadiva#MicrobialDynamics
+:MicrobialDynamics rdf:type owl:Class ;
+                   owl:equivalentClass :MicrobialProcess ;
+                   rdfs:subClassOf :EcologicalProcess ;
+                   owl:disjointWith :PlantDynamics ;
+                   rdfs:comment "Changes and interactions among microbial populations within an environment, often influenced by physical and chemical conditions." ;
+                   rdfs:label "Microbial Dynamics" .
+
+
+###  http://example.org/aquadiva#MicrobialFunctionalGuilds
+:MicrobialFunctionalGuilds rdf:type owl:Class ;
+                           owl:equivalentClass :MicrobialGroup ;
+                           rdfs:subClassOf :MicrobialCommunity ;
+                           owl:disjointWith :PlantFunctionalGuilds ;
+                           rdfs:comment "Groups of microorganisms categorized by their metabolic or functional roles within ecological communities." ;
+                           rdfs:label "Microbial Functional Guilds" .
+
+
+###  http://example.org/aquadiva#MicrobialMechanism
+:MicrobialMechanism rdf:type owl:Class ;
+                    owl:equivalentClass :MicrobialProcess ;
+                    rdfs:subClassOf :EcologicalMechanism ;
+                    owl:disjointWith :PlantMechanism ;
+                    rdfs:comment "Mechanisms or processes employed by microorganisms to interact with their environment, affecting ecological balances and nutrient cycles." ;
+                    rdfs:label "Microbial Mechanism" .
+
+
+###  http://example.org/aquadiva#Mineral
+:Mineral rdf:type owl:Class ;
+         owl:equivalentClass :PhosphateMinerals ,
+                             :SecondaryMinerals ;
+         rdfs:subClassOf :GeologicalMaterial ;
+         owl:disjointWith :OrganicCompound ;
+         rdfs:comment "Naturally occurring inorganic substances with a definite chemical composition and physical properties that are part of the earth's crust." ;
+         rdfs:label "Mineral" .
+
+
+###  http://example.org/aquadiva#Miz
+:Miz rdf:type owl:Class ;
+     rdfs:subClassOf :Biomarker ;
+     owl:disjointWith :NonBiomarker ;
+     rdfs:comment "A specific type of organic or chemical marker used in studies of environmental samples to track changes or origins of substances." ;
+     rdfs:label "Miz" .
+
+
+###  http://example.org/aquadiva#MobileOrganicMatter
+:MobileOrganicMatter rdf:type owl:Class ;
+                     owl:equivalentClass :OrganicGroundwaterComponent ;
+                     rdfs:subClassOf :OrganicMatter ;
+                     rdfs:comment "Organic materials within the groundwater that are mobile and can transport nutrients or pollutants." ;
+                     rdfs:label "Mobile Organic Matter" .
+
+
+###  http://example.org/aquadiva#MolecularFormula
+:MolecularFormula rdf:type owl:Class ;
+                  rdfs:subClassOf :ChemicalData ;
+                  rdfs:comment "A representation of the number and type of atoms in a molecule, providing essential information about chemical structures in environmental studies." ;
+                  rdfs:label "Molecular Formula" .
+
+
+###  http://example.org/aquadiva#MolecularMarker
+:MolecularMarker rdf:type owl:Class ;
+                 rdfs:subClassOf :Biomarker ;
+                 owl:disjointWith :PhysicalMarker ;
+                 rdfs:comment "Biomolecules used as markers to identify and track genetic material, species identification, or processes within ecosystems." ;
+                 rdfs:label "Molecular Marker" .
+
+
+###  http://example.org/aquadiva#MultilevelGroundwaterSystem
+:MultilevelGroundwaterSystem rdf:type owl:Class ;
+                             rdfs:subClassOf :AquiferSystem ;
+                             owl:disjointWith :SingleLevelGroundwaterSystem ;
+                             rdfs:comment "A groundwater system that includes multiple aquifer layers, often interconnected, allowing for complex flow and solute transport dynamics." ;
+                             rdfs:label "Multilevel Groundwater System" .
+
+
+###  http://example.org/aquadiva#MuschelkalkFormation
+:MuschelkalkFormation rdf:type owl:Class ;
+                      owl:equivalentClass :TriassicFormation ;
+                      rdfs:subClassOf :GeologicalFormation ;
+                      owl:disjointWith :NonTriassicFormation ;
+                      rdfs:comment "A geological formation consisting mainly of middle Triassic limestone, known for its distinct sedimentary characteristics." ;
+                      rdfs:label "Muschelkalk Formation" .
+
+
+###  http://example.org/aquadiva#NitrogenCycle
+:NitrogenCycle rdf:type owl:Class ;
+               rdfs:subClassOf :BiogeochemicalCycle ;
+               rdfs:comment "The series of processes by which nitrogen is converted into its various chemical forms, crucial for life on Earth." ;
+               rdfs:label "Nitrogen Cycle" .
+
+
+###  http://example.org/aquadiva#NitrogenCycleProcess
+:NitrogenCycleProcess owl:equivalentClass :NitrogenTransformation .
+
+
+###  http://example.org/aquadiva#NitrogenTransformation
+:NitrogenTransformation rdf:type owl:Class ;
+                        rdfs:subClassOf :BiogeochemicalProcess ;
+                        owl:disjointWith :NonNitrogenProcess ;
+                        rdfs:comment "Biochemical processes that convert nitrogen into various chemical forms, critical in nutrient cycling and ecological balance." ;
+                        rdfs:label "Nitrogen Transformation" .
+
+
+###  http://example.org/aquadiva#NonMineral
+:NonMineral owl:disjointWith :PhosphateMinerals .
+
+
+###  http://example.org/aquadiva#NonRechargeZone
+:NonRechargeZone owl:disjointWith :RechargeZone .
+
+
+###  http://example.org/aquadiva#NonSamplingMethod
+:NonSamplingMethod owl:disjointWith :SamplingMethod .
+
+
+###  http://example.org/aquadiva#NonTraceGas
+:NonTraceGas owl:disjointWith :TraceGas .
+
+
+###  http://example.org/aquadiva#NonVegetationType
+:NonVegetationType owl:disjointWith :VegetationType .
+
+
+###  http://example.org/aquadiva#NonWetland
+:NonWetland owl:disjointWith :SeasonalWetland .
+
+
+###  http://example.org/aquadiva#OrganicComponent
+:OrganicComponent owl:equivalentClass :OrganicGroundwaterComponent .
+
+
+###  http://example.org/aquadiva#OrganicGroundwaterComponent
+:OrganicGroundwaterComponent rdf:type owl:Class ;
+                             rdfs:subClassOf :OrganicComponent ;
+                             rdfs:comment "Organic substances found in groundwater, including both naturally occurring compounds and contaminants." ;
+                             rdfs:label "Organic Groundwater Component" .
+
+
+###  http://example.org/aquadiva#Permeability
+:Permeability rdf:type owl:Class ;
+              rdfs:subClassOf :HydrogeologicalProperty ;
+              rdfs:comment "A measure of the ability of a material (such as soil or rock) to allow fluids to pass through it, crucial for assessing aquifer recharge and water movement." ;
+              rdfs:label "Permeability" .
+
+
+###  http://example.org/aquadiva#PhosphateMinerals
+:PhosphateMinerals rdf:type owl:Class ;
+                   rdfs:subClassOf :Minerals .
+
+
+###  http://example.org/aquadiva#PlantCommunity
+:PlantCommunity owl:equivalentClass :Vegetation .
+
+
+###  http://example.org/aquadiva#PlantCover
+:PlantCover owl:equivalentClass :VegetationCover .
+
+
+###  http://example.org/aquadiva#PlantType
+:PlantType owl:equivalentClass :VegetationType .
+
+
+###  http://example.org/aquadiva#PrimaryMinerals
+:PrimaryMinerals owl:disjointWith :SecondaryMinerals .
+
+
+###  http://example.org/aquadiva#Production
+:Production rdf:type owl:Class ;
+            rdfs:subClassOf :EcologicalProcess ;
+            rdfs:comment "The creation or manufacture of substances or materials, often used in the context of biological or chemical processes in environmental systems." ;
+            rdfs:label "Production" .
+
+
+###  http://example.org/aquadiva#RandomPattern
+:RandomPattern owl:disjointWith :SpatialPattern .
+
+
+###  http://example.org/aquadiva#RareSpeciesBiodiversity
+:RareSpeciesBiodiversity rdf:type owl:Class ;
+                         owl:equivalentClass :RareSpeciesDiversity ;
+                         rdfs:subClassOf :Biodiversity ;
+                         rdfs:comment "The presence and roles of rare species within an ecosystem, which can be indicators of environmental health and stability." ;
+                         rdfs:label "Rare Species Biodiversity" .
+
+
+###  http://example.org/aquadiva#RechargeZone
+:RechargeZone rdf:type owl:Class ;
+              rdfs:subClassOf :HydrologicalUnit .
+
+
+###  http://example.org/aquadiva#RockType
+:RockType rdf:type owl:Class ;
+          rdfs:subClassOf :GeologicalMaterial ;
+          owl:disjointWith :SedimentType ;
+          rdfs:comment "Categories of rocks based on their origin, texture, and mineral composition that influence geological and hydrological properties." ;
+          rdfs:label "Rock Type" .
+
+
+###  http://example.org/aquadiva#SampleCollectionMethod
+:SampleCollectionMethod owl:equivalentClass :SamplingMethod .
+
+
+###  http://example.org/aquadiva#SamplingMethod
+:SamplingMethod rdf:type owl:Class ;
+                rdfs:subClassOf :Method ;
+                rdfs:comment "Techniques used to collect samples from environmental media (water, soil, air) for analysis or study." ;
+                rdfs:label "Sampling Method" .
+
+
+###  http://example.org/aquadiva#SeasonalChange
+:SeasonalChange owl:equivalentClass :SeasonalVariation .
+
+
+###  http://example.org/aquadiva#SeasonalVariation
+:SeasonalVariation rdf:type owl:Class ;
+                   rdfs:subClassOf :EnvironmentalVariation ;
+                   rdfs:comment "Changes in environmental conditions or processes that occur on a seasonal cycle, affecting ecosystems and biological responses." ;
+                   rdfs:label "Seasonal Variation" .
+
+
+###  http://example.org/aquadiva#SeasonalWetland
+:SeasonalWetland rdf:type owl:Class ;
+                 owl:equivalentClass :Wetland ;
+                 rdfs:subClassOf :Wetland .
+
+
+###  http://example.org/aquadiva#SecondaryMinerals
+:SecondaryMinerals rdf:type owl:Class ;
+                   rdfs:subClassOf :Minerals ;
+                   rdfs:label "Secondary Minerals" .
+
+
+###  http://example.org/aquadiva#SoilChemistry
+:SoilChemistry rdf:type owl:Class ;
+               owl:equivalentClass :SoilGeochemistry ;
+               rdfs:subClassOf :Geochemistry ;
+               owl:disjointWith :WaterChemistry ;
+               rdfs:comment "The study of the chemical characteristics and processes of soil, including nutrient content, pH, and contaminant levels." ;
+               rdfs:label "Soil Chemistry" .
+
+
+###  http://example.org/aquadiva#SoilGroundwaterInteraction
+:SoilGroundwaterInteraction rdf:type owl:Class ;
+                            rdfs:subClassOf :EcologicalInteraction ;
+                            owl:disjointWith :SoilSurfaceInteraction ;
+                            rdfs:comment "The processes and relationships between soil characteristics and groundwater movement and quality, key for managing water resources and ecological health." ;
+                            rdfs:label "Soil Groundwater Interaction" .
+
+
+###  http://example.org/aquadiva#SoilHydration
+:SoilHydration owl:equivalentClass :SoilWaterContent .
+
+
+###  http://example.org/aquadiva#SoilOM
+:SoilOM owl:equivalentClass :SoilOrganicMatter .
+
+
+###  http://example.org/aquadiva#SoilOrganicMatter
+:SoilOrganicMatter rdf:type owl:Class ;
+                   rdfs:subClassOf :OrganicMatter ;
+                   rdfs:comment "Organic materials in soil, including decomposed plant and animal residues, which influence soil fertility, structure, and function." ;
+                   rdfs:label "Soil Organic Matter" .
+
+
+###  http://example.org/aquadiva#SoilTracerStudy
+:SoilTracerStudy rdf:type owl:Class ;
+                 rdfs:subClassOf :HydrologicalStudy ;
+                 owl:disjointWith :SurfaceTracerStudy ;
+                 rdfs:comment "Research studies that use tracers to analyze soil properties, such as permeability and solute transport, to better understand soil-water interactions." ;
+                 rdfs:label "Soil Tracer Study" .
+
+
+###  http://example.org/aquadiva#SoilWaterContent
+:SoilWaterContent rdf:type owl:Class ;
+                  rdfs:subClassOf :SoilProperty ;
+                  rdfs:comment "The amount of water contained within the soil, crucial for understanding soil health, plant growth, and hydrological processes." ;
+                  rdfs:label "Soil Water Content" .
+
+
+###  http://example.org/aquadiva#SpatialPattern
+:SpatialPattern rdf:type owl:Class ;
+                rdfs:subClassOf :Pattern ;
+                rdfs:comment "The arrangement or distribution of particular phenomena or entities in physical space, significant in studies of ecology and geographical sciences." ;
+                rdfs:label "Spatial Pattern" .
+
+
+###  http://example.org/aquadiva#StagnantWater
+:StagnantWater owl:disjointWith :WaterFlow .
+
+
+###  http://example.org/aquadiva#StaticCondition
+:StaticCondition owl:disjointWith :TemporalPattern .
+
+
+###  http://example.org/aquadiva#SubsurfaceBacterialCulture
+:SubsurfaceBacterialCulture rdf:type owl:Class ;
+                            rdfs:subClassOf :MicrobialCulture ;
+                            owl:disjointWith :SurfaceBacterialCulture .
+
+
+###  http://example.org/aquadiva#TemporalPattern
+:TemporalPattern rdf:type owl:Class ;
+                 rdfs:subClassOf :Pattern ;
+                 rdfs:comment "The distribution of events or phenomena over time, relevant in ecological, geological, and climatological studies." ;
+                 rdfs:label "Temporal Pattern" .
+
+
+###  http://example.org/aquadiva#Terrain
+:Terrain rdf:type owl:Class ;
+         rdfs:subClassOf :GeologicalFeature ;
+         rdfs:comment "The physical landscape including its elevation, slope, and orientation, which influences water flow and ecological conditions." ;
+         rdfs:label "Terrain" .
+
+
+###  http://example.org/aquadiva#TraceGas
+:TraceGas rdf:type owl:Class ;
+          rdfs:subClassOf :Gas ;
+          rdfs:comment "Gases present in small amounts in the atmosphere, significant for their roles in chemical processes and climate dynamics." ;
+          rdfs:label "Trace Gas" .
+
+
+###  http://example.org/aquadiva#TriassicAquifer
+:TriassicAquifer rdf:type owl:Class ;
+                 owl:equivalentClass :TriassicLimestone ;
+                 rdfs:subClassOf :AquiferSystem ;
+                 rdfs:comment "An aquifer system formed during the Triassic period, often characterized by specific sedimentary rock formations." ;
+                 rdfs:label "Triassic Aquifer" .
+
+
+###  http://example.org/aquadiva#TriassicLimestone
+:TriassicLimestone rdf:type owl:Class ;
+                   rdfs:subClassOf :Limestone .
+
+
+###  http://example.org/aquadiva#Vegetation
+:Vegetation rdf:type owl:Class ;
+            rdfs:subClassOf :PlantCommunity ;
+            rdfs:comment "Plants and trees that cover a portion of the earth's surface, influencing ecological balances and processes including hydrology." ;
+            rdfs:label "Vegetation" .
+
+
+###  http://example.org/aquadiva#VegetationCover
+:VegetationCover rdf:type owl:Class ;
+                 rdfs:subClassOf :PlantCover ;
+                 rdfs:comment "The layer of vegetation that covers a portion of the earth's surface, providing habitat, regulating water flow, and influencing climate." ;
+                 rdfs:label "Vegetation Cover" .
+
+
+###  http://example.org/aquadiva#VegetationType
+:VegetationType rdf:type owl:Class ;
+                rdfs:subClassOf :PlantType ;
+                rdfs:comment "Categories of vegetation defined by the plant species composition, often associated with specific climatic, geographical, or ecological conditions." ;
+                rdfs:label "Vegetation Type" .
+
+
+###  http://example.org/aquadiva#WaterFlow
+:WaterFlow rdf:type owl:Class ;
+           rdfs:subClassOf :HydrologicalProcess ;
+           rdfs:comment "The flow of water within various environments, including rivers, aquifers, and engineered channels, vital for ecological and human activities." ;
+           rdfs:label "Water Flow" .
+
+
+###  http://example.org/aquadiva#WaterInput
+:WaterInput rdf:type owl:Class ;
+            rdfs:subClassOf :HydrologicalProcess ;
+            owl:disjointWith :WaterOutput ;
+            rdfs:label "Water Input" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/aquadiva#AmazonRainforestSoil
+:AmazonRainforestSoil rdf:type :SoilGroundwaterInteraction .
+
+
+###  http://example.org/aquadiva#AquaticMicrobialCommunity
+:AquaticMicrobialCommunity rdf:type :MicrobialCommunity .
+
+
+###  http://example.org/aquadiva#AquiferFungiSample
+:AquiferFungiSample rdf:type :Fungi .
+
+
+###  http://example.org/aquadiva#CO2ReductionPathway
+:CO2ReductionPathway rdf:type :CO2FixationPathway .
+
+
+###  http://example.org/aquadiva#ChalkAquifer
+:ChalkAquifer rdf:type :LimestoneAquifer .
+
+
+###  http://example.org/aquadiva#ContaminatedSite
+:ContaminatedSite rdf:type :GroundwaterContamination .
+
+
+###  http://example.org/aquadiva#DeepAquifer
+:DeepAquifer rdf:type :AquiferSystem .
+
+
+###  http://example.org/aquadiva#DesertSpring
+:DesertSpring rdf:type :Groundwater .
+
+
+###  http://example.org/aquadiva#ForestMicrohabitat
+:ForestMicrohabitat rdf:type :MicrobialCommunity .
+
+
+###  http://example.org/aquadiva#FracturedRockAquifer
+:FracturedRockAquifer rdf:type :GroundwaterQuality .
+
+
+###  http://example.org/aquadiva#HainichCZObservatory
+:HainichCZObservatory rdf:type :HainichCriticalZone .
+
+
+###  http://example.org/aquadiva#HighCalciumWater
+:HighCalciumWater rdf:type :Groundwater .
+
+
+###  http://example.org/aquadiva#HydraulicConductivityStudy
+:HydraulicConductivityStudy rdf:type :HydrogeochemicalCharacterizationMethod .
+
+
+###  http://example.org/aquadiva#IndustrialAgricultureArea
+:IndustrialAgricultureArea rdf:type :AgriculturalActivity .
+
+
+###  http://example.org/aquadiva#KarstAquiferSystem
+:KarstAquiferSystem rdf:type :KarstAquifer .
+
+
+###  http://example.org/aquadiva#KarstSpringWater
+:KarstSpringWater rdf:type :Groundwater .
+
+
+###  http://example.org/aquadiva#NitrateRichWater
+:NitrateRichWater rdf:type :Groundwater ;
+                  rdfs:comment "Groundwater characterized by high nitrate levels, often a result of agricultural runoff or inadequate waste management practices." .
+
+
+###  http://example.org/aquadiva#PhosphateMinerals
+:PhosphateMinerals rdf:type :Mineral .
+
+
+###  http://example.org/aquadiva#RechargeZone
+:RechargeZone rdf:type :InfiltrationArea .
+
+
+###  http://example.org/aquadiva#SeasonalWetland
+:SeasonalWetland rdf:type :GroundwaterPrecipitation .
+
+
+###  http://example.org/aquadiva#SubsurfaceBacterialCulture
+:SubsurfaceBacterialCulture rdf:type :Microbes .
+
+
+###  http://example.org/aquadiva#TriassicLimestone
+:TriassicLimestone rdf:type :GeologicalFormation .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:AmazonRainforestSoil rdfs:comment "Soil from the Amazon rainforest, interacting strongly with groundwater through dense vegetation and frequent rainfall." ;
+                      rdfs:label "Amazon Rainforest Soil" .
+
+
+:AquaticMicrobialCommunity rdfs:comment "A community of diverse microorganisms found in aquatic environments, often within groundwater ecosystems." ;
+                           rdfs:label "Aquatic Microbial Community" .
+
+
+:AquiferFungiSample rdfs:comment "A sample of fungi collected from an aquifer, representing the fungal biodiversity within groundwater ecosystems." ;
+                    rdfs:label "Aquifer Fungi Sample" .
+
+
+:CO2ReductionPathway rdfs:comment "A biochemical pathway involved in reducing CO2 into organic compounds, significant in microbial metabolic processes." ;
+                     rdfs:label "CO2 Reduction Pathway" .
+
+
+:ChalkAquifer rdfs:comment "An aquifer consisting of chalk, particularly permeable and capable of storing significant volumes of water." ;
+              rdfs:label "Chalk Aquifer" .
+
+
+:ContaminatedSite rdfs:comment "A location where groundwater has been adversely affected by pollutants, potentially harmful to ecosystems and human health." ;
+                  rdfs:label "Contaminated Site" .
+
+
+:DeepAquifer rdfs:comment "A deep-seated aquifer, often less susceptible to surface contamination but crucial for providing long-term water supply." ;
+             rdfs:label "Deep Aquifer" .
+
+
+:DesertSpring rdfs:comment "A spring located in a desert region, providing critical water resources for local ecosystems and human populations." ;
+              rdfs:label "Desert Spring" .
+
+
+:ForestMicrohabitat rdfs:comment "A microbial community within a forest setting, influenced by the organic matter and moisture conditions of the forest floor." ;
+                    rdfs:label "Forest Microhabitat" .
+
+
+:FracturedRockAquifer rdfs:comment "An aquifer influenced by fractured rock formations, affecting the water quality due to increased flow and potential contamination paths." ;
+                      rdfs:label "Fractured Rock Aquifer" .
+
+
+:HainichCZObservatory rdfs:comment "A research observatory in the Hainich region focusing on the critical zone, studying interactions within the subsurface biosphere and hydrosphere." ;
+                      rdfs:label "Hainich CZ Observatory" .
+
+
+:HighCalciumWater rdfs:comment "Groundwater with a high concentration of calcium, typically found in limestone aquifers." ;
+                  rdfs:label "High Calcium Water" .
+
+
+:HydraulicConductivityStudy rdfs:comment "A study measuring the rate at which water can pass through aquifer materials, essential for understanding groundwater flow dynamics." ;
+                            rdfs:label "Hydraulic Conductivity Study" .
+
+
+:IndustrialAgricultureArea rdfs:comment "A region dominated by industrial-scale agriculture, often impacting local groundwater systems through chemical runoff and high water usage." ;
+                           rdfs:label "Industrial Agriculture Area" .
+
+
+:KarstAquiferSystem rdfs:comment "An aquifer system within a karst landscape characterized by soluble rocks and underground drainage systems." ;
+                    rdfs:label "Karst Aquifer System" .
+
+
+:KarstSpringWater rdfs:comment "Water emerging from a karst spring, typically clear and filtered through limestone, but vulnerable to rapid contamination due to minimal filtration." ;
+                  rdfs:label "Karst Spring Water" .
+
+
+:PhosphateMinerals rdfs:comment "Minerals containing phosphate, significant for their role in geochemical cycles and as indicators of mineral wealth." ;
+                   rdfs:label "Phosphate Minerals" .
+
+
+:RechargeZone rdfs:comment "An area critical for the recharge of groundwater, where surface water is efficiently absorbed into the subsurface aquifer." ;
+              rdfs:label "Recharge Zone" .
+
+
+:SeasonalWetland rdfs:comment "A wetland area that experiences seasonal fluctuations in groundwater levels, affecting local biodiversity and hydrological dynamics." ;
+                 rdfs:label "Seasonal Wetland" .
+
+
+:SubsurfaceBacterialCulture rdfs:comment "Cultures of bacteria isolated from subsurface environments, studied for their ecological roles and adaptations to low-nutrient conditions." ;
+                            rdfs:label "Subsurface Bacterial Culture" .
+
+
+:TriassicLimestone rdfs:comment "A specific limestone formation that originates from the Triassic period, typically porous and water-permeable." ;
+                   rdfs:label "Triassic Limestone" .
+
+
+:adaptTo rdfs:label "adapt to" .
+
+
+:adaptsTo rdfs:label "adapts to" .
+
+
+:affect rdfs:label "affect" .
+
+
+:affectedBy rdfs:label "affected by" .
+
+
+:associatedWith rdfs:label "associated with" .
+
+
+:define rdfs:label "define" .
+
+
+:detectedThrough rdfs:label "detected through" .
+
+
+:existIn rdfs:label "exist in" .
+
+
+:existsIn rdfs:label "exists in" .
+
+
+:foundIn rdfs:label "found in" .
+
+
+:hasCharacteristic rdfs:label "has characteristic" .
+
+
+:hasComponent rdfs:label "has component" .
+
+
+:hasComponents rdfs:label "has components" .
+
+
+:hasOrganicMatterContent rdfs:label "has organic matter content" .
+
+
+:hasPhase rdfs:label "has phase" .
+
+
+:hasRoleIn rdfs:label "has role in" .
+
+
+:hasSoilMoistureContent rdfs:label "has soil moisture content" .
+
+
+:impact rdfs:label "impact" .
+
+
+:impacts rdfs:label "impacts" .
+
+
+:indicate rdfs:label "indicate" .
+
+
+:influence rdfs:label "influence" .
+
+
+:influencedBy rdfs:label "influenced by" .
+
+
+:involvedIn rdfs:label "involved in" .
+
+
+:isAffected rdfs:label "is affected" .
+
+
+:isCharacterizedBy rdfs:label "is characterized by" .
+
+
+:isDefinedBy rdfs:label "is defined by" .
+
+
+:isDetectedThrough rdfs:label "is detected through" .
+
+
+:isFoundIn rdfs:label "is found in" .
+
+
+:isIndicatedBy rdfs:label "is indicated by" .
+
+
+:isInfluenced rdfs:label "is influenced" .
+
+
+:isInfluencedBy rdfs:label "is influenced by" .
+
+
+:isInvolvedIn rdfs:label "is involved in" .
+
+
+:isPhaseOf rdfs:label "is phase of" .
+
+
+:isUsedFor rdfs:label "is used for" .
+
+
+:isUsedIn rdfs:label "is used in" .
+
+
+:occurIn rdfs:label "occur in" .
+
+
+:playRoleIn rdfs:label "play role in" .
+
+
+:relatedTo rdfs:label "related to" .
+
+
+:usedFor rdfs:label "used for" .
+
+
+:usedIn rdfs:label "used in" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
