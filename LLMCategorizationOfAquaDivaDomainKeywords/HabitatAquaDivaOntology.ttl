@@ -1,0 +1,561 @@
+### MetaData ###
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+aqua:Ontology rdf:type owl:Ontology ;
+      owl:versionInfo "1.0" ;
+      rdfs:label "Habitat AquaDiva Ontology" ;
+      rdfs:comment "The Habitat AquaDiva Ontology is designed to encapsulate and structure knowledge about aquatic and subsurface habitats, focusing on microbial and fungal communities, their interactions with the environment, and ecological roles. This ontology supports scientific research, environmental monitoring, and data-driven decision-making within the AquaDiva domain."@en ;
+      owl:versionIRI <http://example.org/aquadiva/1.0> .
+### fine ###
+
+# Classes
+aqua:Aquifer rdf:type owl:Class .
+aqua:Habitat rdf:type owl:Class .
+aqua:CaveAquifer rdf:type owl:Class ;
+                 rdfs:subClassOf aqua:Aquifer .
+aqua:FracturedRockAquifer rdf:type owl:Class ;
+                          rdfs:subClassOf aqua:Aquifer .
+aqua:KarstAquifer rdf:type owl:Class ;
+                  rdfs:subClassOf aqua:Aquifer .
+aqua:CoastalAquifer rdf:type owl:Class ;
+                    rdfs:subClassOf aqua:Aquifer .
+
+aqua:SurfaceWater rdf:type owl:Class .
+aqua:River rdf:type owl:Class ;
+            rdfs:subClassOf aqua:SurfaceWater .
+aqua:Lake rdf:type owl:Class ;
+          rdfs:subClassOf aqua:SurfaceWater .
+aqua:Wetland rdf:type owl:Class ;
+             rdfs:subClassOf aqua:SurfaceWater .
+aqua:Stream rdf:type owl:Class ;
+            rdfs:subClassOf aqua:SurfaceWater .
+
+aqua:MicrobialCommunity rdf:type owl:Class .
+aqua:FungalCommunity rdf:type owl:Class ;
+                      rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:AlgalCommunity rdf:type owl:Class ;
+                     rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:PlantCommunity rdf:type owl:Class ;
+                     rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:AnimalCommunity rdf:type owl:Class ;
+                      rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:ChemicalParameter rdf:type owl:Class .
+# Properties
+aqua:isFoundIn rdf:type owl:ObjectProperty .
+aqua:isAssociatedWith rdf:type owl:ObjectProperty .
+aqua:influencesGrowthOf rdf:type owl:ObjectProperty .
+aqua:hasCharacteristic rdf:type owl:ObjectProperty .
+aqua:influencesDistributionOf rdf:type owl:ObjectProperty .
+aqua:existsInCondition rdf:type owl:ObjectProperty .
+aqua:performsRoleIn rdf:type owl:ObjectProperty .
+aqua:isPartOf rdf:type owl:ObjectProperty .
+aqua:interactsWith rdf:type owl:ObjectProperty .
+aqua:sharesHabitatWith rdf:type owl:ObjectProperty .
+aqua:isInvolvedInProcess rdf:type owl:ObjectProperty .
+aqua:thrivesUnder rdf:type owl:ObjectProperty .
+aqua:influences rdf:type owl:ObjectProperty .
+aqua:changesOverTime rdf:type owl:ObjectProperty .
+aqua:hasSubclass rdf:type owl:ObjectProperty .
+aqua:isEquivalentTo rdf:type owl:ObjectProperty .
+aqua:hasDistinctClasses rdf:type owl:ObjectProperty .
+aqua:isMutuallyExclusiveWith rdf:type owl:ObjectProperty .
+
+# Individuals and axioms utilizing these classes and properties would be defined here, 
+# including instances of habitats, microbial communities, fungi, and their relationships.
+
+### fine ###
+### InverseDomainAndRange ###
+# Inverse Properties
+aqua:isFoundBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf aqua:isFoundIn .
+
+aqua:associates rdf:type owl:ObjectProperty ;
+                owl:inverseOf aqua:isAssociatedWith .
+
+aqua:isGrowthInfluencedBy rdf:type owl:ObjectProperty ;
+                          owl:inverseOf aqua:influencesGrowthOf .
+
+aqua:isCharacterizedBy rdf:type owl:ObjectProperty ;
+                      owl:inverseOf aqua:hasCharacteristic .
+
+aqua:isDistributionInfluencedBy rdf:type owl:ObjectProperty ;
+                                owl:inverseOf aqua:influencesDistributionOf .
+
+aqua:isConditionExistedIn rdf:type owl:ObjectProperty ;
+                           owl:inverseOf aqua:existsInCondition .
+
+aqua:isRolePerformedIn rdf:type owl:ObjectProperty ;
+                       owl:inverseOf aqua:performsRoleIn .
+
+aqua:isPart rdf:type owl:ObjectProperty ;
+            owl:inverseOf aqua:isPartOf .
+
+aqua:isInteractedWithBy rdf:type owl:ObjectProperty ;
+                        owl:inverseOf aqua:interactsWith .
+
+aqua:isHabitatSharedBy rdf:type owl:ObjectProperty ;
+                       owl:inverseOf aqua:sharesHabitatWith .
+
+aqua:isProcessInvolved rdf:type owl:ObjectProperty ;
+                       owl:inverseOf aqua:isInvolvedInProcess .
+
+aqua:isUnderThrivingConditions rdf:type owl:ObjectProperty ;
+                               owl:inverseOf aqua:thrivesUnder .
+
+aqua:isInfluencedBy rdf:type owl:ObjectProperty ;
+                    owl:inverseOf aqua:influences .
+
+aqua:isTimeChangedOver rdf:type owl:ObjectProperty ;
+                       owl:inverseOf aqua:changesOverTime .
+
+aqua:hasClass rdf:type owl:ObjectProperty ;
+              owl:inverseOf aqua:hasSubclass .
+
+aqua:isComparedWith rdf:type owl:ObjectProperty ;
+                    owl:inverseOf aqua:isEquivalentTo .
+
+aqua:hasDistinctClass rdf:type owl:ObjectProperty ;
+                      owl:inverseOf aqua:hasDistinctClasses .
+
+aqua:isMutuallyExclusive rdf:type owl:ObjectProperty ;
+                         owl:inverseOf aqua:isMutuallyExclusiveWith .
+
+# Domain and Range Restrictions
+aqua:isFoundIn rdfs:domain aqua:MicrobialFunctionalGuild ;
+               rdfs:range aqua:Habitat .
+
+aqua:isAssociatedWith rdf:type owl:ObjectProperty ;
+                      rdfs:domain aqua:AquiferFungi ;
+                      rdfs:range aqua:ChemicalParameter .
+
+aqua:influencesGrowthOf rdf:type owl:ObjectProperty ;
+                        rdfs:domain aqua:ChemicalParameter ;
+                        rdfs:range aqua:AquiferFungi .
+
+aqua:hasCharacteristic rdfs:domain aqua:Habitat ;
+                       rdfs:range aqua:ChemicalCharacteristic .
+
+aqua:influencesDistributionOf rdfs:domain aqua:AquiferHabitat ;
+                              rdfs:range aqua:FungalSpecies .
+
+aqua:existsInCondition rdfs:domain aqua:RareSpecies ;
+                       rdfs:range aqua:AquiferCondition .
+
+aqua:performsRoleIn rdfs:domain aqua:MicrobialFunctionalGuild ;
+                    rdfs:range aqua:EcologicalRole .
+
+aqua:isPartOf rdfs:domain aqua:EcologicalRole ;
+              rdfs:range aqua:AquaticEcosystem .
+
+aqua:interactsWith rdfs:domain aqua:AquaticFungi ;
+                   rdfs:range aqua:AquiferMicrobes .
+
+aqua:sharesHabitatWith rdfs:domain aqua:AquiferMicrobes ;
+                       rdfs:range aqua:AquaticFungi .
+
+aqua:isInvolvedInProcess rdfs:domain aqua:AutolithoautotrophicGuild ;
+                         rdfs:range aqua:BiochemicalProcess .
+
+aqua:thrivesUnder rdfs:domain aqua:HeterotrophicMicrobe ;
+                  rdfs:range aqua:EnvironmentalCondition .
+
+aqua:influences rdfs:domain aqua:AquiferChemicalData ;
+                rdfs:range aqua:MicrobialCommunity .
+
+aqua:changesOverTime rdfs:domain aqua:MicrobialCommunity ;
+                     rdfs:range aqua:TemporalChange .
+
+aqua:hasSubclass rdfs:domain aqua:AquaticMicrobe ;
+                 rdfs:range aqua:TaxonomicalHierarchy .
+
+aqua:isEquivalentTo rdfs:domain aqua:HabitatType ;
+                    rdfs:range aqua:MicrobialCommunityComposition .
+
+aqua:hasDistinctClasses rdfs:domain aqua:Habitat ;
+                        rdfs:range aqua:DistinctChemicalCharacteristic .
+
+aqua:isMutuallyExclusiveWith rdfs:domain aqua:Habitat ;
+                             rdfs:range aqua:DistinctBiologicalCharacteristic .
+### fine ###
+
+### DataProperty ###
+
+aqua:hasHabitatFeature rdf:type owl:ObjectProperty ;
+                       rdfs:domain aqua:AnimalCommunity ;
+                       rdfs:range aqua:Habitat .
+
+aqua:habitatTemperature rdf:type owl:DatatypeProperty ;
+                        rdfs:domain aqua:Habitat ;
+                        rdfs:range xsd:decimal .
+
+aqua:habitatType rdf:type owl:ObjectProperty ;
+                 rdfs:domain aqua:BiologicalCommunity ;
+                 rdfs:range aqua:Habitat .
+
+aqua:hasMicrobialDensity rdf:type owl:DatatypeProperty ;
+                         rdfs:domain aqua:AquiferMicrobe ;
+                         rdfs:range xsd:positiveInteger .
+
+aqua:hasChemicalConcentration rdf:type owl:DatatypeProperty ;
+                               rdfs:domain aqua:ChemicalParameter ;
+                               rdfs:range xsd:float .
+
+aqua:hasTemperature rdf:type owl:DatatypeProperty ;
+                    rdfs:domain aqua:Habitat ;
+                    rdfs:range xsd:decimal .
+
+aqua:hasPHLevel rdf:type owl:DatatypeProperty ;
+                rdfs:domain aqua:WaterQuality ;
+                rdfs:range xsd:decimal .
+
+aqua:hasSalinity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain aqua:WaterQuality ;
+                 rdfs:range xsd:decimal .
+
+aqua:hasNutrientLevel rdf:type owl:DatatypeProperty ;
+                      rdfs:domain aqua:SurfaceWater ;
+                      rdfs:range xsd:decimal .
+
+aqua:hasDissolvedOxygen rdf:type owl:DatatypeProperty ;
+                        rdfs:domain aqua:WaterQuality ;
+                        rdfs:range xsd:decimal .
+
+aqua:hasPopulationCount rdf:type owl:DatatypeProperty ;
+                        rdfs:domain aqua:BiologicalCommunity ;
+                        rdfs:range xsd:nonNegativeInteger .
+
+aqua:hasBiomass rdf:type owl:DatatypeProperty ;
+                rdfs:domain aqua:MicrobialCommunity ;
+                rdfs:range xsd:float .
+
+aqua:hasAreaCovered rdf:type owl:DatatypeProperty ;
+                    rdfs:domain aqua:Habitat ;
+                    rdfs:range xsd:decimal .
+
+aqua:hasOrganicMatterContent rdf:type owl:DatatypeProperty ;
+                             rdfs:domain aqua:Sediment ;
+                             rdfs:range xsd:decimal .
+
+aqua:hasSpeciesRichness rdf:type owl:DatatypeProperty ;
+                        rdfs:domain aqua:BiologicalCommunity ;
+                        rdfs:range xsd:positiveInteger .
+
+aqua:hasLightPenetration rdf:type owl:DatatypeProperty ;
+                         rdfs:domain aqua:AquaticHabitat ;
+                         rdfs:range xsd:decimal .
+
+aqua:hasFlowRate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain aqua:Stream ;
+                 rdfs:range xsd:decimal .
+### fine ###
+### Symmetric ###
+aqua:interactsWith rdf:type owl:SymmetricProperty .
+
+aqua:isMutuallyExclusiveWith rdf:type owl:SymmetricProperty .
+
+aqua:sharesHabitatWith rdf:type owl:SymmetricProperty .
+### fine ###
+### Transitive ###
+aqua:isPartOf rdf:type owl:TransitiveProperty .
+
+aqua:hasSubclass rdf:type owl:TransitiveProperty .
+
+aqua:isFoundIn rdf:type owl:TransitiveProperty .
+### fine ###
+### Functional ###
+aqua:hasTemperature rdf:type owl:FunctionalProperty .
+
+aqua:hasPHLevel rdf:type owl:FunctionalProperty .
+
+aqua:hasSalinity rdf:type owl:FunctionalProperty .
+
+aqua:hasDissolvedOxygen rdf:type owl:FunctionalProperty .
+
+aqua:hasBiomass rdf:type owl:FunctionalProperty .
+
+aqua:hasAreaCovered rdf:type owl:FunctionalProperty .
+
+aqua:hasOrganicMatterContent rdf:type owl:FunctionalProperty .
+
+aqua:hasLightPenetration rdf:type owl:FunctionalProperty .
+
+aqua:hasFlowRate rdf:type owl:FunctionalProperty .
+### fine ###
+### Reflexive ###
+aqua:isPartOf rdf:type owl:ReflexiveProperty .
+
+aqua:interactsWith rdf:type owl:ReflexiveProperty .
+
+aqua:sharesHabitatWith rdf:type owl:ReflexiveProperty .
+### fine ###
+### RealWorldInstances ###
+aqua:AmazonRiver rdf:type aqua:River .
+aqua:GreatBarrierReef rdf:type aqua:CoralReef .
+
+aqua:AmazonRiverMicrobialCommunity rdf:type aqua:MicrobialCommunity .
+aqua:GreatBarrierReefAlgalCommunity rdf:type aqua:AlgalCommunity .
+
+aqua:LoireValley rdf:type aqua:Wetland .
+aqua:Everglades rdf:type aqua:Wetland .
+
+aqua:LoireValleyPlantCommunity rdf:type aqua:PlantCommunity .
+aqua:EvergladesAnimalCommunity rdf:type aqua:AnimalCommunity .
+
+aqua:BlackForest rdf:type aqua:Forest ;
+                 aqua:isPartOf aqua:TerrestrialEcosystem .
+
+aqua:SiberianTundra rdf:type aqua:Tundra ;
+                    aqua:isPartOf aqua:TerrestrialEcosystem .
+
+aqua:YukonRiver rdf:type aqua:River ;
+               aqua:isPartOf aqua:FreshwaterEcosystem .
+
+aqua:MississippiRiverMicrobialCommunity rdf:type aqua:MicrobialCommunity ;
+                                         aqua:isFoundIn aqua:MississippiRiver .
+
+aqua:DeathValleySpring rdf:type aqua:Spring ;
+                       aqua:isPartOf aqua:AridRegion .
+
+aqua:GobiDesert rdf:type aqua:Desert ;
+               aqua:hasAreaCovered "500000"^^xsd:decimal .
+
+aqua:MississippiRiverSedimentFungi rdf:type aqua:SedimentFungi ;
+                                   aqua:isFoundIn aqua:MississippiRiverSediment .
+
+aqua:NileRiverPlankton rdf:type aqua:Plankton ;
+                       aqua:isFoundIn aqua:NileRiver .
+
+aqua:ChesapeakeBay rdf:type aqua:Estuary ;
+                   aqua:hasSalinity "15"^^xsd:decimal .
+
+aqua:ChesapeakeBayWaterQuality rdf:type aqua:WaterQuality ;
+                                aqua:hasPHLevel "8.2"^^xsd:decimal ;
+                                aqua:hasDissolvedOxygen "6.5"^^xsd:decimal .
+
+aqua:HighSierraStreams rdf:type aqua:Stream ;
+                       aqua:hasFlowRate "2.5"^^xsd:decimal ;
+                       aqua:hasTemperature "10"^^xsd:decimal .
+
+aqua:AndeanGlaciers rdf:type aqua:Glacier ;
+                    aqua:isPartOf aqua:ColdRegion .
+
+aqua:AntarcticIceSheet rdf:type aqua:IceSheet ;
+                       aqua:isPartOf aqua:PolarRegion .
+
+aqua:AntarcticMicrobialMat rdf:type aqua:MicrobialMat ;
+                           aqua:isFoundIn aqua:AntarcticIceSheet .
+
+aqua:hasConcentration rdf:type owl:DatatypeProperty ;
+                      rdfs:domain aqua:ChemicalParameter ;
+                      rdfs:range xsd:float .
+### fine ###
+### Comments ###
+# Classes
+aqua:ChemicalParameter rdf:type owl:Class ;
+                       rdfs:comment "Represents a chemical parameter or metric that can influence or describe conditions within an aquifer."@en .
+
+aqua:Aquifer rdfs:comment "A geological formation that can contain or transmit groundwater."@en .
+aqua:CaveAquifer rdfs:comment "An aquifer located within a cave system, often characterized by karst formations."@en .
+aqua:FracturedRockAquifer rdfs:comment "An aquifer that exists within fractured bedrock, allowing for the flow of groundwater through its cracks."@en .
+aqua:KarstAquifer rdfs:comment "A type of aquifer characterized by soluble rocks, such as limestone, which can create caves and sinkholes."@en .
+aqua:CoastalAquifer rdfs:comment "An aquifer located near a coastal area, influenced by the nearby presence of oceanic waters."@en .
+
+aqua:SurfaceWater rdfs:comment "Bodies of water that are found on the Earth's surface, such as rivers, lakes, and oceans."@en .
+aqua:River rdfs:comment "A large, flowing body of water that usually empties into a sea or ocean."@en .
+aqua:Lake rdfs:comment "A sizable body of water surrounded by land, not part of an ocean."@en .
+aqua:Wetland rdfs:comment "Areas of marsh, fen, peatland or water, whether natural or artificial, permanent or temporary."@en .
+aqua:Stream rdfs:comment "A small, narrow river."@en .
+
+# Properties
+aqua:isFoundIn rdfs:comment "Indicates the presence of an entity within a specific habitat or location."@en .
+aqua:isAssociatedWith rdfs:comment "Denotes a connection or relationship between two entities or concepts."@en .
+aqua:influencesGrowthOf rdfs:comment "Describes the effect an entity has on the growth of another, particularly in biological contexts."@en .
+aqua:hasCharacteristic rdfs:comment "Attributes specific characteristics or properties to an entity."@en .
+aqua:influencesDistributionOf rdfs:comment "Describes how one factor or entity affects the distribution of another within an ecological context."@en .
+
+aqua:existsInCondition rdfs:comment "Denotes the existence of an entity under certain environmental or ecological conditions."@en .
+aqua:performsRoleIn rdfs:comment "Indicates the role or function that an entity plays within a larger system or process."@en .
+aqua:isPartOf rdfs:comment "Indicates that an entity is a component or member of a larger group or system."@en .
+aqua:interactsWith rdfs:comment "Describes the interaction between two or more entities, often used in ecological and social contexts."@en .
+aqua:sharesHabitatWith rdfs:comment "Indicates that two or more species or entities share the same habitat or living area."@en .
+
+# Inverse Properties
+aqua:isFoundBy rdfs:comment "Indicates that a specific habitat or location contains the entity."@en .
+aqua:associates rdfs:comment "Inverse of isAssociatedWith; signifies that an entity is connected or related to another."@en .
+aqua:isGrowthInfluencedBy rdfs:comment "Inverse of influencesGrowthOf; indicates that the growth of the entity is influenced by another."@en .
+aqua:isCharacterizedBy rdfs:comment "Inverse of hasCharacteristic; indicates that an entity possesses specific characteristics or properties."@en .
+aqua:isDistributionInfluencedBy rdfs:comment "Inverse of influencesDistributionOf; describes how the distribution of an entity is affected by another factor or entity."@en .
+
+# Symmetric Properties
+aqua:interactsWith rdf:type owl:SymmetricProperty ;
+                  rdfs:comment "A property that is inherently reciprocal; if entity A interacts with entity B, then entity B necessarily interacts with entity A."@en .
+
+# Transitive Properties
+aqua:isPartOf rdf:type owl:TransitiveProperty ;
+              rdfs:comment "A property where if A is part of B and B is part of C, then A is inherently part of C."@en .
+
+# Functional Properties
+aqua:hasTemperature rdf:type owl:FunctionalProperty ;
+                    rdfs:comment "A property indicating the temperature of an entity or environment, which can only have one value at a time."@en .
+
+# Reflexive Properties
+aqua:isPartOf rdf:type owl:ReflexiveProperty ;
+              rdfs:comment "A property where every entity is considered a part of itself, important for modeling inclusive relationships in ecological systems."@en .
+### fine ###
+### Comments ###
+# Additional Inverse Property Comments
+aqua:isFoundBy rdfs:comment "Inverse of isFoundIn; indicates that a specific location contains the specified entity, such as a microbial community or a type of fungi."@en .
+aqua:associates rdfs:comment "Inverse of isAssociatedWith; signifies that an entity is connected or related to another, particularly in terms of ecological or environmental interactions."@en .
+aqua:isGrowthInfluencedBy rdfs:comment "Inverse of influencesGrowthOf; signifies that the growth of one entity, such as fungi, is directly influenced by another, such as specific chemical conditions in an aquifer."@en .
+aqua:isCharacterizedBy rdfs:comment "Inverse of hasCharacteristic; used to indicate that specific characteristics or properties are possessed by a habitat or ecological community."@en .
+aqua:isDistributionInfluencedBy rdfs:comment "Inverse of influencesDistributionOf; used to describe how the distribution of one entity, like a fungal species, is affected by another, like an environmental condition."@en .
+aqua:isConditionExistedIn rdfs:comment "Inverse of existsInCondition; indicates the conditions under which a rare species or ecological feature exists within a specific habitat."@en .
+aqua:isRolePerformedIn rdfs:comment "Inverse of performsRoleIn; describes the system or ecological role that a microbial functional guild or similar group performs within."@en .
+aqua:isPart rdfs:comment "Inverse of isPartOf; indicates the larger group or system that an entity, such as an ecological role or a community, is a component of."@en .
+aqua:isInteractedWithBy rdfs:comment "Inverse of interactsWith; describes entities that are involved in mutual interactions, typically within ecological or environmental settings."@en .
+aqua:isHabitatSharedBy rdfs:comment "Inverse of sharesHabitatWith; indicates the species or ecological communities that coexist within the same habitat."@en .
+aqua:isProcessInvolved rdf:type owl:ObjectProperty ;
+                       rdfs:comment "Inverse of isInvolvedInProcess; used to describe the biochemical processes, like nitrogen cycling, that an entity like autolithoautotrophic guilds are involved in."@en .
+aqua:isUnderThrivingConditions rdfs:comment "Inverse of thrivesUnder; used to specify environmental conditions that support the thriving of a species, particularly heterotrophic microbes."@en .
+aqua:isInfluencedBy rdfs:comment "Inverse of influences; used to detail entities, such as microbial communities, that are affected by factors like changes in chemical data or environmental conditions."@en .
+aqua:isTimeChangedOver rdfs:comment "Inverse of changesOverTime; indicates the temporal changes affecting entities such as microbial communities, tracked over specific time frames."@en .
+aqua:hasClass rdfs:comment "Inverse of hasSubclass; used to indicate the broader class to which subclasses like specific microbial or fungal groups belong."@en .
+aqua:isComparedWith rdfs:comment "Inverse of isEquivalentTo; used to compare and contrast habitat types or microbial community compositions to identify similarities and differences."@en .
+aqua:hasDistinctClass rdfs:comment "Inverse of hasDistinctClasses; used to denote the unique or distinctive classes that differentiate habitats based on characteristics like chemical or biological properties."@en .
+aqua:isMutuallyExclusive rdf:type owl:ObjectProperty ;
+                         rdfs:comment "Inverse of isMutuallyExclusiveWith; used to denote entities or classes that cannot coexist within the same ecological or environmental conditions."@en .
+### fine ###
+
+### NewTriples ###
+# Additional Classes and Hierarchies
+aqua:SubterraneanWaterBody rdf:type owl:Class ;
+                            rdfs:subClassOf aqua:Aquifer .
+aqua:GlacialAquifer rdf:type owl:Class ;
+                    rdfs:subClassOf aqua:Aquifer .
+aqua:VolcanicAquifer rdf:type owl:Class ;
+                     rdfs:subClassOf aqua:Aquifer .
+aqua:PermafrostAquifer rdf:type owl:Class ;
+                       rdfs:subClassOf aqua:Aquifer .
+
+# More specific types of water bodies
+aqua:Pond rdf:type owl:Class ;
+          rdfs:subClassOf aqua:SurfaceWater .
+aqua:Swamp rdf:type owl:Class ;
+           rdfs:subClassOf aqua:Wetland .
+aqua:Bog rdf:type owl:Class ;
+         rdfs:subClassOf aqua:Wetland .
+aqua:Fen rdf:type owl:Class ;
+         rdfs:subClassOf aqua:Wetland .
+
+# Expanded microbial and fungal classifications
+aqua:BacterialCommunity rdf:type owl:Class ;
+                         rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:ArchaealCommunity rdf:type owl:Class ;
+                       rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:ViralCommunity rdf:type owl:Class ;
+                     rdfs:subClassOf aqua:MicrobialCommunity .
+aqua:YeastCommunity rdf:type owl:Class ;
+                     rdfs:subClassOf aqua:FungalCommunity .
+aqua:MoldCommunity rdf:type owl:Class ;
+                    rdfs:subClassOf aqua:FungalCommunity .
+
+# Specific properties for ecological data
+aqua:hasWaterLevel rdf:type owl:DatatypeProperty ;
+                   rdfs:domain aqua:SurfaceWater ;
+                   rdfs:range xsd:decimal .
+aqua:hasTurbidity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain aqua:SurfaceWater ;
+                  rdfs:range xsd:decimal .
+aqua:hasEcosystemType rdf:type owl:DatatypeProperty ;
+                      rdfs:domain aqua:Habitat ;
+                      rdfs:range xsd:string .
+
+# Individuals representing specific ecosystems
+aqua:SaharaDesertOasis rdf:type aqua:Wetland .
+aqua:AmazonBasin rdf:type aqua:River .
+aqua:SiberianPermafrost rdf:type aqua:PermafrostAquifer .
+
+# Annotation to explain new classes
+aqua:SubterraneanWaterBody rdfs:comment "Represents bodies of water located beneath the Earth's surface."@en .
+aqua:GlacialAquifer rdfs:comment "An aquifer formed within or beneath glaciers."@en .
+aqua:VolcanicAquifer rdfs:comment "An aquifer that is associated with volcanic activity and materials."@en .
+aqua:PermafrostAquifer rdfs:comment "An aquifer found within permafrost regions, often impacted by thawing cycles."@en .
+aqua:Pond rdfs:comment "A small body of still water, typically smaller than a lake."@en .
+aqua:Swamp rdfs:comment "A wetland with more open water surfaces and dominated by woody plants."@en .
+aqua:Bog rdfs:comment "A wetland that accumulates peat, less fertile than other types."@en .
+aqua:Fen rdfs:comment "A type of wetland fed by mineral-rich surface water or groundwater."@en .
+aqua:BacterialCommunity rdfs:comment "A community consisting predominantly of bacteria, critical for nutrient cycling."@en .
+aqua:ArchaealCommunity rdfs:comment "A community made up of archaea, often extremophiles living in harsh environments."@en .
+aqua:ViralCommunity rdfs:comment "Consists of viral populations which can influence microbial genetics and ecosystem dynamics."@en .
+aqua:YeastCommunity rdfs:comment "Comprises primarily of yeast species, important for decomposition and fermentation processes in habitats."@en .
+aqua:MoldCommunity rdfs:comment "Consists of mold species, important for breaking down organic matter in various ecosystems."@en .
+### fine ###
+
+### CorrectedTriples ###
+# Ensuring properties for specific domains are correctly defined as object properties or datatype properties with valid XSD types
+
+# For AnimalCommunity
+aqua:hasAnimalFeature rdf:type owl:ObjectProperty ;
+                      rdfs:domain aqua:AnimalCommunity ;
+                      rdfs:range aqua:BiologicalFeature .
+
+# For AquiferMicrobe
+aqua:hasMicrobialProperty rdf:type owl:ObjectProperty ;
+                          rdfs:domain aqua:AquiferMicrobe ;
+                          rdfs:range aqua:MicrobialProperty .
+
+# For SurfaceWater
+aqua:hasWaterQualityParameter rdf:type owl:ObjectProperty ;
+                              rdfs:domain aqua:SurfaceWater ;
+                              rdfs:range aqua:WaterQuality .
+
+# For WaterQuality
+aqua:measuresWaterQuality rdf:type owl:DatatypeProperty ;
+                          rdfs:domain aqua:WaterQuality ;
+                          rdfs:range xsd:string .
+
+# For MicrobialCommunity
+aqua:hasMicrobialCharacteristic rdf:type owl:ObjectProperty ;
+                                rdfs:domain aqua:MicrobialCommunity ;
+                                rdfs:range aqua:Characteristic .
+
+# For Sediment
+aqua:hasSedimentComposition rdf:type owl:ObjectProperty ;
+                            rdfs:domain aqua:Sediment ;
+                            rdfs:range aqua:ChemicalComposition .
+
+# For BiologicalCommunity
+aqua:hasCommunityFeature rdf:type owl:ObjectProperty ;
+                         rdfs:domain aqua:BiologicalCommunity ;
+                         rdfs:range aqua:CommunityFeature .
+
+# For AquaticHabitat
+aqua:hasHabitatQuality rdf:type owl:ObjectProperty ;
+                       rdfs:domain aqua:AquaticHabitat ;
+                       rdfs:range aqua:HabitatQuality .
+
+# For Stream
+aqua:hasStreamVelocity rdf:type owl:DatatypeProperty ;
+                       rdfs:domain aqua:Stream ;
+                       rdfs:range xsd:decimal .
+
+### fine ###
+
+# Comments and metadata to clarify properties
+### CommentsAndMetadata ###
+aqua:hasAnimalFeature rdfs:comment "An object property linking animal communities to specific biological features or characteristics."@en .
+aqua:hasMicrobialProperty rdfs:comment "An object property linking aquifer microbes to their specific properties or traits relevant to their environment."@en .
+aqua:hasWaterQualityParameter rdfs:comment "An object property that links surface water bodies to their measurable water quality parameters."@en .
+aqua:measuresWaterQuality rdfs:comment "A datatype property that measures specific water quality aspects, recorded as textual or numeric data."@en .
+aqua:hasMicrobialCharacteristic rdfs:comment "An object property linking microbial communities to specific characteristics or traits they exhibit."@en .
+aqua:hasSedimentComposition rdfs:comment "An object property that links sediment samples to their chemical composition for environmental analysis."@en .
+aqua:hasCommunityFeature rdfs:comment "Links biological communities to various features or traits they exhibit within their ecosystems."@en .
+aqua:hasHabitatQuality rdfs:comment "An object property linking aquatic habitats to their overall habitat quality based on ecological assessments."@en .
+aqua:hasStreamVelocity rdfs:comment "A datatype property measuring the velocity of water flow in streams, recorded as a decimal value for precision."@en .
+
+### fine ###
+
