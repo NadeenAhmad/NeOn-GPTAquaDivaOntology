@@ -1,0 +1,90 @@
+[
+    {
+        "category": "Habitat",
+        "keywords": "Aquifer fungi, aquifer microbes, microbial functional guilds, aquifer chemical data, aquatic fungi, aquatic microbes, fungi and autolithoantatrophy(?), fungi, heterotrophs, species, rare species"
+    },
+    {
+        "category": "Geological and Pedological Features",
+        "keywords": "Hydrochemistry, limestone, triassic, fractured rock, karst, groundwater quality aquifer, carbonate dissortation, parent material, geology, pedrophysical properties/relationships, aquifers, soils, altering, soil profile, depth profile, B horizon, soil horizon"
+    },
+    {
+        "category": "Karst and Geochemical Processes",
+        "keywords": "Aquatic colloids, groundwater, karst, fractured rock aquifers, carbonate dissolution, karstification"
+    },
+    {
+        "category": "Resources and Inputs",
+        "keywords": "Mobile organic matter, groundwater physiochemical parameters, rainfall, electric conductivity, water precipitation"
+    },
+    {
+        "category": "Agricultural and Land Use",
+        "keywords": "Conduce, agriculture, fertilizers, nitrogen, pesticides, grassland, consuming"
+    },
+    {
+        "category": "Hydrogeological Features",
+        "keywords": "Continuity of strata, source/catchment/infiltration areas, groundwater comparison, chemistry, fractures, secondary minerals, groundwater protection, groundwater vulnerability, groundwater contamination, depth"
+    },
+    {
+        "category": "Microbial and Biochemical Processes",
+        "keywords": "Archaea, soil, groundwater species, geochemistry, microbe, diversity, groundwater, microbial dynamics, microbial communities, microorganisms, microbial guilds, heterotrophy, autotrophy, iron reducer, ladderane"
+    },
+    {
+        "category": "Chemical and Biological Sampling",
+        "keywords": "PH of water samples, oxygen content, seepage water, precipitation, discharge, climatic parameters, infiltration, water balance, groundwater chemistry, tracer, DOM, miz, composition, molecular formula, elemental composition, compounds/substances/molecules, molecular markers, isotopic analysis, nitrogen transformation, molecular formula, check all existing parameters, isotopic signature, elemental composition possible, C-/N isotopes"
+    },
+    {
+        "category": "Aquifer and Soil Interactions",
+        "keywords": "Key Wand, aquifer microbiome, soil microbiome, aquifer and soil, cross kingdom microbial communities in the aquifer, idem in soil, biota"
+    },
+    {
+        "category": "Environmental Impact and Management",
+        "keywords": "Heterogeneity, vegetation, biodiversity, terrain, hydrology, management, legacy"
+    },
+    {
+        "category": "Specialized Scientific Techniques",
+        "keywords": "Gas analysis, microbial processes, soil microorganisms, molecular markers, nitrogen transformation, pristine aquifers, biogeochemical process, bacteria, denitrifiers, anammox, ammonia oxidisers, nitrosphira, sequencing, functional genes, 16S RNA genes, isotopic analysis, georadar/GPR, electrical resistivity/ERT, dielectric constant, seismic retraction, flow cytometry, cell count, sequencing error"
+    },
+    {
+        "category": "Biogeochemical and Hydrological Dynamics",
+        "keywords": "Water input, throughfall, forest floor, forest infiltration, percolation, water balance, soil water, soil hydraulic parameters, hydrogeochemical characterization, spatial redistribution, soil organic, flow, rapid (vertical) transport, range/correlation length, waste flow hotspots, bypass flow, forest soil, LAI, topography, canopy structure, architecture, soil texture, anoxic aquifers, pathways"
+    },
+    {
+        "category": "Ecological Interactions",
+        "keywords": "Grasshoppers, proteome, gut microbiome, intestinal hact (?), mono-culture, microbial community, feces, vegetation cover, vegetation type, tree species, leaf area index, soil type, soil carbon content, soil porosity, soil water content, stemflow, net precipitation, rain, soil water flow, preferential flow, drainage, correlation length, earthworms, rain events"
+    },
+    {
+        "category": "Carbon and Nitrogen Cycling",
+        "keywords": "CO2 fixation pathways, rubisco, nitrogen-cycling, ammonia-oxidisers, nitrogen leaching, carbon and nitrogen isotopes, denitrification, N cycle, desnitrification, forest (beech), N leaching, CO2-fixation, energy metabolism, CO2 fixation, production & consumption of trace gases"
+    },
+    {
+        "category": "Biochemical Markers and Sensors",
+        "keywords": "CO2 isotopes, Mid-infrared isotope ratio sensors, molecular markers, compensation mixing ratio, VOC's, GHG's (greenhouse gases), metabolites, metabolism, NOM, compound, metabolization, CO2-fixation, energy metabolism, filtrated volume, DNA concentration/amount, radiocarbon age, redox"
+    },
+    {
+        "category": "Subsurface Dynamics",
+        "keywords": "Microbes, Subsurface, aquifer rocks, biodiversity, attached, hydraulic properties, Muschelkalk, fractured flow, lateral flow, preferential flow, karst/carstified, marlstone/Mergel, residence time, transit time, evapotranspiration, bacterial membranes, membrane properties, surface properties microorganisms, size microorganisms, colloidal transport"
+    },
+    {
+        "category": "Aquatic and Marine Influences",
+        "keywords": "Marine phage, transport, soil-tracer, ecosystem fractioning, phage, deposition, marine phages, breakthrough curves, tracers, Hainich aquifers, multilevel system, connectivity"
+    },
+    {
+        "category": "Organic Matter and Decomposition",
+        "keywords": "DOC, DIC, well, concentration, time, soil organic carbon, soil nitrogen, soil solution, mineral soil, organic layer, forest, grassland (pasture), agriculture, long term effect, Hainich site, soil organic matter, bioturbation, pore space, bulk density, DOC composition"
+    },
+    {
+        "category": "Microbial Ecology and Community Dynamics",
+        "keywords": "community composition, community structure, temporal changes, upper aquifer, lower aquifer, oxic, anoxic, temporal, spatial, Hainich CZ, links, biodiversity"
+    },
+    {
+        "category": "Climate and Atmospheric Influences",
+        "keywords": "surface signals, biological signals, wetter, kammerforst, r\u00fcckschau, 14 Tage, niederschlag, winter, summer, low temperature, wet deposition, dry deposition, abundance"
+    },
+    {
+        "category": "Groundwater Data and Analysis",
+        "keywords": "GW, hydrogeochemical data, mean value, H.Z.Y, Bauoxic, Alyla"
+    },
+    {
+        "category": "Soil Quality and Characteristics",
+        "keywords": "Hainich CZE, soil properties, PLFA"
+    }
+]
