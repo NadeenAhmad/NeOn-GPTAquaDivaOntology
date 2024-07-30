@@ -1,0 +1,1300 @@
+@prefix : <http://example.org/aquadiva#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### MetaData ###
+<http://example.org/aquadivarole> rdf:type owl:Ontology ;
+    rdfs:label "AquaDiva Role Ontology" ;
+    owl:versionInfo "1.0" ;
+    rdfs:comment "The AquaDiva Role Ontology provides a structured framework to represent and understand various roles of substances and organisms in groundwater ecosystems. It integrates aspects of hydrogeology, microbial ecology, geochemistry, karst systems, and environmental science to facilitate interoperability, data sharing, and advanced data analysis." .
+### fine ###
+
+
+# Classes
+:Role rdf:type owl:Class .
+:GroundwaterEcosystem rdf:type owl:Class .
+:BiologicalRole rdf:type owl:Class .
+:ChemicalRole rdf:type owl:Class .
+:Organism rdf:type owl:Class .
+:Microorganism rdf:type owl:Class .
+:NutrientCycling rdf:type owl:Class .
+:Plant rdf:type owl:Class .
+:Fauna rdf:type owl:Class .
+:KarstSystem rdf:type owl:Class .
+:Substance rdf:type owl:Class .
+:Poison rdf:type owl:Class .
+:Inhibitor rdf:type owl:Class .
+:Acid rdf:type owl:Class .
+:Acceptor rdf:type owl:Class .
+:BiogeochemicalProcess rdf:type owl:Class .
+:Nitrosomonas rdf:type owl:Class .
+:Nitrate rdf:type owl:Class .
+:ChemicalAcceptor rdf:type owl:Class .
+:HeavyMetal rdf:type owl:Class .
+:BiologicalEntity rdf:type owl:Class .
+:MicrobialCommunity rdf:type owl:Class .
+:GroundwaterQuality rdf:type owl:Class .
+:EcosystemHealth rdf:type owl:Class .
+:HarmfulSubstance rdf:type owl:Class .
+:BiogeochemicalCycle rdf:type owl:Class .
+:Denitrification rdf:type owl:Class .
+:EcologicalProcess rdf:type owl:Class .
+:CarbonCycle rdf:type owl:Class .
+:NitrogenCycle rdf:type owl:Class .
+:Metadata rdf:type owl:Class .
+:Creator rdf:type owl:Class .
+:CreationDate rdf:type owl:Class .
+:ModificationDate rdf:type owl:Class .
+:Subclass rdf:type owl:Class .
+:EquivalentClass rdf:type owl:Class .
+:DisjointClass rdf:type owl:Class .
+:DataSource rdf:type owl:Class .
+:Mechanism rdf:type owl:Class .
+:Interoperability rdf:type owl:Class .
+:EcologicalOntology rdf:type owl:Class .
+:Ontology rdf:type owl:Class .
+:ComputationalModeling rdf:type owl:Class .
+:Usability rdf:type owl:Class .
+:Accessibility rdf:type owl:Class .
+
+# Object Properties
+:identifiedIn rdf:type owl:ObjectProperty .
+:classifiedAs rdf:type owl:ObjectProperty .
+:playedBy rdf:type owl:ObjectProperty .
+:inEcosystem rdf:type owl:ObjectProperty .
+:playsRoleIn rdf:type owl:ObjectProperty .
+:foundIn rdf:type owl:ObjectProperty .
+:actsAs rdf:type owl:ObjectProperty .
+:identifiedAs rdf:type owl:ObjectProperty .
+:presentsIn rdf:type owl:ObjectProperty .
+:inProcess rdf:type owl:ObjectProperty .
+:interactsWith rdf:type owl:ObjectProperty .
+:relatedTo rdf:type owl:ObjectProperty .
+:involvedIn rdf:type owl:ObjectProperty .
+:affects rdf:type owl:ObjectProperty .
+:influences rdf:type owl:ObjectProperty .
+:mitigatesImpactOf rdf:type owl:ObjectProperty .
+:crucialFor rdf:type owl:ObjectProperty .
+:affectsRateOf rdf:type owl:ObjectProperty .
+:hasMetadata rdf:type owl:ObjectProperty .
+:createdBy rdf:type owl:ObjectProperty .
+:creationDate rdf:type owl:ObjectProperty .
+:modificationDate rdf:type owl:ObjectProperty .
+:hasSubclass rdf:type owl:ObjectProperty .
+:definedAs rdf:type owl:ObjectProperty .
+:disjointWith rdf:type owl:ObjectProperty .
+:implicationsFor rdf:type owl:ObjectProperty .
+:integratedFrom rdf:type owl:ObjectProperty .
+:ensuresInteroperability rdf:type owl:ObjectProperty .
+:supports rdf:type owl:ObjectProperty .
+:ensures rdf:type owl:ObjectProperty .
+
+# Data Properties
+:createdBy rdf:type owl:DataProperty .
+:creationDate rdf:type owl:DataProperty .
+:modificationDate rdf:type owl:DataProperty .
+
+# Triples
+
+:Role :identifiedIn :GroundwaterEcosystem .
+:Role :classifiedAs :BiologicalRole .
+:Role :classifiedAs :ChemicalRole .
+:BiologicalRole :playedBy :Organism .
+:BiologicalRole :inEcosystem :GroundwaterEcosystem .
+:Microorganism :playsRoleIn :NutrientCycling .
+:Plant :playsRoleIn :GroundwaterEcosystem .
+:Fauna :playsRoleIn :KarstSystem .
+:ChemicalRole :foundIn :Groundwater .
+:Chemical :actsAs :Poison .
+:Poison :inEcosystem :GroundwaterEcosystem .
+:Substance :identifiedAs :Inhibitor .
+:Acid :presentIn :Groundwater .
+:Acid :playsRoleIn :ChemicalRole .
+:Chemical :actsAs :Acceptor .
+:Acceptor :inProcess :BiogeochemicalProcess .
+:BiologicalRole :interactsWith :ChemicalRole .
+:Inhibitor :relatedTo :Acceptor .
+:Role :involvedIn :EnvironmentalContainment .
+
+:Nitrosomonas rdf:type :Microorganism ;
+    :playsRoleIn :Ecosystem .
+
+:Nitrate rdf:type :ChemicalAcceptor ;
+    :playsRoleIn :ChemicalAcceptor .
+
+:ChemicalAcceptor rdf:type :ChemicalAcceptor ;
+    :playsRoleIn :GroundwaterEcosystem .
+
+:Inhibitor :affects :HeavyMetal .
+:HeavyMetal :affects :BiologicalEntity .
+:Poison :influences :MicrobialCommunity .
+:Acid :affects :GroundwaterQuality .
+:GroundwaterQuality :affects :EcosystemHealth .
+:EnvironmentalContainment :mitigatesImpactOf :HarmfulSubstance .
+:Role :crucialFor :BiogeochemicalCycle .
+:Inhibitor :affectsRateOf :Denitrification .
+:Denitrification :affectsRateOf :EcologicalProcess .
+:Acceptor :playsRoleIn :CarbonCycle .
+:Acceptor :playsRoleIn :NitrogenCycle .
+:Role :hasMetadata :Metadata .
+:Role :createdBy :Creator .
+:Role :creationDate :CreationDate .
+:Role :modificationDate :ModificationDate .
+:Role :hasSubclass :Subclass .
+:Role :definedAs :EquivalentClass .
+:Role :disjointWith :DisjointClass .
+:DisjointClass :implicationsFor :EcosystemInteractions .
+:Role :integratedFrom :DataSource .
+:Mechanism :ensuresInteroperability :Interoperability .
+:Interoperability :ensuresInteroperability :EcologicalOntology .
+:Ontology :supports :ComputationalModeling .
+:Ontology :ensures :Usability .
+:Ontology :ensures :Accessibility .
+
+### fine ###
+### InverseDomainAndRange ###
+:identifiedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :identifiesEntity ;
+    rdfs:domain :Role ;
+    rdfs:range :GroundwaterEcosystem .
+
+:identifiesEntity rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :Role .
+
+:classifiedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :classifiesEntity ;
+    rdfs:domain :Role ;
+    rdfs:range :Role .
+
+:classifiesEntity rdf:type owl:ObjectProperty ;
+    rdfs:domain :Role ;
+    rdfs:range :Role .
+
+:playedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :playsRole ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :Organism .
+
+:playsRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :BiologicalRole .
+
+:inEcosystem rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasEcosystem ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :GroundwaterEcosystem .
+
+:hasEcosystem rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :BiologicalRole .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasRole ;
+    rdfs:domain :Organism, :Microorganism, :Plant, :Fauna, :Acceptor, :Nitrate, :ChemicalAcceptor, :Nitrosomonas ;
+    rdfs:range :Role, :NutrientCycling, :GroundwaterEcosystem, :KarstSystem, :BiogeochemicalProcess, :Ecosystem, :CarbonCycle, :NitrogenCycle .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Role, :NutrientCycling, :GroundwaterEcosystem, :KarstSystem, :BiogeochemicalProcess, :Ecosystem, :CarbonCycle, :NitrogenCycle ;
+    rdfs:range :Organism, :Microorganism, :Plant, :Fauna, :Acceptor, :Nitrate, :ChemicalAcceptor, :Nitrosomonas .
+
+:foundIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :contains ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :Groundwater .
+
+:contains rdf:type owl:ObjectProperty ;
+    rdfs:domain :Groundwater ;
+    rdfs:range :ChemicalRole .
+
+:actsAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRoleOf ;
+    rdfs:domain :Chemical, :Inhibitor, :Acid, :ChemicalAcceptor, :Nitrate ;
+    rdfs:range :Poison, :ChemicalRole, :Acceptor .
+
+:isRoleOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Poison, :ChemicalRole, :Acceptor ;
+    rdfs:range :Chemical, :Inhibitor, :Acid, :ChemicalAcceptor, :Nitrate .
+
+:identifiedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :identifies ;
+    rdfs:domain :Substance ;
+    rdfs:range :Inhibitor .
+
+:identifies rdf:type owl:ObjectProperty ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range :Substance .
+
+:presentIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :containsSubstance ;
+    rdfs:domain :Acid ;
+    rdfs:range :Groundwater .
+
+:containsSubstance rdf:type owl:ObjectProperty ;
+    rdfs:domain :Groundwater ;
+    rdfs:range :Acid .
+
+:inProcess rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasProcess ;
+    rdfs:domain :Acceptor ;
+    rdfs:range :BiogeochemicalProcess .
+
+:hasProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :Acceptor .
+
+:interactsWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasInteraction ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :ChemicalRole .
+
+:hasInteraction rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :BiologicalRole .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRelatedTo ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range :Acceptor .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Acceptor ;
+    rdfs:range :Inhibitor .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasInvolvement ;
+    rdfs:domain :Role ;
+    rdfs:range :EnvironmentalContainment .
+
+:hasInvolvement rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalContainment ;
+    rdfs:range :Role .
+
+:affects rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isAffectedBy ;
+    rdfs:domain :Inhibitor, :HeavyMetal, :Acid ;
+    rdfs:range :BiologicalEntity, :GroundwaterQuality, :EcosystemHealth .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalEntity, :GroundwaterQuality, :EcosystemHealth ;
+    rdfs:range :Inhibitor, :HeavyMetal, :Acid .
+
+:influences rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInfluencedBy ;
+    rdfs:domain :Poison ;
+    rdfs:range :MicrobialCommunity .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :Poison .
+
+:mitigatesImpactOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isMitigatedBy ;
+    rdfs:domain :EnvironmentalContainment ;
+    rdfs:range :HarmfulSubstance .
+
+:isMitigatedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :HarmfulSubstance ;
+    rdfs:range :EnvironmentalContainment .
+
+:crucialFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasCrucialRole ;
+    rdfs:domain :Role ;
+    rdfs:range :BiogeochemicalCycle .
+
+:hasCrucialRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalCycle ;
+    rdfs:range :Role .
+
+:affectsRateOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasRateAffectedBy ;
+    rdfs:domain :Inhibitor, :Denitrification ;
+    rdfs:range :Denitrification, :EcologicalProcess .
+
+:hasRateAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification, :EcologicalProcess ;
+    rdfs:range :Inhibitor, :Denitrification .
+
+:hasMetadata rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isMetadataFor ;
+    rdfs:domain :Role ;
+    rdfs:range :Metadata .
+
+:isMetadataFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Metadata ;
+    rdfs:range :Role .
+
+:createdBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :creatorOf ;
+    rdfs:domain :Role ;
+    rdfs:range :Creator .
+
+:creatorOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creator ;
+    rdfs:range :Role .
+
+:creationDate rdf:type owl:ObjectProperty ;
+    owl:inverseOf :creationOf ;
+    rdfs:domain :Role ;
+    rdfs:range :CreationDate .
+
+:creationOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :CreationDate ;
+    rdfs:range :Role .
+
+:modificationDate rdf:type owl:ObjectProperty ;
+    owl:inverseOf :modificationOf ;
+    rdfs:domain :Role ;
+    rdfs:range :ModificationDate .
+
+:modificationOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :ModificationDate ;
+    rdfs:range :Role .
+
+:hasSubclass rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isSubclassOf ;
+    rdfs:domain :Role ;
+    rdfs:range :Subclass .
+
+:isSubclassOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Subclass ;
+    rdfs:range :Role .
+
+:definedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :definitionOf ;
+    rdfs:domain :Role ;
+    rdfs:range :EquivalentClass .
+
+:definitionOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :EquivalentClass ;
+    rdfs:range :Role .
+
+:disjointWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :disjointFrom ;
+    rdfs:domain :Role ;
+    rdfs:range :DisjointClass .
+
+:disjointFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :DisjointClass ;
+    rdfs:range :Role .
+
+:implicationsFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :implicationsOf ;
+    rdfs:domain :DisjointClass ;
+    rdfs:range :EcosystemInteractions .
+
+:implicationsOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :EcosystemInteractions ;
+    rdfs:range :DisjointClass .
+
+:integratedFrom rdf:type owl:ObjectProperty ;
+    owl:inverseOf :integrates ;
+    rdfs:domain :Role ;
+    rdfs:range :DataSource .
+
+:integrates rdf:type owl:ObjectProperty ;
+    rdfs:domain :DataSource ;
+    rdfs:range :Role .
+
+:ensuresInteroperability rdf:type owl:ObjectProperty ;
+    owl:inverseOf :interoperabilityEnsuredBy ;
+    rdfs:domain :Mechanism, :Interoperability ;
+    rdfs:range :Interoperability, :EcologicalOntology .
+
+:interoperabilityEnsuredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :EcologicalOntology, :Interoperability ;
+    rdfs:range :Mechanism, :Interoperability .
+
+:supports rdf:type owl:ObjectProperty ;
+    owl:inverseOf :supportedBy ;
+    rdfs:domain :Ontology ;
+    rdfs:range :ComputationalModeling .
+
+:supportedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :ComputationalModeling ;
+    rdfs:range :Ontology .
+
+:ensures rdf:type owl:ObjectProperty ;
+    owl:inverseOf :ensuredBy ;
+    rdfs:domain :Ontology ;
+    rdfs:range :Usability, :Accessibility .
+
+:ensuredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Usability, :Accessibility ;
+    rdfs:range :Ontology .
+### fine ###
+### DataProperty ###
+:hasBiologicalRole rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range xsd:string .
+
+:hasChemicalRole rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Substance ;
+    rdfs:range xsd:string .
+
+:hasPoisonConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Poison ;
+    rdfs:range xsd:decimal .
+
+
+
+:hasAcceptorCapacity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Acceptor ;
+    rdfs:range xsd:positiveInteger .
+
+:hasAcidityLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Acid ;
+    rdfs:range xsd:decimal .
+
+
+:hasEnvironmentalImpact rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EnvironmentalContainment ;
+    rdfs:range xsd:string .
+
+:hasMicrobialCommunityDiversity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range xsd:integer .
+
+:hasGroundwaterQualityIndex rdf:type owl:DatatypeProperty ;
+    rdfs:domain :GroundwaterQuality ;
+    rdfs:range xsd:float .
+
+:hasHealthImpact rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EcosystemHealth ;
+    rdfs:range xsd:string .
+
+:hasCycleDuration rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BiogeochemicalCycle ;
+    rdfs:range xsd:duration .
+
+:hasNutrientContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NutrientCycling ;
+    rdfs:range xsd:string .
+
+:hasCarbonContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CarbonCycle ;
+    rdfs:range xsd:string .
+
+:hasNitrogenContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenCycle ;
+    rdfs:range xsd:string .
+
+:hasDenitrificationRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range xsd:float .
+
+:hasModificationDetails rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ModificationDate ;
+    rdfs:range xsd:string .
+
+:hasCreationDetails rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CreationDate ;
+    rdfs:range xsd:string .
+
+:hasSourceInformation rdf:type owl:DatatypeProperty ;
+    rdfs:domain :DataSource ;
+    rdfs:range xsd:string .
+
+:hasMechanismDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Mechanism ;
+    rdfs:range xsd:string .
+
+:hasUsabilityScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Usability ;
+    rdfs:range xsd:integer .
+
+:hasAccessibilityScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Accessibility ;
+    rdfs:range xsd:integer .
+
+:hasModelingComplexity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ComputationalModeling ;
+    rdfs:range xsd:integer .
+
+:hasOntologyVersion rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Ontology ;
+    rdfs:range xsd:string .
+### fine ###
+### Symmetric ###
+:interactsWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasInteraction ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :ChemicalRole ;
+    owl:SymmetricProperty true .
+
+:hasInteraction rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :BiologicalRole ;
+    owl:SymmetricProperty true .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRelatedTo ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range :Acceptor ;
+    owl:SymmetricProperty true .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Acceptor ;
+    rdfs:range :Inhibitor ;
+    owl:SymmetricProperty true .
+
+:disjointWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :disjointFrom ;
+    rdfs:domain :Role ;
+    rdfs:range :DisjointClass ;
+    owl:SymmetricProperty true .
+
+:disjointFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :DisjointClass ;
+    rdfs:range :Role ;
+    owl:SymmetricProperty true .
+### fine ###
+### Transitive ###
+:hasSubclass rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isSubclassOf ;
+    rdfs:domain :Role ;
+    rdfs:range :Subclass ;
+    owl:TransitiveProperty true .
+
+:isSubclassOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Subclass ;
+    rdfs:range :Role ;
+    owl:TransitiveProperty true .
+### fine ###
+### Functional ###
+:identifiedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :identifiesEntity ;
+    rdfs:domain :Role ;
+    rdfs:range :GroundwaterEcosystem ;
+    owl:FunctionalProperty true .
+
+:identifiesEntity rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:classifiedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :classifiesEntity ;
+    rdfs:domain :Role ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:classifiesEntity rdf:type owl:ObjectProperty ;
+    rdfs:domain :Role ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:playedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :playsRole ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :Organism ;
+    owl:FunctionalProperty true .
+
+:playsRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :BiologicalRole ;
+    owl:FunctionalProperty true .
+
+:inEcosystem rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasEcosystem ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :GroundwaterEcosystem ;
+    owl:FunctionalProperty true .
+
+:hasEcosystem rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :BiologicalRole ;
+    owl:FunctionalProperty true .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasRole ;
+    rdfs:domain :Organism, :Microorganism, :Plant, :Fauna, :Acceptor, :Nitrate, :ChemicalAcceptor, :Nitrosomonas ;
+    rdfs:range :Role, :NutrientCycling, :GroundwaterEcosystem, :KarstSystem, :BiogeochemicalProcess, :Ecosystem, :CarbonCycle, :NitrogenCycle ;
+    owl:FunctionalProperty true .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Role, :NutrientCycling, :GroundwaterEcosystem, :KarstSystem, :BiogeochemicalProcess, :Ecosystem, :CarbonCycle, :NitrogenCycle ;
+    rdfs:range :Organism, :Microorganism, :Plant, :Fauna, :Acceptor, :Nitrate, :ChemicalAcceptor, :Nitrosomonas ;
+    owl:FunctionalProperty true .
+
+:foundIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :contains ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :Groundwater ;
+    owl:FunctionalProperty true .
+
+:contains rdf:type owl:ObjectProperty ;
+    rdfs:domain :Groundwater ;
+    rdfs:range :ChemicalRole ;
+    owl:FunctionalProperty true .
+
+:actsAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRoleOf ;
+    rdfs:domain :Chemical, :Inhibitor, :Acid, :ChemicalAcceptor, :Nitrate ;
+    rdfs:range :Poison, :ChemicalRole, :Acceptor ;
+    owl:FunctionalProperty true .
+
+:isRoleOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Poison, :ChemicalRole, :Acceptor ;
+    rdfs:range :Chemical, :Inhibitor, :Acid, :ChemicalAcceptor, :Nitrate ;
+    owl:FunctionalProperty true .
+
+:identifiedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :identifies ;
+    rdfs:domain :Substance ;
+    rdfs:range :Inhibitor ;
+    owl:FunctionalProperty true .
+
+:identifies rdf:type owl:ObjectProperty ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range :Substance ;
+    owl:FunctionalProperty true .
+
+:presentIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :containsSubstance ;
+    rdfs:domain :Acid ;
+    rdfs:range :Groundwater ;
+    owl:FunctionalProperty true .
+
+:containsSubstance rdf:type owl:ObjectProperty ;
+    rdfs:domain :Groundwater ;
+    rdfs:range :Acid ;
+    owl:FunctionalProperty true .
+
+:inProcess rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasProcess ;
+    rdfs:domain :Acceptor ;
+    rdfs:range :BiogeochemicalProcess ;
+    owl:FunctionalProperty true .
+
+:hasProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :Acceptor ;
+    owl:FunctionalProperty true .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasInvolvement ;
+    rdfs:domain :Role ;
+    rdfs:range :EnvironmentalContainment ;
+    owl:FunctionalProperty true .
+
+:hasInvolvement rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalContainment ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:affects rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isAffectedBy ;
+    rdfs:domain :Inhibitor, :HeavyMetal, :Acid ;
+    rdfs:range :BiologicalEntity, :GroundwaterQuality, :EcosystemHealth ;
+    owl:FunctionalProperty true .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalEntity, :GroundwaterQuality, :EcosystemHealth ;
+    rdfs:range :Inhibitor, :HeavyMetal, :Acid ;
+    owl:FunctionalProperty true .
+
+:influences rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInfluencedBy ;
+    rdfs:domain :Poison ;
+    rdfs:range :MicrobialCommunity ;
+    owl:FunctionalProperty true .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :Poison ;
+    owl:FunctionalProperty true .
+
+:mitigatesImpactOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isMitigatedBy ;
+    rdfs:domain :EnvironmentalContainment ;
+    rdfs:range :HarmfulSubstance ;
+    owl:FunctionalProperty true .
+
+:isMitigatedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :HarmfulSubstance ;
+    rdfs:range :EnvironmentalContainment ;
+    owl:FunctionalProperty true .
+
+:crucialFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasCrucialRole ;
+    rdfs:domain :Role ;
+    rdfs:range :BiogeochemicalCycle ;
+    owl:FunctionalProperty true .
+
+:hasCrucialRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalCycle ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:affectsRateOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasRateAffectedBy ;
+    rdfs:domain :Inhibitor, :Denitrification ;
+    rdfs:range :Denitrification, :EcologicalProcess ;
+    owl:FunctionalProperty true .
+
+:hasRateAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification, :EcologicalProcess ;
+    rdfs:range :Inhibitor, :Denitrification ;
+    owl:FunctionalProperty true .
+
+:hasMetadata rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isMetadataFor ;
+    rdfs:domain :Role ;
+    rdfs:range :Metadata ;
+    owl:FunctionalProperty true .
+
+:isMetadataFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Metadata ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:createdBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :creatorOf ;
+    rdfs:domain :Role ;
+    rdfs:range :Creator ;
+    owl:FunctionalProperty true .
+
+:creatorOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creator ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:creationDate rdf:type owl:ObjectProperty ;
+    owl:inverseOf :creationOf ;
+    rdfs:domain :Role ;
+    rdfs:range :CreationDate ;
+    owl:FunctionalProperty true .
+
+:creationOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :CreationDate ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:modificationDate rdf:type owl:ObjectProperty ;
+    owl:inverseOf :modificationOf ;
+    rdfs:domain :Role ;
+    rdfs:range :ModificationDate ;
+    owl:FunctionalProperty true .
+
+:modificationOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :ModificationDate ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:integratedFrom rdf:type owl:ObjectProperty ;
+    owl:inverseOf :integrates ;
+    rdfs:domain :Role ;
+    rdfs:range :DataSource ;
+    owl:FunctionalProperty true .
+
+:integrates rdf:type owl:ObjectProperty ;
+    rdfs:domain :DataSource ;
+    rdfs:range :Role ;
+    owl:FunctionalProperty true .
+
+:ensuresInteroperability rdf:type owl:ObjectProperty ;
+    owl:inverseOf :interoperabilityEnsuredBy ;
+    rdfs:domain :Mechanism, :Interoperability ;
+    rdfs:range :Interoperability, :EcologicalOntology ;
+    owl:FunctionalProperty true .
+
+:interoperabilityEnsuredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :EcologicalOntology, :Interoperability ;
+    rdfs:range :Mechanism, :Interoperability ;
+    owl:FunctionalProperty true .
+
+:supports rdf:type owl:ObjectProperty ;
+    owl:inverseOf :supportedBy ;
+    rdfs:domain :Ontology ;
+    rdfs:range :ComputationalModeling ;
+    owl:FunctionalProperty true .
+
+:supportedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :ComputationalModeling ;
+    rdfs:range :Ontology ;
+    owl:FunctionalProperty true .
+
+:ensures rdf:type owl:ObjectProperty ;
+    owl:inverseOf :ensuredBy ;
+    rdfs:domain :Ontology ;
+    rdfs:range :Usability, :Accessibility ;
+    owl:FunctionalProperty true .
+
+:ensuredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Usability, :Accessibility ;
+    rdfs:range :Ontology ;
+    owl:FunctionalProperty true .
+### fine ###
+### Reflexive ###
+:interactsWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasInteraction ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :ChemicalRole ;
+    owl:SymmetricProperty true ;
+    owl:ReflexiveProperty true .
+
+:hasInteraction rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :BiologicalRole ;
+    owl:SymmetricProperty true ;
+    owl:ReflexiveProperty true .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRelatedTo ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range :Acceptor ;
+    owl:SymmetricProperty true ;
+    owl:ReflexiveProperty true .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Acceptor ;
+    rdfs:range :Inhibitor ;
+    owl:SymmetricProperty true ;
+    owl:ReflexiveProperty true .
+
+:disjointWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :disjointFrom ;
+    rdfs:domain :Role ;
+    rdfs:range :DisjointClass ;
+    owl:SymmetricProperty true .
+
+:disjointFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :DisjointClass ;
+    rdfs:range :Role ;
+    owl:SymmetricProperty true .
+
+:classifiedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :classifiesEntity ;
+    rdfs:domain :Role ;
+    rdfs:range :Role ;
+    owl:ReflexiveProperty true .
+
+:classifiesEntity rdf:type owl:ObjectProperty ;
+    rdfs:domain :Role ;
+    rdfs:range :Role ;
+    owl:ReflexiveProperty true .
+### fine ###
+### RealWorldInstances ###
+:Ammonia rdf:type :Chemical ;
+    :hasChemicalRole "Nutrient" .
+
+:SulfurDioxide rdf:type :Chemical ;
+    :hasChemicalRole "Pollutant" .
+
+:Glyphosate rdf:type :Substance ;
+    :hasChemicalRole "Herbicide" .
+
+:Cadmium rdf:type :Substance ;
+    :hasChemicalRole "HeavyMetal" ;
+    :hasPoisonConcentration "0.002"^^xsd:decimal .
+
+:CarbonDioxide rdf:type :Substance ;
+    :hasChemicalRole "GreenhouseGas" .
+
+:SulfuricAcid rdf:type :Acid ;
+    :hasAcidityLevel "1.2"^^xsd:decimal .
+
+:Trichloroethylene rdf:type :EnvironmentalContaminant ;
+    :hasEnvironmentalImpact "GroundwaterContamination" .
+
+:ZincIon rdf:type :Acceptor ;
+    :hasAcceptorCapacity 2 .
+
+
+
+:Nitrosomonas rdf:type :Microorganism ;
+    :hasBiologicalRole "Nitrification" .
+
+:Nitrate rdf:type :ChemicalAcceptor ;
+    :hasChemicalRole "ElectronAcceptor" .
+
+:SulfateReducingBacteria rdf:type :Microorganism ;
+    :hasBiologicalRole "SulfateReduction" .
+
+
+
+:PhosphoricAcid rdf:type :Acid ;
+    :hasAcidityLevel "2.1"^^xsd:decimal .
+
+:Benzene rdf:type :EnvironmentalContaminant ;
+    :hasEnvironmentalImpact "Toxicity" .
+
+:Lead rdf:type :HeavyMetal ;
+    :hasPoisonConcentration "0.005"^^xsd:decimal .
+
+:Oxygen rdf:type :Acceptor ;
+    :hasAcceptorCapacity 2 .
+
+:Methane rdf:type :Chemical ;
+    :hasChemicalRole "GreenhouseGas" .
+
+:Trichloroethane rdf:type :Substance ;
+    :hasChemicalRole "Solvent" ;
+    :hasEnvironmentalImpact "GroundwaterPollution" .
+
+:Mercury rdf:type :Substance ;
+    :hasChemicalRole "Toxin" ;
+    :hasPoisonConcentration "0.001"^^xsd:decimal .
+
+:Acetone rdf:type :Substance ;
+    :hasChemicalRole "Solvent" .
+
+:Algae rdf:type :Organism ;
+    :hasBiologicalRole "PrimaryProducer" .
+
+:DenitrifyingBacteria rdf:type :Microorganism ;
+    :hasBiologicalRole "Denitrification" .
+
+:IronIon rdf:type :Acceptor ;
+    :hasAcceptorCapacity 3 .
+
+:Chloride rdf:type :Chemical ;
+    :hasChemicalRole "Ion" .
+
+:HydrochloricAcid rdf:type :Acid ;
+    :hasAcidityLevel "1.0"^^xsd:decimal .
+
+:Microcystis rdf:type :Organism ;
+    :hasBiologicalRole "ToxinProducer" .
+
+### fine ###
+
+
+### Comments ###
+
+# Classes
+:Role rdfs:comment "A function or position that a substance or organism plays in an ecological or chemical context." .
+:GroundwaterEcosystem rdfs:comment "A dynamic system composed of groundwater and the ecological communities it supports." .
+:BiologicalRole rdfs:comment "Roles played by biological entities within an ecosystem." .
+:ChemicalRole rdfs:comment "Roles played by chemical substances within an ecosystem." .
+:Organism rdfs:comment "A living entity, such as a plant, animal, or microorganism." .
+:Microorganism rdfs:comment "Microscopic organisms, including bacteria, viruses, and fungi." .
+:NutrientCycling rdfs:comment "The movement and exchange of organic and inorganic matter back into the production of living matter." .
+:Plant rdfs:comment "A multicellular organism that typically produces its own food through photosynthesis." .
+:Fauna rdfs:comment "Animals collectively, especially those of a particular region or period." .
+:KarstSystem rdfs:comment "A landscape formed from the dissolution of soluble rocks, including limestone and dolomite." .
+:Substance rdfs:comment "A particular kind of matter with uniform properties." .
+:Poison rdfs:comment "A substance that is capable of causing the illness or death of a living organism when introduced or absorbed." .
+:Inhibitor rdfs:comment "A substance that slows down or prevents a particular chemical reaction or other processes." .
+:Acid rdfs:comment "A molecule or other entity that can donate a proton or accept an electron pair in reactions." .
+:Acceptor rdfs:comment "A chemical entity that accepts electrons during a reaction." .
+:BiogeochemicalProcess rdfs:comment "The natural processes that cycle nutrients and other elements through the environment." .
+:Nitrosomonas rdfs:comment "A genus of bacteria that play an important role in the nitrogen cycle." .
+:Nitrate rdfs:comment "A salt or ester of nitric acid, containing the anion NO3− or the group —NO3." .
+:SulfateReducingBacteria rdfs:comment "Bacteria that can obtain energy by oxidizing organic compounds or molecular hydrogen while reducing sulfate to hydrogen sulfide." .
+
+:PhosphoricAcid rdfs:comment "A mineral acid having the chemical formula H3PO4." .
+:Benzene rdfs:comment "A volatile aromatic hydrocarbon used as a solvent and in the manufacture of plastics and other chemicals." .
+:Lead rdfs:comment "A heavy metal that is toxic to humans and other animals." .
+:Oxygen rdfs:comment "A chemical element essential for aerobic respiration." .
+:Methane rdfs:comment "A greenhouse gas with the chemical formula CH4." .
+:Trichloroethane rdfs:comment "A chlorinated hydrocarbon used as a solvent and in industrial applications." .
+:Mercury rdfs:comment "A heavy metal that is highly toxic and can bioaccumulate in living organisms." .
+:Acetone rdfs:comment "A volatile, flammable liquid commonly used as a solvent." .
+:Algae rdfs:comment "Photosynthetic organisms found in aquatic environments." .
+:DenitrifyingBacteria rdfs:comment "Bacteria that convert nitrates into nitrogen gas, thus removing bioavailable nitrogen from ecosystems." .
+:IronIon rdfs:comment "An ion of iron, Fe2+ or Fe3+, that acts as an electron acceptor in various biochemical reactions." .
+:Chloride rdfs:comment "A chemical ion of chlorine that is commonly found in salts and is essential for cellular homeostasis." .
+:HydrochloricAcid rdfs:comment "A strong acid formed by dissolving hydrogen chloride in water." .
+:Microcystis rdfs:comment "A genus of freshwater cyanobacteria that can produce toxins." .
+
+# Object Properties
+:identifiedIn rdfs:comment "Indicates the ecosystem where a particular role is identified." .
+:identifiesEntity rdfs:comment "Indicates the role identified within a specific ecosystem." .
+:classifiedAs rdfs:comment "Classifies a role as either biological or chemical." .
+:classifiesEntity rdfs:comment "Indicates the entity that is classified as a specific role." .
+:playedBy rdfs:comment "Indicates the organism that plays a particular biological role." .
+:playsRole rdfs:comment "Indicates the biological role played by a specific organism." .
+:inEcosystem rdfs:comment "Indicates the ecosystem where a biological role is played." .
+:hasEcosystem rdfs:comment "Indicates the biological role present within a specific ecosystem." .
+:playsRoleIn rdfs:comment "Indicates the role played by an organism, chemical, or substance." .
+:hasRole rdfs:comment "Indicates the role that is played by a specific entity." .
+:foundIn rdfs:comment "Indicates the ecosystem where a chemical role is found." .
+:contains rdfs:comment "Indicates the chemical role contained within a specific ecosystem." .
+:actsAs rdfs:comment "Indicates the function of a chemical or biological entity in a particular context." .
+:isRoleOf rdfs:comment "Indicates the entity that performs a specific role." .
+:identifiedAs rdfs:comment "Indicates the identification of a substance as an inhibitor." .
+:identifies rdfs:comment "Indicates the inhibitor identified as a specific substance." .
+:presentIn rdfs:comment "Indicates the presence of a chemical in a particular environment." .
+:containsSubstance rdfs:comment "Indicates the environment that contains a specific substance." .
+:inProcess rdfs:comment "Indicates the involvement of an acceptor in a biogeochemical process." .
+:hasProcess rdfs:comment "Indicates the process involving a specific acceptor." .
+:interactsWith rdfs:comment "Indicates the interaction between biological and chemical roles." .
+:hasInteraction rdfs:comment "Indicates the chemical role interacting with a biological role." .
+:relatedTo rdfs:comment "Indicates a relationship between different roles." .
+:isRelatedTo rdfs:comment "Indicates a role that is related to another role." .
+:involvedIn rdfs:comment "Indicates the involvement of a role in an environmental process." .
+:hasInvolvement rdfs:comment "Indicates the role involved in a specific environmental process." .
+:affects rdfs:comment "Indicates the impact of a substance on a biological entity." .
+:isAffectedBy rdfs:comment "Indicates the biological entity affected by a specific substance." .
+:influences rdfs:comment "Indicates the influence of a poison on a microbial community." .
+:isInfluencedBy rdfs:comment "Indicates the microbial community influenced by a poison." .
+:mitigatesImpactOf rdfs:comment "Indicates the role of environmental containment in mitigating harmful substances." .
+:isMitigatedBy rdfs:comment "Indicates the harmful substance mitigated by environmental containment." .
+:crucialFor rdfs:comment "Indicates the importance of a role in biogeochemical cycles." .
+:hasCrucialRole rdfs:comment "Indicates the biogeochemical cycle that requires a specific role." .
+:affectsRateOf rdfs:comment "Indicates the effect of an inhibitor on the rate of a process." .
+:hasRateAffectedBy rdfs:comment "Indicates the process rate affected by an inhibitor." .
+:hasMetadata rdfs:comment "Indicates the metadata associated with a role." .
+:isMetadataFor rdfs:comment "Indicates the role associated with specific metadata." .
+:createdBy rdfs:comment "Indicates the creator of a role." .
+:creatorOf rdfs:comment "Indicates the role created by a specific entity." .
+:creationDate rdfs:comment "Indicates the date a role was created." .
+:creationOf rdfs:comment "Indicates the role associated with a specific creation date." .
+:modificationDate rdfs:comment "Indicates the date a role was modified." .
+:modificationOf rdfs:comment "Indicates the role associated with a specific modification date." .
+:hasSubclass rdfs:comment "Indicates the subclass of a role." .
+:isSubclassOf rdfs:comment "Indicates the role that is a subclass of another role." .
+:definedAs rdfs:comment "Indicates the definition of a role." .
+:definitionOf rdfs:comment "Indicates the role associated with a specific definition." .
+:disjointWith rdfs:comment "Indicates roles that are disjoint from each other." .
+:disjointFrom rdfs:comment "Indicates a role that is disjoint from another role." .
+:implicationsFor rdfs:comment "Indicates the implications of a disjoint role for ecosystem interactions." .
+:implicationsOf rdfs:comment "Indicates the ecosystem interactions associated with disjoint roles." .
+:integratedFrom rdfs:comment "Indicates the source of data integrated into a role." .
+:integrates rdfs:comment "Indicates the role that integrates data from a specific source." .
+:ensuresInteroperability rdfs:comment "Indicates the mechanism ensuring interoperability between ontologies." .
+:interoperabilityEnsuredBy rdfs:comment "Indicates the ontology ensuring interoperability through a specific mechanism." .
+:supports rdfs:comment "Indicates the ontology supporting computational modeling." .
+:supportedBy rdfs:comment "Indicates the computational modeling supported by a specific ontology." .
+:ensures rdfs:comment "Indicates the ontology ensuring usability and accessibility." .
+:ensuredBy rdfs:comment "Indicates the usability and accessibility ensured by a specific ontology." .
+
+# Data Properties
+:hasBiologicalRole rdfs:comment "Describes the biological role played by an organism." .
+:hasChemicalRole rdfs:comment "Describes the chemical role of a substance." .
+:hasPoisonConcentration rdfs:comment "Describes the concentration of a poison in a substance." .
+
+:hasAcceptorCapacity rdfs:comment "Describes the electron-accepting capacity of an acceptor." .
+:hasAcidityLevel rdfs:comment "Describes the acidity level of an acid." .
+:hasEnvironmentalImpact rdfs:comment "Describes the environmental impact of a contaminant." .
+:hasMicrobialCommunityDiversity rdfs:comment "Describes the diversity of a microbial community." .
+:hasGroundwaterQualityIndex rdfs:comment "Describes the quality index of groundwater." .
+:hasHealthImpact rdfs:comment "Describes the impact on ecosystem health." .
+:hasCycleDuration rdfs:comment "Describes the duration of a biogeochemical cycle." .
+:hasNutrientContent rdfs:comment "Describes the nutrient content involved in cycling." .
+:hasCarbonContent rdfs:comment "Describes the carbon content involved in cycling." .
+:hasNitrogenContent rdfs:comment "Describes the nitrogen content involved in cycling." .
+:hasDenitrificationRate rdfs:comment "Describes the rate of the denitrification process." .
+:hasModificationDetails rdfs:comment "Describes the details of a modification." .
+:hasCreationDetails rdfs:comment "Describes the details of a creation." .
+:hasSourceInformation rdfs:comment "Describes the information about a data source." .
+:hasMechanismDescription rdfs:comment "Describes the mechanism ensuring interoperability." .
+:hasUsabilityScore rdfs:comment "Describes the usability score of an ontology." .
+:hasAccessibilityScore rdfs:comment "Describes the accessibility score of an ontology." .
+:hasModelingComplexity rdfs:comment "Describes the complexity of computational modeling." .
+:hasOntologyVersion rdfs:comment "Describes the version of an ontology." .
+
+# Real-world Instances
+:Ammonia rdfs:comment "A chemical compound used as a nutrient." .
+:SulfurDioxide rdfs:comment "A chemical compound that acts as a pollutant." .
+:Glyphosate rdfs:comment "A herbicide used to kill weeds." .
+:Cadmium rdfs:comment "A heavy metal with a poison concentration of 0.002." .
+:CarbonDioxide rdfs:comment "A greenhouse gas contributing to global warming." .
+:SulfuricAcid rdfs:comment "A strong acid with an acidity level of 1.2." .
+:Trichloroethylene rdfs:comment "A chemical contaminant causing groundwater contamination." .
+:ZincIon rdfs:comment "An acceptor with an electron-accepting capacity of 2." .
+
+:Nitrosomonas rdfs:comment "A genus of bacteria involved in the nitrification process." .
+:Nitrate rdfs:comment "A chemical acceptor involved in electron transfer." .
+:SulfateReducingBacteria rdfs:comment "Bacteria involved in the reduction of sulfate to hydrogen sulfide." .
+
+:PhosphoricAcid rdfs:comment "A mineral acid with an acidity level of 2.1." .
+:Benzene rdfs:comment "An aromatic hydrocarbon that is toxic and used as a solvent." .
+:Lead rdfs:comment "A heavy metal with a poison concentration of 0.005." .
+:Oxygen rdfs:comment "A chemical element essential for aerobic respiration, acting as an acceptor." .
+:Methane rdfs:comment "A greenhouse gas with the chemical formula CH4." .
+:Trichloroethane rdfs:comment "A solvent used in industrial applications, causing groundwater pollution." .
+:Mercury rdfs:comment "A highly toxic heavy metal with a poison concentration of 0.001." .
+:Acetone rdfs:comment "A common solvent used in laboratories and industry." .
+:Algae rdfs:comment "Photosynthetic organisms found in aquatic environments, acting as primary producers." .
+:DenitrifyingBacteria rdfs:comment "Bacteria that convert nitrates into nitrogen gas, playing a role in denitrification." .
+:IronIon rdfs:comment "An ion that acts as an electron acceptor in biochemical reactions." .
+:Chloride rdfs:comment "An ion commonly found in salts, essential for cellular homeostasis." .
+:HydrochloricAcid rdfs:comment "A strong acid with an acidity level of 1.0." .
+:Microcystis rdfs:comment "A genus of cyanobacteria that can produce harmful toxins." .
+
+### fine ###
+
+### New Subclass Triples ###
+
+:ChemicalRole rdfs:subClassOf :Role .
+:BiologicalRole rdfs:subClassOf :Role .
+
+:Microorganism rdfs:subClassOf :Organism .
+:Plant rdfs:subClassOf :Organism .
+:Fauna rdfs:subClassOf :Organism .
+:Algae rdfs:subClassOf :Plant .
+:Microcystis rdfs:subClassOf :Algae .
+:Nitrosomonas rdfs:subClassOf :Microorganism .
+:SulfateReducingBacteria rdfs:subClassOf :Microorganism .
+:DenitrifyingBacteria rdfs:subClassOf :Microorganism .
+
+:Substance rdfs:subClassOf :ChemicalRole .
+:Acid rdfs:subClassOf :ChemicalRole .
+:Acceptor rdfs:subClassOf :ChemicalRole .
+:Poison rdfs:subClassOf :ChemicalRole .
+:Inhibitor rdfs:subClassOf :ChemicalRole .
+
+:Ammonia rdfs:subClassOf :Substance .
+:SulfurDioxide rdfs:subClassOf :Substance .
+:Glyphosate rdfs:subClassOf :Substance .
+:Cadmium rdfs:subClassOf :Substance .
+:CarbonDioxide rdfs:subClassOf :Substance .
+:Trichloroethane rdfs:subClassOf :Substance .
+:Mercury rdfs:subClassOf :Substance .
+:Acetone rdfs:subClassOf :Substance .
+:Benzene rdfs:subClassOf :Substance .
+:Lead rdfs:subClassOf :Substance .
+:Chloride rdfs:subClassOf :Substance .
+
+:SulfuricAcid rdfs:subClassOf :Acid .
+:PhosphoricAcid rdfs:subClassOf :Acid .
+:HydrochloricAcid rdfs:subClassOf :Acid .
+
+:ZincIon rdfs:subClassOf :Acceptor .
+:IronIon rdfs:subClassOf :Acceptor .
+:Oxygen rdfs:subClassOf :Acceptor .
+:Nitrate rdfs:subClassOf :Acceptor .
+
+:ChemicalAcceptor rdfs:subClassOf :Acceptor .
+
+:EnvironmentalContaminant rdfs:subClassOf :ChemicalRole .
+:Trichloroethylene rdfs:subClassOf :EnvironmentalContaminant .
+
+:BiologicalRole :hasSubclass :MicrobialCommunity .
+:MicrobialCommunity rdfs:subClassOf :Organism .
+
+:GroundwaterEcosystem rdfs:subClassOf :Ecosystem .
+:KarstSystem rdfs:subClassOf :Ecosystem .
+
+:NutrientCycling rdfs:subClassOf :BiogeochemicalProcess .
+:CarbonCycle rdfs:subClassOf :BiogeochemicalProcess .
+:NitrogenCycle rdfs:subClassOf :BiogeochemicalProcess .
+:Denitrification rdfs:subClassOf :BiogeochemicalProcess .
+
+### fine ###
+
+
+
+# Define the data property with the correct domain and range
+:hasInhibitorEffectiveness rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Describes the effectiveness of an inhibitor." .
+
+# Correct the typing of individuals to match the domain of the properties
+:Chlorpyrifos rdf:type :Inhibitor ;
+    :hasInhibitorEffectiveness "0.85"^^xsd:decimal ;
+    rdfs:comment "An insecticide with an inhibitor effectiveness of 0.85." .
+
+:Arsenic rdf:type :Inhibitor ;
+    :hasInhibitorEffectiveness "0.75"^^xsd:decimal ;
+    rdfs:comment "A toxic element with an inhibitor effectiveness of 0.75." ;
+    rdfs:comment "A chemical element that can inhibit biological processes and is toxic in high concentrations." .
+
+
+
+
+
+
+:Organism rdfs:subClassOf :BiologicalEntity .
+:Microorganism rdfs:subClassOf :Organism .
+:Plant rdfs:subClassOf :Organism .
+:Fauna rdfs:subClassOf :Organism .
+
+:Chemical rdfs:subClassOf :Substance .
+:Acid rdfs:subClassOf :Chemical .
+:Poison rdfs:subClassOf :Chemical .
+:Inhibitor rdfs:subClassOf :Chemical .
+
+:BiogeochemicalProcess rdfs:subClassOf :EcologicalProcess .
+:NutrientCycling rdfs:subClassOf :BiogeochemicalProcess .
+:CarbonCycle rdfs:subClassOf :BiogeochemicalProcess .
+:NitrogenCycle rdfs:subClassOf :BiogeochemicalProcess .
+:Denitrification rdfs:subClassOf :BiogeochemicalProcess .
+
+:Acceptor rdfs:subClassOf :ChemicalRole .
+:ChemicalAcceptor rdfs:subClassOf :Acceptor .
+:IronIon rdfs:subClassOf :Acceptor .
+:Oxygen rdfs:subClassOf :Acceptor .
+:Nitrate rdfs:subClassOf :Acceptor .
+:ZincIon rdfs:subClassOf :Acceptor .
+
+:Acid rdfs:subClassOf :ChemicalRole .
+:SulfuricAcid rdfs:subClassOf :Acid .
+:PhosphoricAcid rdfs:subClassOf :Acid .
+:HydrochloricAcid rdfs:subClassOf :Acid .
+
+:EnvironmentalContaminant rdfs:subClassOf :ChemicalRole .
+:Trichloroethylene rdfs:subClassOf :EnvironmentalContaminant .
+
+:Substance rdfs:subClassOf :ChemicalRole .
+:Ammonia rdfs:subClassOf :Substance .
+:SulfurDioxide rdfs:subClassOf :Substance .
+:Glyphosate rdfs:subClassOf :Substance .
+:Cadmium rdfs:subClassOf :Poison .
+:CarbonDioxide rdfs:subClassOf :Substance .
+:Trichloroethane rdfs:subClassOf :Substance .
+:Mercury rdfs:subClassOf :Poison .
+:Acetone rdfs:subClassOf :Substance .
+:Benzene rdfs:subClassOf :EnvironmentalContaminant .
+:Lead rdfs:subClassOf :Poison .
+:Chloride rdfs:subClassOf :Substance .
+
+:BiologicalRole rdfs:subClassOf :Role .
+:ChemicalRole rdfs:subClassOf :Role .
+
+# New instances to match the new hierarchy
+:Nitrosomonas rdf:type :Microorganism ;
+    :playsRoleIn :Nitrification .
+
+:SulfateReducingBacteria rdf:type :Microorganism ;
+    :playsRoleIn :SulfateReduction .
+
+:DenitrifyingBacteria rdf:type :Microorganism ;
+    :playsRoleIn :Denitrification .
+
+# Descriptive comments for the new hierarchy
+:Organism rdfs:comment "Any living entity such as animals, plants, fungi, and microorganisms." .
+:Microorganism rdfs:comment "Microscopic organisms, including bacteria, viruses, and fungi." .
+:Plant rdfs:comment "A multicellular organism that typically produces its own food through photosynthesis." .
+:Fauna rdfs:comment "Animals collectively, especially those of a particular region or period." .
+:Chemical rdfs:comment "A substance with a distinct molecular composition." .
+:Acid rdfs:comment "A molecule or other entity that can donate a proton or accept an electron pair in reactions." .
+:Poison rdfs:comment "A substance that is capable of causing the illness or death of a living organism when introduced or absorbed." .
+:Inhibitor rdfs:comment "A substance that slows down or prevents a particular chemical reaction or other processes." .
+:BiogeochemicalProcess rdfs:comment "The natural processes that cycle nutrients and other elements through the environment." .
+:NutrientCycling rdfs:comment "The movement and exchange of organic and inorganic matter back into the production of living matter." .
+:CarbonCycle rdfs:comment "The series of processes by which carbon compounds are interconverted in the environment." .
+:NitrogenCycle rdfs:comment "The series of processes by which nitrogen and its compounds are interconverted in the environment." .
+:Denitrification rdfs:comment "The reduction of nitrates back into nitrogen gas by bacteria." .
+:Acceptor rdfs:comment "A chemical entity that accepts electrons during a reaction." .
+:ChemicalAcceptor rdfs:comment "A molecule or ion that receives electrons during a chemical reaction." .
+:IronIon rdfs:comment "An ion of iron, Fe2+ or Fe3+, that acts as an electron acceptor in various biochemical reactions." .
+:Oxygen rdfs:comment "A chemical element essential for aerobic respiration." .
+:Nitrate rdfs:comment "A salt or ester of nitric acid, containing the anion NO3− or the group —NO3." .
+:ZincIon rdfs:comment "An acceptor with an electron-accepting capacity of 2." .
+:SulfuricAcid rdfs:comment "A strong acid with an acidity level of 1.2." .
+:PhosphoricAcid rdfs:comment "A mineral acid having the chemical formula H3PO4." .
+:HydrochloricAcid rdfs:comment "A strong acid formed by dissolving hydrogen chloride in water." .
+:EnvironmentalContaminant rdfs:comment "A chemical substance that causes pollution." .
+:Trichloroethylene rdfs:comment "A chemical contaminant causing groundwater contamination." .
+:Substance rdfs:comment "A particular kind of matter with uniform properties." .
+:Ammonia rdfs:comment "A chemical compound used as a nutrient." .
+:SulfurDioxide rdfs:comment "A chemical compound that acts as a pollutant." .
+:Glyphosate rdfs:comment "A herbicide used to kill weeds." .
+:Cadmium rdfs:comment "A heavy metal with a poison concentration of 0.002." .
+:CarbonDioxide rdfs:comment "A greenhouse gas contributing to global warming." .
+:Trichloroethane rdfs:comment "A solvent used in industrial applications, causing groundwater pollution." .
+:Mercury rdfs:comment "A highly toxic heavy metal with a poison concentration of 0.001." .
+:Acetone rdfs:comment "A common solvent used in laboratories and industry." .
+:Benzene rdfs:comment "A volatile aromatic hydrocarbon used as a solvent and in the manufacture of plastics and other chemicals." .
+:Lead rdfs:comment "A heavy metal with a poison concentration of 0.005." .
+:Chloride rdfs:comment "A chemical ion of chlorine that is commonly found in salts and is essential for cellular homeostasis." .
+:BiologicalRole rdfs:comment "Roles played by biological entities within an ecosystem." .
+:ChemicalRole rdfs:comment "Roles played by chemical substances within an ecosystem." .
+
