@@ -1,0 +1,1863 @@
+### TurtleOntology ###
+@prefix : <http://www.aquadiva.de/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### MetaData ###
+
+<http://www.aquadiva.de/ontology#CarbonAndNitrogenCyclingOntology> a owl:Ontology ;
+    rdfs:label "Carbon and Nitrogen Cycling Ontology" ;
+    owl:versionInfo "1.0" ;
+    rdfs:comment "An ontology representing the processes and mechanisms involved in the fixation, transformation, and movement of carbon and nitrogen within groundwater ecosystems. It includes entities such as enzymes, ammonia oxidizers, nitrogen isotopes, and forest ecosystems, and their relationships to each other and to environmental factors." ;
+    owl:imports <http://www.w3.org/2002/07/owl#> .
+
+### fine ###
+
+
+# Classes
+:CarbonAndNitrogenCyclingOntology a owl:Ontology .
+
+:CO2FixationPathway a owl:Class .
+
+:GroundwaterEcosystem a owl:Class .
+:Enzyme a owl:Class .
+:Rubisco a owl:Class .
+:CO2Fixation a owl:Class .
+:Organism a owl:Class .
+:NitrogenCycle a owl:Class .
+:AmmoniaOxidation a owl:Class .
+:Microorganism a owl:Class .
+:Denitrification a owl:Class .
+:EnvironmentalFactor a owl:Class .
+:NitrogenLeaching a owl:Class .
+:ForestEcosystem a owl:Class .
+:ForestedArea a owl:Class .
+:NonForestedArea a owl:Class .
+:Species a owl:Class .
+:AmmoniaOxidizer a owl:Class .
+:Process a owl:Class .
+:GroundwaterQuality a owl:Class .
+:ForestHealth a owl:Class .
+:CarbonIsotope a owl:Class .
+:CarbonCycling a owl:Class .
+:IsotopeRatio a owl:Class .
+:DenitrificationProcess a owl:Class .
+:DenitrificationStep a owl:Class .
+:TraceGasProduction a owl:Class .
+:BeechForest a owl:Class .
+:ForestManagementPractice a owl:Class .
+:TraceGas a owl:Class .
+:NitrogenCyclingProcess a owl:Class .
+:TraceGasConsumption a owl:Class .
+:TraceGasEmission a owl:Class .
+:GroundwaterCondition a owl:Class .
+:EnergyMetabolism a owl:Class .
+:MetabolicPathway a owl:Class .
+:EnergyMetabolismProcess a owl:Class .
+:BiogeochemicalCycle a owl:Class .
+:FixationPathway a owl:Class .
+:FixationProcess a owl:Class .
+# Object Properties
+:pathwayIn a owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :GroundwaterEcosystem .
+:involvedIn a owl:ObjectProperty ;
+    rdfs:domain :Enzyme ;
+    rdfs:range :CO2FixationPathway .
+:contributesTo a owl:ObjectProperty ;
+    rdfs:domain :Rubisco ;
+    rdfs:range :CO2Fixation .
+:utilizes a owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :CO2FixationPathway .
+:processIn a owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycle ;
+    rdfs:range :GroundwaterEcosystem .
+:carriedOutIn a owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidation ;
+    rdfs:range :GroundwaterEcosystem .
+:responsibleFor a owl:ObjectProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification .
+:influences a owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :NitrogenLeaching .
+:differsBetween a owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :ForestedArea, :NonForestedArea .
+:identifiedAs a owl:ObjectProperty ;
+    rdfs:domain :Species ;
+    rdfs:range :AmmoniaOxidizer .
+:roleIn a owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenCycling .
+:impacts a owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenLeaching .
+:contributesTo a owl:ObjectProperty ;
+    rdfs:domain :Process ;
+    rdfs:range :NitrogenLeaching .
+:affects a owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :GroundwaterQuality .
+:implicationsFor a owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestHealth .
+:usedToStudy a owl:ObjectProperty ;
+    rdfs:domain :CarbonIsotope ;
+    rdfs:range :CarbonCycling, :GroundwaterEcosystem .
+:providesInfoOn a owl:ObjectProperty ;
+    rdfs:domain :NitrogenIsotope ;
+    rdfs:range :NitrogenCycling .
+:variesAcross a owl:ObjectProperty ;
+    rdfs:domain :IsotopeRatio ;
+    rdfs:range :GroundwaterEcosystem .
+:hasStep a owl:ObjectProperty ;
+    rdfs:domain :DenitrificationProcess ;
+    rdfs:range :DenitrificationStep .
+:primarilyResponsibleFor a owl:ObjectProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification .
+:influences a owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :TraceGasProduction .
+:playsRoleIn a owl:ObjectProperty ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenCycling, :GroundwaterEcosystem .
+:occursIn a owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :BeechForest .
+:effectsOn a owl:ObjectProperty ;
+    rdfs:domain :ForestManagementPractice ;
+    rdfs:range :NitrogenLeaching .
+:producedDuring a owl:ObjectProperty ;
+    rdfs:domain :TraceGas ;
+    rdfs:range :NitrogenCyclingProcess .
+:involvedIn a owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :TraceGasProduction, :TraceGasConsumption .
+:variesWith a owl:ObjectProperty ;
+    rdfs:domain :TraceGasEmission ;
+    rdfs:range :GroundwaterCondition .
+:linkedTo a owl:ObjectProperty ;
+    rdfs:domain :EnergyMetabolism ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem .
+:involvedIn a owl:ObjectProperty ;
+    rdfs:domain :MetabolicPathway ;
+    rdfs:range :CO2Fixation .
+:affects a owl:ObjectProperty ;
+    rdfs:domain :EnergyMetabolismProcess ;
+    rdfs:range :BiogeochemicalCycle .
+:relatedTo a owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :NitrogenCyclingProcess .
+:affects a owl:ObjectProperty ;
+    rdfs:domain :CarbonCycleComponent ;
+    rdfs:range :NitrogenCycleComponent .
+:impactsOn a owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalChange ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem .
+
+# Class Hierarchies
+:CO2FixationPathway rdfs:subClassOf :FixationPathway .
+:NitrogenCyclingProcess rdfs:subClassOf :CyclingProcess .
+:AmmoniaOxidizer rdfs:subClassOf :Oxidizer .
+:NitrogenIsotope rdfs:subClassOf :Isotope .
+:DenitrificationProcess rdfs:subClassOf :Process .
+:NitrogenLeaching rdfs:subClassOf :Leaching .
+:TraceGas rdfs:subClassOf :Gas .
+:NitrogenCycle rdfs:subClassOf :BiogeochemicalCycle .
+:EnergyMetabolism rdfs:subClassOf :Metabolism .
+:NitrogenFixation rdfs:subClassOf :FixationProcess .
+
+# Declarations
+:CO2FixationPathway rdf:type owl:Class .
+:GroundwaterEcosystem rdf:type owl:Class .
+:Enzyme rdf:type owl:Class .
+:Rubisco rdf:type owl:Class .
+:CO2Fixation rdf:type owl:Class .
+:Organism rdf:type owl:Class .
+:NitrogenCycle rdf:type owl:Class .
+:AmmoniaOxidation rdf:type owl:Class .
+:Microorganism rdf:type owl:Class .
+:Denitrification rdf:type owl:Class .
+:EnvironmentalFactor rdf:type owl:Class .
+:NitrogenLeaching rdf:type owl:Class .
+:ForestEcosystem rdf:type owl:Class .
+:ForestedArea rdf:type owl:Class .
+:NonForestedArea rdf:type owl:Class .
+:Species rdf:type owl:Class .
+:AmmoniaOxidizer rdf:type owl:Class .
+:Process rdf:type owl:Class .
+:GroundwaterQuality rdf:type owl:Class .
+:ForestHealth rdf:type owl:Class .
+:CarbonIsotope rdf:type owl:Class .
+:CarbonCycling rdf:type owl:Class .
+:IsotopeRatio rdf:type owl:Class .
+:DenitrificationProcess rdf:type owl:Class .
+:DenitrificationStep rdf:type owl:Class .
+:TraceGasProduction rdf:type owl:Class .
+:BeechForest rdf:type owl:Class .
+:ForestManagementPractice rdf:type owl:Class .
+:TraceGas rdf:type owl:Class .
+:NitrogenCyclingProcess rdf:type owl:Class .
+:TraceGasConsumption rdf:type owl:Class .
+:TraceGasEmission rdf:type owl:Class .
+:GroundwaterCondition rdf:type owl:Class .
+:EnergyMetabolism rdf:type owl:Class .
+:MetabolicPathway rdf:type owl:Class .
+:EnergyMetabolismProcess rdf:type owl:Class .
+:BiogeochemicalCycle rdf:type owl:Class .
+:FixationPathway rdf:type owl:Class .
+:FixationProcess rdf:type owl:Class .
+:pathwayIn rdf:type owl:ObjectProperty .
+:involvedIn rdf:type owl:ObjectProperty .
+:contributesTo rdf:type owl:ObjectProperty .
+:utilizes rdf:type owl:ObjectProperty .
+:processIn rdf:type owl:ObjectProperty .
+:carriedOutIn rdf:type owl:ObjectProperty .
+:responsibleFor rdf:type owl:ObjectProperty .
+:influences rdf:type owl:ObjectProperty .
+:differsBetween rdf:type owl:ObjectProperty .
+:identifiedAs rdf:type owl:ObjectProperty .
+:roleIn rdf:type owl:ObjectProperty .
+:impacts rdf:type owl:ObjectProperty .
+:contributesTo rdf:type owl:ObjectProperty .
+:affects rdf:type owl:ObjectProperty .
+:implicationsFor rdf:type owl:ObjectProperty .
+:usedToStudy rdf:type owl:ObjectProperty .
+:providesInfoOn rdf:type owl:ObjectProperty .
+:variesAcross rdf:type owl:ObjectProperty .
+:hasStep rdf:type owl:ObjectProperty .
+:primarilyResponsibleFor rdf:type owl:ObjectProperty .
+:playsRoleIn rdf:type owl:ObjectProperty .
+:occursIn rdf:type owl:ObjectProperty .
+:effectsOn rdf:type owl:ObjectProperty .
+:producedDuring rdf:type owl:ObjectProperty .
+:variesWith rdf:type owl:ObjectProperty .
+:linkedTo rdf:type owl:ObjectProperty .
+:relatedTo rdf:type owl:ObjectProperty .
+:impactsOn rdf:type owl:ObjectProperty .
+### fine ###
+### InverseDomainAndRange ###
+:pathwayIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasPathway ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :GroundwaterEcosystem .
+
+:hasPathway rdf:type owl:ObjectProperty ;
+    owl:inverseOf :pathwayIn ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :CO2FixationPathway .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInvolvedBy ;
+    rdfs:domain :Enzyme ;
+    rdfs:range :CO2FixationPathway .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :involvedIn ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :Enzyme .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasContribution ;
+    rdfs:domain :Rubisco ;
+    rdfs:range :CO2Fixation .
+
+:hasContribution rdf:type owl:ObjectProperty ;
+    owl:inverseOf :contributesTo ;
+    rdfs:domain :CO2Fixation ;
+    rdfs:range :Rubisco .
+
+:utilizes rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isUtilizedBy ;
+    rdfs:domain :Organism ;
+    rdfs:range :CO2FixationPathway .
+
+:isUtilizedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :utilizes ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :Organism .
+
+:processIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasProcess ;
+    rdfs:domain :NitrogenCycle ;
+    rdfs:range :GroundwaterEcosystem .
+
+:hasProcess rdf:type owl:ObjectProperty ;
+    owl:inverseOf :processIn ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :NitrogenCycle .
+
+:carriedOutIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :carriesOut ;
+    rdfs:domain :AmmoniaOxidation ;
+    rdfs:range :GroundwaterEcosystem .
+
+:carriesOut rdf:type owl:ObjectProperty ;
+    owl:inverseOf :carriedOutIn ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :AmmoniaOxidation .
+
+:responsibleFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isResponsibilityOf ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification .
+
+:isResponsibilityOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :responsibleFor ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :Microorganism .
+
+:influences rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInfluencedBy ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :NitrogenLeaching .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :influences ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :EnvironmentalFactor .
+
+:differsBetween rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isDifferedBy ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :ForestedArea, :NonForestedArea .
+
+:isDifferedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :differsBetween ;
+    rdfs:domain :ForestedArea, :NonForestedArea ;
+    rdfs:range :NitrogenCycling .
+
+:identifiedAs rdf:type owl:ObjectProperty ;
+    owl:inverseOf :identifies ;
+    rdfs:domain :Species ;
+    rdfs:range :AmmoniaOxidizer .
+
+:identifies rdf:type owl:ObjectProperty ;
+    owl:inverseOf :identifiedAs ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :Species .
+
+:roleIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasRole ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenCycling .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    owl:inverseOf :roleIn ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :AmmoniaOxidizer .
+
+:impacts rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isImpactedBy ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenLeaching .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :impacts ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :AmmoniaOxidizer .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isContributionOf ;
+    rdfs:domain :Process ;
+    rdfs:range :NitrogenLeaching .
+
+:isContributionOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :contributesTo ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :Process .
+
+:affects rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isAffectedBy ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :GroundwaterQuality .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :affects ;
+    rdfs:domain :GroundwaterQuality ;
+    rdfs:range :NitrogenLeaching .
+
+:implicationsFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasImplication ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestHealth .
+
+:hasImplication rdf:type owl:ObjectProperty ;
+    owl:inverseOf :implicationsFor ;
+    rdfs:domain :ForestHealth ;
+    rdfs:range :NitrogenLeaching .
+
+:usedToStudy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isStudiedBy ;
+    rdfs:domain :CarbonIsotope ;
+    rdfs:range :CarbonCycling, :GroundwaterEcosystem .
+
+:isStudiedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :usedToStudy ;
+    rdfs:domain :CarbonCycling, :GroundwaterEcosystem ;
+    rdfs:range :CarbonIsotope .
+
+:providesInfoOn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInfoProvidedBy ;
+    rdfs:domain :NitrogenIsotope ;
+    rdfs:range :NitrogenCycling .
+
+:isInfoProvidedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :providesInfoOn ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :NitrogenIsotope .
+
+:variesAcross rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasVariation ;
+    rdfs:domain :IsotopeRatio ;
+    rdfs:range :GroundwaterEcosystem .
+
+:hasVariation rdf:type owl:ObjectProperty ;
+    owl:inverseOf :variesAcross ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :IsotopeRatio .
+
+:hasStep rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isStepOf ;
+    rdfs:domain :DenitrificationProcess ;
+    rdfs:range :DenitrificationStep .
+
+:isStepOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasStep ;
+    rdfs:domain :DenitrificationStep ;
+    rdfs:range :DenitrificationProcess .
+
+:primarilyResponsibleFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasPrimaryResponsibility ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification .
+
+:hasPrimaryResponsibility rdf:type owl:ObjectProperty ;
+    owl:inverseOf :primarilyResponsibleFor ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :Microorganism .
+
+:influences rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInfluencedBy ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :TraceGasProduction .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :influences ;
+    rdfs:domain :TraceGasProduction ;
+    rdfs:range :Denitrification .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasRolePlayedBy ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenCycling, :GroundwaterEcosystem .
+
+:hasRolePlayedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :playsRoleIn ;
+    rdfs:domain :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :BeechForest .
+
+:occursIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasOccurrence ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :BeechForest .
+
+:hasOccurrence rdf:type owl:ObjectProperty ;
+    owl:inverseOf :occursIn ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenLeaching .
+
+:effectsOn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isEffectOf ;
+    rdfs:domain :ForestManagementPractice ;
+    rdfs:range :NitrogenLeaching .
+
+:isEffectOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :effectsOn ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestManagementPractice .
+
+:producedDuring rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasProduction ;
+    rdfs:domain :TraceGas ;
+    rdfs:range :NitrogenCyclingProcess .
+
+:hasProduction rdf:type owl:ObjectProperty ;
+    owl:inverseOf :producedDuring ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :TraceGas .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInvolvedBy ;
+    rdfs:domain :Organism ;
+    rdfs:range :TraceGasProduction, :TraceGasConsumption .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :involvedIn ;
+    rdfs:domain :TraceGasProduction, :TraceGasConsumption ;
+    rdfs:range :Organism .
+
+:variesWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasVariationWith ;
+    rdfs:domain :TraceGasEmission ;
+    rdfs:range :GroundwaterCondition .
+
+:hasVariationWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :variesWith ;
+    rdfs:domain :GroundwaterCondition ;
+    rdfs:range :TraceGasEmission .
+
+:linkedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isLinkOf ;
+    rdfs:domain :EnergyMetabolism ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem .
+
+:isLinkOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :linkedTo ;
+    rdfs:domain :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :EnergyMetabolism .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInvolvedBy ;
+    rdfs:domain :MetabolicPathway ;
+    rdfs:range :CO2Fixation .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :involvedIn ;
+    rdfs:domain :CO2Fixation ;
+    rdfs:range :MetabolicPathway .
+
+:affects rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isAffectedBy ;
+    rdfs:domain :EnergyMetabolismProcess ;
+    rdfs:range :BiogeochemicalCycle .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :affects ;
+    rdfs:domain :BiogeochemicalCycle ;
+    rdfs:range :EnergyMetabolismProcess .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRelatedTo ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :NitrogenCyclingProcess .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :relatedTo ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :CO2FixationPathway .
+
+:affects rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isAffectedBy ;
+    rdfs:domain :CarbonCycleComponent ;
+    rdfs:range :NitrogenCycleComponent .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :affects ;
+    rdfs:domain :NitrogenCycleComponent ;
+    rdfs:range :CarbonCycleComponent .
+
+:impactsOn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isImpactedBy ;
+    rdfs:domain :EnvironmentalChange ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :impactsOn ;
+    rdfs:domain :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :EnvironmentalChange .
+### fine ###
+### DataProperty ###
+:hasEnzymeName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Enzyme ;
+    rdfs:range xsd:string .
+
+:hasFixationPathway rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range xsd:string .
+
+:hasAmmoniaOxidizerSpecies rdf:type owl:DatatypeProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range xsd:string .
+
+:hasNitrogenIsotopeValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenIsotope ;
+    rdfs:range xsd:decimal .
+
+:hasDenitrificationRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :DenitrificationProcess ;
+    rdfs:range xsd:decimal .
+
+:hasTraceGasType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :TraceGas ;
+    rdfs:range xsd:string .
+
+:hasNLeachingRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range xsd:decimal .
+
+:hasForestType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ForestEcosystem ;
+    rdfs:range xsd:string .
+
+:hasMetabolicRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EnergyMetabolism ;
+    rdfs:range xsd:decimal .
+
+:hasNitrogenCycleType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenCycle ;
+    rdfs:range xsd:string .
+
+:hasIsotopeRatio rdf:type owl:DatatypeProperty ;
+    rdfs:domain :IsotopeRatio ;
+    rdfs:range xsd:decimal .
+
+:hasMicroorganismName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range xsd:string .
+
+:hasEnvironmentalFactorType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range xsd:string .
+
+:hasSpeciesName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Species ;
+    rdfs:range xsd:string .
+
+:hasTraceGasEmissionValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :TraceGasEmission ;
+    rdfs:range xsd:decimal .
+
+:hasGroundwaterConditionType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :GroundwaterCondition ;
+    rdfs:range xsd:string .
+
+:hasCarbonIsotopeValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CarbonIsotope ;
+    rdfs:range xsd:decimal .
+
+:hasForestManagementPracticeType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ForestManagementPractice ;
+    rdfs:range xsd:string .
+
+:hasDenitrificationStepName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :DenitrificationStep ;
+    rdfs:range xsd:string .
+
+:hasCarbonCycleComponentName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CarbonCycleComponent ;
+    rdfs:range xsd:string .
+
+:hasNitrogenCycleComponentName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenCycleComponent ;
+    rdfs:range xsd:string .
+
+:hasEnvironmentalChangeType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EnvironmentalChange ;
+    rdfs:range xsd:string .
+
+:hasBiogeochemicalCycleType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :BiogeochemicalCycle ;
+    rdfs:range xsd:string .
+
+:hasFixationProcessName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :FixationProcess ;
+    rdfs:range xsd:string .
+
+:hasFixationPathwayType rdf:type owl:DatatypeProperty ;
+    rdfs:domain :FixationPathway ;
+    rdfs:range xsd:string .
+
+### fine ###
+
+
+### Symmetric ###
+:relatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isRelatedTo ;
+    rdf:type owl:SymmetricProperty .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :relatedTo ;
+    rdf:type owl:SymmetricProperty .
+
+### fine ###
+### Transitive ###
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty .
+
+:hasStep rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty .
+
+### fine ###
+### Functional ###
+
+:pathwayIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasPathway rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasContribution rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:utilizes rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isUtilizedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:processIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasProcess rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:carriedOutIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:carriesOut rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:responsibleFor rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isResponsibilityOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:differsBetween rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isDifferedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:identifiedAs rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:identifies rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:roleIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:impacts rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isContributionOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:implicationsFor rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasImplication rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:usedToStudy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isStudiedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:providesInfoOn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isInfoProvidedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:variesAcross rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasVariation rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasStep rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isStepOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:primarilyResponsibleFor rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasPrimaryResponsibility rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasRolePlayedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:occursIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasOccurrence rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:effectsOn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isEffectOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:producedDuring rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasProduction rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:variesWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:hasVariationWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:linkedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isLinkOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty .
+
+### fine ###
+
+### Reflexive ###
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty .
+
+### fine ###
+### RealWorldInstances ###
+
+:Rubisco rdf:type :Enzyme ;
+    :hasEnzymeName "Ribulose-1,5-bisphosphate carboxylase/oxygenase" ;
+    :roleIn :CO2Fixation .
+
+:Nitrosomonas rdf:type :AmmoniaOxidizer ;
+    :hasAmmoniaOxidizerSpecies "Nitrosomonas europaea" ;
+    :playsRoleIn :AmmoniaOxidation .
+
+:15N_Isotope rdf:type :NitrogenIsotope ;
+    :hasNitrogenIsotopeValue 0.3663 ;
+    :foundIn :ForestSoil .
+
+:BeechForest rdf:type :ForestEcosystem ;
+    :hasForestType "Beech" ;
+    :influences :NitrogenLeaching .
+
+:DenitrificationProcess1 rdf:type :DenitrificationProcess ;
+    :hasDenitrificationRate 1.5 ;
+    :contributesTo :GreenhouseGasEmissions .
+
+:NitrogenFixation rdf:type :NitrogenCycle ;
+    :hasNitrogenCycleType "Nitrogen Fixation" ;
+    :keyPathwayIn :TerrestrialEcosystem .
+
+:Methane rdf:type :TraceGas ;
+    :hasTraceGasType "CH4" ;
+    :producedDuring :Methanogenesis .
+
+:TropicalForest rdf:type :ForestEcosystem ;
+    :hasForestType "Tropical" ;
+    :differsBetween :TemperateForest .
+
+:CO2_Fixation rdf:type :CO2FixationPathway ;
+    :hasFixationPathway "Calvin Cycle" ;
+    :keyPathwayIn :Photosynthesis .
+
+:MicrobialMetabolism rdf:type :EnergyMetabolism ;
+    :hasMetabolicRate 2.3 ;
+    :variesAmong :NitrogenCyclingMicroorganisms .
+
+:DenitrificationStep1 rdf:type :DenitrificationStep ;
+    :hasDenitrificationStepName "Nitrate Reduction" .
+
+:DenitrificationStep2 rdf:type :DenitrificationStep ;
+    :hasDenitrificationStepName "Nitrite Reduction" .
+
+:DenitrificationStep3 rdf:type :DenitrificationStep ;
+    :hasDenitrificationStepName "Nitric Oxide Reduction" .
+
+:DenitrificationStep4 rdf:type :DenitrificationStep ;
+    :hasDenitrificationStepName "Nitrous Oxide Reduction" .
+
+:CalvinCycle rdf:type :CO2FixationPathway ;
+    :hasFixationPathway "Calvin Cycle" .
+
+:ForestSoil rdf:type :Soil ;
+    :hasSoilType "Forest Soil" .
+
+:TemperateForest rdf:type :ForestEcosystem ;
+    :hasForestType "Temperate" .
+
+:Methanogenesis rdf:type :BiochemicalProcess ;
+    :hasBiochemicalProcessName "Methanogenesis" .
+
+:NitrogenCyclingMicroorganisms rdf:type :MicroorganismGroup ;
+    :hasMicroorganismGroupName "Nitrogen-Cycling Microorganisms" .
+
+### fine ###
+
+### Comments ###
+
+# Classes
+:CO2FixationPathway rdfs:comment "Pathways involved in the fixation of CO2 into organic molecules." .
+:GroundwaterEcosystem rdfs:comment "Ecosystems that exist in groundwater environments." .
+:Enzyme rdfs:comment "Proteins that act as catalysts to accelerate chemical reactions." .
+:Rubisco rdfs:comment "An enzyme involved in the first major step of carbon fixation." .
+:CO2Fixation rdfs:comment "The process of converting inorganic CO2 into organic compounds." .
+:Organism rdfs:comment "Any living entity, such as animals, plants, fungi, or microorganisms." .
+:NitrogenCycle rdfs:comment "The biogeochemical cycle that describes the transformations of nitrogen and nitrogen-containing compounds in nature." .
+:AmmoniaOxidation rdfs:comment "The process of converting ammonia into nitrite, an essential step in the nitrogen cycle." .
+:Microorganism rdfs:comment "Microscopic organisms, such as bacteria, archaea, and fungi." .
+:Denitrification rdfs:comment "The microbial process of reducing nitrate and nitrite to gaseous forms of nitrogen." .
+:EnvironmentalFactor rdfs:comment "Any biotic or abiotic component that influences living organisms." .
+:NitrogenLeaching rdfs:comment "The process by which nitrogen in the soil is dissolved and carried away by water, typically into groundwater." .
+:ForestEcosystem rdfs:comment "Ecosystems that are dominated by trees and other vegetation." .
+:ForestedArea rdfs:comment "Regions covered predominantly by forest." .
+:NonForestedArea rdfs:comment "Regions not predominantly covered by forest." .
+:Species rdfs:comment "Groups of organisms that can interbreed and produce fertile offspring." .
+:AmmoniaOxidizer rdfs:comment "Microorganisms that convert ammonia to nitrite in the nitrogen cycle." .
+:Process rdfs:comment "A series of actions or steps taken to achieve a particular end." .
+:GroundwaterQuality rdfs:comment "The condition or purity of groundwater." .
+:ForestHealth rdfs:comment "The overall condition and functionality of a forest ecosystem." .
+:CarbonIsotope rdfs:comment "Atoms of carbon with the same number of protons but different numbers of neutrons." .
+:CarbonCycling rdfs:comment "The biogeochemical cycle in which carbon is exchanged among the biosphere, pedosphere, geosphere, hydrosphere, and atmosphere." .
+:IsotopeRatio rdfs:comment "The ratio of the abundance of one isotope to another." .
+:DenitrificationProcess rdfs:comment "Processes involved in the reduction of nitrate to gaseous forms of nitrogen." .
+:DenitrificationStep rdfs:comment "Specific stages in the denitrification process." .
+:TraceGasProduction rdfs:comment "The production of trace gases, such as methane and nitrous oxide, through biological or chemical processes." .
+:BeechForest rdfs:comment "Forests predominantly composed of beech trees." .
+:ForestManagementPractice rdfs:comment "Methods used in managing and conserving forest resources." .
+:TraceGas rdfs:comment "Gases that are present in the atmosphere at low concentrations." .
+:NitrogenCyclingProcess rdfs:comment "Processes involved in the transformation and movement of nitrogen through the environment." .
+:TraceGasConsumption rdfs:comment "The consumption of trace gases by biological or chemical processes." .
+:TraceGasEmission rdfs:comment "The release of trace gases into the atmosphere." .
+:GroundwaterCondition rdfs:comment "The state or quality of groundwater." .
+:EnergyMetabolism rdfs:comment "Processes involved in the production, use, and transfer of energy in living organisms." .
+:MetabolicPathway rdfs:comment "A series of chemical reactions occurring within a cell." .
+:EnergyMetabolismProcess rdfs:comment "Processes that manage the energy balance in organisms." .
+:BiogeochemicalCycle rdfs:comment "Cycles that involve the transfer of chemical elements between living (biotic) and non-living (abiotic) components of the environment." .
+:FixationPathway rdfs:comment "Pathways involved in the conversion of inorganic compounds into organic molecules." .
+:FixationProcess rdfs:comment "Processes involved in the conversion of inorganic compounds into organic molecules." .
+
+# Object Properties
+:pathwayIn rdfs:comment "Indicates the ecosystem in which a CO2 fixation pathway operates." .
+:hasPathway rdfs:comment "Indicates the CO2 fixation pathway present in an ecosystem." .
+:involvedIn rdfs:comment "Indicates the process an enzyme is involved in." .
+:isInvolvedBy rdfs:comment "Indicates the enzyme involved in a process." .
+:contributesTo rdfs:comment "Indicates what a particular element or process contributes to." .
+:hasContribution rdfs:comment "Indicates what contributes to a particular element or process." .
+:utilizes rdfs:comment "Indicates what pathway an organism utilizes." .
+:isUtilizedBy rdfs:comment "Indicates the organism that utilizes a pathway." .
+:processIn rdfs:comment "Indicates the ecosystem where a nitrogen cycle process occurs." .
+:hasProcess rdfs:comment "Indicates the nitrogen cycle process occurring in an ecosystem." .
+:carriedOutIn rdfs:comment "Indicates where an ammonia oxidation process is carried out." .
+:carriesOut rdfs:comment "Indicates the process carried out in an ecosystem." .
+:responsibleFor rdfs:comment "Indicates what a microorganism is responsible for." .
+:isResponsibilityOf rdfs:comment "Indicates the microorganism responsible for a process." .
+:influences rdfs:comment "Indicates what an environmental factor influences." .
+:isInfluencedBy rdfs:comment "Indicates what influences an environmental factor." .
+:differsBetween rdfs:comment "Indicates the ecosystems or conditions that a process differs between." .
+:isDifferedBy rdfs:comment "Indicates the process that differs between ecosystems or conditions." .
+:identifiedAs rdfs:comment "Indicates the species identified as an ammonia oxidizer." .
+:identifies rdfs:comment "Indicates the ammonia oxidizer identified as a species." .
+:roleIn rdfs:comment "Indicates the role an entity plays in a process." .
+:hasRole rdfs:comment "Indicates the entity that plays a role in a process." .
+:impacts rdfs:comment "Indicates what an entity impacts." .
+:isImpactedBy rdfs:comment "Indicates what impacts an entity." .
+:contributesTo rdfs:comment "Indicates the contribution of a process to a larger process." .
+:isContributionOf rdfs:comment "Indicates the larger process that a process contributes to." .
+:affects rdfs:comment "Indicates what an entity affects." .
+:isAffectedBy rdfs:comment "Indicates what affects an entity." .
+:implicationsFor rdfs:comment "Indicates the implications for an entity." .
+:hasImplication rdfs:comment "Indicates the entity that has implications for another." .
+:usedToStudy rdfs:comment "Indicates what isotopes are used to study." .
+:isStudiedBy rdfs:comment "Indicates the isotopes used to study an entity." .
+:providesInfoOn rdfs:comment "Indicates the information provided by an isotope." .
+:isInfoProvidedBy rdfs:comment "Indicates the isotope that provides information." .
+:variesAcross rdfs:comment "Indicates the ecosystems where isotope ratios vary." .
+:hasVariation rdfs:comment "Indicates the variation of isotope ratios across ecosystems." .
+:hasStep rdfs:comment "Indicates the steps in a denitrification process." .
+:isStepOf rdfs:comment "Indicates the denitrification process that a step is part of." .
+:primarilyResponsibleFor rdfs:comment "Indicates what a microorganism is primarily responsible for." .
+:hasPrimaryResponsibility rdfs:comment "Indicates the microorganism with primary responsibility for a process." .
+:influences rdfs:comment "Indicates what a denitrification process influences." .
+:isInfluencedBy rdfs:comment "Indicates what influences a denitrification process." .
+:playsRoleIn rdfs:comment "Indicates the role a forest ecosystem plays in a process." .
+:hasRolePlayedBy rdfs:comment "Indicates the forest ecosystem that plays a role in a process." .
+:occursIn rdfs:comment "Indicates where nitrogen leaching occurs." .
+:hasOccurrence rdfs:comment "Indicates the occurrence of nitrogen leaching in an ecosystem." .
+:effectsOn rdfs:comment "Indicates the effects of a forest management practice." .
+:isEffectOf rdfs:comment "Indicates the forest management practice that has an effect on an entity." .
+:producedDuring rdfs:comment "Indicates what process a trace gas is produced during." .
+:hasProduction rdfs:comment "Indicates the trace gas produced during a process." .
+:involvedIn rdfs:comment "Indicates the process an organism is involved in." .
+:isInvolvedBy rdfs:comment "Indicates the organism involved in a process." .
+:variesWith rdfs:comment "Indicates the conditions with which trace gas emissions vary." .
+:hasVariationWith rdfs:comment "Indicates the trace gas emissions that vary with conditions." .
+:linkedTo rdfs:comment "Indicates what energy metabolism is linked to." .
+:isLinkOf rdfs:comment "Indicates the energy metabolism linked to an entity." .
+:relatedTo rdfs:comment "Indicates what an entity is related to." .
+:isRelatedTo rdfs:comment "Indicates the entities related to an entity." .
+:impactsOn rdfs:comment "Indicates the impacts of an environmental change." .
+:isImpactedBy rdfs:comment "Indicates the environmental change impacting an entity." .
+
+### fine ###
+
+### ImproveHierarchy ###
+
+# Hierarchical Structure for CO2 Fixation Pathway
+:CO2FixationPathway rdf:type owl:Class ;
+    rdfs:subClassOf :FixationPathway .
+
+:CalvinCycle rdf:type owl:Class ;
+    rdfs:subClassOf :CO2FixationPathway .
+
+:C4Pathway rdf:type owl:Class ;
+    rdfs:subClassOf :CO2FixationPathway .
+
+:CAMPathway rdf:type owl:Class ;
+    rdfs:subClassOf :CO2FixationPathway .
+
+# Hierarchical Structure for Nitrogen Cycle
+:NitrogenCycle rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalCycle .
+
+:NitrogenFixation rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle .
+
+:Nitrification rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle .
+
+:AmmoniaOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :Nitrification .
+
+:NitriteOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :Nitrification .
+
+:Denitrification rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle .
+
+:Anammox rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle .
+
+# Hierarchical Structure for Forest Ecosystem
+:ForestEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :Ecosystem .
+
+:BeechForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem .
+
+:TropicalForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem .
+
+:TemperateForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem .
+
+# Hierarchical Structure for Trace Gases
+:TraceGas rdf:type owl:Class ;
+    rdfs:subClassOf :Gas .
+
+:Methane rdf:type owl:Class ;
+    rdfs:subClassOf :TraceGas .
+
+:NitrousOxide rdf:type owl:Class ;
+    rdfs:subClassOf :TraceGas .
+
+:CarbonDioxide rdf:type owl:Class ;
+    rdfs:subClassOf :TraceGas .
+
+# Hierarchical Structure for Microorganisms
+:Microorganism rdf:type owl:Class ;
+    rdfs:subClassOf :Organism .
+
+:AmmoniaOxidizer rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism .
+
+:NitriteOxidizer rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism .
+
+:DenitrifyingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism .
+
+:Methanogens rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism .
+
+# Detailed Relationships
+:pathwayIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the ecosystem in which a CO2 fixation pathway operates." .
+
+:hasPathway rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates the CO2 fixation pathway present in an ecosystem." .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Enzyme ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates the process an enzyme is involved in." .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :Enzyme ;
+    rdfs:comment "Indicates the enzyme involved in a process." .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Rubisco ;
+    rdfs:range :CO2Fixation ;
+    rdfs:comment "Indicates what a particular element or process contributes to." .
+
+:hasContribution rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2Fixation ;
+    rdfs:range :Rubisco ;
+    rdfs:comment "Indicates what contributes to a particular element or process." .
+
+:utilizes rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates what pathway an organism utilizes." .
+
+:isUtilizedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :Organism ;
+    rdfs:comment "Indicates the organism that utilizes a pathway." .
+
+:processIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycle ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the ecosystem where a nitrogen cycle process occurs." .
+
+:hasProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :NitrogenCycle ;
+    rdfs:comment "Indicates the nitrogen cycle process occurring in an ecosystem." .
+
+:carriedOutIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidation ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates where an ammonia oxidation process is carried out." .
+
+:carriesOut rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :AmmoniaOxidation ;
+    rdfs:comment "Indicates the process carried out in an ecosystem." .
+
+:responsibleFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification ;
+    rdfs:comment "Indicates what a microorganism is responsible for." .
+
+:isResponsibilityOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :Microorganism ;
+    rdfs:comment "Indicates the microorganism responsible for a process." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates what an environmental factor influences." .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :EnvironmentalFactor ;
+    rdfs:comment "Indicates what influences an environmental factor." .
+
+:differsBetween rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :ForestedArea, :NonForestedArea ;
+    rdfs:comment "Indicates the ecosystems or conditions that a process differs between." .
+
+:isDifferedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :ForestedArea, :NonForestedArea ;
+    rdfs:range :NitrogenCycling ;
+    rdfs:comment "Indicates the process that differs between ecosystems or conditions." .
+
+:identifiedAs rdf:type owl:ObjectProperty ;
+    rdfs:domain :Species ;
+    rdfs:range :AmmoniaOxidizer ;
+    rdfs:comment "Indicates the species identified as an ammonia oxidizer." .
+
+:identifies rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :Species ;
+    rdfs:comment "Indicates the ammonia oxidizer identified as a species." .
+
+:roleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenCyclingProcess ;
+    rdfs:comment "Indicates the role an entity plays in a process." .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :AmmoniaOxidizer ;
+    rdfs:comment "Indicates the entity that plays a role in a process." .
+
+:impacts rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates what an entity impacts." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :AmmoniaOxidizer ;
+    rdfs:comment "Indicates what impacts an entity." .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Process ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the contribution of a process to a larger process." .
+
+:isContributionOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :Process ;
+    rdfs:comment "Indicates the larger process that a process contributes to." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :GroundwaterQuality ;
+    rdfs:comment "Indicates what an entity affects." .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterQuality ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates what affects an entity." .
+
+:implicationsFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestHealth ;
+    rdfs:comment "Indicates the implications for an entity." .
+
+:hasImplication rdf:type owl:ObjectProperty ;
+    rdfs:domain :ForestHealth ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the entity that has implications for another." .
+
+:usedToStudy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonIsotope ;
+    rdfs:range :CarbonCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates what isotopes are used to study." .
+
+:isStudiedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycling, :GroundwaterEcosystem ;
+    rdfs:range :CarbonIsotope ;
+    rdfs:comment "Indicates the isotopes used to study an entity." .
+
+:providesInfoOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenIsotope ;
+    rdfs:range :NitrogenCycling ;
+    rdfs:comment "Indicates the information provided by an isotope." .
+
+:isInfoProvidedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :NitrogenIsotope ;
+    rdfs:comment "Indicates the isotope that provides information." .
+
+:variesAcross rdf:type owl:ObjectProperty ;
+    rdfs:domain :IsotopeRatio ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the ecosystems where isotope ratios vary." .
+
+:hasVariation rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :IsotopeRatio ;
+    rdfs:comment "Indicates the variation of isotope ratios across ecosystems." .
+
+:hasStep rdf:type owl:ObjectProperty ;
+    rdfs:domain :DenitrificationProcess ;
+    rdfs:range :DenitrificationStep ;
+    rdfs:comment "Indicates the steps in a denitrification process." .
+
+:isStepOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :DenitrificationStep ;
+    rdfs:range :DenitrificationProcess ;
+    rdfs:comment "Indicates the denitrification process that a step is part of." .
+
+:primarilyResponsibleFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification ;
+    rdfs:comment "Indicates what a microorganism is primarily responsible for." .
+
+:hasPrimaryResponsibility rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :Microorganism ;
+    rdfs:comment "Indicates the microorganism with primary responsibility for a process." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :TraceGasProduction ;
+    rdfs:comment "Indicates what a denitrification process influences." .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGasProduction ;
+    rdfs:range :Denitrification ;
+    rdfs:comment "Indicates what influences a denitrification process." .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the role a forest ecosystem plays in a process." .
+
+:hasRolePlayedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :BeechForest ;
+    rdfs:comment "Indicates the forest ecosystem that plays a role in a process." .
+
+:occursIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :BeechForest ;
+    rdfs:comment "Indicates where nitrogen leaching occurs." .
+
+:hasOccurrence rdf:type owl:ObjectProperty ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the occurrence of nitrogen leaching in an ecosystem." .
+
+:effectsOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :ForestManagementPractice ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the effects of a forest management practice." .
+
+:isEffectOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestManagementPractice ;
+    rdfs:comment "Indicates the forest management practice that has an effect on an entity." .
+
+:producedDuring rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGas ;
+    rdfs:range :NitrogenCyclingProcess ;
+    rdfs:comment "Indicates what process a trace gas is produced during." .
+
+:hasProduction rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :TraceGas ;
+    rdfs:comment "Indicates the trace gas produced during a process." .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :TraceGasProduction, :TraceGasConsumption ;
+    rdfs:comment "Indicates the process an organism is involved in." .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGasProduction, :TraceGasConsumption ;
+    rdfs:range :Organism ;
+    rdfs:comment "Indicates the organism involved in a process." .
+
+:variesWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGasEmission ;
+    rdfs:range :GroundwaterCondition ;
+    rdfs:comment "Indicates the conditions with which trace gas emissions vary." .
+
+:hasVariationWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterCondition ;
+    rdfs:range :TraceGasEmission ;
+    rdfs:comment "Indicates the trace gas emissions that vary with conditions." .
+
+:linkedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnergyMetabolism ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates what energy metabolism is linked to." .
+
+:isLinkOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :EnergyMetabolism ;
+    rdfs:comment "Indicates the energy metabolism linked to an entity." .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :NitrogenCyclingProcess ;
+    rdfs:comment "Indicates what an entity is related to." .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates the entities related to an entity." .
+
+:impactsOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalChange ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the impacts of an environmental change." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :EnvironmentalChange ;
+    rdfs:comment "Indicates the environmental change impacting an entity." .
+
+### fine ###
+### ImproveHierarchy ###
+
+# Hierarchical Structure for CO2 Fixation Pathway
+:CO2FixationPathway rdf:type owl:Class ;
+    rdfs:subClassOf :FixationPathway ;
+    rdfs:comment "Pathways involved in the fixation of CO2 into organic molecules.".
+
+:CalvinCycle rdf:type owl:Class ;
+    rdfs:subClassOf :CO2FixationPathway ;
+    rdfs:comment "A CO2 fixation pathway where CO2 is converted into glucose via the Calvin-Benson cycle.".
+
+:C4Pathway rdf:type owl:Class ;
+    rdfs:subClassOf :CO2FixationPathway ;
+    rdfs:comment "A CO2 fixation pathway found in some plants where CO2 is first fixed into a four-carbon compound.".
+
+:CAMPathway rdf:type owl:Class ;
+    rdfs:subClassOf :CO2FixationPathway ;
+    rdfs:comment "A CO2 fixation pathway found in some plants where CO2 is fixed at night and stored as a four-carbon acid.".
+
+# Hierarchical Structure for Nitrogen Cycle
+:NitrogenCycle rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalCycle ;
+    rdfs:comment "The biogeochemical cycle that describes the transformations of nitrogen and nitrogen-containing compounds in nature.".
+
+:NitrogenFixation rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle ;
+    rdfs:comment "The process by which nitrogen gas from the atmosphere is converted into ammonia by microorganisms.".
+
+:Nitrification rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle ;
+    rdfs:comment "The process by which ammonia is converted to nitrate ions (NO3−).".
+
+:AmmoniaOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :Nitrification ;
+    rdfs:comment "The first step in nitrification where ammonia is oxidized to nitrite.".
+
+:NitriteOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :Nitrification ;
+    rdfs:comment "The second step in nitrification where nitrite is oxidized to nitrate.".
+
+:Denitrification rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle ;
+    rdfs:comment "The microbial process of reducing nitrate and nitrite to gaseous forms of nitrogen, such as N2O and N2.".
+
+:Anammox rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycle ;
+    rdfs:comment "The anaerobic oxidation of ammonia to nitrogen gas.".
+
+# Hierarchical Structure for Forest Ecosystem
+:ForestEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :Ecosystem ;
+    rdfs:comment "Ecosystems that are dominated by trees and other vegetation.".
+
+:BeechForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem ;
+    rdfs:comment "Forests predominantly composed of beech trees.".
+
+:TropicalForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem ;
+    rdfs:comment "Forests found in tropical regions with high biodiversity and complex structure.".
+
+:TemperateForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem ;
+    rdfs:comment "Forests found in temperate regions, typically with distinct seasons.".
+
+# Hierarchical Structure for Trace Gases
+:TraceGas rdf:type owl:Class ;
+    rdfs:subClassOf :Gas ;
+    rdfs:comment "Gases that are present in the atmosphere at low concentrations.".
+
+:Methane rdf:type owl:Class ;
+    rdfs:subClassOf :TraceGas ;
+    rdfs:comment "A trace gas with the chemical formula CH4, produced by methanogenic bacteria.".
+
+:NitrousOxide rdf:type owl:Class ;
+    rdfs:subClassOf :TraceGas ;
+    rdfs:comment "A trace gas with the chemical formula N2O, produced by microbial processes in soils and water bodies.".
+
+:CarbonDioxide rdf:type owl:Class ;
+    rdfs:subClassOf :TraceGas ;
+    rdfs:comment "A trace gas with the chemical formula CO2, produced by respiration and combustion.".
+
+# Hierarchical Structure for Microorganisms
+:Microorganism rdf:type owl:Class ;
+    rdfs:subClassOf :Organism ;
+    rdfs:comment "Microscopic organisms, such as bacteria, archaea, and fungi.".
+
+:AmmoniaOxidizer rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism ;
+    rdfs:comment "Microorganisms that convert ammonia to nitrite in the nitrogen cycle.".
+
+:NitriteOxidizer rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism ;
+    rdfs:comment "Microorganisms that convert nitrite to nitrate in the nitrogen cycle.".
+
+:DenitrifyingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism ;
+    rdfs:comment "Bacteria that convert nitrate to nitrogen gas in the denitrification process.".
+
+:Methanogens rdf:type owl:Class ;
+    rdfs:subClassOf :Microorganism ;
+    rdfs:comment "Archaea that produce methane as a metabolic byproduct in anoxic conditions.".
+
+# Detailed Relationships
+:pathwayIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the ecosystem in which a CO2 fixation pathway operates." .
+
+:hasPathway rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates the CO2 fixation pathway present in an ecosystem." .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Enzyme ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates the process an enzyme is involved in." .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :Enzyme ;
+    rdfs:comment "Indicates the enzyme involved in a process." .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Rubisco ;
+    rdfs:range :CO2Fixation ;
+    rdfs:comment "Indicates what a particular element or process contributes to." .
+
+:hasContribution rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2Fixation ;
+    rdfs:range :Rubisco ;
+    rdfs:comment "Indicates what contributes to a particular element or process." .
+
+:utilizes rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates what pathway an organism utilizes." .
+
+:isUtilizedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :Organism ;
+    rdfs:comment "Indicates the organism that utilizes a pathway." .
+
+:processIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycle ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the ecosystem where a nitrogen cycle process occurs." .
+
+:hasProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :NitrogenCycle ;
+    rdfs:comment "Indicates the nitrogen cycle process occurring in an ecosystem." .
+
+:carriedOutIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidation ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates where an ammonia oxidation process is carried out." .
+
+:carriesOut rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :AmmoniaOxidation ;
+    rdfs:comment "Indicates the process carried out in an ecosystem." .
+
+:responsibleFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification ;
+    rdfs:comment "Indicates what a microorganism is responsible for." .
+
+:isResponsibilityOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :Microorganism ;
+    rdfs:comment "Indicates the microorganism responsible for a process." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates what an environmental factor influences." .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :EnvironmentalFactor ;
+    rdfs:comment "Indicates what influences an environmental factor." .
+
+:differsBetween rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :ForestedArea, :NonForestedArea ;
+    rdfs:comment "Indicates the ecosystems or conditions that a process differs between." .
+
+:isDifferedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :ForestedArea, :NonForestedArea ;
+    rdfs:range :NitrogenCycling ;
+    rdfs:comment "Indicates the process that differs between ecosystems or conditions." .
+
+:identifiedAs rdf:type owl:ObjectProperty ;
+    rdfs:domain :Species ;
+    rdfs:range
+
+ :AmmoniaOxidizer ;
+    rdfs:comment "Indicates the species identified as an ammonia oxidizer." .
+
+:identifies rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :Species ;
+    rdfs:comment "Indicates the ammonia oxidizer identified as a species." .
+
+:roleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenCyclingProcess ;
+    rdfs:comment "Indicates the role an entity plays in a process." .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :AmmoniaOxidizer ;
+    rdfs:comment "Indicates the entity that plays a role in a process." .
+
+:impacts rdf:type owl:ObjectProperty ;
+    rdfs:domain :AmmoniaOxidizer ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates what an entity impacts." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :AmmoniaOxidizer ;
+    rdfs:comment "Indicates what impacts an entity." .
+
+:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Process ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the contribution of a process to a larger process." .
+
+:isContributionOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :Process ;
+    rdfs:comment "Indicates the larger process that a process contributes to." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :GroundwaterQuality ;
+    rdfs:comment "Indicates what an entity affects." .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterQuality ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates what affects an entity." .
+
+:implicationsFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestHealth ;
+    rdfs:comment "Indicates the implications for an entity." .
+
+:hasImplication rdf:type owl:ObjectProperty ;
+    rdfs:domain :ForestHealth ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the entity that has implications for another." .
+
+:usedToStudy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonIsotope ;
+    rdfs:range :CarbonCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates what isotopes are used to study." .
+
+:isStudiedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycling, :GroundwaterEcosystem ;
+    rdfs:range :CarbonIsotope ;
+    rdfs:comment "Indicates the isotopes used to study an entity." .
+
+:providesInfoOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenIsotope ;
+    rdfs:range :NitrogenCycling ;
+    rdfs:comment "Indicates the information provided by an isotope." .
+
+:isInfoProvidedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling ;
+    rdfs:range :NitrogenIsotope ;
+    rdfs:comment "Indicates the isotope that provides information." .
+
+:variesAcross rdf:type owl:ObjectProperty ;
+    rdfs:domain :IsotopeRatio ;
+    rdfs:range :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the ecosystems where isotope ratios vary." .
+
+:hasVariation rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterEcosystem ;
+    rdfs:range :IsotopeRatio ;
+    rdfs:comment "Indicates the variation of isotope ratios across ecosystems." .
+
+:hasStep rdf:type owl:ObjectProperty ;
+    rdfs:domain :DenitrificationProcess ;
+    rdfs:range :DenitrificationStep ;
+    rdfs:comment "Indicates the steps in a denitrification process." .
+
+:isStepOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :DenitrificationStep ;
+    rdfs:range :DenitrificationProcess ;
+    rdfs:comment "Indicates the denitrification process that a step is part of." .
+
+:primarilyResponsibleFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Microorganism ;
+    rdfs:range :Denitrification ;
+    rdfs:comment "Indicates what a microorganism is primarily responsible for." .
+
+:hasPrimaryResponsibility rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :Microorganism ;
+    rdfs:comment "Indicates the microorganism with primary responsibility for a process." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain :Denitrification ;
+    rdfs:range :TraceGasProduction ;
+    rdfs:comment "Indicates what a denitrification process influences." .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGasProduction ;
+    rdfs:range :Denitrification ;
+    rdfs:comment "Indicates what influences a denitrification process." .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the role a forest ecosystem plays in a process." .
+
+:hasRolePlayedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :BeechForest ;
+    rdfs:comment "Indicates the forest ecosystem that plays a role in a process." .
+
+:occursIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :BeechForest ;
+    rdfs:comment "Indicates where nitrogen leaching occurs." .
+
+:hasOccurrence rdf:type owl:ObjectProperty ;
+    rdfs:domain :BeechForest ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the occurrence of nitrogen leaching in an ecosystem." .
+
+:effectsOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :ForestManagementPractice ;
+    rdfs:range :NitrogenLeaching ;
+    rdfs:comment "Indicates the effects of a forest management practice." .
+
+:isEffectOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenLeaching ;
+    rdfs:range :ForestManagementPractice ;
+    rdfs:comment "Indicates the forest management practice that has an effect on an entity." .
+
+:producedDuring rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGas ;
+    rdfs:range :NitrogenCyclingProcess ;
+    rdfs:comment "Indicates what process a trace gas is produced during." .
+
+:hasProduction rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :TraceGas ;
+    rdfs:comment "Indicates the trace gas produced during a process." .
+
+:involvedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :TraceGasProduction, :TraceGasConsumption ;
+    rdfs:comment "Indicates the process an organism is involved in." .
+
+:isInvolvedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGasProduction, :TraceGasConsumption ;
+    rdfs:range :Organism ;
+    rdfs:comment "Indicates the organism involved in a process." .
+
+:variesWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :TraceGasEmission ;
+    rdfs:range :GroundwaterCondition ;
+    rdfs:comment "Indicates the conditions with which trace gas emissions vary." .
+
+:hasVariationWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :GroundwaterCondition ;
+    rdfs:range :TraceGasEmission ;
+    rdfs:comment "Indicates the trace gas emissions that vary with conditions." .
+
+:linkedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnergyMetabolism ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates what energy metabolism is linked to." .
+
+:isLinkOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :EnergyMetabolism ;
+    rdfs:comment "Indicates the energy metabolism linked to an entity." .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2FixationPathway ;
+    rdfs:range :NitrogenCyclingProcess ;
+    rdfs:comment "Indicates what an entity is related to." .
+
+:isRelatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCyclingProcess ;
+    rdfs:range :CO2FixationPathway ;
+    rdfs:comment "Indicates the entities related to an entity." .
+
+:impactsOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalChange ;
+    rdfs:range :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:comment "Indicates the impacts of an environmental change." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycling, :NitrogenCycling, :GroundwaterEcosystem ;
+    rdfs:range :EnvironmentalChange ;
+    rdfs:comment "Indicates the environmental change impacting an entity." .
+
+### fine ###
+
+
+
+
+
+
+
+
+
+
