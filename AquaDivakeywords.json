@@ -886,5 +886,12 @@
     {
         "keywords": NaN,
         "keyword": "structure"
+    },
+    {
+      
+
+"keywords": ["role", "biological role", "chemical role", "poison", "inhibitor", "acceptor", "acid", "environmental containment"],
+        "keyword": "role"
+
     }
 ]
