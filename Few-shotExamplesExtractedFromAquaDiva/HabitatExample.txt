@@ -306,3 +306,91 @@ Meaningful individuals examples:
     rdfs:label "Aquifer microbiome"@en ;
     obo:IAO_0000115 "The community of microorganisms living within an aquifer."@en .
 
+# Deep Chlorophyll Maximum Layer
+obo:ENVO_01000326 rdf:type owl:Class ;
+    rdfs:label "deep chlorophyll maximum layer"@en ;
+    rdfs:comment "A subsurface layer in a water body, typically an ocean or lake, in which chlorophyll concentrations reach their maximum."@en ;
+    obo:IAO_0000115 "A subsurface layer in a water body, typically an ocean or lake, in which chlorophyll concentrations reach their maximum."@en ;
+    oboInOwl:hasExactSynonym "DCM"@en ;
+    oboInOwl:hasRelatedSynonym "subsurface chlorophyll maximum layer"@en .
+
+# Littoral Zone
+obo:ENVO_01000407 rdf:type owl:Class ;
+    rdfs:label "littoral zone"@en ;
+    rdfs:comment "The part of a sea, lake, or river that is close to the shore."@en ;
+    obo:IAO_0000115 "The littoral zone is the part of a sea, lake, or river that is close to the shore. The adjacency of water has many consequences including the generation of microclimates and impacts on the biology."@en .
+
+# Freshwater Littoral Zone
+obo:ENVO_01000409 rdf:type owl:Class ;
+    rdfs:label "freshwater littoral zone"@en ;
+    rdfs:comment "The littoral zone may form a narrow or broad fringing wetland, with extensive areas of aquatic plants sorted by their tolerance to different water depths."@en ;
+    obo:IAO_0000115 "A freshwater littoral zone is a littoral zone which extends offshore from the shore of a freshwater body of water to the limit of occupancy of rooted plants."@en ;
+    oboInOwl:hasRelatedSynonym "fringing wetland"@en .
+
+# Wet Meadow
+obo:ENVO_01000449 rdf:type owl:Class ;
+    rdfs:label "wet meadow"@en ;
+    rdfs:comment "A type of wetland with soils that are saturated with water for part or all of the growing season."@en ;
+    obo:IAO_0000115 "A wet meadow is a type of wetland with soils that are saturated with water for part or all of the growing season."@en .
+
+# Algal Bloom
+obo:ENVO_2000004 rdf:type owl:Class ;
+    rdfs:label "algal bloom"@en ;
+    rdfs:comment "A feature that arises from a rapid increase or accumulation in the population of algae in an aquatic system."@en ;
+    obo:IAO_0000115 "A feature that arises from a rapid increase or accumulation in the population of algae (typically microscopic) in an aquatic system."@en .
+
+# Mesonephros
+obo:UBERON_0000080 rdf:type owl:Class ;
+    rdfs:label "mesonephros"@en ;
+    rdfs:comment "The second stage of the kidney in vertebrates, serving as the main excretory organ of aquatic vertebrates and a temporary embryonic kidney in higher vertebrates."@en ;
+    obo:IAO_0000115 "The second stage of the kidney. It serves as the main excretory organ of aquatic vertebrates and as a temporary embryonic kidney in higher vertebrates."@en ;
+    oboInOwl:hasExactSynonym "Wolffian body"@en ;
+    oboInOwl:hasExactSynonym "mesonephric kidney"@en ;
+    oboInOwl:hasRelatedSynonym "amphibian adult kidney"@en .
+
+# Intromittent Organ
+obo:UBERON_0008811 rdf:type owl:Class ;
+    rdfs:label "intromittent organ"@en ;
+    rdfs:comment "An external organ specialized to deliver sperm during copulation."@en ;
+    obo:IAO_0000115 "An external organ of a male organism that is specialized to deliver sperm during copulation."@en ;
+    oboInOwl:hasNarrowSynonym "penis"@en ;
+    oboInOwl:hasNarrowSynonym "aedeagus"@en ;
+    oboInOwl:hasRelatedSynonym "copulatory organ"@en .
+
+# Fungus
+obo:C14209 rdf:type owl:Class ;
+    rdfs:label "fungus"@en ;
+    rdfs:comment "A eukaryotic organism that lives as a saprobe or parasite and reproduces either sexually or asexually."@en ;
+    obo:IAO_0000115 "A eukaryotic, heterotrophic organism that lives as a saprobe or parasite, and includes yeasts and molds."@en .
+
+# Plant Part
+obo:C79611 rdf:type owl:Class ;
+    rdfs:label "plant part"@en ;
+    rdfs:comment "Any part of a plant that has not been processed further."@en ;
+    obo:IAO_0000115 "Any part of a plant that has not been processed further."@en .
+
+# Water Body
+obo:ENVO_00000063 rdf:type owl:Class ;
+    rdfs:label "water body"@en ;
+    rdfs:comment "An accumulation of water of varying size."@en ;
+    obo:IAO_0000115 "An accumulation of water of varying size."@en ;
+    oboInOwl:hasExactSynonym "aquatic feature"@en ;
+    oboInOwl:hasExactSynonym "bodies of water"@en ;
+    oboInOwl:hasExactSynonym "waterbody"@en .
+
+# Cold Desert
+obo:ENVO_01000382 rdf:type owl:Class ;
+    rdfs:label "cold desert"@en ;
+    rdfs:comment "A desert which has hot summers and cold, dry winters with temperatures below 0 degrees Celsius."@en ;
+    obo:IAO_0000115 "A cold desert is a desert which has hot summers and cold, dry winters with temperatures below 0 degrees Celsius."@en .
+
+# Marine Eulittoral Zone
+obo:ENVO_01000410 rdf:type owl:Class ;
+    rdfs:label "marine eulittoral zone"@en ;
+    rdfs:comment "The eulittoral zone extends from the spring high tide line to the spring low tide line."@en ;
+    obo:IAO_0000115 "The eulittoral zone extends from the spring high tide line, which is rarely inundated, to the spring low tide line, which is rarely not inundated."@en ;
+    oboInOwl:hasRelatedSynonym "foreshore"@en ;
+    oboInOwl:hasRelatedSynonym "intertidal zone"@en ;
+    oboInOwl:hasRelatedSynonym "midlittoral zone"@en .
+
+
