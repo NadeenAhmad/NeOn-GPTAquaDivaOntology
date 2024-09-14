@@ -1,1 +1,1172 @@
+@prefix : <http://example.org/aquadiva#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Ontology Declaration
+<http://example.org/aquadiva> rdf:type owl:Ontology ;
+    rdfs:label "AquaDiva Ontology" ;
+    rdfs:comment "Ontology for groundwater ecosystems, including microbial communities, geochemistry, and hydrogeology." ;
+    owl:versionInfo "1.0" .
+
+
+
+
+### Classes
+
+# Aquifer
+:aquifer rdf:type owl:Class ;
+    rdfs:label "Aquifer" .
+
+# MicrobialFunctionalGuild
+:MicrobialFunctionalGuild rdf:type owl:Class ;
+    rdfs:label "Microbial Functional Guild" .
+
+# MicrobialCommunity
+:MicrobialCommunity rdf:type owl:Class ;
+    rdfs:label "Microbial Community" .
+
+# AquaticFungi
+:AquaticFungi rdf:type owl:Class ;
+    rdfs:label "Aquatic Fungi" .
+
+# AquaticMicrobes
+:AquaticMicrobes rdf:type owl:Class ;
+    rdfs:label "Aquatic Microbes" .
+
+# KarstAquifer
+:KarstAquifer rdf:type owl:Class ;
+    rdfs:label "Karst Aquifer" ;
+    rdfs:subClassOf :aquifer .
+
+# FracturedRockAquifer
+:FracturedRockAquifer rdf:type owl:Class ;
+    rdfs:label "Fractured Rock Aquifer" ;
+    rdfs:subClassOf :aquifer .
+
+# GeochemicalProcess
+:GeochemicalProcess rdf:type owl:Class ;
+    rdfs:label "Geochemical Process" .
+
+# MicrobialSpecies
+:MicrobialSpecies rdf:type owl:Class ;
+    rdfs:label "Microbial Species" .
+
+# SubsurfaceHabitat
+:SubsurfaceHabitat rdf:type owl:Class ;
+    rdfs:label "Subsurface Habitat" .
+
+# ChemicalComposition
+:ChemicalComposition rdf:type owl:Class ;
+    rdfs:label "Chemical Composition" .
+
+# AbovegroundEnvironment
+:AbovegroundEnvironment rdf:type owl:Class ;
+    rdfs:label "Aboveground Environment" .
+
+# TriassicLimestoneAquifer
+:TriassicLimestoneAquifer rdf:type owl:Class ;
+    rdfs:label "Triassic Limestone Aquifer" ;
+    rdfs:subClassOf :aquifer .
+
+# Hydrochemistry
+:Hydrochemistry rdf:type owl:Class ;
+    rdfs:label "Hydrochemistry" .
+
+# PedologicalSetting
+:PedologicalSetting rdf:type owl:Class ;
+    rdfs:label "Pedological Setting" .
+
+# GroundwaterQuality
+:GroundwaterQuality rdf:type owl:Class ;
+    rdfs:label "Groundwater Quality" .
+
+# AquiferType
+:AquiferType rdf:type owl:Class ;
+    rdfs:label "Aquifer Type" .
+
+# HydrochemicalProperties
+:HydrochemicalProperties rdf:type owl:Class ;
+    rdfs:label "Hydrochemical Properties" .
+
+# AquaticColloid
+:AquaticColloid rdf:type owl:Class ;
+    rdfs:label "Aquatic Colloid" .
+
+# GroundwaterMicrobes
+:GroundwaterMicrobes rdf:type owl:Class ;
+    rdfs:label "Groundwater Microbes" .
+
+# CarbonateDissortation
+:CarbonateDissortation rdf:type owl:Class ;
+    rdfs:label "Carbonate Dissortation" .
+
+# EukaryoticOrganism
+:EukaryoticOrganism rdf:type owl:Class ;
+    rdfs:label "Eukaryotic Organism" .
+
+# MobileOrganicMatter
+:MobileOrganicMatter rdf:type owl:Class ;
+    rdfs:label "Mobile Organic Matter" .
+
+# PhysiochemicalParameters
+:PhysiochemicalParameters rdf:type owl:Class ;
+    rdfs:label "Physiochemical Parameters" .
+
+# Precipitation
+:Precipitation rdf:type owl:Class ;
+    rdfs:label "Precipitation" .
+
+# Snowmelt
+:Snowmelt rdf:type owl:Class ;
+    rdfs:label "Snowmelt" .
+
+# EnvironmentalSetting
+:EnvironmentalSetting rdf:type owl:Class ;
+    rdfs:label "Environmental Setting" .
+
+# StrataContinuity
+:StrataContinuity rdf:type owl:Class ;
+    rdfs:label "Strata Continuity" .
+
+# GroundwaterInfiltrationArea
+:GroundwaterInfiltrationArea rdf:type owl:Class ;
+    rdfs:label "Groundwater Infiltration Area" .
+
+# SubsoilCharacteristic
+:SubsoilCharacteristic rdf:type owl:Class ;
+    rdfs:label "Subsoil Characteristic" .
+
+# MineralOrganicInteraction
+:MineralOrganicInteraction rdf:type owl:Class ;
+    rdfs:label "Mineral-Organic Interaction" .
+
+# MicrobialGuild
+:MicrobialGuild rdf:type owl:Class ;
+    rdfs:label "Microbial Guild" .
+
+# BiogeochemicalCycle
+:BiogeochemicalCycle rdf:type owl:Class ;
+    rdfs:label "Biogeochemical Cycle" .
+
+# VegetationHeterogeneity
+:VegetationHeterogeneity rdf:type owl:Class ;
+    rdfs:label "Vegetation Heterogeneity" .
+
+# Peptide
+:Peptide rdf:type owl:Class ;
+    rdfs:label "Peptide" .
+
+# SamplingMethod
+:SamplingMethod rdf:type owl:Class ;
+    rdfs:label "Sampling Method" .
+
+# OxicZone
+:OxicZone rdf:type owl:Class ;
+    rdfs:label "Oxic Zone" .
+
+# AnoxicZone
+:AnoxicZone rdf:type owl:Class ;
+    rdfs:label "Anoxic Zone" .
+
+# SurfaceChemicalSignal
+:SurfaceChemicalSignal rdf:type owl:Class ;
+    rdfs:label "Surface Chemical Signal" .
+
+# ChemicalSignal
+:ChemicalSignal rdf:type owl:Class ;
+    rdfs:label "Chemical Signal" .
+
+# AquiferMicrobiome
+:AquiferMicrobiome rdf:type owl:Class ;
+    rdfs:label "Aquifer Microbiome" .
+
+# SoilMicrobiome
+:SoilMicrobiome rdf:type owl:Class ;
+    rdfs:label "Soil Microbiome" .
+
+# CrossKingdomInteraction
+:CrossKingdomInteraction rdf:type owl:Class ;
+    rdfs:label "Cross-Kingdom Interaction" .
+
+# Biocolloid
+:Biocolloid rdf:type owl:Class ;
+    rdfs:label "Biocolloid" .
+
+# PristineAquifer
+:PristineAquifer rdf:type owl:Class ;
+    rdfs:label "Pristine Aquifer" ;
+    rdfs:subClassOf :aquifer .
+
+# DOCComposition
+:DOCComposition rdf:type owl:Class ;
+    rdfs:label "Dissolved Organic Carbon Composition" .
+
+# MicrobialMetabolism
+:MicrobialMetabolism rdf:type owl:Class ;
+    rdfs:label "Microbial Metabolism" .
+
+# PoreStructure
+:PoreStructure rdf:type owl:Class ;
+    rdfs:label "Pore Structure" .
+
+# Throughfall
+:Throughfall rdf:type owl:Class ;
+    rdfs:label "Throughfall" .
+
+# MarineMicrobialCommunity
+:MarineMicrobialCommunity rdf:type owl:Class ;
+    rdfs:label "Marine Microbial Community" .
+
+# Substrate
+:Substrate rdf:type owl:Class ;
+    rdfs:label "Substrate" .
+
+# HydraulicProperty
+:HydraulicProperty rdf:type owl:Class ;
+    rdfs:label "Hydraulic Property" .
+
+# MicrobialCommunityDistribution
+:MicrobialCommunityDistribution rdf:type owl:Class ;
+    rdfs:label "Microbial Community Distribution" .
+
+# GroundwaterVelocity
+:GroundwaterVelocity rdf:type owl:Class ;
+    rdfs:label "Groundwater Velocity" .
+
+# UpperAquifer
+:UpperAquifer rdf:type owl:Class ;
+    rdfs:label "Upper Aquifer" ;
+    rdfs:subClassOf :aquifer .
+
+# LowerAquifer
+:LowerAquifer rdf:type owl:Class ;
+    rdfs:label "Lower Aquifer" ;
+    rdfs:subClassOf :aquifer .
+
+# MicrobialCommunityStructure
+:MicrobialCommunityStructure rdf:type owl:Class ;
+    rdfs:label "Microbial Community Structure" .
+
+# PhysicochemicalCondition
+:PhysicochemicalCondition rdf:type owl:Class ;
+    rdfs:label "Physicochemical Condition" .
+
+# EnvironmentalContamination
+:EnvironmentalContamination rdf:type owl:Class ;
+    rdfs:label "Environmental Contamination" .
+
+# ContaminantTransportPathway
+:ContaminantTransportPathway rdf:type owl:Class ;
+    rdfs:label "Contaminant Transport Pathway" .
+
+# AgriculturalRunoff
+:AgriculturalRunoff rdf:type owl:Class ;
+    rdfs:label "Agricultural Runoff" .
+
+# GroundwaterContamination
+:GroundwaterContamination rdf:type owl:Class ;
+    rdfs:label "Groundwater Contamination" .
+
+# AquiferVulnerability
+:AquiferVulnerability rdf:type owl:Class ;
+    rdfs:label "Aquifer Vulnerability" .
+
+# ClimaticParameter
+:ClimaticParameter rdf:type owl:Class ;
+    rdfs:label "Climatic Parameter" .
+
+# RechargeRate
+:RechargeRate rdf:type owl:Class ;
+    rdfs:label "Recharge Rate" .
+
+# ExtremeWeatherEvent
+:ExtremeWeatherEvent rdf:type owl:Class ;
+    rdfs:label "Extreme Weather Event" .
+
+# GroundwaterBalance
+:GroundwaterBalance rdf:type owl:Class ;
+    rdfs:label "Groundwater Balance" .
+
+### Properties
+
+# Object Properties
+:hasDominantFunctionalGuild rdf:type owl:ObjectProperty ;
+    rdfs:domain :aquifer ;
+    rdfs:range :MicrobialFunctionalGuild .
+
+:presentIn rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :aquifer .
+
+:contributeTo rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :GeochemicalProcess .
+
+:hasHabitatDistribution rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialSpecies ;
+    rdfs:range :aquifer .
+
+:inAquiferWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :aquifer ;
+    rdfs:range :ChemicalComposition .
+
+:comparedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :AbovegroundEnvironment .
+
+:variesBetween rdf:type owl:ObjectProperty ;
+    rdfs:domain :Hydrochemistry ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:interactsWith rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:foundIn rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :SubsurfaceHabitat .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:affectsBehaviorOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonateDissortation ;
+    rdfs:range :EukaryoticOrganism .
+
+:changesWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range :AquiferSupply .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Biocolloid ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+# Other object properties are defined similarly, linking entities as described in the triples above.
+
+
+### Inverse Object Properties
+
+:isDominantFunctionalGuildOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasDominantFunctionalGuild ;
+    rdfs:domain :MicrobialFunctionalGuild ;
+    rdfs:range :aquifer .
+
+:isPresentIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :presentIn ;
+    rdfs:domain :aquifer ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:isContributedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :contributeTo ;
+    rdfs:domain :GeochemicalProcess ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:isHabitatDistributionFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasHabitatDistribution ;
+    rdfs:domain :aquifer ;
+    rdfs:range :MicrobialSpecies .
+
+:hasAquiferWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :inAquiferWith ;
+    rdfs:domain :ChemicalComposition ;
+    rdfs:range :aquifer .
+
+:isComparedTo rdf:type owl:ObjectProperty ;
+    owl:inverseOf :comparedTo ;
+    rdfs:domain :AbovegroundEnvironment ;
+    rdfs:range :MicrobialCommunity .
+
+:variedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :variesBetween ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :Hydrochemistry .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :affects ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:hasInteractionWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf :interactsWith ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:isFoundIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :foundIn ;
+    rdfs:domain :SubsurfaceHabitat ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :influences ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:isBehaviorAffectedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :affectsBehaviorOf ;
+    rdfs:domain :EukaryoticOrganism ;
+    rdfs:range :CarbonateDissortation .
+
+:hasChangedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :changesWith ;
+    rdfs:domain :AquiferSupply ;
+    rdfs:range :PhysiochemicalParameters .
+
+:isRoleOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :playsRoleIn ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :Biocolloid .
+
+:isDominatedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :dominatesIn ;
+    rdfs:domain :PristineAquifer ;
+    rdfs:range :BiogeochemicalProcess .
+
+:isInstructedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :associatedWith ;
+    rdfs:domain :SubsurfaceEcosystem ;
+    rdfs:range :Peptide .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasPart ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :impacts ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    owl:inverseOf :maintains ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :GroundwaterQuality .
+
+:isUsedFor rdf:type owl:ObjectProperty ;
+    owl:inverseOf :usesMethod ;
+    rdfs:domain :GroundwaterProtection ;
+    rdfs:range :SamplingMethod .
+
+:hasComparison rdf:type owl:ObjectProperty ;
+    owl:inverseOf :comparedTo ;
+    rdfs:domain :SamplingMethod ;
+    rdfs:range :EnvironmentalStudy .
+
+:isModeledAfter rdf:type owl:ObjectProperty ;
+    owl:inverseOf :observedBy ;
+    rdfs:domain :MicrobialBiosample ;
+    rdfs:range :GroundwaterMicroorganism .
+
+
+### Reflexive Object Properties
+
+:isSimilarTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Similar To" ;
+    rdfs:comment "A reflexive property indicating an entity is similar to itself." .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Part Of" ;
+    rdfs:comment "A reflexive property indicating an entity is part of itself in some contexts." .
+
+:interactsWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "interacts With" ;
+    rdfs:comment "A reflexive property indicating an entity interacts with itself in some processes." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "affects" ;
+    rdfs:comment "A reflexive property indicating an entity can affect itself." .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Influenced By" ;
+    rdfs:comment "A reflexive property indicating an entity can be influenced by itself." .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "has Role" ;
+    rdfs:comment "A reflexive property indicating an entity has a role within itself." .
+
+:hasPart rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "has Part" ;
+    rdfs:comment "A reflexive property indicating an entity is composed of parts of itself." .
+
+:associatedWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "associated With" ;
+    rdfs:comment "A reflexive property indicating an entity is associated with itself in some contexts." .
+
+:isModeledAfter rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Modeled After" ;
+    rdfs:comment "A reflexive property indicating an entity can model itself." .
+
+:dominatesIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "dominates In" ;
+    rdfs:comment "A reflexive property indicating an entity dominates itself within some context." .
+
+:maintains rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "maintains" ;
+    rdfs:comment "A reflexive property indicating an entity maintains itself." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:ReflexiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Impacted By" ;
+    rdfs:comment "A reflexive property indicating an entity is impacted by itself." .
+### Symmetric Object Properties
+
+:isSimilarTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Similar To" ;
+    rdfs:comment "A symmetric property indicating two entities are similar to each other." .
+
+:interactsWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "interacts With" ;
+    rdfs:comment "A symmetric property indicating two entities interact with each other." .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Part Of" ;
+    rdfs:comment "A symmetric property indicating two entities are parts of each other in some contexts." .
+
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Influenced By" ;
+    rdfs:comment "A symmetric property indicating two entities influence each other." .
+
+:associatedWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "associated With" ;
+    rdfs:comment "A symmetric property indicating two entities are associated with each other." .
+
+:isModeledAfter rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Modeled After" ;
+    rdfs:comment "A symmetric property indicating two entities model each other." .
+
+:isComparedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Compared To" ;
+    rdfs:comment "A symmetric property indicating two entities are compared to each other." .
+
+:hasInteractionWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:SymmetricProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "has Interaction With" ;
+    rdfs:comment "A symmetric property indicating two entities interact with each other." .
+
+### Functional Object Properties
+
+:hasDominantFunctionalGuild rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :aquifer ;
+    rdfs:range :MicrobialFunctionalGuild ;
+    rdfs:label "has Dominant Functional Guild" ;
+    rdfs:comment "A functional property indicating an aquifer has one dominant microbial functional guild." .
+
+:inAquiferWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :aquifer ;
+    rdfs:range :ChemicalComposition ;
+    rdfs:label "in Aquifer With" ;
+    rdfs:comment "A functional property indicating an aquifer can have only one chemical composition at a given time." .
+
+:hasHabitatDistribution rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :MicrobialSpecies ;
+    rdfs:range :aquifer ;
+    rdfs:label "has Habitat Distribution" ;
+    rdfs:comment "A functional property indicating that a microbial species can have only one habitat distribution in an aquifer." .
+
+:isPresentIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :aquifer ;
+    rdfs:label "is Present In" ;
+    rdfs:comment "A functional property indicating that a given microbe or fungi can be present in only one aquifer at a given time." .
+
+:hasAquiferWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :ChemicalComposition ;
+    rdfs:range :aquifer ;
+    rdfs:label "has Aquifer With" ;
+    rdfs:comment "A functional property indicating that a specific chemical composition corresponds to a single aquifer." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "affects" ;
+    rdfs:comment "A functional property indicating that an entity can affect only one other entity." .
+
+:isContributedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :GeochemicalProcess ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Contributed By" ;
+    rdfs:comment "A functional property indicating that a geochemical process is contributed by one microbial species at a given time." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Impacted By" ;
+    rdfs:comment "A functional property indicating that an entity can be impacted by only one specific entity in a given context." .
+
+:associatedWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "associated With" ;
+    rdfs:comment "A functional property indicating that an entity is associated with only one other entity in a specific context." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "influences" ;
+    rdfs:comment "A functional property indicating that an entity can influence only one specific entity in a given context." .
+
+:isModeledAfter rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Modeled After" ;
+    rdfs:comment "A functional property indicating that an entity can be modeled after only one other entity." .
+
+:dominatesIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :PristineAquifer ;
+    rdfs:label "dominates In" ;
+    rdfs:comment "A functional property indicating that a biogeochemical process dominates in only one pristine aquifer." .
+
+:maintains rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :GroundwaterQuality ;
+    rdfs:label "maintains" ;
+    rdfs:comment "A functional property indicating that a specific entity can maintain only one aspect of groundwater quality." .
+
+:isComparedTo rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Compared To" ;
+    rdfs:comment "A functional property indicating that an entity can only be compared to one specific entity." .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "has Role" ;
+    rdfs:comment "A functional property indicating that an entity has a single role in a given context." .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :Biocolloid ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "plays Role In" ;
+    rdfs:comment "A functional property indicating that a biocolloid plays a role in only one entity." .
+
+### Transitive Object Properties
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Part Of" ;
+    rdfs:comment "A transitive property indicating that if entity A is part of entity B, and B is part of entity C, then A is also part of C." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "affects" ;
+    rdfs:comment "A transitive property indicating that if entity A affects entity B, and B affects entity C, then A also affects C." .
+
+:isImpactedBy rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Impacted By" ;
+    rdfs:comment "A transitive property indicating that if entity A is impacted by entity B, and B is impacted by entity C, then A is also impacted by C." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "influences" ;
+    rdfs:comment "A transitive property indicating that if entity A influences entity B, and B influences entity C, then A also influences C." .
+
+:hasPart rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "has Part" ;
+    rdfs:comment "A transitive property indicating that if entity A has part B, and B has part C, then A also has part C." .
+
+:associatedWith rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "associated With" ;
+    rdfs:comment "A transitive property indicating that if entity A is associated with entity B, and B is associated with entity C, then A is also associated with C." .
+
+:isModeledAfter rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range [ rdf:type owl:Class ] ;
+    rdfs:label "is Modeled After" ;
+    rdfs:comment "A transitive property indicating that if entity A is modeled after entity B, and B is modeled after entity C, then A is also modeled after C." .
+
+:dominatesIn rdf:type owl:ObjectProperty ;
+    rdf:type owl:TransitiveProperty ;
+    rdfs:domain [ rdf:type owl:Class ] ;
+    rdfs:range :PristineAquifer ;
+    rdfs:label "dominates In" ;
+    rdfs:comment "A transitive property indicating that if a process dominates in aquifer B, and B dominates in aquifer C, then the process also dominates in C." .
+
+### Data Properties
+
+:hasAquiferID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :aquifer ;
+    rdfs:range xsd:string ;
+    rdfs:label "has Aquifer ID" ;
+    rdfs:comment "A data property that assigns a unique identifier to each aquifer." .
+
+:hasChemicalConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ChemicalComposition ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Chemical Concentration" ;
+    rdfs:comment "A data property that gives the concentration of chemicals in an aquifer." .
+
+:hasPHValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range xsd:float ;
+    rdfs:label "has pH Value" ;
+    rdfs:comment "A data property that assigns the pH value of groundwater samples." .
+
+:hasOxygenContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Oxygen Content" ;
+    rdfs:comment "A data property representing the oxygen content in groundwater." .
+
+:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Temperature" ;
+    rdfs:comment "A data property representing the temperature of groundwater." .
+
+:hasConductivity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Conductivity" ;
+    rdfs:comment "A data property that provides the electric conductivity of groundwater." .
+
+:hasSampleID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SamplingMethod ;
+    rdfs:range xsd:string ;
+    rdfs:label "has Sample ID" ;
+    rdfs:comment "A data property that assigns a unique identifier to a groundwater sample." .
+
+:hasSamplingDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SamplingMethod ;
+    rdfs:range xsd:date ;
+    rdfs:label "has Sampling Date" ;
+    rdfs:comment "A data property that represents the date when a groundwater sample was taken." .
+
+:hasBiodiversityIndex rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MicrobialDiversity ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Biodiversity Index" ;
+    rdfs:comment "A data property that quantifies the biodiversity index of a microbial community in an aquifer." .
+
+:hasRechargeRateValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RechargeRate ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Recharge Rate Value" ;
+    rdfs:comment "A data property that provides the rate of groundwater recharge." .
+
+:hasPrecipitationValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Precipitation ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Precipitation Value" ;
+    rdfs:comment "A data property representing the amount of precipitation in a given time period." .
+
+:hasGroundwaterVelocityValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :GroundwaterVelocity ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Groundwater Velocity Value" ;
+    rdfs:comment "A data property representing the velocity of groundwater flow." .
+
+:hasDOCConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain :DOCComposition ;
+    rdfs:range xsd:float ;
+    rdfs:label "has DOC Concentration" ;
+    rdfs:comment "A data property that represents the concentration of dissolved organic carbon in groundwater." .
+
+:hasDOValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Dissolved Oxygen Value" ;
+    rdfs:comment "A data property representing the concentration of dissolved oxygen in groundwater." .
+
+:hasSamplingDepth rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SamplingMethod ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Sampling Depth" ;
+    rdfs:comment "A data property representing the depth at which a groundwater sample was taken." .
+
+:hasCellCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has Cell Count" ;
+    rdfs:comment "A data property that quantifies the number of microbial cells in a given sample." .
+
+:hasCarbonIsotopeRatio rdf:type owl:DatatypeProperty ;
+    rdfs:domain :GeochemicalProcess ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Carbon Isotope Ratio" ;
+    rdfs:comment "A data property that provides the ratio of carbon isotopes in a sample." .
+
+:hasConductivityValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PhysiochemicalParameters ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Conductivity Value" ;
+    rdfs:comment "A data property that provides the electric conductivity of groundwater." .
+
+:hasGroundwaterContaminationLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain :GroundwaterContamination ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Groundwater Contamination Level" ;
+    rdfs:comment "A data property representing the contamination level of a groundwater sample." .
+
+:hasPrecipitationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Precipitation ;
+    rdfs:range xsd:date ;
+    rdfs:label "has Precipitation Date" ;
+    rdfs:comment "A data property that represents the date of a precipitation event." .
+
+:hasNitrogenContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Nitrogen Content" ;
+    rdfs:comment "A data property representing the nitrogen content in microbial communities." .
+
+:hasDenitrificationRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :GeochemicalProcess ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Denitrification Rate" ;
+    rdfs:comment "A data property that represents the rate of denitrification in an aquifer." .
+
+:hasCommunityDiversityIndex rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MicrobialCommunityStructure ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Community Diversity Index" ;
+    rdfs:comment "A data property representing the diversity index of a microbial community structure." .
+
+:hasSamplingTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SamplingMethod ;
+    rdfs:range xsd:float ;
+    rdfs:label "has Sampling Temperature" ;
+    rdfs:comment "A data property representing the temperature at which the groundwater sample was taken." .
+
+:hasMicrobialCommunityID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range xsd:string ;
+    rdfs:label "has Microbial Community ID" ;
+    rdfs:comment "A data property that provides a unique identifier for microbial communities in an aquifer." .
+
+:hasSamplingLocation rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SamplingMethod ;
+    rdfs:range xsd:string ;
+    rdfs:label "has Sampling Location" ;
+    rdfs:comment "A data property that represents the geographical location where a sample was taken." .
+
+### Individuals
+
+:HainichAquifer rdf:type :aquifer ;
+    :hasAquiferID "HA001" ;
+    :hasChemicalConcentration 8.5 ;
+    :hasPHValue 7.2 ;
+    :hasOxygenContent 6.4 ;
+    :hasConductivity 1200.0 ;
+    rdfs:label "Hainich Aquifer" ;
+    rdfs:comment "An aquifer located in the Hainich area, with specific physiochemical properties." .
+
+:FracturedRockAquifer1 rdf:type :FracturedRockAquifer ;
+    :hasAquiferID "FRAQ001" ;
+    :hasChemicalConcentration 10.1 ;
+    :hasPHValue 6.8 ;
+    :hasOxygenContent 5.7 ;
+    :hasConductivity 1300.0 ;
+    rdfs:label "Fractured Rock Aquifer 1" ;
+    rdfs:comment "A fractured rock aquifer with moderate chemical concentration and physiochemical properties." .
+
+:KarstAquifer2 rdf:type :KarstAquifer ;
+    :hasAquiferID "KAQ002" ;
+    :hasChemicalConcentration 9.0 ;
+    :hasPHValue 7.5 ;
+    :hasOxygenContent 7.0 ;
+    :hasConductivity 1100.0 ;
+    rdfs:label "Karst Aquifer 2" ;
+    rdfs:comment "A karst aquifer with specific physiochemical parameters, located in a carbonate-rich region." .
+
+:GroundwaterSample1 rdf:type :SamplingMethod ;
+    :hasSampleID "GS001" ;
+    :hasSamplingDate "2023-08-15"^^xsd:date ;
+    :hasSamplingDepth 50.0 ;
+    :hasSamplingTemperature 14.5 ;
+    :hasSamplingLocation "Hainich Area, Germany" ;
+    rdfs:label "Groundwater Sample 1" ;
+    rdfs:comment "A groundwater sample taken from Hainich Aquifer on August 15, 2023." .
+
+:MicrobialCommunityA rdf:type :MicrobialCommunity ;
+    :hasMicrobialCommunityID "MC001" ;
+    :hasCellCount 2500000 ;
+    :hasNitrogenContent 2.5 ;
+    :hasCommunityDiversityIndex 3.2 ;
+    rdfs:label "Microbial Community A" ;
+    rdfs:comment "A microbial community identified in Hainich Aquifer with a high cell count and nitrogen content." .
+
+:MicrobialCommunityB rdf:type :MicrobialCommunity ;
+    :hasMicrobialCommunityID "MC002" ;
+    :hasCellCount 1800000 ;
+    :hasNitrogenContent 2.1 ;
+    :hasCommunityDiversityIndex 2.9 ;
+    rdfs:label "Microbial Community B" ;
+    rdfs:comment "A microbial community found in Karst Aquifer 2 with moderate diversity and nitrogen content." .
+
+:GeochemicalProcess1 rdf:type :GeochemicalProcess ;
+    :hasCarbonIsotopeRatio 1.4 ;
+    :hasDenitrificationRate 0.8 ;
+    rdfs:label "Geochemical Process 1" ;
+    rdfs:comment "A geochemical process occurring in Hainich Aquifer, involving denitrification and carbon isotope ratios." .
+
+:DOCCompositionSample1 rdf:type :DOCComposition ;
+    :hasDOCConcentration 3.7 ;
+    rdfs:label "DOC Composition Sample 1" ;
+    rdfs:comment "A dissolved organic carbon composition sample taken from the Hainich Aquifer." .
+
+:PrecipitationEvent1 rdf:type :Precipitation ;
+    :hasPrecipitationValue 25.5 ;
+    :hasPrecipitationDate "2023-09-10"^^xsd:date ;
+    rdfs:label "Precipitation Event 1" ;
+    rdfs:comment "A precipitation event recorded in the Hainich region on September 10, 2023." .
+
+:RechargeRateSample1 rdf:type :RechargeRate ;
+    :hasRechargeRateValue 1.2 ;
+    rdfs:label "Recharge Rate Sample 1" ;
+    rdfs:comment "A groundwater recharge rate sample measured in the Karst Aquifer 2." .
+
+:GroundwaterVelocitySample1 rdf:type :GroundwaterVelocity ;
+    :hasGroundwaterVelocityValue 0.5 ;
+    rdfs:label "Groundwater Velocity Sample 1" ;
+    rdfs:comment "A sample representing the groundwater velocity in Fractured Rock Aquifer 1." .
+
+:GroundwaterContamination1 rdf:type :GroundwaterContamination ;
+    :hasGroundwaterContaminationLevel 2.5 ;
+    rdfs:label "Groundwater Contamination 1" ;
+    rdfs:comment "A groundwater contamination level recorded in Fractured Rock Aquifer 1." .
+
+:MicrobialDiversitySample1 rdf:type :MicrobialDiversity ;
+    :hasBiodiversityIndex 4.1 ;
+    rdfs:label "Microbial Diversity Sample 1" ;
+    rdfs:comment "A microbial diversity sample from the microbial community in the Hainich Aquifer." .
+
+### Class Descriptions
+
+:aquifer rdf:type owl:Class ;
+    rdfs:comment "An aquifer is an underground layer of water-bearing rock from which groundwater can be extracted." .
+
+:MicrobialFunctionalGuild rdf:type owl:Class ;
+    rdfs:comment "A microbial functional guild is a group of microorganisms that perform similar ecological roles in an environment." .
+
+:MicrobialCommunity rdf:type owl:Class ;
+    rdfs:comment "A microbial community is a collection of microorganisms living together in a particular habitat, such as an aquifer." .
+
+:AquaticFungi rdf:type owl:Class ;
+    rdfs:comment "Aquatic fungi are a group of fungi that inhabit water environments, such as groundwater systems." .
+
+:AquaticMicrobes rdf:type owl:Class ;
+    rdfs:comment "Aquatic microbes are microorganisms that live in aquatic environments, including bacteria, archaea, and other microorganisms in aquifers." .
+
+:KarstAquifer rdf:type owl:Class ;
+    rdfs:comment "A karst aquifer is an aquifer that forms in karst systems, characterized by soluble rock, such as limestone, that can create underground drainage systems." .
+
+:FracturedRockAquifer rdf:type owl:Class ;
+    rdfs:comment "A fractured rock aquifer is an aquifer where water flows through fractures or cracks in solid rock, providing pathways for groundwater movement." .
+
+:GeochemicalProcess rdf:type owl:Class ;
+    rdfs:comment "A geochemical process refers to the chemical reactions and processes that occur in an aquifer and influence the water's chemical composition." .
+
+:MicrobialSpecies rdf:type owl:Class ;
+    rdfs:comment "A microbial species is a specific type of microorganism that can exist in various environments, including groundwater ecosystems." .
+
+:SubsurfaceHabitat rdf:type owl:Class ;
+    rdfs:comment "A subsurface habitat is an environment below the earth’s surface where organisms, such as microbes, live." .
+
+:ChemicalComposition rdf:type owl:Class ;
+    rdfs:comment "Chemical composition refers to the chemical makeup of groundwater, including concentrations of various elements and compounds." .
+
+:AbovegroundEnvironment rdf:type owl:Class ;
+    rdfs:comment "An aboveground environment refers to terrestrial ecosystems, in contrast to subsurface or groundwater habitats." .
+
+:TriassicLimestoneAquifer rdf:type owl:Class ;
+    rdfs:comment "A Triassic limestone aquifer is an aquifer that is found within limestone rock formations from the Triassic geological period." .
+
+:Hydrochemistry rdf:type owl:Class ;
+    rdfs:comment "Hydrochemistry involves the study of the chemical characteristics of water, particularly in groundwater systems like aquifers." .
+
+:PedologicalSetting rdf:type owl:Class ;
+    rdfs:comment "A pedological setting describes the soil characteristics and factors influencing groundwater and aquifer formation." .
+
+:GroundwaterQuality rdf:type owl:Class ;
+    rdfs:comment "Groundwater quality refers to the chemical, physical, and biological characteristics of groundwater, determining its suitability for use." .
+
+:AquiferType rdf:type owl:Class ;
+    rdfs:comment "Aquifer type categorizes different aquifers based on geological and hydrogeological properties, such as karst or fractured rock." .
+
+:HydrochemicalProperties rdf:type owl:Class ;
+    rdfs:comment "Hydrochemical properties describe the chemical characteristics of water within an aquifer, including pH, oxygen content, and solute concentrations." .
+
+:AquaticColloid rdf:type owl:Class ;
+    rdfs:comment "Aquatic colloids are small particles or molecules suspended in water, influencing water quality and microbial processes in groundwater." .
+
+:GroundwaterMicrobes rdf:type owl:Class ;
+    rdfs:comment "Groundwater microbes refer to microorganisms found in groundwater systems, playing key roles in biogeochemical cycling and water quality." .
+
+:CarbonateDissortation rdf:type owl:Class ;
+    rdfs:comment "Carbonate dissortation refers to the breakdown or dissolution of carbonate minerals in groundwater, influencing its chemistry." .
+
+:EukaryoticOrganism rdf:type owl:Class ;
+    rdfs:comment "A eukaryotic organism is a cell or organism with a defined nucleus, which can include microbes found in groundwater environments." .
+
+:MobileOrganicMatter rdf:type owl:Class ;
+    rdfs:comment "Mobile organic matter refers to organic compounds that move through groundwater, influencing microbial activity and geochemical processes." .
+
+:PhysiochemicalParameters rdf:type owl:Class ;
+    rdfs:comment "Physiochemical parameters describe the physical and chemical conditions of groundwater, such as pH, temperature, and dissolved oxygen." .
+
+:Precipitation rdf:type owl:Class ;
+    rdfs:comment "Precipitation refers to any form of water, such as rain or snow, that falls to the ground, affecting groundwater recharge." .
+
+:Snowmelt rdf:type owl:Class ;
+    rdfs:comment "Snowmelt is the runoff produced by melting snow, which can contribute to groundwater recharge in certain regions." .
+
+:EnvironmentalSetting rdf:type owl:Class ;
+    rdfs:comment "Environmental setting refers to the broader ecological and geological conditions influencing an aquifer and its microbial communities." .
+
+:StrataContinuity rdf:type owl:Class ;
+    rdfs:comment "Strata continuity refers to the unbroken sequence of sedimentary layers in geological formations that can influence aquifers." .
+
+:GroundwaterInfiltrationArea rdf:type owl:Class ;
+    rdfs:comment "A groundwater infiltration area is a region where surface water enters the subsurface and becomes groundwater." .
+
+:SubsoilCharacteristic rdf:type owl:Class ;
+    rdfs:comment "Subsoil characteristics describe the physical and chemical properties of soil layers beneath the topsoil that can influence groundwater recharge." .
+
+:MineralOrganicInteraction rdf:type owl:Class ;
+    rdfs:comment "Mineral-organic interaction refers to the processes where organic matter interacts with minerals in the groundwater system." .
+
+:MicrobialGuild rdf:type owl:Class ;
+    rdfs:comment "A microbial guild is a group of microorganisms that share the same functional role within an ecosystem, such as in groundwater habitats." .
+
+:BiogeochemicalCycle rdf:type owl:Class ;
+    rdfs:comment "A biogeochemical cycle refers to the natural processes that recycle nutrients and other elements in the groundwater system." .
+
+### Object Property Descriptions
+
+:hasDominantFunctionalGuild rdf:type owl:ObjectProperty ;
+    rdfs:comment "The hasDominantFunctionalGuild property relates an aquifer to the microbial functional guild that dominates in its ecosystem." .
+
+:presentIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "The presentIn property indicates that an organism or chemical is found in a specific aquifer or groundwater environment." .
+
+:contributeTo rdf:type owl:ObjectProperty ;
+    rdfs:comment "The contributeTo property describes the relationship where microbes or chemical processes contribute to a larger geochemical process." .
+
+:hasHabitatDistribution rdf:type owl:ObjectProperty ;
+    rdfs:comment "The hasHabitatDistribution property indicates the habitat range of a microbial species within an aquifer." .
+
+:inAquiferWith rdf:type owl:ObjectProperty ;
+    rdfs:comment "The inAquiferWith property indicates the chemical composition or characteristics associated with an aquifer." .
+
+:isPresentIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "The isPresentIn property describes the presence of microbes, chemicals, or processes within a specific aquifer." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdfs:comment "The affects property indicates that one entity, such as a microbial community or geochemical process, influences another within the aquifer." .
+
+:interactsWith rdf:type owl:ObjectProperty ;
+    rdfs:comment "The interactsWith property indicates that two entities, such as microbes or processes, have a mutual influence on each other." .
+
+:associatedWith rdf:type owl:ObjectProperty ;
+    rdfs:comment "The associatedWith property indicates a general association between two entities, such as environmental settings and aquifer characteristics." .
+
+:hasPart rdf:type owl:ObjectProperty ;
+    rdfs:comment "The hasPart property indicates that an entity, such as an aquifer, is composed of smaller parts or sub-entities." .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    rdfs:comment "The isPartOf property is the inverse of hasPart, indicating that an entity is part of a larger whole." .
+
+:isDominatedIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "The isDominatedIn property indicates that a specific geochemical or microbial process dominates within an aquifer." .
+
+:dominatesIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "The dominatesIn property describes that a microbial or geochemical process is the dominant factor within a specific aquifer." .
 
