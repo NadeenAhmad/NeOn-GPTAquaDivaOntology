@@ -1,13 +1,8 @@
-# NeOn-GPT AquaDive Ontology
-
-Welcome to the AquaDiva Ontology repository! This project utilizes the NeOn-GPT method to generate and maintain an ontology for the study of groundwater ecosystems. The AquaDiva ontology integrates diverse datasets related to subsurface habitats, hydrogeology, microbial ecology, geochemistry, and karst systems.
+# LLMs4Life: Large Language Models for Ontology Learning in Life Sciences
+Ontology learning in complex domains, such as life sciences, poses significant challenges for current Large Language Models (LLMs). Existing models struggle with generating deep, structured ontologies due to token limitations, shallow hierarchies, and inadequate domain adaptation. To address these issues, we extend the NeOn-GPT pipeline with advanced prompt engineering techniques and ontology reuse to enhance domain-specific reasoning and structural depth of the generated ontologies. Our work evaluates the capabilities of LLMs in ontology learning in the context of life science domains, and we use the AquaDiva ontology as a case study to assess the logical consistency, completeness, and scalability of the generated ontologies. Our evaluation shows the viability of LLMs for ontology learning in specialized domains, providing solutions to longstanding limitations in model performance and scalability.
 
 - File Directory:
-- AquaDiva2.ttl: NeOn-GPT generated ontology using GPT-4 in turtle syntax. This is the final ontology after syntax validation, consistency check, and common pitfall check.
-- AquaDiva.xml: Same ontology as AquaDiva2.ttl but in owl/xml syntax.
-- NeOnGPTPrompts.json: Prompts to GPT-4 to generate the AquaDiva ontology based on the NeOn-GPT methodology in json.
-- keywords.xlsx: AquaDiva keywords .xlsx file
-- keywordsAC.json: AquaDiva keywords .json file
+
 
   # NeOn-GPT workflow for AquaDive Ontology
 
