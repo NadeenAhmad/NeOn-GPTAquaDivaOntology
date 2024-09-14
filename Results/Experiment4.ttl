@@ -1,1 +1,987 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+<http://example.org/aquadiva> rdf:type owl:Ontology .
+### Aquifer and Environmental Entities
+aqua:Aquifer rdf:type owl:Class .
+aqua:AquiferEnvironment rdf:type owl:Class .
+aqua:SubsurfaceEcosystem rdf:type owl:Class .
+aqua:GroundwaterEcosystem rdf:type owl:Class .
+
+### Microbial Entities
+aqua:AquiferMicrobes rdf:type owl:Class .
+aqua:AquaticFungi rdf:type owl:Class .
+aqua:Heterotrophs rdf:type owl:Class .
+aqua:MicrobialFunctionalGuild rdf:type owl:Class .
+aqua:RareMicrobialSpecies rdf:type owl:Class .
+
+### Biogeochemical Entities
+aqua:OrganicMatter rdf:type owl:Class .
+aqua:NutrientCycling rdf:type owl:Class .
+aqua:CarbonCycling rdf:type owl:Class .
+
+### Chemical and Environmental Data
+aqua:AquiferChemicalData rdf:type owl:Class .
+aqua:ChemicalComposition rdf:type owl:Class .
+aqua:ChemicalFactors rdf:type owl:Class .
+aqua:DissolvedOrganicCarbon rdf:type owl:Class .
+aqua:ExtremeConditions rdf:type owl:Class .
+
+### Processes and Functions
+aqua:AutotrophicProcesses rdf:type owl:Class .
+aqua:Autolithoantatrophy rdf:type owl:Class .
+aqua:BiogeochemicalCycling rdf:type owl:Class .
+aqua:EnvironmentalConditions rdf:type owl:Class .
+aqua:EcologicalFunctions rdf:type owl:Class .
+aqua:TrophicRelationships rdf:type owl:Class .
+aqua:SpeciesRichness rdf:type owl:Class .
+aqua:SpeciesDiversity rdf:type owl:Class .
+### Relationships between entities
+
+aqua:foundIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:Aquifer .
+
+aqua:hasSpecies rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:Species .
+
+aqua:interactsWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:AquiferMicrobes .
+
+aqua:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:BiogeochemicalCycling .
+
+aqua:presentIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:AquiferEnvironment .
+
+aqua:adaptedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:ExtremeConditions .
+
+aqua:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:NutrientCycling .
+
+aqua:existsIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range aqua:SubsurfaceEcosystem .
+
+aqua:impacts rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:MicrobialFunctionalGuild .
+
+aqua:metabolizes rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:OrganicMatter .
+
+aqua:metabolicInteractionWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:AquaticFungi .
+
+aqua:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:ChemicalComposition ;
+    rdfs:range aqua:AquiferMicrobes .
+
+aqua:associatedWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range aqua:MicrobialActivity .
+
+aqua:correlatedWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range aqua:RareMicrobialSpecies .
+
+aqua:triggers rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:EnvironmentalConditions ;
+    rdfs:range aqua:Autolithoantatrophy .
+
+aqua:influencesAbundanceOf rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquaticFungi ;
+    rdfs:range aqua:Heterotrophs .
+
+aqua:usedToAssess rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialIndicators ;
+    rdfs:range aqua:Biodiversity .
+
+aqua:indicatesHealthOf rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialCommunities ;
+    rdfs:range aqua:AquiferEcosystem .
+### Data properties for capturing environmental measurements
+
+aqua:haspH rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+
+aqua:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+
+aqua:hasSalinity rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+
+aqua:hasDissolvedOxygen rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+### Examples of individual species and environments
+
+aqua:species1 rdf:type aqua:AquiferMicrobes ;
+    rdfs:label "Species 1" .
+
+aqua:species2 rdf:type aqua:AquaticFungi ;
+    rdfs:label "Species 2" .
+
+aqua:aquifer1 rdf:type aqua:Aquifer ;
+    rdfs:label "Aquifer 1" .
+
+aqua:subsurfaceEco1 rdf:type aqua:SubsurfaceEcosystem ;
+    rdfs:label "Subsurface Ecosystem 1" .
+### Annotations for documentation and metadata
+
+aqua:hasDefinition rdf:type owl:AnnotationProperty .
+
+aqua:Aquifer rdfs:comment "An underground layer of water-bearing rock." .
+aqua:AquiferFungi rdfs:comment "Fungi found in subsurface aquifer environments." .
+aqua:AquaticFungi rdfs:comment "Aquatic fungi that exist in groundwater ecosystems." .
+aqua:Autolithoantatrophy rdfs:comment "A unique metabolic process seen in specific fungi." .
+### Subclass relationships
+
+aqua:AquiferMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild .
+
+aqua:AquiferFungi rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquaticFungi .
+
+aqua:RareMicrobialSpecies rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes .
+
+aqua:Heterotrophs rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild .
+
+aqua:AutotrophicProcesses rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling .
+
+aqua:SpeciesRichness rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EcologicalFunctions .
+
+aqua:SpeciesDiversity rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EcologicalFunctions .
+
+aqua:AquiferFungi rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquaticFungi .
+
+aqua:AquaticFungi rdf:type owl:Class ;
+    rdfs:subClassOf aqua:Fungi .
+
+aqua:AquiferMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild .
+
+aqua:RareMicrobialSpecies rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes .
+
+aqua:AutotrophicProcesses rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling .
+
+aqua:Heterotrophs rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild .
+
+aqua:SpeciesRichness rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EcologicalFunctions .
+
+aqua:SpeciesDiversity rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EcologicalFunctions .
+aqua:foundIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:Aquifer .
+
+aqua:hasSpecies rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:Species .
+
+aqua:interactsWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:AquiferMicrobes .
+
+aqua:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferFungi ;
+    rdfs:range aqua:BiogeochemicalCycling .
+
+aqua:presentIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:AquiferEnvironment .
+
+aqua:adaptedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:ExtremeConditions .
+
+aqua:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:NutrientCycling .
+
+aqua:existsIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range aqua:SubsurfaceEcosystem .
+
+aqua:impacts rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:MicrobialFunctionalGuild .
+
+aqua:metabolizes rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:OrganicMatter .
+
+aqua:metabolicInteractionWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:AquaticFungi .
+
+aqua:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:ChemicalComposition ;
+    rdfs:range aqua:AquiferMicrobes .
+
+aqua:associatedWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range aqua:MicrobialActivity .
+
+aqua:correlatedWith rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range aqua:RareMicrobialSpecies .
+
+aqua:triggers rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:EnvironmentalConditions ;
+    rdfs:range aqua:Autolithoantatrophy .
+
+aqua:influencesAbundanceOf rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquaticFungi ;
+    rdfs:range aqua:Heterotrophs .
+
+aqua:usedToAssess rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialIndicators ;
+    rdfs:range aqua:Biodiversity .
+
+aqua:indicatesHealthOf rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialCommunities ;
+    rdfs:range aqua:AquiferEcosystem .
+aqua:haspH rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+
+aqua:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+
+aqua:hasSalinity rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+
+aqua:hasDissolvedOxygen rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float .
+aqua:species1 rdf:type aqua:AquiferMicrobes ;
+    rdfs:label "Species 1" .
+
+aqua:species2 rdf:type aqua:AquaticFungi ;
+    rdfs:label "Species 2" .
+
+aqua:aquifer1 rdf:type aqua:Aquifer ;
+    rdfs:label "Aquifer 1" .
+
+aqua:subsurfaceEco1 rdf:type aqua:SubsurfaceEcosystem ;
+    rdfs:label "Subsurface Ecosystem 1" .
+aqua:hasDefinition rdf:type owl:AnnotationProperty .
+
+aqua:Aquifer rdfs:comment "An underground layer of water-bearing rock." .
+aqua:AquiferFungi rdfs:comment "Fungi found in subsurface aquifer environments." .
+aqua:AquaticFungi rdfs:comment "Aquatic fungi that exist in groundwater ecosystems." .
+aqua:Autolithoantatrophy rdfs:comment "A unique metabolic process seen in specific fungi." .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+### Inverse Properties for Object Properties
+
+### Inverse of "foundIn"
+aqua:isFoundIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:foundIn ;
+    rdfs:domain aqua:Aquifer ;
+    rdfs:range aqua:AquiferFungi .
+
+### Inverse of "hasSpecies"
+aqua:isSpeciesOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:hasSpecies ;
+    rdfs:domain aqua:Species ;
+    rdfs:range aqua:AquiferFungi .
+
+### Inverse of "interactsWith"
+aqua:interactedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:interactsWith ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:AquiferFungi .
+
+### Inverse of "playsRoleIn"
+aqua:hasRolePlayedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:playsRoleIn ;
+    rdfs:domain aqua:BiogeochemicalCycling ;
+    rdfs:range aqua:AquiferFungi .
+
+### Inverse of "presentIn"
+aqua:hasPresenceOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:presentIn ;
+    rdfs:domain aqua:AquiferEnvironment ;
+    rdfs:range aqua:AquiferMicrobes .
+
+### Inverse of "adaptedTo"
+aqua:hasAdaptationBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:adaptedTo ;
+    rdfs:domain aqua:ExtremeConditions ;
+    rdfs:range aqua:AquiferMicrobes .
+
+### Inverse of "contributesTo"
+aqua:hasContributionFrom rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:contributesTo ;
+    rdfs:domain aqua:NutrientCycling ;
+    rdfs:range aqua:AquiferMicrobes .
+
+### Inverse of "existsIn"
+aqua:contains rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:existsIn ;
+    rdfs:domain aqua:SubsurfaceEcosystem ;
+    rdfs:range aqua:MicrobialFunctionalGuild .
+
+### Inverse of "impacts"
+aqua:impactedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:impacts ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range aqua:Heterotrophs .
+
+### Inverse of "metabolizes"
+aqua:metabolizedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:metabolizes ;
+    rdfs:domain aqua:OrganicMatter ;
+    rdfs:range aqua:Heterotrophs .
+
+### Inverse of "metabolicInteractionWith"
+aqua:hasMetabolicInteractionFrom rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:metabolicInteractionWith ;
+    rdfs:domain aqua:AquaticFungi ;
+    rdfs:range aqua:Heterotrophs .
+
+### Inverse of "influences"
+aqua:influencedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:influences ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:ChemicalComposition .
+
+### Inverse of "associatedWith"
+aqua:hasAssociationWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:associatedWith ;
+    rdfs:domain aqua:MicrobialActivity ;
+    rdfs:range aqua:AquiferChemicalData .
+
+### Inverse of "correlatedWith"
+aqua:hasCorrelationWith rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:correlatedWith ;
+    rdfs:domain aqua:RareMicrobialSpecies ;
+    rdfs:range aqua:AquiferChemicalData .
+
+### Inverse of "triggers"
+aqua:triggeredBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:triggers ;
+    rdfs:domain aqua:Autolithoantatrophy ;
+    rdfs:range aqua:EnvironmentalConditions .
+
+### Inverse of "influencesAbundanceOf"
+aqua:hasAbundanceInfluencedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:influencesAbundanceOf ;
+    rdfs:domain aqua:Heterotrophs ;
+    rdfs:range aqua:AquaticFungi .
+
+### Inverse of "usedToAssess"
+aqua:assessedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:usedToAssess ;
+    rdfs:domain aqua:Biodiversity ;
+    rdfs:range aqua:MicrobialIndicators .
+
+### Inverse of "indicatesHealthOf"
+aqua:hasHealthIndicatedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf aqua:indicatesHealthOf ;
+    rdfs:domain aqua:AquiferEcosystem ;
+    rdfs:range aqua:MicrobialCommunities .
+
+
+### Reflexive Properties for Object Properties
+
+### Reflexive Property for "interactsWith"
+aqua:interactsWith rdf:type owl:ReflexiveProperty .
+
+### Reflexive Property for "metabolicInteractionWith"
+aqua:metabolicInteractionWith rdf:type owl:ReflexiveProperty .
+
+### Reflexive Property for "impacts"
+aqua:impacts rdf:type owl:ReflexiveProperty .
+
+### Reflexive Property for "isSimilarTo" (New property for self-relation cases)
+aqua:isSimilarTo rdf:type owl:ObjectProperty, owl:ReflexiveProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:AquiferMicrobes .
+
+### Reflexive Property for "hasContributionFrom"
+aqua:hasContributionFrom rdf:type owl:ReflexiveProperty .
+
+### Reflexive Property for "associatedWith"
+aqua:associatedWith rdf:type owl:ReflexiveProperty .
+
+### Reflexive Property for "correlatedWith"
+aqua:correlatedWith rdf:type owl:ReflexiveProperty .
+
+### Symmetric Properties for Object Properties
+
+### Symmetric Property for "interactsWith"
+aqua:interactsWith rdf:type owl:SymmetricProperty .
+
+### Symmetric Property for "metabolicInteractionWith"
+aqua:metabolicInteractionWith rdf:type owl:SymmetricProperty .
+
+### Symmetric Property for "correlatedWith"
+aqua:correlatedWith rdf:type owl:SymmetricProperty .
+
+### Symmetric Property for "associatedWith"
+aqua:associatedWith rdf:type owl:SymmetricProperty .
+
+### Symmetric Property for "isSimilarTo" (New property for symmetrical relation cases)
+aqua:isSimilarTo rdf:type owl:SymmetricProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:AquiferMicrobes .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+### Functional Properties for Object Properties
+
+### Functional Property for "hasSpecies"
+aqua:hasSpecies rdf:type owl:FunctionalProperty .
+
+### Functional Property for "foundIn"
+aqua:foundIn rdf:type owl:FunctionalProperty .
+
+### Functional Property for "playsRoleIn"
+aqua:playsRoleIn rdf:type owl:FunctionalProperty .
+
+### Functional Property for "presentIn"
+aqua:presentIn rdf:type owl:FunctionalProperty .
+
+### Functional Property for "adaptedTo"
+aqua:adaptedTo rdf:type owl:FunctionalProperty .
+
+### Functional Property for "contributesTo"
+aqua:contributesTo rdf:type owl:FunctionalProperty .
+
+### Functional Property for "existsIn"
+aqua:existsIn rdf:type owl:FunctionalProperty .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+### Transitive Properties for Object Properties
+
+### Transitive Property for "interactsWith"
+aqua:interactsWith rdf:type owl:TransitiveProperty .
+
+### Transitive Property for "contributesTo"
+aqua:contributesTo rdf:type owl:TransitiveProperty .
+
+### Transitive Property for "correlatedWith"
+aqua:correlatedWith rdf:type owl:TransitiveProperty .
+
+### Transitive Property for "hasSpecies"
+aqua:hasSpecies rdf:type owl:TransitiveProperty .
+
+### Transitive Property for "foundIn"
+aqua:foundIn rdf:type owl:TransitiveProperty .
+
+### Transitive Property for "isSimilarTo"
+aqua:isSimilarTo rdf:type owl:TransitiveProperty .
+
+### Transitive Property for "adaptedTo"
+aqua:adaptedTo rdf:type owl:TransitiveProperty .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+### Data Properties for Measured Values, Codes, and Specified Values
+
+### Data Property for "hasCode"
+aqua:hasCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain aqua:MeasuredValue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The hasCode property gives the underlying value or coded representation of a primitive value."@en .
+
+### Data Property for "hasFeatureValue"
+aqua:hasFeatureValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:OBI_0200140 ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "The hasFeatureValue property describes feature values, such as nonNegativeInteger values for features."@en ;
+    rdfs:label "has_feature_value"@en .
+
+### Data Property for "hasSpecifiedValue"
+aqua:hasSpecifiedValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:OBI_0001933 ;
+    rdfs:range owl:real ;
+    rdfs:comment "A relation between a value specification and a number that quantifies it."@en .
+
+### Data Properties for Aquifer Chemical Data
+
+### Data Property for "hasPHValue"
+aqua:hasPHValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The pH value of the aquifer environment."@en .
+
+### Data Property for "hasSalinity"
+aqua:hasSalinity rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The salinity of the aquifer environment measured in appropriate units."@en .
+
+### Data Property for "hasTemperature"
+aqua:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The temperature of the aquifer environment measured in Celsius."@en .
+
+### Data Property for "hasDissolvedOxygen"
+aqua:hasDissolvedOxygen rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The dissolved oxygen content in the aquifer environment, typically measured in mg/L."@en .
+
+### Data Properties for Microbial Functional Guilds and Features
+
+### Data Property for "hasActivityLevel"
+aqua:hasActivityLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The activity level of a microbial functional guild, represented as a numeric value."@en .
+
+### Data Property for "hasSpeciesCount"
+aqua:hasSpeciesCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "The number of species within a specific microbial functional guild."@en .
+
+### Data Property for "hasCarbonUtilizationRate"
+aqua:hasCarbonUtilizationRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The rate at which carbon is utilized by a microbial functional guild, typically measured in mg/L."@en .
+
+### Data Property for "hasNitrogenFixationRate"
+aqua:hasNitrogenFixationRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The nitrogen fixation rate within a microbial functional guild, measured in mg/L."@en .
+
+### Data Properties for Rare Species
+
+### Data Property for "hasRarityIndex"
+aqua:hasRarityIndex rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:RareSpecies ;
+    rdfs:range xsd:float ;
+    rdfs:comment "An index value representing the rarity of a species, with higher values indicating rarer species."@en .
+
+### Data Property for "hasPopulationSize"
+aqua:hasPopulationSize rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:RareSpecies ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "The population size of a rare species in a given environment."@en .
+
+### Data Properties for Environmental Conditions
+
+### Data Property for "hasEnvironmentalFactor"
+aqua:hasEnvironmentalFactor rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:EnvironmentalConditions ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The environmental factor influencing the microbial or fungal community."@en .
+
+### Data Property for "hasPressureLevel"
+aqua:hasPressureLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:EnvironmentalConditions ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The pressure level of the aquifer environment, typically measured in atmospheres or bars."@en .
+
+### Data Properties for Trophic Relationships
+
+### Data Property for "hasTrophicLevel"
+aqua:hasTrophicLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:TrophicRelationships ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "The trophic level of an organism within an ecosystem, where 1 is primary producers."@en .
+
+### Data Property for "hasEnergyTransferRate"
+aqua:hasEnergyTransferRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:TrophicRelationships ;
+    rdfs:range xsd:float ;
+    rdfs:comment "The rate at which energy is transferred between trophic levels, typically measured in kilojoules."@en .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+### Individuals for Aquifer Environments
+
+aqua:KarstAquifer rdf:type aqua:Aquifer ;
+    rdfs:label "Karst Aquifer"@en ;
+    rdfs:comment "A karst aquifer characterized by dissolution features in carbonate rocks."@en .
+
+aqua:PorousAquifer rdf:type aqua:Aquifer ;
+    rdfs:label "Porous Aquifer"@en ;
+    rdfs:comment "An aquifer with high porosity, typically consisting of sand or gravel."@en .
+
+aqua:FracturedRockAquifer rdf:type aqua:Aquifer ;
+    rdfs:label "Fractured Rock Aquifer"@en ;
+    rdfs:comment "An aquifer located within fractured rock, often with limited water flow."@en .
+
+### Individuals for Microbial Species
+
+aqua:GeobacterSulfureducens rdf:type aqua:AquiferMicrobes ;
+    rdfs:label "Geobacter sulfureducens"@en ;
+    rdfs:comment "A metal-reducing bacterium found in subsurface environments, particularly in anoxic conditions."@en .
+
+aqua:DesulfovibrioDesulfuricans rdf:type aqua:AquiferMicrobes ;
+    rdfs:label "Desulfovibrio desulfuricans"@en ;
+    rdfs:comment "A sulfate-reducing bacterium present in anaerobic environments."@en .
+
+aqua:NitrosomonasEuropa rdf:type aqua:AquiferMicrobes ;
+    rdfs:label "Nitrosomonas europa"@en ;
+    rdfs:comment "An ammonia-oxidizing bacterium involved in the nitrogen cycle."@en .
+
+### Individuals for Aquifer Fungi
+
+aqua:AspergillusFumigatus rdf:type aqua:AquiferFungi ;
+    rdfs:label "Aspergillus fumigatus"@en ;
+    rdfs:comment "A common fungal species found in groundwater and subsurface environments."@en .
+
+aqua:PenicilliumChrysogenum rdf:type aqua:AquiferFungi ;
+    rdfs:label "Penicillium chrysogenum"@en ;
+    rdfs:comment "A fungal species known for its antibiotic production, found in aquifer environments."@en .
+
+### Individuals for Rare Species
+
+aqua:ThiobacillusDenitrificans rdf:type aqua:RareSpecies ;
+    rdfs:label "Thiobacillus denitrificans"@en ;
+    rdfs:comment "A rare sulfur-oxidizing bacterium involved in denitrification processes in aquifers."@en .
+
+aqua:GallionellaFerruginea rdf:type aqua:RareSpecies ;
+    rdfs:label "Gallionella ferruginea"@en ;
+    rdfs:comment "A rare iron-oxidizing bacterium found in low-oxygen aquifer environments."@en .
+
+### Individuals for Microbial Functional Guilds
+
+aqua:SulfateReducers rdf:type aqua:MicrobialFunctionalGuild ;
+    rdfs:label "Sulfate-Reducing Guild"@en ;
+    rdfs:comment "A guild of microbes that utilize sulfate as a terminal electron acceptor during anaerobic respiration."@en .
+
+aqua:NitrogenFixers rdf:type aqua:MicrobialFunctionalGuild ;
+    rdfs:label "Nitrogen-Fixing Guild"@en ;
+    rdfs:comment "A functional guild of microbes capable of converting atmospheric nitrogen into bioavailable forms."@en .
+
+aqua:IronOxidizers rdf:type aqua:MicrobialFunctionalGuild ;
+    rdfs:label "Iron-Oxidizing Guild"@en ;
+    rdfs:comment "A guild of microbes that oxidize iron as part of their metabolic processes."@en .
+
+### Individuals for Environmental Conditions
+
+aqua:AnoxicConditions rdf:type aqua:EnvironmentalConditions ;
+    rdfs:label "Anoxic Conditions"@en ;
+    rdfs:comment "Environmental conditions where oxygen is absent or present in very low concentrations."@en .
+
+aqua:HighSalinity rdf:type aqua:EnvironmentalConditions ;
+    rdfs:label "High Salinity"@en ;
+    rdfs:comment "An environmental condition where the concentration of dissolved salts is significantly elevated."@en .
+
+aqua:LowpH rdf:type aqua:EnvironmentalConditions ;
+    rdfs:label "Low pH"@en ;
+    rdfs:comment "An acidic condition in the aquifer environment, typically characterized by a pH below 6."@en .
+
+### Individuals for Trophic Relationships
+
+aqua:PrimaryProducers rdf:type aqua:TrophicRelationships ;
+    rdfs:label "Primary Producers"@en ;
+    rdfs:comment "Organisms at the base of the food chain, typically autotrophs that produce organic compounds."@en .
+
+aqua:SecondaryConsumers rdf:type aqua:TrophicRelationships ;
+    rdfs:label "Secondary Consumers"@en ;
+    rdfs:comment "Organisms that consume primary consumers in the trophic structure."@en .
+
+aqua:TertiaryConsumers rdf:type aqua:TrophicRelationships ;
+    rdfs:label "Tertiary Consumers"@en ;
+    rdfs:comment "Organisms at the top of the food chain that consume secondary consumers."@en .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aqua: <http://example.org/aquadiva#> .
+
+### rdfs:comment for Classes
+
+aqua:Aquifer rdf:type owl:Class ;
+    rdfs:comment "An underground layer of water-bearing rock or sediment where groundwater can be stored and transmitted."@en .
+
+aqua:AquiferMicrobes rdf:type owl:Class ;
+    rdfs:comment "Microbes found in subsurface aquifer environments that play essential roles in biogeochemical cycles."@en .
+
+aqua:AquiferFungi rdf:type owl:Class ;
+    rdfs:comment "Fungi that are found in groundwater and subsurface aquifer environments, participating in organic matter degradation and other ecological processes."@en .
+
+aqua:RareSpecies rdf:type owl:Class ;
+    rdfs:comment "Species that are uncommon or rare in subsurface environments, typically with specialized ecological functions."@en .
+
+aqua:MicrobialFunctionalGuild rdf:type owl:Class ;
+    rdfs:comment "Groups of microorganisms that share similar functional roles in an ecosystem, such as sulfate reducers or nitrogen fixers."@en .
+
+aqua:EnvironmentalConditions rdf:type owl:Class ;
+    rdfs:comment "The physical, chemical, and biological conditions present in an aquifer environment that affect the organisms living there."@en .
+
+aqua:TrophicRelationships rdf:type owl:Class ;
+    rdfs:comment "The relationships between different organisms in a food web, showing the transfer of energy and nutrients across trophic levels."@en .
+
+aqua:BiogeochemicalCycling rdf:type owl:Class ;
+    rdfs:comment "The cycling of nutrients and elements through biological, geological, and chemical processes in an ecosystem."@en .
+
+aqua:NutrientCycling rdf:type owl:Class ;
+    rdfs:comment "The movement and transformation of nutrients, such as nitrogen and phosphorus, through an ecosystem."@en .
+
+aqua:OrganicMatter rdf:type owl:Class ;
+    rdfs:comment "Material derived from the remains of living organisms, essential for microbial decomposition processes in aquifers."@en .
+
+aqua:SubsurfaceEcosystem rdf:type owl:Class ;
+    rdfs:comment "The ecological system found below the Earth's surface, typically consisting of aquifers and the organisms that inhabit them."@en .
+
+### rdfs:comment for Object Properties
+
+aqua:hasSpecies rdf:type owl:ObjectProperty ;
+    rdfs:comment "Relates an aquifer fungus or microbe to its specific species."@en .
+
+aqua:foundIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "Indicates the aquifer or subsurface environment in which a particular organism is found."@en .
+
+aqua:interactsWith rdf:type owl:ObjectProperty ;
+    rdfs:comment "Describes the interaction between two organisms, such as competition, symbiosis, or predation."@en .
+
+aqua:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "Indicates the functional role an organism or microbial guild plays in a specific biogeochemical process."@en .
+
+aqua:presentIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "Relates a microbial species or guild to the aquifer environment in which it is present."@en .
+
+aqua:adaptedTo rdf:type owl:ObjectProperty ;
+    rdfs:comment "Describes the environmental condition or factor to which an organism is specifically adapted."@en .
+
+aqua:contributesTo rdf:type owl:ObjectProperty ;
+    rdfs:comment "Indicates the contribution of a microbial guild or species to a specific biogeochemical or nutrient cycling process."@en .
+
+aqua:existsIn rdf:type owl:ObjectProperty ;
+    rdfs:comment "Describes the subsurface or aquifer ecosystem in which a microbial guild or species exists."@en .
+
+aqua:hasCode rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Provides the underlying value or code representing a measured or primitive value."@en .
+
+aqua:hasFeatureValue rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Describes a feature value that can be assigned to an entity, typically a numerical or coded value."@en .
+
+aqua:hasSpecifiedValue rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Indicates the specified value or quantity associated with a value specification."@en .
+
+aqua:hasPHValue rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The pH value of the aquifer environment, indicating its acidity or alkalinity."@en .
+
+aqua:hasSalinity rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The salinity of the aquifer, representing the concentration of dissolved salts in the water."@en .
+
+aqua:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The temperature of the aquifer environment, typically measured in degrees Celsius."@en .
+
+aqua:hasDissolvedOxygen rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The amount of dissolved oxygen present in the aquifer, typically measured in milligrams per liter."@en .
+
+aqua:hasActivityLevel rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The level of biological activity within a microbial functional guild, often represented by a numeric value."@en .
+
+aqua:hasSpeciesCount rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The number of species present within a microbial functional guild."@en .
+
+aqua:hasCarbonUtilizationRate rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The rate at which carbon is metabolized or utilized by a microbial functional guild, typically measured in milligrams per liter."@en .
+
+aqua:hasNitrogenFixationRate rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The rate at which nitrogen is fixed from the atmosphere by a microbial guild, measured in milligrams per liter."@en .
+
+aqua:hasRarityIndex rdf:type owl:DatatypeProperty ;
+    rdfs:comment "An index indicating the rarity of a species in an aquifer environment, with higher values representing rarer species."@en .
+
+aqua:hasPopulationSize rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The population size of a rare species within a specific environment."@en .
+
+aqua:hasEnvironmentalFactor rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Describes the environmental factors influencing an organism, such as temperature, pH, or salinity."@en .
+
+aqua:hasPressureLevel rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The pressure level in the aquifer environment, typically measured in atmospheres or bars."@en .
+
+aqua:hasTrophicLevel rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Indicates the trophic level of an organism in an ecosystem, where 1 represents primary producers."@en .
+
+aqua:hasEnergyTransferRate rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The rate at which energy is transferred between trophic levels in an ecosystem, typically measured in kilojoules."@en .
+### AquiferMicrobes Hierarchy
+aqua:SulfateReducingMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes ;
+    rdfs:label "Sulfate Reducing Microbes"@en ;
+    rdfs:comment "Microbes that use sulfate as a terminal electron acceptor in anaerobic conditions."@en .
+
+aqua:MetalReducingMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes ;
+    rdfs:label "Metal Reducing Microbes"@en ;
+    rdfs:comment "Microbes that reduce metals such as iron or manganese during anaerobic respiration."@en .
+
+### MicrobialFunctionalGuild Hierarchy
+aqua:AutotrophicMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:label "Autotrophic Microbes"@en ;
+    rdfs:comment "Microbes that fix carbon dioxide to produce their own organic matter."@en .
+
+aqua:HeterotrophicMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:label "Heterotrophic Microbes"@en ;
+    rdfs:comment "Microbes that obtain carbon by consuming organic matter."@en .
+
+### AquiferChemicalData Hierarchy
+aqua:AnionConcentration rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferChemicalData ;
+    rdfs:label "Anion Concentration"@en ;
+    rdfs:comment "The concentration of anions such as sulfate, chloride, and bicarbonate in the aquifer."@en .
+
+aqua:CationConcentration rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferChemicalData ;
+    rdfs:label "Cation Concentration"@en ;
+    rdfs:comment "The concentration of cations such as sodium, potassium, and calcium in the aquifer."@en .
+
+### EnvironmentalConditions Hierarchy
+aqua:OxygenatedConditions rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EnvironmentalConditions ;
+    rdfs:label "Oxygenated Conditions"@en ;
+    rdfs:comment "Aquifer environments with measurable dissolved oxygen."@en .
+
+aqua:HypoxicConditions rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EnvironmentalConditions ;
+    rdfs:label "Hypoxic Conditions"@en ;
+    rdfs:comment "Aquifer environments with low oxygen concentrations, but not fully anoxic."@en .
+
+### Trophic Relationships Hierarchy
+aqua:PrimaryProducers rdf:type owl:Class ;
+    rdfs:subClassOf aqua:TrophicRelationships ;
+    rdfs:label "Primary Producers"@en ;
+    rdfs:comment "Organisms that generate biomass from inorganic compounds, usually through photosynthesis or chemosynthesis."@en .
+
+aqua:PrimaryConsumers rdf:type owl:Class ;
+    rdfs:subClassOf aqua:TrophicRelationships ;
+    rdfs:label "Primary Consumers"@en ;
+    rdfs:comment "Organisms that consume primary producers."@en .
+### Disjoint Classes Definitions
+owl:AllDisjointClasses rdf:type owl:AllDisjointClasses ;
+    owl:members ( aqua:AutotrophicMicrobes
+                  aqua:HeterotrophicMicrobes ) ;
+    rdfs:comment "Autotrophic microbes and heterotrophic microbes are disjoint, meaning they perform different roles in the ecosystem."@en .
+
+owl:AllDisjointClasses rdf:type owl:AllDisjointClasses ;
+    owl:members ( aqua:SulfateReducingMicrobes
+                  aqua:MetalReducingMicrobes ) ;
+    rdfs:comment "Sulfate-reducing microbes and metal-reducing microbes are disjoint, reflecting their different metabolic pathways."@en .
+### Equivalent Class Definitions
+aqua:SulfateReducingMicrobes rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:AquiferMicrobes
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:contributesTo ;
+                                                 owl:hasValue aqua:SulfateReduction ] ) ] ;
+    rdfs:comment "Microbes that reduce sulfate in anaerobic conditions."@en .
+
+aqua:MetalReducingMicrobes rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:AquiferMicrobes
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:contributesTo ;
+                                                 owl:hasValue aqua:MetalReduction ] ) ] ;
+    rdfs:comment "Microbes that reduce metals such as iron and manganese."@en .
+
+aqua:AutotrophicMicrobes rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:MicrobialFunctionalGuild
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:playsRoleIn ;
+                                                 owl:hasValue aqua:CarbonFixation ] ) ] ;
+    rdfs:comment "Microbes capable of fixing carbon from carbon dioxide."@en .
+### Hidden GCI Example for Functional Guilds
+aqua:MicrobialFunctionalGuild rdf:type owl:Class ;
+    owl:hasSubClass [ rdf:type owl:Class ;
+                      owl:unionOf ( aqua:AutotrophicMicrobes
+                                    aqua:HeterotrophicMicrobes ) ] ;
+    rdfs:comment "Every microbial functional guild must either be autotrophic or heterotrophic."@en .
+### Property Restrictions for Functional Roles
+aqua:AutotrophicMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      owl:onProperty aqua:playsRoleIn ;
+                      owl:hasValue aqua:CarbonFixation ] ;
+    rdfs:comment "Autotrophic microbes must play a role in carbon fixation."@en .
+
+aqua:HeterotrophicMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      owl:onProperty aqua:playsRoleIn ;
+                      owl:hasValue aqua:OrganicMatterDecomposition ] ;
+    rdfs:comment "Heterotrophic microbes must play a role in organic matter decomposition."@en .
+### Transitive Properties for Nutrient Cycling
+aqua:contributesTo rdf:type owl:TransitiveProperty ;
+    rdfs:comment "If microbe A contributes to process B, and process B contributes to process C, then microbe A contributes to process C."@en .
+
+aqua:interactsWith rdf:type owl:TransitiveProperty ;
+    rdfs:comment "If microbe A interacts with microbe B, and microbe B interacts with microbe C, then microbe A interacts with microbe C."@en .
+### Functional Properties for Unique Associations
+aqua:hasSpecies rdf:type owl:FunctionalProperty ;
+    rdfs:comment "Each microbe or fungus can only have one species associated with it."@en .
+
+aqua:foundIn rdf:type owl:FunctionalProperty ;
+    rdfs:comment "Each microbe can only be found in one specific aquifer environment."@en .
+### Annotations for Additional Classes and Properties
+aqua:AnionConcentration rdf:type owl:Class ;
+    rdfs:comment "The concentration of anions like sulfate, chloride, and bicarbonate in the aquifer."@en .
+
+aqua:CationConcentration rdf:type owl:Class ;
+    rdfs:comment "The concentration of cations like sodium, potassium, and calcium in the aquifer."@en .
+
+aqua:CarbonFixation rdf:type owl:Class ;
+    rdfs:comment "The process by which autotrophic microbes convert carbon dioxide into organic carbon."@en .
+
+aqua:OrganicMatterDecomposition rdf:type owl:Class ;
+    rdfs:comment "The process by which heterotrophic microbes break down organic matter in the ecosystem."@en .
+
+aqua:SulfateReduction rdf:type owl:Class ;
+    rdfs:comment "A metabolic process where microbes reduce sulfate to hydrogen sulfide in anaerobic conditions."@en .
+
+aqua:MetalReduction rdf:type owl:Class ;
+    rdfs:comment "A metabolic process where microbes reduce metals like iron or manganese in anaerobic conditions."@en .
 
