@@ -1,1 +1,129 @@
+Subject-relation-object from Competency Questions examples:
+
+CQ1: What environmental entity does the reductive carboxylate cycle affect?
+Entity: ["Reductive carboxylate cycle", "Anoxic Aquifer"]
+Property: ["affects"]
+
+CQ1: What is the conjugate base relationship of ammonia?
+Entity: ["Ammonia", "Ammonium"]
+Property: ["is_conjugate_base_of"]
+
+CQ1: What transformation does a biomarker reveal in nitrogen?
+Entity: ["Biomarker", "Nitrogen Transformation"]
+Property: ["reveals"]
+
+CQ1: What chemical component has increased levels in carbon nanotube enriched soil?
+Entity: ["Carbon nanotube enriched soil", "Carbon nanotube"]
+Property: ["has_increased_levels_of"]
+
+CQ1: What are the exact synonyms for the respiration organ?
+Entity: ["Respiration organ", "breathing organ", "respiratory system organ"]
+Property: ["hasExactSynonym"]
+
+CQ1: What is ammonia the conjugate acid of?
+Entity: ["Ammonia", "Azanide"]
+Property: ["is_conjugate_acid_of"]
+
+CQ1: What environmental system sequesters and stores carbon?
+Entity: ["Carbon pooling disposition", "Carbon"]
+Property: ["sequesters"]
+
+CQ1: How does nitrogen deposition differ from other entities?
+Entity: ["Nitrogen deposition", "Environment"]
+Property: ["differsFrom"]
+
+CQ1: What value does the property in animal euthanization derive from?
+Entity: ["Animal euthanization", "NCBITaxon_7742"]
+Property: ["someValuesFrom"]
+
+CQ1: What conjugate base does nitrate relate to?
+Entity: ["Nitrate", "Nitric acid"]
+Property: ["is_conjugate_base_of"]
+
+CQ1: What environmental entity does atmospheric carbon dioxide affect?
+Entity: ["Atmospheric carbon dioxide", "Air"]
+Property: ["someValuesFrom"]
+
+CQ1: What is the conjugate acid relationship for ammonium?
+Entity: ["Ammonium", "Ammonia"]
+Property: ["is_conjugate_acid_of"]
+
+CQ1: What conjugate base does hydrogencarbonate relate to?
+Entity: ["Hydrogencarbonate", "Carbonic acid"]
+Property: ["is_conjugate_base_of"]
+
+CQ1: What does nitrogen transformation affect in the environment?
+Entity: ["Nitrogen transformation", "Nitrogen"]
+Property: ["affects"]
+
+CQ1: What conjugate acid does azanide relate to?
+Entity: ["Azanide", "Ammonia"]
+Property: ["is_conjugate_acid_of"]
+
+CQ1: What are the exact synonyms for peptide?
+Entity: ["Peptide", "amide"]
+Property: ["hasExactSynonym"]
+
+CQ1: What value does fluid pressure regulation derive from?
+Entity: ["Fluid pressure regulator", "Air"]
+Property: ["someValuesFrom"]
+
+CQ1: What does nitrogen atom amount in soil reveal?
+Entity: ["Amount of nitrogen atom in soil", "Nitrogen Transformation"]
+Property: ["reveals"]
+
+CQ1: What does the nitrogen deposition affect in the environment?
+Entity: ["Nitrogen deposition", "Atmosphere"]
+Property: ["affects"]
+
+CQ1: What property is associated with the process of nitrogen atom measurement in soil?
+Entity: ["Nitrogen atom in soil", "Soil"]
+Property: ["onProperty"]
+
+CQ1: What is the superclass of carbon dioxide-reducing sediment?
+Entity: ["Carbon dioxide-reducing sediment", "Sediment"]
+Property: ["subClassOf"]
+
+CQ1: What does carbon nanotube enriched soil have increased levels of?
+Entity: ["Carbon nanotube enriched soil", "Carbon nanotubes"]
+Property: ["has_increased_levels_of"]
+
+CQ1: Who created the marine cold seep biome ontology?
+Entity: ["Marine cold seep biome", "Creator"]
+Property: ["created_by"]
+
+CQ1: What are the exact synonyms for carbon monoxide?
+Entity: ["Carbon monoxide", "CO"]
+Property: ["hasExactSynonym"]
+
+CQ1: What are the related synonyms for coral bleaching?
+Entity: ["Coral bleaching", "Coral bleaching process"]
+Property: ["hasRelatedSynonym"]
+
+CQ1: What does atmospheric carbon dioxide composition include?
+Entity: ["Atmospheric carbon dioxide", "Carbon dioxide"]
+Property: ["someValuesFrom"]
+
+CQ1: What are the broad synonyms for metabolic energy generation?
+Entity: ["Metabolic energy generation", "Energy pathways"]
+Property: ["hasBroadSynonym"]
+
+CQ1: What class is disjoint with mudstone?
+Entity: ["Mudstone", "Disjoint class"]
+Property: ["disjointWith"]
+
+CQ1: What is the intersection of classes in the definition of nitrogen-oxygen planetary atmosphere?
+Entity: ["Nitrogen-oxygen planetary atmosphere", "Nitrogen and Oxygen gases"]
+Property: ["intersectionOf"]
+
+CQ1: What is the OBO namespace for reactive nitrogen species?
+Entity: ["Reactive nitrogen species", "OBO namespace"]
+Property: ["hasOBONamespace"]
+
+CQ1: What does the process of decapitation result from?
+Entity: ["Decapitation", "Decapitation method"]
+Property: ["someValuesFrom"]
+
+Data property with domain and range examples: 
+
 
