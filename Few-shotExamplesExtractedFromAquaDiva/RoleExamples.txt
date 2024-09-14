@@ -201,3 +201,68 @@ Data property with domain and range examples:
     rdfs:range xsd:string ;
     rdfs:comment "A role of a substance classified as a contaminant in the environment, typically resulting from human activities."@en .
 
+Meaningful individuals examples: 
+
+:NaClSolution rdf:type owl:NamedIndividual ;
+    :hasRole :CalibrationStandard ;
+    rdfs:label "Sodium chloride solution (0.9%)" .
+
+:HematoxylinDye rdf:type owl:NamedIndividual ;
+    :hasRole :CytologicalStain ;
+    rdfs:label "Hematoxylin dye" .
+
+:PelletDuringPlasmaSeparation rdf:type owl:NamedIndividual ;
+    :hasRole :MaterialComponent ;
+    rdfs:label "Pellet formed during plasma separation" .
+
+:SupernatantInProteinPrecipitation rdf:type owl:NamedIndividual ;
+    :hasRole :LiquidComponent ;
+    rdfs:label "Supernatant in protein precipitation" .
+
+:JohnDoeClinicalResearchCoordinator rdf:type owl:NamedIndividual ;
+    :hasRole :ClinicalResearchCoordinator ;
+    rdfs:label "John Doe, Clinical Research Coordinator" .
+
+:SigmaAldrichReagentSupplier rdf:type owl:NamedIndividual ;
+    :hasRole :MaterialSupplier ;
+    rdfs:label "Sigma-Aldrich, reagent supplier" .
+
+:PRAHealthSciences rdf:type owl:NamedIndividual ;
+    :hasRole :ContractResearchOrganization ;
+    rdfs:label "PRA Health Sciences" .
+
+:ATP rdf:type owl:NamedIndividual ;
+    :hasRole :EnergyCarrier ;
+    rdfs:label "Adenosine triphosphate (ATP)" .
+
+:Hexokinase rdf:type owl:NamedIndividual ;
+    :hasRole :EnzymeInGlycolysis ;
+    rdfs:label "Enzyme Hexokinase" .
+
+:MHCBindingAssay rdf:type owl:NamedIndividual ;
+    :hasRole :IC50Assay ;
+    rdfs:label "Peptide-MHC binding assay" .
+
+:PCBs rdf:type owl:NamedIndividual ;
+    :hasRole :EnvironmentalContaminant ;
+    rdfs:label "Polychlorinated biphenyls (PCBs)" .
+
+:Cyanide rdf:type owl:NamedIndividual ;
+    :hasRole :Poison ;
+    rdfs:label "Cyanide" .
+
+:Aspirin rdf:type owl:NamedIndividual ;
+    :hasRole :EnzymeInhibitor ;
+    rdfs:label "Aspirin" .
+
+:Rotenone rdf:type owl:NamedIndividual ;
+    :hasRole :MitochondrialInhibitor ;
+    rdfs:label "Rotenone" .
+
+:AerobicRespirationInHumanMuscle rdf:type owl:NamedIndividual ;
+    :hasRole :AerobicRespirationProcess ;
+    rdfs:label "Aerobic respiration in human muscle cells" .
+
+:FermentationInYeastCells rdf:type owl:NamedIndividual ;
+    :hasRole :AnaerobicRespirationProcess ;
+    rdfs:label "Fermentation in yeast cells" .
