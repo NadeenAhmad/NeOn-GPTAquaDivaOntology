@@ -126,4 +126,114 @@ Property: ["someValuesFrom"]
 
 Data property with domain and range examples: 
 
+:hasSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CarbonDioxide ;
+    rdfs:comment "The hasSynonym property gives an alternative name or abbreviation for the chemical compound."@en .
+
+:hasLabel rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Photosynthesis ;
+    rdfs:comment "The hasLabel property provides a human-readable label for the biological process of photosynthesis."@en .
+
+:hasExactSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RespirationOrgan ;
+    rdfs:comment "The hasExactSynonym property gives alternative exact names for the respiration organ."@en .
+
+:hasExactSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RespirationOrgan ;
+    rdfs:comment "The hasExactSynonym property gives alternative exact names for the respiration organ."@en .
+
+:hasComment rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenOxide ;
+    rdfs:comment "The hasComment property provides a contextual note on nitrogen oxide compounds."@en .
+
+:rdfs:label rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CarbonDioxide ;
+    rdfs:comment "A human-readable label for the entity, such as carbon dioxide."@en .
+
+:obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Photosynthesis ;
+    rdfs:comment "The synthesis by organisms of organic chemical compounds, especially carbohydrates, from carbon dioxide (CO2) using energy obtained from light."@en .
+
+:rdfs:label rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Asphyxiation ;
+    rdfs:comment "A human-readable label for the asphyxiation process."@en .
+
+:obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RespirationOrgan ;
+    rdfs:comment "Organ that functions in gaseous exchange between an organism and its environment."@en .
+
+:obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Nitrate ;
+    rdfs:comment "A nitrogen oxoanion formed by loss of a proton from nitric acid."@en .
+
+:obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrogenAtom ;
+    rdfs:comment "An element with atomic symbol N, atomic number 7, and atomic weight 14.01."@en .
+
+:obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NitrousAcid ;
+    rdfs:comment "A nitrogen oxoacid that has formula HNO2."@en .
+
+:rdfs:label rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Ammonia ;
+    rdfs:comment "A human-readable label for ammonia."@en .
+
+Meaningful individuals examples: 
+
+
+# Retrotrapezoid nucleus
+uberon:0009918 a uberon:RetrotrapezoidNucleus ;
+    rdfs:label "retrotrapezoid nucleus"@en .
+
+# Dinitrogen oxide
+chebi:17045 a chebi:DinitrogenOxide ;
+    rdfs:label "dinitrogen oxide"@en .
+
+# Nitrate
+chebi:17632 a chebi:Nitrate ;
+    rdfs:label "nitrate"@en .
+
+# Azanide
+chebi:29337 a chebi:Azanide ;
+    rdfs:label "azanide"@en .
+
+# Root nodule
+envo:01000164 a envo:RootNodule ;
+    rdfs:label "root nodule"@en ;
+    oboInOwl:created_by "ORCID:0000-0002-4366-3088" .
+
+# Nitrogen-oxygen planetary atmosphere
+envo:01000811 a envo:NitrogenOxygenAtmosphere ;
+    rdfs:label "nitrogen-oxygen planetary atmosphere"@en ;
+    rdfs:comment "An instance of this class would be Earth's atmosphere" .
+
+# Reductive carboxylate cycle (CO2 fixation)
+iev:0001435 a iev:ReductiveCarboxylateCycle ;
+    rdfs:label "Reductive carboxylate cycle"@en ;
+    rdfs:synonym "CO2 fixation", "Carbon dioxide fixation" .
+
+# Flash freezing
+obi:0001952 a obi:FlashFreezing ;
+    rdfs:label "flash freezing"@en ;
+    obi:IAO_0000117 "Mathias Brochhausen", "Jie Zheng" .
+
+# Natural gas
+envo:01000552 a envo:NaturalGas ;
+    rdfs:label "natural gas"@en ;
+    oboInOwl:hasDbXref <https://en.wikipedia.org/wiki/Natural_gas> .
+
+# Ammonia
+chebi:16134 a chebi:Ammonia ;
+    rdfs:label "ammonia"@en .
+
+# Ammonium
+chebi:28938 a chebi:Ammonium ;
+    rdfs:label "ammonium"@en .
+
+# Biomarker
+chebi:59163 a chebi:Biomarker ;
+    rdfs:label "biomarker"@en ;
+    rdfs:synonym "Molecular marker"@en .
+
+
 
