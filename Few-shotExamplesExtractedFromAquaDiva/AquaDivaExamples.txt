@@ -5,111 +5,111 @@ Object Property: characteristicFor
 CQ1: What characteristic is associated with an entity?
 Entity: ["Characteristic", "Entity"]
 Property: ["characteristicFor"]
-Object Property: entityRelated
 
+Object Property: entityRelated
 CQ2: What relationship exists between entities in different observations?
 Entity: ["Observation", "Observation"]
 Property: ["entityRelated"]
-Object Property: hasBaseQualifier
 
+Object Property: hasBaseQualifier
 CQ3: What is the base qualifier in a composite characteristic qualifier?
 Entity: ["CompositeCharacteristicQualifier", "BaseCharacteristicQualifier"]
 Property: ["hasBaseQualifier"]
-Object Property: hasContext
 
+Object Property: hasContext
 CQ4: What observation serves as the context for another observation?
 Entity: ["Observation", "Observation"]
 Property: ["hasContext"]
-Object Property: hasMeasurement
 
+Object Property: hasMeasurement
 CQ5: What measurement is associated with an observation?
 Entity: ["Observation", "Measurement"]
 Property: ["hasMeasurement"]
-Object Property: hasMember
 
+Object Property: hasMember
 CQ6: What members does an observation collection contain?
 Entity: ["ObservationCollection", "Observation"]
 Property: ["hasMember"]
-Object Property: hasNextQualifier
 
+Object Property: hasNextQualifier
 CQ7: What is the next qualifier in a composite characteristic qualifier?
 Entity: ["CompositeCharacteristicQualifier", "CharacteristicQualifier"]
 Property: ["hasNextQualifier"]
-Object Property: hasObservedRelation
 
+Object Property: hasObservedRelation
 CQ8: What observed relation is present in an observation?
 Entity: ["Observation"]
 Property: ["hasObservedRelation"]
-Object Property: hasQualifier
 
+Object Property: hasQualifier
 CQ9: What characteristic qualifier is associated with a measured characteristic?
 Entity: ["MeasuredCharacteristic", "CharacteristicQualifier"]
 Property: ["hasQualifier"]
-Object Property: hasSourceUnit
 
+Object Property: hasSourceUnit
 CQ10: What is the source unit in a unit conversion?
 Entity: ["UnitConversion", "Unit"]
 Property: ["hasSourceUnit"]
-Object Property: hasTargetUnit
 
+Object Property: hasTargetUnit
 CQ1: What is the target unit in a unit conversion?
 Entity: ["UnitConversion", "Unit"]
 Property: ["hasTargetUnit"]
-Object Property: hasUnit
 
+Object Property: hasUnit
 CQ11: What base or derived unit is associated with a composite or derived unit?
 Entity: ["CompositeUnit", "DerivedUnit", "PrefixedUnit", "BaseUnit"]
 Property: ["hasUnit"]
-Object Property: hasValue
 
+Object Property: hasValue
 CQ12: What value does the measurement have?
 Entity: ["Measurement", "MeasuredValue"]
 Property: ["hasValue"]
-Object Property: measurementFor
 
+Object Property: measurementFor
 CQ13: What observation is a measurement associated with?
 Entity: ["Measurement", "Observation"]
 Property: ["measurementFor"]
-Object Property: measuresCharacteristic
 
+Object Property: measuresCharacteristic
 CQ14: What characteristic does the measurement type measure?
 Entity: ["MeasurementType", "Characteristic"]
 Property: ["measuresCharacteristic"]
-Object Property: measuresEntity
 
+Object Property: measuresEntity
 CQ15: What entity does the measurement type measure?
 Entity: ["MeasurementType", "Entity"]
 Property: ["measuresEntity"]
-Object Property: measuresUsingProtocol
 
+Object Property: measuresUsingProtocol
 CQ16: What protocol does the measurement type use?
 Entity: ["MeasurementType", "Protocol"]
 Property: ["measuresUsingProtocol"]
-Object Property: measuresUsingStandard
 
+Object Property: measuresUsingStandard
 CQ17: What standard does the measurement type use?
 Entity: ["MeasurementType", "Standard"]
 Property: ["measuresUsingStandard"]
-Object Property: ofCharacteristic
 
+Object Property: ofCharacteristic
 CQ18: What characteristic does the measurement represent?
 Entity: ["Measurement", "Characteristic"]
 Property: ["ofCharacteristic"]
-Object Property: ofEntity
 
+Object Property: ofEntity
 CQ19: What entity is observed in the observation?
 Entity: ["Observation", "Entity"]
 Property: ["ofEntity"]
-Object Property: usesProtocol
 
+Object Property: usesProtocol
 CQ20: What protocol is used in a measurement?
 Entity: ["Measurement", "Protocol"]
 Property: ["usesProtocol"]
-Object Property: usesStandard
 
+Object Property: usesStandard
 CQ21: What standard is used in a measurement?
 Entity: ["Measurement", "Standard"]
-Property: ["usesStandard"]
+
  
 
 
