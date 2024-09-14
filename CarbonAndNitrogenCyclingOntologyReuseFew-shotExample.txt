@@ -1,0 +1,45 @@
+demonstrate the expected level of hierarchy, where each class and its corresponding subclasses are represented using dashed arrows. A single arrow (\codeword{-->}) denotes a direct class, while additional arrows (\codeword{--->} or more) indicate increasing levels of subclass hierarchy within the ontology.
+  
+-> :atom
+- -> :main_group_element_atom
+- - -> :alkali_metal_atom
+- - - -> :caesium_atom
+- - - -> :lithium_atom
+- - - -> :potassium_atom
+- - - -> :sodium_atom
+- - -> :alkaline_earth_metal_atom
+- - - -> :barium_atom
+- - - -> :calcium_atom
+- - - -> :magnesium_atom
+- - - -> :strontium_atom
+- - -> :noble_gas_atom
+- - - -> :argon_atom
+- - - - -> :argon-39_atom
+- - - -> :helium_atom
+- - - - -> :helium-3_atom
+- - -> :p-block_element_atom
+- - - -> :argon_atom
+- - - - -> :argon-39_atom
+- - - -> :boron_group_element_atom
+- - - - -> :boron_atom
+- - - - -> :thallium
+- - -> :carbon_group_element_atom
+- - - -> :carbon_atom
+- - - - -> :carbon-13_atom
+- - - - -> :carbon-14_atom
+- - - -> :lead_atom
+- - - -> :silicon_atom
+- - - -> :tin_atom
+- - -> :chalcogen
+- - - -> :oxygen_atom
+- - - -> :sulfur_atom
+- - -> :halogen
+- - - -> :bromine_atom
+- - - -> :chlorine_atom
+- - - -> :fluorine_atom
+- - -> :pnictogen
+- - - -> :antimony_atom
+- - - -> :arsenic_atom
+- - - -> :nitrogen_atom
+- - - - -> :nitrogen-15_atom
+- - - -> :phosphorus_atom 
