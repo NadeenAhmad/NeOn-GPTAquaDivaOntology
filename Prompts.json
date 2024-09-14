@@ -1,1 +1,154 @@
+{
+  "AppendixB": {
+    "description": "This appendix presents an illustrative example of the prompt pipeline used in our ontology generation process. The diagram highlights the key sections of the prompt, with black text representing the fixed template applied across various scenarios. Green-highlighted boxes indicate placeholders for dynamic, domain-specific content. Blue text specifically denotes sections where extensions to the pipeline have been introduced, reflecting improvements and customizations made to better suit the ontology's structural and domain requirements.",
+    "prompts": [
+      {
+        "title": "Specification of Ontology Requirements",
+        "prompts": [
+          {
+            "Prompt 1": "You are a {Persona}. The {Domain Name} describes {Domain Description}. Here are some keywords to help you model the domain. Use all the following keywords, not just a snippet, and your own knowledge and domain understanding to generate the ontology based on the NeOn methodology for ontology engineering: {Keywords}. The original ontology has {Ontology Metric Counts}. Make sure that the generated ontology reflects the previous metrics and has a high subclass count; if the class count is n, the subclass count should at least be n-1.",
+            "requirements": [
+              "The purpose of the ontology",
+              "The scope of the ontology",
+              "The target group of the ontology",
+              "The intended uses",
+              "The functional requirements",
+              "The non-functional requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Reuse of Ontological Knowledge Resources",
+        "prompts": [
+          {
+            "Prompt 2": "The ontology should accurately represent the complexity and hierarchical structure of the domain. It should be detailed, with well-defined hierarchy levels and interconnected relationships between concepts. This can be achieved with ontology reuse. Reuse refers to utilizing existing ontological knowledge or structures as input in the development of new ontologies. It allows for more efficient and consistent knowledge representation across applications. Reuse the following example to improve the ontology structure from the {Existing Resource Name and Description}. Example: {Few-shot examples from existing resource}."
+          }
+        ]
+      },
+      {
+        "title": "Ontology Conceptualization",
+        "prompts": [
+          {
+            "Prompt 3": "Based on the generated Specifications of Ontology Requirements and all the keywords given, write a list of Competency Questions that the core module of the ontology should be able to answer. Make it as complete as possible. The original ontology has {Ontology Metric Counts}. Make sure that the generated ontology reflects the previous metrics and has a high subclass count; if the class count is n, the subclass count should at least be n-1."
+          },
+          {
+            "Prompt 4": "For each Competency Question, extract entities and properties that must be introduced in the ontology. A competency question can help in extracting more than one triple. Do it for all the competency questions. Examples: {Few-shot examples for entity and relationship extraction from competency questions}. The original ontology has {Ontology Metric Counts}. Make sure that the generated ontology reflects the previous metrics and has a high subclass count."
+          },
+          {
+            "Prompt 5": "Considering entities and properties, generate a conceptual model expressing the triples of the entities, properties, and their relations (subject-relation-object triples). Do it for all the entities and properties, not just a snippet. The original ontology has {Ontology Metric Counts}. Make sure that the generated ontology reflects the previous metrics and has a high subclass count."
+          }
+        ]
+      },
+      {
+        "title": "Ontology Implementation",
+        "prompts": [
+          {
+            "Prompt 6": "Considering the conceptual model you generated, generate a full ontology serialized in Turtle syntax. The original ontology has {Ontology Metric Counts}. Make sure the syntax is correct, all entities and properties have correct prefixes, the ontology is consistent, and free from common pitfalls.",
+            "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ]
+          },
+          {
+            "Prompt 7": "For all object properties, if lacking, generate the inverse property. An inverse property expresses a two-way relationship between two concepts. If the ontology contains a property 'hasPart,' its inverse would be 'isPartOf.' Ensure that every object property that has an inverse relationship is accounted for. Generate the inverse property for the whole ontology, not just a snippet. Print only the new triples. The original ontology has {Ontology Metric Counts}. Make sure that the generated ontology reflects the previous metrics and has a high subclass count.",
+             "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ]
+          },
+          {
+            "Prompt 8": "For all object properties, if lacking, generate the reflexive property. A reflexive property is one where an entity can be related to itself, such as 'isSimilarTo.' Ensure that reflexive properties are appropriately assigned where meaningful. Generate reflexive properties for the whole ontology, not just a snippet. Print only the new triples. The original ontology has {Ontology Metric Counts}. Ensure high subclass count."
+            , "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ]
+          },
+          {
+            "Prompt 9": "For all object properties, if lacking, generate the symmetric property. A symmetric property means if entity A is related to entity B, then entity B is also related to entity A, like 'isMarriedTo.' Ensure symmetric properties are introduced where relevant. Generate symmetric properties for the whole ontology, not just a snippet. Print only the new triples. The original ontology has {Ontology Metric Counts}. Make sure to reflect the previous metrics and ensure high subclass count."
+          ,    "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ]
+          },
+          {
+            "Prompt 10": "For all object properties, if lacking, generate the functional property. A functional property means an entity can only have one unique value for the property, such as 'hasBirthDate.' Ensure functional properties are introduced for relevant object properties. Generate functional properties for the whole ontology, not just a snippet. Print only the new triples. The original ontology has {Ontology Metric Counts}. Ensure high subclass count."
+            , "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ]
+          },
+          {
+            "Prompt 11": "For all object properties, if lacking, generate the transitive property. A transitive property means if entity A is related to entity B, and B is related to C, then A is also related to C, like 'isAncestorOf.' Ensure transitive properties are introduced for relevant object properties. Generate transitive properties for the whole ontology, not just a snippet. Print only the new triples. The original ontology has {Ontology Metric Counts}. Make sure that the generated ontology reflects the previous metrics and has a high subclass count."
+          ,  "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ] 
+          },
+          {
+            "Prompt 12": "Considering the classes in the ontology, introduce Data Properties when meaningful, such as: {Few-shot examples to demonstrate introducing data properties}. Modify the domain and range according to the type of value the Data Property requests. Do it for the whole ontology, not just a snippet. Print only the new triples. The original ontology has {Ontology Metric Counts}. Make sure to reflect the previous metrics and ensure high subclass count."
+          ,   "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ] 
+          },
+          {
+            "Prompt 13": "Populate the ontology with meaningful individuals. Examples: {Few-shot examples of meaningful individuals}. Print only the new triples. The original ontology has {Ontology Metric Counts}. Ensure high subclass count."
+          ,    "validation": [
+              "the turtle syntax is correct",
+              "all the entities and properties have the correct prefixes",
+              "the prefix for the ontology is declared",
+              "the ontology is consistent",
+              "the ontology is free from common pitfalls"
+            ]
+          },
+          {
+            "Prompt 14": "If not there, add triples about the ontology IRI, label, version, and description in natural language. Print only the new triples."
+          },
+          {
+            "Prompt 15": "For all the classes and properties, add a triple that describes its meaning in natural language, using the annotation property rdfs:comment. Do it for the whole ontology, not just a snippet. Print only the new triples."
+          },
+          {
+            "Prompt 16": "The current generated ontology lacks the necessary complexity and hierarchical structure to reflect the domain accurately. Use the example below to refine the structure of the ontology: {Existing Resource Name and Description}. Example: {Few-shot examples from existing resource}."
+          }
+        ]
+      },
+      {
+        "title": "Ontology Verification",
+        "prompts": [
+          {
+            "Prompt 17": "Based on the error message below, correct the syntax error in the affected part of the ontology. Ensure that the revised ontology adheres to proper RDF/Turtle syntax. {RDFLib Syntax Error Message} {Affected Part of the Ontology}"
+          },
+          {
+            "Prompt 18": "Based on the error message below, fix the inconsistency in the affected part of the ontology. {HermiT Reasoner Error Message} {Affected Part of the Ontology}"
+          },
+          {
+            "Prompt 19": "Based on the error message below, fix the pitfall in the affected part of the ontology. {OOPS API Error Message} {Affected Part of the Ontology}"
+          }
+        ]
+      }
+    ]
+  }
+}
 
