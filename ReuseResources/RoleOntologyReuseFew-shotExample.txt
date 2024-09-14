@@ -1,0 +1,41 @@
+demonstrate the expected level of hierarchy, where each class and its corresponding subclasses are represented using dashed arrows. A single arrow (\codeword{-->}) denotes a direct class, while additional arrows (\codeword{--->} or more) indicate increasing levels of subclass hierarchy within the ontology.
+    
+
+--> anatomical cavity
+--> anatomical conduit space
+--> extraembryonic cavity
+--> open anatomical space
+---> future brain vesicle
+----> early prosencephalic vesicle
+----> early telencephalic vesicle
+--> material anatomical entity
+---> anatomical collection
+----> articular system
+----> skeleton
+---> anatomical structure
+----> acellular anatomical structure
+-----> acellular membrane
+-----> basement membrane of epithelium
+-----> collection of collagen fibrils
+----> anatomical junction
+----> anatomical system
+----> cell condensation
+----> conceptus
+----> ectoderm-derived structure
+----> endoderm-derived structure
+----> fungal structure
+----> lateral structure
+----> mesoderm-derived structure
+----> mixed ectoderm/mesoderm/endoderm-derived structure
+----> mixed endoderm/mesoderm-derived structure
+----> morphological feature
+----> multi cell part structure
+----> multicellular anatomical structure
+----> muscle structure
+----> neural crest-derived structure
+----> septum
+----> structure with developmental contribution from neural crest
+----> surface structure
+----> transparent eye structure
+----> anatomical surface region
+----> developing anatomical structure
