@@ -1,1 +1,511 @@
 
+@prefix : <http://example.org/aquadiva#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix envo: <http://purl.obolibrary.org/obo/envo#> .
+
+### Ontology Metadata
+<> rdf:type owl:Ontology ;
+    rdfs:label "AquaDiva Groundwater Ecosystem Role Ontology (AGERO)" ;
+    rdfs:comment "Ontology representing the roles of biological and chemical entities in groundwater ecosystems, focusing on biogeochemical interactions and environmental containment factors." .
+
+### Classes
+
+### Biological Roles
+:BiologicalRole rdf:type owl:Class ;
+    rdfs:label "Biological Role" ;
+    rdfs:comment "A role that biological entities play in the groundwater ecosystem." .
+
+:DecomposerRole rdf:type owl:Class ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:label "Decomposer Role" ;
+    rdfs:comment "The role of decomposing organic matter in groundwater environments." .
+
+:NitrogenFixationRole rdf:type owl:Class ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:label "Nitrogen Fixation Role" ;
+    rdfs:comment "The role that some microbes play in fixing nitrogen in aquifer ecosystems." .
+
+:SymbioticRole rdf:type owl:Class ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:label "Symbiotic Role" ;
+    rdfs:comment "A biological role where organisms engage in symbiotic relationships." .
+
+:PrimaryConsumer rdf:type owl:Class ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:label "Primary Consumer" ;
+    rdfs:comment "The role of consuming primary producers in the groundwater food web." .
+
+:PrimaryProducer rdf:type owl:Class ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:label "Primary Producer" ;
+    rdfs:comment "An organism that produces organic compounds, typically autotrophic bacteria in groundwater systems." .
+
+### Chemical Roles
+:ChemicalRole rdf:type owl:Class ;
+    rdfs:label "Chemical Role" ;
+    rdfs:comment "A role that chemical substances play in the groundwater ecosystem." .
+
+:ElectronAcceptor rdf:type owl:Class ;
+    rdfs:subClassOf :ChemicalRole ;
+    rdfs:label "Electron Acceptor" ;
+    rdfs:comment "A chemical that accepts electrons during chemical reactions, such as oxygen or nitrate." .
+
+:Poison rdf:type owl:Class ;
+    rdfs:subClassOf :ChemicalRole ;
+    rdfs:label "Poison" ;
+    rdfs:comment "A substance that negatively impacts biological entities." .
+
+:Inhibitor rdf:type owl:Class ;
+    rdfs:subClassOf :ChemicalRole ;
+    rdfs:label "Inhibitor" ;
+    rdfs:comment "A substance that inhibits biological or chemical processes in groundwater." .
+
+:Acid rdf:type owl:Class ;
+    rdfs:subClassOf :ChemicalRole ;
+    rdfs:label "Acid" ;
+    rdfs:comment "A chemical substance that influences pH and biogeochemical processes in groundwater." .
+
+### Environmental Containment
+:EnvironmentalContainmentFactor rdf:type owl:Class ;
+    rdfs:label "Environmental Containment Factor" ;
+    rdfs:comment "Environmental conditions that regulate biological and chemical roles in groundwater ecosystems." .
+
+:pH rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalContainmentFactor ;
+    rdfs:label "pH" ;
+    rdfs:comment "The level of acidity or basicity that influences microbial activity in aquifers." .
+
+:TemperatureGradient rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalContainmentFactor ;
+    rdfs:label "Temperature Gradient" ;
+    rdfs:comment "A gradient in temperature that affects biological and chemical roles in aquifers." .
+
+### Processes
+:Biogeochemistry rdf:type owl:Class ;
+    rdfs:label "Biogeochemistry" ;
+    rdfs:comment "The chemical processes occurring in the ecosystem, particularly in groundwater." .
+
+:NutrientCycling rdf:type owl:Class ;
+    rdfs:subClassOf :Biogeochemistry ;
+    rdfs:label "Nutrient Cycling" ;
+    rdfs:comment "The movement and transformation of nutrients through biological and chemical processes." .
+
+:CarbonCycle rdf:type owl:Class ;
+    rdfs:subClassOf :Biogeochemistry ;
+    rdfs:label "Carbon Cycle" ;
+    rdfs:comment "The carbon transformations in the groundwater system." .
+
+:NitrogenCycle rdf:type owl:Class ;
+    rdfs:subClassOf :Biogeochemistry ;
+    rdfs:label "Nitrogen Cycle" ;
+    rdfs:comment "The nitrogen transformations within the groundwater ecosystem." .
+
+:SulfurCycle rdf:type owl:Class ;
+    rdfs:subClassOf :Biogeochemistry ;
+    rdfs:label "Sulfur Cycle" ;
+    rdfs:comment "The sulfur transformations in the aquifer system." .
+
+:PhosphorusCycle rdf:type owl:Class ;
+    rdfs:subClassOf :Biogeochemistry ;
+    rdfs:label "Phosphorus Cycle" ;
+    rdfs:comment "The phosphorus transformations in the groundwater ecosystem." .
+
+### Aquifer Structures
+:AquiferSystem rdf:type owl:Class ;
+    rdfs:label "Aquifer System" ;
+    rdfs:comment "The geological structure that contains groundwater, such as karst or porous media." .
+
+:KarstSystem rdf:type owl:Class ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:label "Karst System" ;
+    rdfs:comment "A type of aquifer system characterized by porous rock formations." .
+
+:PorousRockFormation rdf:type owl:Class ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:label "Porous Rock Formation" ;
+    rdfs:comment "A geological structure that contains groundwater within its porous spaces." .
+
+### Object Properties
+:hasBiologicalRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :BiologicalRole ;
+    rdfs:label "has biological role" ;
+    rdfs:comment "Associates an organism with its biological role in the ecosystem." .
+
+:hasChemicalRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Substance ;
+    rdfs:range :ChemicalRole ;
+    rdfs:label "has chemical role" ;
+    rdfs:comment "Associates a substance with its chemical role in the groundwater system." .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :GroundwaterEnvironment ;
+    rdfs:label "plays role in" ;
+    rdfs:comment "Defines the environmental context in which a biological role is played." .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain :Acid ;
+    rdfs:range :Biogeochemistry ;
+    rdfs:label "influences" ;
+    rdfs:comment "Specifies how an acid influences biogeochemical processes in groundwater." .
+
+:affects rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalContainmentFactor ;
+    rdfs:range :BiologicalRole ;
+    rdfs:label "affects" ;
+    rdfs:comment "Defines how an environmental containment factor affects biological roles." .
+
+:inhibits rdf:type owl:ObjectProperty ;
+    rdfs:domain :Inhibitor ;
+    rdfs:range :Metabolism ;
+    rdfs:label "inhibits" ;
+    rdfs:comment "Describes how an inhibitor affects metabolic processes in the ecosystem." .
+
+:hasPoisonousEffectOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Poison ;
+    rdfs:range :BiologicalEntity ;
+    rdfs:label "has poisonous effect on" ;
+    rdfs:comment "Defines the relationship between a poison and the biological entities it affects." .
+
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalEntity ;
+    rdfs:range :Poison ;
+    rdfs:label "is affected by" ;
+    rdfs:comment "Defines how biological entities are influenced by poisons." .
+
+:isLocatedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :GroundwaterEnvironment ;
+    rdfs:label "is located in" ;
+    rdfs:comment "Describes where a biological role is enacted." .
+
+:regulates rdf:type owl:ObjectProperty ;
+    rdfs:domain :pH ;
+    rdfs:range :MicrobialActivity ;
+    rdfs:label "regulates" ;
+    rdfs:comment "Describes how pH levels regulate microbial activity." .
+
+:promotes rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalContainmentFactor ;
+    rdfs:range :BiologicalFunction ;
+    rdfs:label "promotes" ;
+    rdfs:comment "Describes how environmental containment factors promote biological functions." .
+
+:isInvolvedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :SulfurReducingBacteria ;
+    rdfs:range :SulfurCycle ;
+    rdfs:label "is involved in" ;
+    rdfs:comment "Defines the role of sulfur-reducing bacteria in the sulfur cycle." .
+
+:isKeyIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :DenitrificationProcess ;
+    rdfs:label "is key in" ;
+    rdfs:comment "Describes the key role that chemical agents play in denitrification processes." .
+
+### Individuals
+:MicrobialSpecies rdf:type owl:NamedIndividual ;
+    rdfs:label "Microbial Species" ;
+    rdfs:comment "An example of a microbial species in the groundwater ecosystem." .
+
+:Nitrate rdf:type owl:NamedIndividual ;
+    rdfs:label "Nitrate" ;
+    rdfs:comment "An example of an electron acceptor in biogeochemical processes." .
+
+### Annotation Properties
+rdfs:comment rdf:type owl:AnnotationProperty .
+rdfs:label rdf:type owl:AnnotationProperty .
+
+### Additional Prefixes for Interoperability
+:ENVO_Ontology rdf:type owl:Ontology ;
+    rdfs:comment "Reference to the Environment Ontology (ENVO) for hierarchical reuse." .
+### SubClassOf relationships to increase subclass count (high subclass count)
+:AcidicEnvironment rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalContainmentFactor .
+
+:BasicEnvironment rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalContainmentFactor .
+
+:HeavyMetal rdf:type owl:Class ;
+    rdfs:subClassOf :Poison .
+
+:Lead rdf:type owl:Class ;
+    rdfs:subClassOf :HeavyMetal .
+
+:Mercury rdf:type owl:Class ;
+    rdfs:subClassOf :HeavyMetal .
+
+:Antibiotic rdf:type owl:Class ;
+    rdfs:subClassOf :Inhibitor .
+
+:SaprotrophicBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :DecomposerRole .
+
+:SulfurReducingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :ChemicalRole .
+
+:Nitrate rdf:type owl:Class ;
+    rdfs:subClassOf :ElectronAcceptor .
+
+:Oxygen rdf:type owl:Class ;
+    rdfs:subClassOf :ElectronAcceptor .
+### EquivalentClasses
+:ElectronDonor rdf:type owl:Class ;
+    owl:equivalentClass :ChemicalEntity .
+
+:InhibitorySubstance rdf:type owl:Class ;
+    owl:equivalentClass :Inhibitor .
+
+:MutualisticOrganism rdf:type owl:Class ;
+    owl:equivalentClass :SymbioticRole .
+
+:OrganicContaminant rdf:type owl:Class ;
+    owl:equivalentClass :InhibitorySubstance .
+
+:HeavyMetal rdf:type owl:Class ;
+    owl:equivalentClass :Poison .
+
+:NitrogenFixingBacteria rdf:type owl:Class ;
+    owl:equivalentClass :NitrogenFixationRole .
+### DisjointClasses
+:Acid rdf:type owl:Class ;
+    owl:disjointWith :Base .
+
+:Poison rdf:type owl:Class ;
+    owl:disjointWith :Nutrient .
+
+:ElectronAcceptor rdf:type owl:Class ;
+    owl:disjointWith :ElectronDonor .
+
+:Inhibitor rdf:type owl:Class ;
+    owl:disjointWith :Promoter .
+
+:SymbioticRole rdf:type owl:Class ;
+    owl:disjointWith :ParasiticRole .
+### Annotations for class definitions
+:Acid rdfs:comment "A chemical substance that increases the concentration of hydrogen ions, affecting pH." .
+
+:Inhibitor rdfs:comment "A chemical or biological entity that reduces the rate of a chemical or biological process." .
+
+:NutrientCycling rdfs:comment "The movement and exchange of organic and inorganic matter back into the production of living matter." .
+
+:DecomposerRole rdfs:comment "The functional role of organisms that break down dead organic material." .
+
+:KarstSystem rdfs:comment "An aquifer system characterized by soluble rock, often containing caves and sinkholes." .
+
+### Additional annotation properties
+rdfs:seeAlso rdf:type owl:AnnotationProperty .
+rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
+
+### Additional object properties
+:isPromotedBy rdf:type owl:ObjectProperty ;
+    rdfs:label "is promoted by" ;
+    rdfs:domain :BiologicalFunction ;
+    rdfs:range :EnvironmentalContainmentFactor .
+
+:isInhibitedBy rdf:type owl:ObjectProperty ;
+    rdfs:label "is inhibited by" ;
+    rdfs:domain :BiologicalFunction ;
+    rdfs:range :Inhibitor .
+
+:contains rdf:type owl:ObjectProperty ;
+    rdfs:label "contains" ;
+    rdfs:domain :AquiferSystem ;
+    rdfs:range :ChemicalEntity .
+
+:hasElectronDonor rdf:type owl:ObjectProperty ;
+    rdfs:label "has electron donor" ;
+    rdfs:domain :ChemicalRole ;
+    rdfs:range :ElectronDonor .
+### Data properties
+:hasConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:label "has concentration" ;
+    rdfs:domain :ChemicalEntity ;
+    rdfs:range xsd:float .
+
+:haspH rdf:type owl:DatatypeProperty ;
+    rdfs:label "has pH" ;
+    rdfs:domain :EnvironmentalContainmentFactor ;
+    rdfs:range xsd:float .
+
+:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:label "has temperature" ;
+    rdfs:domain :EnvironmentalContainmentFactor ;
+    rdfs:range xsd:float .
+
+:hasContaminantLevel rdf:type owl:DatatypeProperty ;
+    rdfs:label "has contaminant level" ;
+    rdfs:domain :Contaminant ;
+    rdfs:range xsd:float .
+### Logical Axioms: Object property domain and range restrictions
+:isLocatedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalRole ;
+    rdfs:range :GroundwaterEnvironment .
+
+:isCriticalTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalEntity ;
+    rdfs:range :BiogeochemicalProcess .
+
+:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalContainmentFactor ;
+    rdfs:range :ChemicalRole .
+
+:hasTrophicRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiologicalEntity ;
+    rdfs:range :TrophicRole .
+### Adding Individuals
+:Iron rdf:type :HeavyMetal ;
+    rdfs:label "Iron" ;
+    rdfs:comment "A heavy metal that acts as a poison in certain concentrations in groundwater." .
+
+:Sulfur rdf:type :ChemicalEntity ;
+    rdfs:label "Sulfur" ;
+    rdfs:comment "A chemical substance that participates in the sulfur cycle." .
+
+:Arsenic rdf:type :Contaminant ;
+    rdfs:label "Arsenic" ;
+    rdfs:comment "A toxic contaminant found in some groundwater systems." .
+
+:MethanotrophicBacteria rdf:type :MicrobialSpecies ;
+    rdfs:label "Methanotrophic Bacteria" ;
+    rdfs:comment "A bacterial species involved in the carbon cycle." .
+### Inverse Properties
+
+### Inverse of :hasBiologicalRole
+:isBiologicalRoleOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasBiologicalRole ;
+    rdfs:label "is biological role of" ;
+    rdfs:comment "Indicates that a biological role is played by a specific organism." .
+
+### Inverse of :hasChemicalRole
+:isChemicalRoleOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasChemicalRole ;
+    rdfs:label "is chemical role of" ;
+    rdfs:comment "Indicates that a chemical role is assigned to a specific substance." .
+
+### Inverse of :playsRoleIn
+:hasRolePlayer rdf:type owl:ObjectProperty ;
+    owl:inverseOf :playsRoleIn ;
+    rdfs:label "has role player" ;
+    rdfs:comment "Indicates the organism or entity that plays a role in a particular environment." .
+
+### Inverse of :influences
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :influences ;
+    rdfs:label "is influenced by" ;
+    rdfs:comment "Indicates that an entity is influenced by another entity, such as a chemical or environmental factor." .
+
+### Inverse of :affects
+:isAffectedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :affects ;
+    rdfs:label "is affected by" ;
+    rdfs:comment "Indicates that a biological or chemical role is affected by a specific factor." .
+
+### Inverse of :inhibits
+:isInhibitedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :inhibits ;
+    rdfs:label "is inhibited by" ;
+    rdfs:comment "Indicates that a biological process or entity is inhibited by a specific inhibitor." .
+
+### Inverse of :hasPoisonousEffectOn
+:isPoisonedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasPoisonousEffectOn ;
+    rdfs:label "is poisoned by" ;
+    rdfs:comment "Indicates that a biological entity is poisoned by a specific chemical or substance." .
+
+### Inverse of :isLocatedIn
+:contains rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isLocatedIn ;
+    rdfs:label "contains" ;
+    rdfs:comment "Indicates that an environment or system contains a specific role or entity." .
+
+### Inverse of :regulates
+:isRegulatedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :regulates ;
+    rdfs:label "is regulated by" ;
+    rdfs:comment "Indicates that a process or entity is regulated by another entity, such as pH or environmental factors." .
+
+### Inverse of :promotes
+:isPromotedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :promotes ;
+    rdfs:label "is promoted by" ;
+    rdfs:comment "Indicates that a biological function is promoted by an environmental factor or substance." .
+
+### Inverse of :isInvolvedIn
+:hasInvolvementFrom rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInvolvedIn ;
+    rdfs:label "has involvement from" ;
+    rdfs:comment "Indicates that a process or cycle involves a specific biological entity or chemical." .
+
+### Inverse of :isKeyIn
+:hasKeyRoleIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isKeyIn ;
+    rdfs:label "has key role in" ;
+    rdfs:comment "Indicates that a chemical role or biological role is key to a specific process." .
+
+### Inverse of :hasElectronDonor
+:isElectronDonorOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasElectronDonor ;
+    rdfs:label "is electron donor of" ;
+    rdfs:comment "Indicates that a substance acts as an electron donor in a particular process." .
+
+### Inverse of :isPromotedBy
+:promotes rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isPromotedBy ;
+    rdfs:label "promotes" ;
+    rdfs:comment "Indicates that a factor promotes a particular process or function." .
+
+### Inverse of :isInhibitedBy
+:inhibits rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isInhibitedBy ;
+    rdfs:label "inhibits" ;
+    rdfs:comment "Indicates that a process or function is inhibited by a specific inhibitor." .
+
+### Inverse of :contains
+:isContainedIn rdf:type owl:ObjectProperty ;
+    owl:inverseOf :contains ;
+    rdfs:label "is contained in" ;
+    rdfs:comment "Indicates that an entity or role is contained within a particular system or environment." .
+
+### Reflexive Properties
+
+### Reflexive Property: isSimilarTo (useful for comparing entities that can be similar to themselves)
+:isSimilarTo rdf:type owl:ObjectProperty ;
+    owl:reflexiveProperty true ;
+    rdfs:label "is similar to" ;
+    rdfs:comment "Indicates that an entity can be similar to itself, often used for comparing similar roles or functions in the ecosystem." .
+
+### Reflexive Property: interactsWith (useful for interactions where an entity can interact with itself)
+:interactsWith rdf:type owl:ObjectProperty ;
+    owl:reflexiveProperty true ;
+    rdfs:label "interacts with" ;
+    rdfs:comment "Indicates that an entity, such as a chemical substance or biological organism, can interact with itself under certain conditions." .
+
+### Reflexive Property: participatesIn (useful for entities that can participate in processes they generate)
+:participatesIn rdf:type owl:ObjectProperty ;
+    owl:reflexiveProperty true ;
+    rdfs:label "participates in" ;
+    rdfs:comment "Indicates that an entity can participate in a process it also generates or contributes to, such as microorganisms participating in cycles they help drive." .
+
+### Reflexive Property: regulates (useful for containment factors that can regulate themselves)
+:regulates rdf:type owl:ObjectProperty ;
+    owl:reflexiveProperty true ;
+    rdfs:label "regulates" ;
+    rdfs:comment "Indicates that a containment factor, such as pH or temperature, can regulate itself within a system." .
+
+### Reflexive Property: hasRole (useful for roles that an entity can have in relation to itself)
+:hasRole rdf:type owl:ObjectProperty ;
+    owl:reflexiveProperty true ;
+    rdfs:label "has role" ;
+    rdfs:comment "Indicates that an entity, such as an organism or chemical, can have a role with respect to itself in certain scenarios, such as being both the actor and subject in a process." .
+
+### Reflexive Property: contributesTo (useful for contributions where an entity contributes to a process it is part of)
+:contributesTo rdf:type owl:ObjectProperty ;
+    owl:reflexiveProperty true ;
+    rdfs:label "contributes to" ;
+    rdfs:comment "Indicates that an entity can contribute to a process or function in which it is also involved, such as microorganisms contributing to nutrient cycles they are part of." .
+
