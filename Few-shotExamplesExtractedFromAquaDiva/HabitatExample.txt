@@ -1,1 +1,126 @@
+Subject-relation-object from Competency Questions examples:
 
+ 
+CQ1: What entity does the reductive carboxylate cycle affect?
+Entity: ["Reductive Carboxylate Cycle", "Anoxic Aquifer"]
+Property: ["Affects"]
+Object Property: Affects
+
+CQ2: What grows on a plant compound?
+Entity: ["Aquifer Microbiome", "Plant Compound"]
+Property: ["GrowOn"]
+Object Property: GrowOn
+
+CQ3: What does the upper aquifer differ from?
+Entity: ["Upper Aquifer", "Lower Aquifer"]
+Property: ["DiffersFrom"]
+Object Property: DiffersFrom
+
+CQ4: What does the groundwater discharge process affect?
+Entity: ["Groundwater Discharge Process", "Aquifer"]
+Property: ["Affects"]
+Object Property: Affects
+
+CQ5: What is the microbial mat material derived from?
+Entity: ["Microbial Mat Material", "Microbial Mat"]
+Property: ["DerivedFrom"]
+Object Property: DerivedFrom
+
+CQ6: What entity is associated with anoxic aquifers?
+Entity: ["Anoxic Aquifer", "Reductive Carboxylate Cycle"]
+Property: ["Affects"]
+Object Property: Affects
+
+CQ7: What is characteristic of a microbial process?
+Entity: ["Microbial Process", "Gas Analysis"]
+Property: ["CharacterizedBy"]
+Object Property: CharacterizedBy
+
+CQ8: What organisms grow on plant compounds?
+Entity: ["Microorganism", "Plant Compound"]
+Property: ["GrowOn"]
+Object Property: GrowOn
+
+CQ9: What does the aquatic biome contain?
+Entity: ["Aquatic Biome", "Water Body"]
+Property: ["Contains"]
+Object Property: Contains
+
+CQ10: What does the nitrate-reducing sediment host?
+Entity: ["Nitrate-Reducing Sediment", "Microbial Communities"]
+Property: ["Hosts"]
+
+CQ11: What is the target of the microbial diversity community?
+Entity: ["Microbial Species Diversity", "Microbiome Ecosystem"]
+Property: ["ExistsIn"]
+Object Property: ExistsIn
+
+CQ12: What does the microbial mat affect?
+Entity: ["Microbial Mat", "Internal Chemical Environments"]
+Property: ["Creates"]
+Object Property: Creates
+
+CQ13: What does the Latin square design control for?
+Entity: ["Latin Square Design", "Nuisance Variables"]
+Property: ["Controls"]
+Object Property: Controls
+
+CQ14: What does the aquifer host?
+Entity: ["Aquifer", "Groundwater"]
+Property: ["Contains"]
+Object Property: Contains
+
+CQ15: What is associated with the aquifer?
+Entity: ["Aquifer", "Water Extraction"]
+Property: ["Supports"]
+Object Property: Supports
+
+CQ16: What entity is associated with the reductive carboxylate cycle?
+Entity: ["Reductive Carboxylate Cycle", "CO2 Fixation"]
+Property: ["Synonym"]
+Object Property: Synonym
+
+CQ17: What does the groundwater aquifer contain?
+Entity: ["Groundwater Aquifer", "Groundwater"]
+Property: ["SubClassOf"]
+Object Property: SubClassOf
+
+CQ18: What is the microbial community composed of?
+Entity: ["Microbial Community", "Microbial Organisms"]
+Property: ["ComposedOf"]
+Object Property: ComposedOf
+
+CQ19: What is the habitat of aquatic species?
+Entity: ["Aquatic Habitat", "Water Body"]
+Property: ["InhabitedBy"]
+Object Property: InhabitedBy
+
+CQ20: What does the aquifer interact with?
+Entity: ["Aquifer", "Aquatic Environment"]
+Property: ["InteractsWith"]
+Object Property: InteractsWith
+
+CQ21: What is the aquifer made of?
+Entity: ["Aquifer", "Water-Bearing Rock"]
+Property: ["ComposedOf"]
+Object Property: ComposedOf
+
+CQ22: What process involves microbial activity?
+Entity: ["Microbial Activity", "Microbial Process"]
+Property: ["Involves"]
+Object Property: Involves
+
+CQ23: What is the process that groundwater discharge participates in?
+Entity: ["Groundwater Discharge Process", "Water Flow Process"]
+Property: ["SubClassOf"]
+Object Property: SubClassOf
+
+CQ24: What is the synonym of the spring entity?
+Entity: ["Spring", "Water Body"]
+Property: ["Synonym"]
+Object Property: Synonym
+
+CQ25: What is the synonym for sulphate-reducing sediment?
+Entity: ["Sulphate-Reducing Sediment", "Microbial Communities"]
+Property: ["CharacterizedBy"]
+Object Property: CharacterizedBy
