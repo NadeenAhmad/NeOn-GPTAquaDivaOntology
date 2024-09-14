@@ -1,1 +1,355 @@
+Subject-relation-object from Competency Questions examples:
+
+ 
+Object Property: characteristicFor
+CQ1: What characteristic is associated with an entity?
+Entity: ["Characteristic", "Entity"]
+Property: ["characteristicFor"]
+Object Property: entityRelated
+
+CQ2: What relationship exists between entities in different observations?
+Entity: ["Observation", "Observation"]
+Property: ["entityRelated"]
+Object Property: hasBaseQualifier
+
+CQ3: What is the base qualifier in a composite characteristic qualifier?
+Entity: ["CompositeCharacteristicQualifier", "BaseCharacteristicQualifier"]
+Property: ["hasBaseQualifier"]
+Object Property: hasContext
+
+CQ4: What observation serves as the context for another observation?
+Entity: ["Observation", "Observation"]
+Property: ["hasContext"]
+Object Property: hasMeasurement
+
+CQ5: What measurement is associated with an observation?
+Entity: ["Observation", "Measurement"]
+Property: ["hasMeasurement"]
+Object Property: hasMember
+
+CQ6: What members does an observation collection contain?
+Entity: ["ObservationCollection", "Observation"]
+Property: ["hasMember"]
+Object Property: hasNextQualifier
+
+CQ7: What is the next qualifier in a composite characteristic qualifier?
+Entity: ["CompositeCharacteristicQualifier", "CharacteristicQualifier"]
+Property: ["hasNextQualifier"]
+Object Property: hasObservedRelation
+
+CQ8: What observed relation is present in an observation?
+Entity: ["Observation"]
+Property: ["hasObservedRelation"]
+Object Property: hasQualifier
+
+CQ9: What characteristic qualifier is associated with a measured characteristic?
+Entity: ["MeasuredCharacteristic", "CharacteristicQualifier"]
+Property: ["hasQualifier"]
+Object Property: hasSourceUnit
+
+CQ10: What is the source unit in a unit conversion?
+Entity: ["UnitConversion", "Unit"]
+Property: ["hasSourceUnit"]
+Object Property: hasTargetUnit
+
+CQ1: What is the target unit in a unit conversion?
+Entity: ["UnitConversion", "Unit"]
+Property: ["hasTargetUnit"]
+Object Property: hasUnit
+
+CQ11: What base or derived unit is associated with a composite or derived unit?
+Entity: ["CompositeUnit", "DerivedUnit", "PrefixedUnit", "BaseUnit"]
+Property: ["hasUnit"]
+Object Property: hasValue
+
+CQ12: What value does the measurement have?
+Entity: ["Measurement", "MeasuredValue"]
+Property: ["hasValue"]
+Object Property: measurementFor
+
+CQ13: What observation is a measurement associated with?
+Entity: ["Measurement", "Observation"]
+Property: ["measurementFor"]
+Object Property: measuresCharacteristic
+
+CQ14: What characteristic does the measurement type measure?
+Entity: ["MeasurementType", "Characteristic"]
+Property: ["measuresCharacteristic"]
+Object Property: measuresEntity
+
+CQ15: What entity does the measurement type measure?
+Entity: ["MeasurementType", "Entity"]
+Property: ["measuresEntity"]
+Object Property: measuresUsingProtocol
+
+CQ16: What protocol does the measurement type use?
+Entity: ["MeasurementType", "Protocol"]
+Property: ["measuresUsingProtocol"]
+Object Property: measuresUsingStandard
+
+CQ17: What standard does the measurement type use?
+Entity: ["MeasurementType", "Standard"]
+Property: ["measuresUsingStandard"]
+Object Property: ofCharacteristic
+
+CQ18: What characteristic does the measurement represent?
+Entity: ["Measurement", "Characteristic"]
+Property: ["ofCharacteristic"]
+Object Property: ofEntity
+
+CQ19: What entity is observed in the observation?
+Entity: ["Observation", "Entity"]
+Property: ["ofEntity"]
+Object Property: usesProtocol
+
+CQ20: What protocol is used in a measurement?
+Entity: ["Measurement", "Protocol"]
+Property: ["usesProtocol"]
+Object Property: usesStandard
+
+CQ21: What standard is used in a measurement?
+Entity: ["Measurement", "Standard"]
+Property: ["usesStandard"]
+ 
+
+
+Data property with domain and range examples: 
+
+ 
+:hasCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :MeasuredValue ;
+    rdfs:comment "The hasCode property gives the underlying value (or coded representation) of a primitive value."@en .
+
+:hasMultiplier rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :UnitConversion ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The hasMultiplier property gives the multiplier value in a unit conversion."@en .
+
+:hasOffset rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :UnitConversion ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The hasOffset property gives the offset value in a unit conversion."@en .
+
+:hasPower rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :DerivedUnit ;
+    rdfs:range xsd:int ;
+    rdfs:comment "The hasPower property gives the power a base unit is raised to within a derived unit."@en .
+
+:hasPrecision rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "This property gives the precision of a measurement value."@en .
+
+:hasPrefixMultiplier rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :PrefixedUnit ;
+    rdfs:range xsd:decimal .
+
+:usesMethod rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :Measurement ;
+    rdfs:comment "The usesMethod property gives the actual method used to carry out the measurement."@en .
+
+:hasMeasurementValue rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :IAO_0000032 ;
+    rdfs:range xsd:float ;
+    rdfs:label "has measurement value"@en .
+
+:hasXCoordinateValue rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :IAO_0000400 ;
+    rdfs:range xsd:float ;
+    rdfs:label "has x coordinate value"@en .
+
+:hasZCoordinateValue rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :IAO_0000400 ;
+    rdfs:range xsd:float ;
+    rdfs:label "has z coordinate value"@en .
+
+:hasYCoordinateValue rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :IAO_0000400 ;
+    rdfs:range xsd:float ;
+    rdfs:label "has y coordinate value"@en .
+
+:hasFeatureValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :OBI_0200140 ;
+    rdfs:comment "has_feature_value datatype property is used to describe the feature values which the feature class can contain, for example has_base can have feature values of nonNegativeInteger values."@en ;
+    rdfs:label "has_feature_value"@en .
+
+:hasSpecifiedValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain :OBI_0001933 ;
+    rdfs:range owl:real ;
+    rdfs:comment "A relation between a value specification and a number that quantifies it."@en ;
+    rdfs:label "has specified value"@en .
+
+:revision rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap> .
+
+
+
+Meaningful individuals examples: 
+ 
+
+
+ 
+:InformationArtifactOntology rdf:type owl:NamedIndividual .
+
+:ECSO_00001739 rdf:type owl:NamedIndividual .
+
+:ECSO_00001955 rdf:type owl:NamedIndividual .
+
+:ID_200906005580795747 rdf:type owl:NamedIndividual .
+
+:ID_200906007040120700 rdf:type owl:NamedIndividual .
+
+:ID_200906029951027400 rdf:type owl:NamedIndividual .
+
+:ID_200906035358539682 rdf:type owl:NamedIndividual .
+
+:ID_200906045420318324 rdf:type owl:NamedIndividual .
+
+:ID_200906062432384499 rdf:type owl:NamedIndividual .
+
+:ID_200906070912326734 rdf:type owl:NamedIndividual .
+
+:ID_200906075025112691 rdf:type owl:NamedIndividual .
+
+:stemflow rdf:type owl:NamedIndividual ;
+    rdfs:label "stemflow"@en .
+
+:ID_201206044053997618 rdf:type owl:NamedIndividual .
+
+:ID_201406098427281805 rdf:type owl:NamedIndividual .
+
+:LS_ur_c_OWLClass_00000000000000000563 rdf:type owl:NamedIndividual ;
+    rdfs:label "Non-biological phenomenon, process, and state related to life science"@en ;
+    rdfs:altLabel "Non-biological phenomenon, process, and state (Life science)"@en .
+
+:LS_ur_c_OWLClass_00000000000000000689 rdf:type owl:NamedIndividual .
+
+:IAO_0000002 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "example to be eventually removed"@en .
+
+:IAO_0000103 rdf:type owl:NamedIndividual , :IAO_0000225 ;
+    rdfs:label "failed exploratory term"@en ;
+    obo:IAO_0000111 "failed exploratory term"@en ;
+    obo:IAO_0000115 "The term was used in an attempt to structure part of the ontology but in retrospect failed to do a good job"@en .
+
+:IAO_0000120 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "metadata complete"@en .
+
+:IAO_0000121 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "organizational term"@en .
+
+:IAO_0000122 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "ready for release"@en .
+
+:IAO_0000123 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "metadata incomplete"@en .
+
+:IAO_0000124 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "uncurated"@en .
+
+:IAO_0000125 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "pending final vetting"@en .
+
+:IAO_0000227 rdf:type :IAO_0000225 , owl:NamedIndividual ;
+    rdfs:label "terms merged"@en .
+
+:IAO_0000228 rdf:type :IAO_0000225 , owl:NamedIndividual ;
+    rdfs:label "term imported"@en .
+
+:IAO_0000229 rdf:type :IAO_0000225 , owl:NamedIndividual ;
+    rdfs:label "term split"@en .
+
+:IAO_0000230 rdf:type :IAO_0000225 , owl:NamedIndividual ;
+    rdfs:label "other"@en ;
+    owl:deprecated "true"^^xsd:boolean .
+
+:IAO_0000410 rdf:type :IAO_0000409 , owl:NamedIndividual ;
+    rdfs:label "universal"@en .
+
+:IAO_0000420 rdf:type :IAO_0000409 , owl:NamedIndividual ;
+    rdfs:label "defined class"@en .
+
+:IAO_0000421 rdf:type :IAO_0000409 , owl:NamedIndividual ;
+    rdfs:label "named class expression"@en .
+
+:IAO_0000423 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "to be replaced with external ontology term"@en .
+
+:IAO_0000428 rdf:type :IAO_0000078 , owl:NamedIndividual ;
+    rdfs:label "requires discussion"@en .
+
+:OBI_0000462 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Affymetrix"@en .
+
+:OBI_0000752 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Thermo"@en .
+
+:OBI_0000753 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Waters"@en .
+
+:OBI_0000754 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "BIO-RAD"@en .
+
+:OBI_0000757 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Helicos"@en .
+
+:OBI_0000758 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Roche"@en .
+
+:OBI_0000759 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Illumina"@en .
+
+:OBI_0000762 rdf:type :OBI_0000727 , owl:NamedIndividual ;
+    rdfs:label "GenePattern k-nearest neighbors"@en .
+
+:OBI_0000769 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Li-Cor"@en .
+
+:OBI_0000771 rdf:type :OBI_0000713 , owl:NamedIndividual ;
+    rdfs:label "GenePattern module KNNXValidation"@en .
+
+:OBI_0000772 rdf:type :OBI_0000713 , owl:NamedIndividual ;
+    rdfs:label "GenePattern module PeakMatch"@en .
+
+:OBI_0000773 rdf:type :OBI_0000713 , owl:NamedIndividual ;
+    rdfs:label "GenePattern module KNN"@en .
+
+:OBI_0000775 rdf:type :OBI_0000700 , owl:NamedIndividual ;
+    rdfs:label "GenePattern SVM"@en .
+
+:OBI_0000776 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Applied Biosystems"@en .
+
+:OBI_0000778 rdf:type :OBI_0000726 , owl:NamedIndividual ;
+    rdfs:label "GenePattern peak matching"@en .
+
+:OBI_0000829 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Sysmex Corporation, Kobe, Japan"@en .
+
+:OBI_0000958 rdf:type :OBI_0000963 , owl:NamedIndividual ;
+    rdfs:label "right handed"@en .
+
+:OBI_0000979 rdf:type :OBI_0000963 , owl:NamedIndividual ;
+    rdfs:label "ambidexterous"@en .
+
+:OBI_0000998 rdf:type :OBI_0000963 , owl:NamedIndividual ;
+    rdfs:label "left handed"@en .
+
+:OBI_0001004 rdf:type :OBI_0001000 , owl:NamedIndividual ;
+    rdfs:label "Edingburgh handedness inventory"@en .
+
+:OBI_0001213 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "eBioscience"@en .
+
+:OBI_0001287 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Exalpha Biological"@en .
+
+:OBI_0001312 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Apogee Flow Systems"@en .
+
+:OBI_0001320 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Exbio Antibodies"@en .
+
+:OBI_0001321 rdf:type :OBI_0000245 , owl:NamedIndividual ;
+    rdfs:label "Becton Dickinson (BD Biosciences)"@en .
 
