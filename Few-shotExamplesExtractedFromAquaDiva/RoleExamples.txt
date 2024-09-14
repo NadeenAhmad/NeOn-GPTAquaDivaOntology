@@ -1,1 +1,93 @@
+Subject-relation-object from Competency Questions examples:
 
+Object Property: hasParticipant
+CQ1: What is the role of a reference substance in relation to a BFO entity?
+Entity: ["Reference substance", "Material entity"]
+Property: ["hasParticipant"]
+
+Object Property: hasRole
+CQ1: What is the role of a reference substance in calibration and standardization?
+Entity: ["Reference substance", "Calibration standard"]
+Property: ["hasRole"]
+
+Object Property: inheresIn
+CQ1: What role does the reference substance play in comparison or reference?
+Entity: ["Reference substance", "Comparison process"]
+Property: ["inheresIn"]
+
+Object Property: hasDescription
+CQ1: What external resources describe the role of the reference substance?
+Entity: ["Reference substance", "External resource"]
+Property: ["hasDescription"]
+
+Object Property: hasRole
+CQ1: What is the role of haemotoxylin as a cytological stain?
+Entity: ["Haemotoxylin", "Cytological stain"]
+Property: ["hasRole"]
+
+Object Property: inheresIn
+CQ1: What is the function of a dye in cellular staining?
+Entity: ["Dye", "Cell"]
+Property: ["inheresIn"]
+
+Object Property: hasOutput
+CQ1: How is the pellet role related to material separation in centrifugation?
+Entity: ["Centrifuge pellet", "Material entity"]
+Property: ["hasOutput"]
+
+Object Property: hasRole
+CQ1: What is the role of a centrifuge pellet in a material separation process?
+Entity: ["Centrifuge pellet", "Material separation process"]
+Property: ["hasRole"]
+
+Object Property: hasRole
+CQ1: What role does a clinical research coordinator play in a study?
+Entity: ["Clinical research coordinator", "Trial"]
+Property: ["hasRole"]
+
+Object Property: inheresIn
+CQ1: What administrative duties are involved in the role of a clinical research coordinator?
+Entity: ["Clinical research coordinator", "Administrative duties"]
+Property: ["inheresIn"]
+
+Object Property: hasParticipant
+CQ1: How is the supernatant role related to material separation in a liquid-solid process?
+Entity: ["Supernatant", "Precipitate"]
+Property: ["hasParticipant"]
+
+Object Property: hasRole
+CQ1: What role does the supernatant play in material separation processes?
+Entity: ["Supernatant", "Liquid component"]
+Property: ["hasRole"]
+
+Object Property: hasRole
+CQ1: What role does a material supplier play in an investigation?
+Entity: ["Material supplier", "Experimental material"]
+Property: ["hasRole"]
+
+Object Property: inheresIn
+CQ1: What process is associated with the role of a material supplier?
+Entity: ["Material supplier", "Supply process"]
+Property: ["inheresIn"]
+
+Object Property: hasRole
+CQ1: What is the role of a contract research organization in carrying out a study?
+Entity: ["Contract research organization", "Study"]
+Property: ["hasRole"]
+
+Object Property: inheresIn
+CQ1: What responsibilities are associated with the role of a contract research organization?
+Entity: ["Contract research organization", "Study director"]
+Property: ["inheresIn"]
+
+Object Property: hasRole
+CQ1: What is the chemical role of a compound in biological processes?
+Entity: ["Chemical", "Biological process"]
+Property: ["hasRole"]
+
+Object Property: hasRole
+CQ1: What is the role of a biochemical in cellular functions?
+Entity: ["Biochemical", "Cell"]
+Property: ["hasRole"]
+
+Data property with domain and range examples: 
