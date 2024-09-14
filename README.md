@@ -3,8 +3,10 @@ Ontology learning in complex domains, such as life sciences, poses significant c
 
 - File Directory:
 
-## Overview of our proposed methodology to extend the NeOn-GPT pipeline for more complicated domains
+## Overview of our methodology
   <img src="https://i.ibb.co/3MTrs6c/methodology-1.png" />
+
+Overview of our proposed methodology to extend the NeOn-GPT pipeline for ontology learning to suite more complicated domains such as life science domains. 
 
 ## NeOn-GPT workflow for AquaDive Ontology
 
