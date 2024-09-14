@@ -1111,6 +1111,174 @@
 :FreshwaterEcosystem owl:equivalentClass :RiverEcosystem .
 :CO2FixationPathway owl:equivalentClass :CarbonSequestrationProcess .
 # Disjoint classes
+# Disjoint classes
 :ForestEcosystem owl:disjointWith :DesertEcosystem .
-:AquaticEcosystem owl:disjointWith :TerrestrialE
+:AquaticEcosystem owl:disjointWith :TerrestrialEcosystem .
+:NitrogenFixation owl:disjointWith :Denitrification .
+:CO2FixationPathway owl:disjointWith :RespirationProcess .
+# GCI relationships
+:CarbonFixation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occurs_in ; owl:someValuesFrom :ForestEcosystem ] .
+:NitrogenFixation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occurs_in ; owl:someValuesFrom :Soil ] .
+
+
+# Class hierarchy expansion to increase subclass relationships
+
+:TerrestrialEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :Ecosystem ;
+    rdfs:comment "An ecosystem occurring on land, including forests, grasslands, and deserts."@en .
+
+:MarineEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :AquaticEcosystem ;
+    rdfs:comment "An ecosystem located in marine environments such as oceans and seas."@en .
+
+:FreshwaterEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :AquaticEcosystem ;
+    rdfs:comment "An ecosystem in freshwater environments such as rivers, lakes, and wetlands."@en .
+
+:GroundwaterEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :AquaticEcosystem ;
+    rdfs:comment "An ecosystem located in groundwater systems, including aquifers and karst systems."@en .
+
+:KarstEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :GroundwaterEcosystem ;
+    rdfs:comment "An ecosystem located in karst landscapes, with unique hydrological properties."@en .
+
+:CarbonCycle rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalCycle ;
+    rdfs:comment "The cycle through which carbon is exchanged between the biosphere, geosphere, hydrosphere, and atmosphere."@en .
+
+:NitrogenCycle rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalCycle ;
+    rdfs:comment "The cycle through which nitrogen is converted into various chemical forms, essential for life."@en .
+
+:CO2FixationProcess rdf:type owl:Class ;
+    rdfs:subClassOf :CarbonCycleProcess ;
+    rdfs:comment "A process in which carbon dioxide is fixed by plants, algae, or bacteria into organic compounds."@en .
+
+:NitrogenFixationProcess rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "A process by which nitrogen gas is converted into a biologically usable form by microbes or industrial processes."@en .
+
+:DenitrificationProcess rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "A process in which nitrates are reduced and released into the atmosphere as nitrogen gas."@en .
+
+:AmmoniaOxidationProcess rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "A microbial process in which ammonia is oxidized to nitrite, contributing to the nitrogen cycle."@en .
+
+:TraceGasExchange rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalProcess ;
+    rdfs:comment "A process involving the exchange of trace gases like CO2, CH4, and N2O between ecosystems and the atmosphere."@en .
+
+:RespirationProcess rdf:type owl:Class ;
+    rdfs:subClassOf :CarbonCycleProcess ;
+    rdfs:comment "A process in which organisms convert organic carbon into carbon dioxide through metabolic processes."@en .
+# Object property expansion to increase relationships
+
+:hasBiogeochemicalProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain :Ecosystem ;
+    rdfs:range :BiogeochemicalProcess ;
+    rdfs:comment "Indicates that an ecosystem hosts specific biogeochemical processes."@en .
+
+:occursIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :EnvironmentalMaterial ;
+    rdfs:comment "Indicates the environment or material where a process takes place."@en .
+
+:producesTraceGas rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :TraceGas ;
+    rdfs:comment "Indicates that a process produces a specific trace gas, such as CO2, CH4, or N2O."@en .
+
+:influencesNutrientAvailability rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :Nutrient ;
+    rdfs:comment "Represents a process that influences the availability of nutrients in the ecosystem."@en .
+
+:consumesCarbon rdf:type owl:ObjectProperty ;
+    rdfs:domain :CarbonCycleProcess ;
+    rdfs:range :OrganicCarbon ;
+    rdfs:comment "Indicates that a process consumes organic carbon, such as in microbial respiration."@en .
+
+:fixesNitrogen rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenFixationProcess ;
+    rdfs:range :Nitrogen ;
+    rdfs:comment "Indicates the fixation of nitrogen by microbial processes or plants."@en .
+
+:releasesNitrogenGas rdf:type owl:ObjectProperty ;
+    rdfs:domain :DenitrificationProcess ;
+    rdfs:range :Nitrogen ;
+    rdfs:comment "Indicates that a denitrification process releases nitrogen gas into the atmosphere."@en .
+
+:influencesMicrobialActivity rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :MicrobialCommunity ;
+    rdfs:comment "Represents an environmental factor that influences microbial activity in soil or water."@en .
+# Data property expansion for quantitative measures
+
+:hasCarbonContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Soil ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the carbon content in soil, crucial for understanding carbon cycling."@en .
+
+:hasNitrogenContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Soil ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the nitrogen content in soil, an important factor in nitrogen cycling."@en .
+
+:hasMoistureContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Soil ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the moisture content in soil, affecting microbial activity and nutrient cycling."@en .
+
+:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EnvironmentalMaterial ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the temperature of an environmental material, such as soil or water."@en .
+
+:haspHLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Water ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the pH level of water, influencing chemical reactions and biogeochemical processes."@en .
+# Adding meaningful individuals
+
+:AmazonRainforest rdf:type :TropicalRainforest ;
+    rdfs:label "Amazon Rainforest"@en ;
+    rdfs:comment "The Amazon Rainforest, a tropical rainforest known for its role in global carbon sequestration."@en .
+
+:BeechForestGermany rdf:type :TemperateForest ;
+    rdfs:label "Beech Forest (Germany)"@en ;
+    rdfs:comment "A beech forest located in Germany, studied for its nitrogen and carbon cycling processes."@en .
+
+:KarstGroundwater rdf:type :GroundwaterEcosystem ;
+    rdfs:label "Karst Groundwater"@en ;
+    rdfs:comment "A groundwater ecosystem in a karst landscape, influencing water and nutrient transport."@en .
+
+:AmmoniaOxidizingBacteria rdf:type :MicrobialCommunity ;
+    rdfs:label "Ammonia-Oxidizing Bacteria"@en ;
+    rdfs:comment "A community of bacteria responsible for oxidizing ammonia in soil and water."@en .
+
+:CO2FixationAmazon rdf:type :CO2FixationProcess ;
+    rdfs:label "CO2 Fixation in Amazon Rainforest"@en ;
+    rdfs:comment "The process of CO2 fixation occurring in the Amazon Rainforest, contributing to the global carbon cycle."@en .
+# Equivalent classes
+
+:TropicalRainforest owl:equivalentClass :Rainforest ;
+    rdfs:comment "Tropical Rainforests are equivalent to the broader class of Rainforests."@en .
+
+:TemperateForest owl:equivalentClass :DeciduousForest ;
+    rdfs:comment "Temperate forests are equivalent to deciduous forests in terms of ecological functions."@en .
+
+# Disjoint classes
+
+:ForestEcosystem owl:disjointWith :DesertEcosystem ;
+    rdfs:comment "Forest ecosystems and desert ecosystems are mutually exclusive in their environmental characteristics."@en .
+
+:AquaticEcosystem owl:disjointWith :TerrestrialEcosystem ;
+    rdfs:comment "Aquatic and terrestrial ecosystems are disjoint classes with distinct characteristics."@en .
+
+:AmmoniaOxidationProcess owl:disjointWith :DenitrificationProcess ;
+    rdfs:comment "Ammonia oxidation and denitrification processes are distinct and occur under different environmental conditions."@en .
+
 
