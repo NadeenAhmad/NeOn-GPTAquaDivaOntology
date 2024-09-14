@@ -1,0 +1,665 @@
+### TurtleOntology ###
+### MetaData ###
+@prefix : <http://example.org/aquadiva#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/aquadiva>
+    rdf:type owl:Ontology ;
+    owl:versionInfo "1.0" ;
+    dct:title "AquaDiva Ontology" ;
+    dct:description "An ontology for integrating and annotating diverse datasets in groundwater ecosystems research, covering hydrogeology, microbial ecology, geochemistry, and karst systems."@en .
+
+### Class Declarations ###
+:Microbes rdf:type rdfs:Class ; rdfs:label "Microbes" .
+:AquiferSystem rdf:type rdfs:Class ; rdfs:label "Aquifer System" .
+:ChemicalCompound rdf:type rdfs:Class ; rdfs:label "Chemical Compound" .
+:KarstAquifer rdf:type rdfs:Class ; rdfs:label "Karst Aquifer" .
+:MicrobialFunctionalGuilds rdf:type rdfs:Class ; rdfs:label "Microbial Functional Guilds" .
+:AquiferChemistry rdf:type rdfs:Class ; rdfs:label "Aquifer Chemistry" .
+:LimestoneAquifer rdf:type rdfs:Class ; rdfs:label "Limestone Aquifer" .
+:TriassicAquifer rdf:type rdfs:Class ; rdfs:label "Triassic Aquifer" .
+:GroundwaterQuality rdf:type rdfs:Class ; rdfs:label "Groundwater Quality" .
+:FracturedRock rdf:type rdfs:Class ; rdfs:label "Fractured Rock" .
+:KarstSystem rdf:type rdfs:Class ; rdfs:label "Karst System" .
+:CarbonateDissolution rdf:type rdfs:Class ; rdfs:label "Carbonate Dissolution" .
+:Karstification rdf:type rdfs:Class ; rdfs:label "Karstification" .
+:MobileOrganicMatter rdf:type rdfs:Class ; rdfs:label "Mobile Organic Matter" .
+:Groundwater rdf:type rdfs:Class ; rdfs:label "Groundwater" .
+:AgriculturalActivity rdf:type rdfs:Class ; rdfs:label "Agricultural Activity" .
+:GroundwaterEcosystem rdf:type rdfs:Class ; rdfs:label "Groundwater Ecosystem" .
+:GeologicalStrata rdf:type rdfs:Class ; rdfs:label "Geological Strata" .
+:GroundwaterPrecipitation rdf:type rdfs:Class ; rdfs:label "Groundwater Precipitation" .
+:CatchmentArea rdf:type rdfs:Class ; rdfs:label "Catchment Area" .
+:InfiltrationArea rdf:type rdfs:Class ; rdfs:label "Infiltration Area" .
+:RockType rdf:type rdfs:Class ; rdfs:label "Rock Type" .
+:Mineral rdf:type rdfs:Class ; rdfs:label "Mineral" .
+:OrganicGroundwaterComponent rdf:type rdfs:Class ; rdfs:label "Organic Groundwater Component" .
+:Biodiversity rdf:type rdfs:Class ; rdfs:label "Biodiversity" .
+:Vegetation rdf:type rdfs:Class ; rdfs:label "Vegetation" .
+:Terrain rdf:type rdfs:Class ; rdfs:label "Terrain" .
+:ManagementPractice rdf:type rdfs:Class ; rdfs:label "Management Practice" .
+:MicrobialDynamics rdf:type rdfs:Class ; rdfs:label "Microbial Dynamics" .
+:HainichCriticalZone rdf:type rdfs:Class ; rdfs:label "Hainich Critical Zone" .
+:MolecularMarker rdf:type rdfs:Class ; rdfs:label "Molecular Marker" .
+:NitrogenTransformation rdf:type rdfs:Class ; rdfs:label "Nitrogen Transformation" .
+:MarinePhage rdf:type rdfs:Class ; rdfs:label "Marine Phage" .
+:SoilTracerStudy rdf:type rdfs:Class ; rdfs:label "Soil Tracer Study" .
+:DOM rdf:type rdfs:Class ; rdfs:label "DOM" .
+:Miz rdf:type rdfs:Class ; rdfs:label "Miz" .
+:MolecularFormula rdf:type rdfs:Class ; rdfs:label "Molecular Formula" .
+:SoilChemistry rdf:type rdfs:Class ; rdfs:label "Soil Chemistry" .
+:GroundwaterChemistry rdf:type rdfs:Class ; rdfs:label "Groundwater Chemistry" .
+:CO2FixationPathway rdf:type rdfs:Class ; rdfs:label "CO2 Fixation Pathway" .
+:RareSpeciesBiodiversity rdf:type rdfs:Class ; rdfs:label "Rare Species Biodiversity" .
+:HydrogeochemicalCharacterizationMethod rdf:type rdfs:Class ; rdfs:label "Hydrogeochemical Characterization Method" .
+:MultilevelGroundwaterSystem rdf:type rdfs:Class ; rdfs:label "Multilevel Groundwater System" .
+:Permeability rdf:type rdfs:Class ; rdfs:label "Permeability" .
+:GroundwaterVulnerability rdf:type rdfs:Class ; rdfs:label "Groundwater Vulnerability" .
+:GroundwaterContamination rdf:type rdfs:Class ; rdfs:label "Groundwater Contamination" .
+:SeasonalVariation rdf:type rdfs:Class ; rdfs:label "Seasonal Variation" .
+:NitrogenCycle rdf:type rdfs:Class ; rdfs:label "Nitrogen Cycle" .
+:ForestEcosystem rdf:type rdfs:Class ; rdfs:label "Forest Ecosystem" .
+:VegetationCover rdf:type rdfs:Class ; rdfs:label "Vegetation Cover" .
+:VegetationType rdf:type rdfs:Class ; rdfs:label "Vegetation Type" .
+:SoilGroundwaterInteraction rdf:type rdfs:Class ; rdfs:label "Soil Groundwater Interaction" .
+:MicrobialCommunity rdf:type rdfs:Class ; rdfs:label "Microbial Community" .
+:SoilWaterContent rdf:type rdfs:Class ; rdfs:label "Soil Water Content" .
+:Production rdf:type rdfs:Class ; rdfs:label "Production" .
+:Consumption rdf:type rdfs:Class ; rdfs:label "Consumption" .
+:TraceGas rdf:type rdfs:Class ; rdfs:label "Trace Gas" .
+:EnvironmentalSignal rdf:type rdfs:Class ; rdfs:label "Environmental Signal" .
+:SamplingMethod rdf:type rdfs:Class ; rdfs:label "Sampling Method" .
+:AnalysisMethod rdf:type rdfs:Class ; rdfs:label "Analysis Method" .
+:BioticFactor rdf:type rdfs:Class ; rdfs:label "Biotic Factor" .
+:AbioticFactor rdf:type rdfs:Class ; rdfs:label "Abiotic Factor" .
+:SpatialPattern rdf:type rdfs:Class ; rdfs:label "Spatial Pattern" .
+:TemporalPattern rdf:type rdfs:Class ; rdfs:label "Temporal Pattern" .
+:SoilOrganicMatter rdf:type rdfs:Class ; rdfs:label "Soil Organic Matter" .
+:Bioturbation rdf:type rdfs:Class ; rdfs:label "Bioturbation" .
+:AgriculturalPractice rdf:type rdfs:Class ; rdfs:label "Agricultural Practice" .
+:EnergyMetabolismPathway rdf:type rdfs:Class ; rdfs:label "Energy Metabolism Pathway" .
+:MicrobialMechanism rdf:type rdfs:Class ; rdfs:label "Microbial Mechanism" .
+:HydrologicalProperty rdf:type rdfs:Class ; rdfs:label "Hydrological Property" .
+:MuschelkalkFormation rdf:type rdfs:Class ; rdfs:label "Muschelkalk Formation" .
+:GroundwaterFlow rdf:type rdfs:Class ; rdfs:label "Groundwater Flow" .
+:HydraulicProperty rdf:type rdfs:Class ; rdfs:label "Hydraulic Property" .
+:WaterFlow rdf:type rdfs:Class ; rdfs:label "Water Flow" .
+:Fungi rdf:type rdfs:Class ; rdfs:label "Fungi" .
+:AquaticFungi rdf:type rdfs:Class ; rdfs:label "Aquatic Fungi" .
+:AquaticMicrobes rdf:type rdfs:Class ; rdfs:label "Aquatic Microbes" .
+:GroundwaterComparison rdf:type rdfs:Class ; rdfs:label "Groundwater Comparison" .
+:SecondaryMinerals rdf:type rdfs:Class ; rdfs:label "Secondary Minerals" .
+:GroundwaterProtection rdf:type rdfs:Class ; rdfs:label "Groundwater Protection" .
+:GroundwaterPhysiochemicalParameters rdf:type rdfs:Class ; rdfs:label "Groundwater Physiochemical Parameters" .
+:Geochemistry rdf:type rdfs:Class ; rdfs:label "Geochemistry" .
+:Hydrochemistry rdf:type rdfs:Class ; rdfs:label "Hydrochemistry" .
+:Limestone rdf:type rdfs:Class ; rdfs:label "Limestone" .
+:FracturedRockAquifer rdf:type rdfs:Class ; rdfs:label "Fractured Rock Aquifer" .
+:Karst rdf:type rdfs:Class ; rdfs:label "Karst" .
+:CarbonateDissortation rdf:type rdfs:Class ; rdfs:label "Carbonate Dissortation" .
+:CatchmentArea rdf:type rdfs:Class ; rdfs:label "Catchment Area" .
+:InfiltrationArea rdf:type rdfs:Class ; rdfs:label "Infiltration Area" .
+:WaterInput rdf:type rdfs:Class ; rdfs:label "Water Input" .
+:ForestMicrohabitat rdf:type rdfs:Class ; rdfs:label "Forest Microhabitat" .
+:RareSpeciesBiodiversity rdf:type rdfs:Class ; rdfs:label "Rare Species Biodiversity" .
+:MicrobialCommunity rdf:type rdfs:Class ; rdfs:label "Microbial Community" .
+:TraceGas rdf:type rdfs:Class ; rdfs:label "Trace Gas" .
+:PhosphateMinerals rdf:type rdfs:Class ; rdfs:label "Phosphate Minerals" .
+:RechargeZone rdf:type rdfs:Class ; rdfs:label "Recharge Zone" .
+:DesertSpring rdf:type rdfs:Class ; rdfs:label "Desert Spring" .
+:KarstSpringWater rdf:type rdfs:Class ; rdfs:label "Karst Spring Water" .
+:SeasonalWetland rdf:type rdfs:Class ; rdfs:label "Seasonal Wetland" .
+:HydraulicConductivityStudy rdf:type rdfs:Class ; rdfs:label "Hydraulic Conductivity Study" .
+:ChalkAquifer rdf:type rdfs:Class ; rdfs:label "Chalk Aquifer" .
+:HighCalciumWater rdf:type rdfs:Class ; rdfs:label "High Calcium Water" .
+:AquiferFungiSample rdf:type rdfs:Class ; rdfs:label "Aquifer Fungi Sample" .
+:SubsurfaceBacterialCulture rdf:type rdfs:Class ; rdfs:label "Subsurface Bacterial Culture" .
+:DeepAquifer rdf:type rdfs:Class ; rdfs:label "Deep Aquifer" .
+:IndustrialAgricultureArea rdf:type rdfs:Class ; rdfs:label "Industrial Agriculture Area" .
+:CO2ReductionPathway rdf:type rdfs:Class ; rdfs:label "CO2 Reduction Pathway" .
+:AmazonRainforestSoil rdf:type rdfs:Class ; rdfs:label "Amazon Rainforest Soil" .
+:ContaminatedSite rdf:type rdfs:Class ; rdfs:label "Contaminated Site" .
+:HainichCZObservatory rdf:type rdfs:Class ; rdfs:label "Hainich CZ Observatory" .
+:AquaticMicrobialCommunity rdf:type rdfs:Class ; rdfs:label "Aquatic Microbial Community" .
+:KarstAquiferSystem rdf:type rdfs:Class ; rdfs:label "Karst Aquifer System" .
+:TriassicLimestone rdf:type rdfs:Class ; rdfs:label "Triassic Limestone" .
+
+### Object Property Declarations ###
+:foundIn rdf:type rdf:Property ; rdfs:label "found in" .
+:influence rdf:type rdf:Property ; rdfs:label "influence" .
+:hasCharacteristic rdf:type rdf:Property ; rdfs:label "has characteristic" .
+:affectedBy rdf:type rdf:Property ; rdfs:label "affected by" .
+:occurIn rdf:type rdf:Property ; rdfs:label "occur in" .
+:associatedWith rdf:type rdf:Property ; rdfs:label "associated with" .
+:define rdf:type rdf:Property ; rdfs:label "define" .
+:interactWith rdf:type rdf:Property ; rdfs:label "interact with" .
+:relatedTo rdf:type rdf:Property ; rdfs:label "related to" .
+:hasComponent rdf:type rdf:Property ; rdfs:label "has component" .
+:hasPhase rdf:type rdf:Property ; rdfs:label "has phase" .
+:indicate rdf:type rdf:Property ; rdfs:label "indicate" .
+:affect rdf:type rdf:Property ; rdfs:label "affect" .
+:playRoleIn rdf:type rdf:Property ; rdfs:label "play role in" .
+:usedIn rdf:type rdf:Property ; rdfs:label "used in" .
+:influencedBy rdf:type rdf:Property ; rdfs:label "influenced by" .
+:adaptTo rdf:type rdf:Property ; rdfs:label "adapt to" .
+:involvedIn rdf:type rdf:Property ; rdfs:label "involved in" .
+:detectedThrough rdf:type rdf:Property ; rdfs:label "detected through" .
+:usedFor rdf:type rdf:Property ; rdfs:label "used for" .
+:impact rdf:type rdf:Property ; rdfs:label "impact" .
+:existIn rdf:type rdf:Property ; rdfs:label "exist in" .
+
+### Data Property Declarations ###
+:hasMicrobialDensity rdf:type owl:DatatypeProperty ; rdfs:domain :Microbes ; rdfs:range xsd:positiveInteger ; rdfs:label "has microbial density" .
+:hasChemicalConcentration rdf:type owl:DatatypeProperty ; rdfs:domain :Groundwater ; rdfs:range xsd:float ; rdfs:label "has chemical concentration" .
+:hasPHLevel rdf:type owl:DatatypeProperty ; rdfs:domain :GroundwaterChemistry ; rdfs:range xsd:float ; rdfs:label "has pH level" .
+:hasTemperature rdf:type owl:DatatypeProperty ; rdfs:domain :Groundwater ; rdfs:range xsd:decimal ; rdfs:label "has temperature" .
+:hasVegetationDensity rdf:type owl:DatatypeProperty ; rdfs:domain :Vegetation ; rdfs:range xsd:positiveInteger ; rdfs:label "has vegetation density" .
+:hasSoilMoistureContent rdf:type owl:DatatypeProperty ; rdfs:domain :SoilChemistry ; rdfs:range xsd:percentage ; rdfs:label "has soil moisture content" .
+:hasCO2EmissionRate rdf:type owl:DatatypeProperty ; rdfs:domain :GroundwaterEcosystem ; rdfs:range xsd:float ; rdfs:label "has CO2 emission rate" .
+:hasInfiltrationRate rdf:type owl:DatatypeProperty ; rdfs:domain :InfiltrationArea ; rdfs:range xsd:float ; rdfs:label "has infiltration rate" .
+:hasOrganicMatterContent rdf:type owl:DatatypeProperty ; rdfs:domain :SoilOrganicMatter ; rdfs:range xsd:percentage ; rdfs:label "has organic matter content" .
+:hasAnnualRainfall rdf:type owl:DatatypeProperty ; rdfs:domain :GroundwaterPrecipitation ; rdfs:range xsd:float ; rdfs:label "has annual rainfall" .
+:hasNitrogenLevel rdf:type owl:DatatypeProperty ; rdfs:domain :NitrogenCycle ; rdfs:range xsd:float ; rdfs:label "has nitrogen level" .
+:hasBiodiversityIndex rdf:type owl:DatatypeProperty ; rdfs:domain :Biodiversity ; rdfs:range xsd:float ; rdfs:label "has biodiversity index" .
+:hasRockPorosity rdf:type owl:DatatypeProperty ; rdfs:domain :RockType ; rdfs:range xsd:decimal ; rdfs:label "has rock porosity" .
+:hasMineralDensity rdf:type owl:DatatypeProperty ; rdfs:domain :Mineral ; rdfs:range xsd:float ; rdfs:label "has mineral density" .
+:hasAquiferDepth rdf:type owl:DatatypeProperty ; rdfs:domain :AquiferSystem ; rdfs:range xsd:float ; rdfs:label "has aquifer depth" .
+:hasWaterFlowSpeed rdf:type owl:DatatypeProperty ; rdfs:domain :WaterFlow ; rdfs:range xsd:float ; rdfs:label "has water flow speed" .
+:hasPermeabilityIndex rdf:type owl:DatatypeProperty ; rdfs:domain :Permeability ; rdfs:range xsd:float ; rdfs:label "has permeability index" .
+:hasManagementEffectivenessScore rdf:type owl:DatatypeProperty ; rdfs:domain :ManagementPractice ; rdfs:range xsd:float ; rdfs:label "has management effectiveness score" .
+:hasPollutionLevel rdf:type owl:DatatypeProperty ; rdfs:domain :GroundwaterContamination ; rdfs:range xsd:float ; rdfs:label "has pollution level" .
+:hasSpeciesCount rdf:type owl:DatatypeProperty ; rdfs:domain :RareSpeciesBiodiversity ; rdfs:range xsd:positiveInteger ; rdfs:label "has species count" .
+:hasTraceGasConcentration rdf:type owl:DatatypeProperty ; rdfs:domain :TraceGas ; rdfs:range xsd:float ; rdfs:label "has trace gas concentration" .
+
+### Inverse Properties ###
+:isFoundIn rdf:type rdf:Property ; rdfs:inverseOf :foundIn ; rdfs:label "is found in" .
+:isInfluencedBy rdf:type rdf:Property ; rdfs:inverseOf :influence ; rdfs:label "is influenced by" .
+:isCharacterizedBy rdf:type rdf:Property ; rdfs:inverseOf :hasCharacteristic ; rdfs:label "is characterized by" .
+:isAffectedBy rdf:type rdf:Property ; rdfs:inverseOf :affectedBy ; rdfs:label "is affected by" .
+:occursIn rdf:type rdf:Property ; rdfs:inverseOf :occurIn ; rdfs:label "occurs in" .
+:isAssociatedWith rdf:type rdf:Property ; rdfs:inverseOf :associatedWith ; rdfs:label "is associated with" .
+:isDefinedBy rdf:type rdf:Property ; rdfs:inverseOf :define ; rdfs:label "is defined by" .
+:interactsWith rdf:type rdf:Property ; rdfs:inverseOf :interactWith ; rdfs:label "interacts with" .
+:isRelatedTo rdf:type rdf:Property ; rdfs:inverseOf :relatedTo ; rdfs:label "is related to" .
+:hasComponents rdf:type rdf:Property ; rdfs:inverseOf :hasComponent ; rdfs:label "has components" .
+:isPhaseOf rdf:type rdf:Property ; rdfs:inverseOf :hasPhase ; rdfs:label "is phase of" .
+:isIndicatedBy rdf:type rdf:Property ; rdfs:inverseOf :indicate ; rdfs:label "is indicated by" .
+:isAffected rdf:type rdf:Property ; rdfs:inverseOf :affect ; rdfs:label "is affected" .
+:hasRoleIn rdf:type rdf:Property ; rdfs:inverseOf :playRoleIn ; rdfs:label "has role in" .
+:isUsedIn rdf:type rdf:Property ; rdfs:inverseOf :usedIn ; rdfs:label "is used in" .
+:isInfluenced rdf:type rdf:Property ; rdfs:inverseOf :influencedBy ; rdfs:label "is influenced" .
+:adaptsTo rdf:type rdf:Property ; rdfs:inverseOf :adaptTo ; rdfs:label "adapts to" .
+:isInvolvedIn rdf:type rdf:Property ; rdfs:inverseOf :involvedIn ; rdfs:label "is involved in" .
+:isDetectedThrough rdf:type rdf:Property ; rdfs:inverseOf :detectedThrough ; rdfs:label "is detected through" .
+:isUsedFor rdf:type rdf:Property ; rdfs:inverseOf :usedFor ; rdfs:label "is used for" .
+:impacts rdf:type rdf:Property ; rdfs:inverseOf :impact ; rdfs:label "impacts" .
+:existsIn rdf:type rdf:Property ; rdfs:inverseOf :existIn ; rdfs:label "exists in" .
+
+### Class Axioms ###
+# SubClassOf Axioms
+:Microbes rdfs:subClassOf :AquaticMicrobes .
+:Microbes rdfs:subClassOf :GroundwaterMicrobes .
+:AquiferSystem rdfs:subClassOf :HydrogeologicalSystem .
+:ChemicalCompound rdfs:subClassOf :GroundwaterChemical .
+:KarstAquifer rdfs:subClassOf :AquiferSystem .
+:MicrobialFunctionalGuilds rdfs:subClassOf :MicrobialCommunity .
+:AquiferChemistry rdfs:subClassOf :Geochemistry .
+:LimestoneAquifer rdfs:subClassOf :AquiferSystem .
+:TriassicAquifer rdfs:subClassOf :AquiferSystem .
+:GroundwaterQuality rdfs:subClassOf :Groundwater .
+:FracturedRock rdfs:subClassOf :GeologicalStrata .
+:KarstSystem rdfs:subClassOf :GeologicalStrata .
+:CarbonateDissolution rdfs:subClassOf :ChemicalProcess .
+:Karstification rdfs:subClassOf :GeologicalProcess .
+:MobileOrganicMatter rdfs:subClassOf :OrganicMatter .
+:Groundwater rdfs:subClassOf :Water .
+:AgriculturalActivity rdfs:subClassOf :LandUseActivity .
+:GroundwaterEcosystem rdfs:subClassOf :Ecosystem .
+:GeologicalStrata rdfs:subClassOf :Strata .
+:GroundwaterPrecipitation rdfs:subClassOf :Precipitation .
+:CatchmentArea rdfs:subClassOf :HydrologicalUnit .
+:InfiltrationArea rdfs:subClassOf :HydrologicalUnit .
+:RockType rdfs:subClassOf :GeologicalMaterial .
+:Mineral rdfs:subClassOf :GeologicalMaterial .
+:OrganicGroundwaterComponent rdfs:subClassOf :OrganicComponent .
+:Biodiversity rdfs:subClassOf :EcologicalMetric .
+:Vegetation rdfs:subClassOf :PlantCommunity .
+:Terrain rdfs:subClassOf :GeologicalFeature .
+:ManagementPractice rdfs:subClassOf :LandManagement .
+:MicrobialDynamics rdfs:subClassOf :EcologicalProcess .
+:HainichCriticalZone rdfs:subClassOf :CriticalZone .
+:MolecularMarker rdfs:subClassOf :Biomarker .
+:NitrogenTransformation rdfs:subClassOf :BiogeochemicalProcess .
+:MarinePhage rdfs:subClassOf :Phage .
+:SoilTracerStudy rdfs:subClassOf :HydrologicalStudy .
+:DOM rdfs:subClassOf :OrganicMatter .
+:Miz rdfs:subClassOf :Biomarker .
+:MolecularFormula rdfs:subClassOf :ChemicalData .
+:SoilChemistry rdfs:subClassOf :Geochemistry .
+:GroundwaterChemistry rdfs:subClassOf :Geochemistry .
+:CO2FixationPathway rdfs:subClassOf :BiochemicalPathway .
+:RareSpeciesBiodiversity rdfs:subClassOf :Biodiversity .
+:HydrogeochemicalCharacterizationMethod rdfs:subClassOf :CharacterizationMethod .
+:MultilevelGroundwaterSystem rdfs:subClassOf :AquiferSystem .
+:Permeability rdfs:subClassOf :HydrogeologicalProperty .
+:GroundwaterVulnerability rdfs:subClassOf :EnvironmentalVulnerability .
+:GroundwaterContamination rdfs:subClassOf :Contamination .
+:SeasonalVariation rdfs:subClassOf :EnvironmentalVariation .
+:NitrogenCycle rdfs:subClassOf :BiogeochemicalCycle .
+:ForestEcosystem rdfs:subClassOf :Ecosystem .
+:VegetationCover rdfs:subClassOf :PlantCover .
+:VegetationType rdfs:subClassOf :PlantType .
+:SoilGroundwaterInteraction rdfs:subClassOf :EcologicalInteraction .
+:MicrobialCommunity rdfs:subClassOf :Community .
+:SoilWaterContent rdfs:subClassOf :SoilProperty .
+:Production rdfs:subClassOf :EcologicalProcess .
+:Consumption rdfs:subClassOf :EcologicalProcess .
+:TraceGas rdfs:subClassOf :Gas .
+:EnvironmentalSignal rdfs:subClassOf :Signal .
+:SamplingMethod rdfs:subClassOf :Method .
+:AnalysisMethod rdfs:subClassOf :Method .
+:BioticFactor rdfs:subClassOf :EcologicalFactor .
+:AbioticFactor rdfs:subClassOf :EcologicalFactor .
+:SpatialPattern rdfs:subClassOf :Pattern .
+:TemporalPattern rdfs:subClassOf :Pattern .
+:SoilOrganicMatter rdfs:subClassOf :OrganicMatter .
+:Bioturbation rdfs:subClassOf :EcologicalProcess .
+:AgriculturalPractice rdfs:subClassOf :LandUseActivity .
+:EnergyMetabolismPathway rdfs:subClassOf :BiochemicalPathway .
+:MicrobialMechanism rdfs:subClassOf :EcologicalMechanism .
+:HydrologicalProperty rdfs:subClassOf :Property .
+:MuschelkalkFormation rdfs:subClassOf :GeologicalFormation .
+:GroundwaterFlow rdfs:subClassOf :HydrologicalProcess .
+:HydraulicProperty rdfs:subClassOf :Property .
+:WaterFlow rdfs:subClassOf :HydrologicalProcess .
+:Fungi rdfs:subClassOf :Microorganism .
+:AquaticFungi rdfs:subClassOf :Fungi .
+
+:GroundwaterComparison rdfs:subClassOf :GroundwaterStudy .
+:SecondaryMinerals rdfs:subClassOf :Minerals .
+:GroundwaterProtection rdfs:subClassOf :EnvironmentalProtection .
+:GroundwaterPhysiochemicalParameters rdfs:subClassOf :PhysiochemicalParameters .
+:Geochemistry rdfs:subClassOf :EarthScience .
+:Hydrochemistry rdfs:subClassOf :Geochemistry .
+:Limestone rdfs:subClassOf :RockType .
+:FracturedRockAquifer rdfs:subClassOf :Aquifer .
+:Karst rdfs:subClassOf :GeologicalFormation .
+:CarbonateDissortation rdfs:subClassOf :ChemicalProcess .
+:CatchmentArea rdfs:subClassOf :HydrologicalUnit .
+:InfiltrationArea rdfs:subClassOf :HydrologicalUnit .
+:WaterInput rdfs:subClassOf :HydrologicalProcess .
+:ForestMicrohabitat rdfs:subClassOf :Microhabitat .
+:RareSpeciesBiodiversity rdfs:subClassOf :Biodiversity .
+:MicrobialCommunity rdfs:subClassOf :Community .
+:TraceGas rdfs:subClassOf :Gas .
+:PhosphateMinerals rdfs:subClassOf :Minerals .
+:RechargeZone rdfs:subClassOf :HydrologicalUnit .
+:DesertSpring rdfs:subClassOf :WaterSource .
+:KarstSpringWater rdfs:subClassOf :Water .
+:SeasonalWetland rdfs:subClassOf :Wetland .
+:HydraulicConductivityStudy rdfs:subClassOf :HydrologicalStudy .
+:ChalkAquifer rdfs:subClassOf :AquiferSystem .
+:HighCalciumWater rdfs:subClassOf :Groundwater .
+:AquiferFungiSample rdfs:subClassOf :Fungi .
+:SubsurfaceBacterialCulture rdfs:subClassOf :MicrobialCulture .
+:DeepAquifer rdfs:subClassOf :AquiferSystem .
+:IndustrialAgricultureArea rdfs:subClassOf :AgriculturalArea .
+:CO2ReductionPathway rdfs:subClassOf :BiochemicalPathway .
+:AmazonRainforestSoil rdfs:subClassOf :Soil .
+:ContaminatedSite rdfs:subClassOf :Site .
+:HainichCZObservatory rdfs:subClassOf :Observatory .
+:AquaticMicrobialCommunity rdfs:subClassOf :Community .
+:KarstAquiferSystem rdfs:subClassOf :AquiferSystem .
+:TriassicLimestone rdfs:subClassOf :Limestone .
+
+### Equivalent Classes ###
+:AquiferSystem owl:equivalentClass :GroundwaterSystem .
+:MicrobialFunctionalGuilds owl:equivalentClass :MicrobialGroup .
+:AquiferChemistry owl:equivalentClass :Hydrochemistry .
+:LimestoneAquifer owl:equivalentClass :ChalkAquifer .
+:TriassicAquifer owl:equivalentClass :TriassicLimestone .
+:GroundwaterQuality owl:equivalentClass :WaterQuality .
+:FracturedRock owl:equivalentClass :RockFracture .
+:KarstSystem owl:equivalentClass :Karst .
+:CarbonateDissolution owl:equivalentClass :CarbonateDissortation .
+:Karstification owl:equivalentClass :KarstProcess .
+:MobileOrganicMatter owl:equivalentClass :OrganicGroundwaterComponent .
+:Groundwater owl:equivalentClass :AquiferWater .
+:AgriculturalActivity owl:equivalentClass :Agriculture .
+:GroundwaterEcosystem owl:equivalentClass :AquiferEcosystem .
+:GeologicalStrata owl:equivalentClass :Strata .
+:GroundwaterPrecipitation owl:equivalentClass :HydroPrecipitation .
+:CatchmentArea owl:equivalentClass :HydrologicalCatchment .
+:InfiltrationArea owl:equivalentClass :HydrologicalInfiltration .
+:RockType owl:equivalentClass :GeologicalMaterial .
+:Mineral owl:equivalentClass :GeologicalMineral .
+:OrganicGroundwaterComponent owl:equivalentClass :OrganicComponent .
+:Biodiversity owl:equivalentClass :EcologicalDiversity .
+:Vegetation owl:equivalentClass :PlantCommunity .
+:Terrain owl:equivalentClass :Landform .
+:ManagementPractice owl:equivalentClass :EnvironmentalManagement .
+:MicrobialDynamics owl:equivalentClass :MicrobialProcess .
+:HainichCriticalZone owl:equivalentClass :CriticalZone .
+:MolecularMarker owl:equivalentClass :Biomarker .
+:NitrogenTransformation owl:equivalentClass :NitrogenCycleProcess .
+:MarinePhage owl:equivalentClass :WaterPhage .
+:SoilTracerStudy owl:equivalentClass :HydrologicalTracerStudy .
+:DOM owl:equivalentClass :DissolvedOrganicMatter .
+:Miz owl:equivalentClass :ChemicalMarker .
+:MolecularFormula owl:equivalentClass :ChemicalData .
+:SoilChemistry owl:equivalentClass :SoilGeochemistry .
+:GroundwaterChemistry owl:equivalentClass :Hydrochemistry .
+:CO2FixationPathway owl:equivalentClass :CarbonFixationPathway .
+:RareSpeciesBiodiversity owl:equivalentClass :RareSpeciesDiversity .
+:HydrogeochemicalCharacterizationMethod owl:equivalentClass :GeochemicalCharacterizationMethod .
+:MultilevelGroundwaterSystem owl:equivalentClass :ComplexAquiferSystem .
+:Permeability owl:equivalentClass :HydrogeologicalProperty .
+:GroundwaterVulnerability owl:equivalentClass :EnvironmentalVulnerability .
+:GroundwaterContamination owl:equivalentClass :Contamination .
+:SeasonalVariation owl:equivalentClass :SeasonalChange .
+:NitrogenCycle owl:equivalentClass :BiogeochemicalCycle .
+:ForestEcosystem owl:equivalentClass :ForestEnvironment .
+:VegetationCover owl:equivalentClass :PlantCover .
+:VegetationType owl:equivalentClass :PlantType .
+:SoilGroundwaterInteraction owl:equivalentClass :GroundwaterSoilInteraction .
+:MicrobialCommunity owl:equivalentClass :MicrobialGroup .
+:SoilWaterContent owl:equivalentClass :SoilHydration .
+:Production owl:equivalentClass :EcologicalProduction .
+:Consumption owl:equivalentClass :EcologicalConsumption .
+:TraceGas owl:equivalentClass :AtmosphericTraceGas .
+:EnvironmentalSignal owl:equivalentClass :EcologicalSignal .
+:SamplingMethod owl:equivalentClass :SampleCollectionMethod .
+:AnalysisMethod owl:equivalentClass :SampleAnalysisMethod .
+:BioticFactor owl:equivalentClass :LivingFactor .
+:AbioticFactor owl:equivalentClass :NonLivingFactor .
+:SpatialPattern owl:equivalentClass :GeospatialPattern .
+:TemporalPattern owl:equivalentClass :ChronologicalPattern .
+:SoilOrganicMatter owl:equivalentClass :SoilOM .
+:Bioturbation owl:equivalentClass :SoilDisturbance .
+:AgriculturalPractice owl:equivalentClass :FarmingPractice .
+:EnergyMetabolismPathway owl:equivalentClass :MetabolicPathway .
+:MicrobialMechanism owl:equivalentClass :MicrobialProcess .
+:HydrologicalProperty owl:equivalentClass :WaterProperty .
+:MuschelkalkFormation owl:equivalentClass :TriassicFormation .
+:GroundwaterFlow owl:equivalentClass :SubsurfaceWaterFlow .
+:HydraulicProperty owl:equivalentClass :WaterFlowProperty .
+:WaterFlow owl:equivalentClass :HydrologicalFlow .
+:Fungi owl:equivalentClass :AquaticFungi .
+:AquaticFungi owl:equivalentClass :AquaticMicroorganism .
+:GroundwaterComparison owl:equivalentClass :AquiferComparison .
+:SecondaryMinerals owl:equivalentClass :Mineral .
+:GroundwaterProtection owl:equivalentClass :AquiferProtection .
+:GroundwaterPhysiochemicalParameters owl:equivalentClass :PhysiochemicalParameters .
+:Geochemistry owl:equivalentClass :GeologicalChemistry .
+:Hydrochemistry owl:equivalentClass :WaterChemistry .
+:Limestone owl:equivalentClass :SedimentaryRock .
+:FracturedRockAquifer owl:equivalentClass :FracturedAquifer .
+:Karst owl:equivalentClass :KarstFormation .
+:CarbonateDissortation owl:equivalentClass :CarbonateProcess .
+:CatchmentArea owl:equivalentClass :HydrologicalCatchment .
+:InfiltrationArea owl:equivalentClass :HydrologicalInfiltration .
+:WaterInput owl:equivalentClass :HydrologicalInput .
+:ForestMicrohabitat owl:equivalentClass :ForestHabitat .
+:RareSpeciesBiodiversity owl:equivalentClass :RareSpeciesDiversity .
+:MicrobialCommunity owl:equivalentClass :MicrobialGroup .
+:TraceGas owl:equivalentClass :AtmosphericTraceGas .
+:PhosphateMinerals owl:equivalentClass :Mineral .
+:RechargeZone owl:equivalentClass :AquiferRechargeZone .
+:DesertSpring owl:equivalentClass :Spring .
+:KarstSpringWater owl:equivalentClass :KarstWater .
+:SeasonalWetland owl:equivalentClass :Wetland .
+:HydraulicConductivityStudy owl:equivalentClass :ConductivityStudy .
+:ChalkAquifer owl:equivalentClass :AquiferSystem .
+:HighCalciumWater owl:equivalentClass :Groundwater .
+:AquiferFungiSample owl:equivalentClass :FungiSample .
+:SubsurfaceBacterialCulture owl:equivalentClass :BacterialCulture .
+:DeepAquifer owl:equivalentClass :SubsurfaceAquifer .
+:IndustrialAgricultureArea owl:equivalentClass :AgriculturalArea .
+:CO2ReductionPathway owl:equivalentClass :CarbonFixationPathway .
+:AmazonRainforestSoil owl:equivalentClass :RainforestSoil .
+:ContaminatedSite owl:equivalentClass :PollutedSite .
+:HainichCZObservatory owl:equivalentClass :CriticalZoneObservatory .
+:AquaticMicrobialCommunity owl:equivalentClass :MicrobialCommunity .
+:KarstAquiferSystem owl:equivalentClass :KarstAquifer .
+
+### Disjoint Classes ###
+:Microbes owl:disjointWith :Fungi .
+:AquiferSystem owl:disjointWith :AquaticSystem .
+:ChemicalCompound owl:disjointWith :BiologicalCompound .
+:KarstAquifer owl:disjointWith :FracturedRockAquifer .
+:MicrobialFunctionalGuilds owl:disjointWith :PlantFunctionalGuilds .
+:AquiferChemistry owl:disjointWith :SoilChemistry .
+:TriassicAquifer owl:disjointWith :JurassicAquifer .
+:GroundwaterQuality owl:disjointWith :SurfaceWaterQuality .
+:FracturedRock owl:disjointWith :SolidRock .
+:KarstSystem owl:disjointWith :NonKarstSystem .
+:CarbonateDissolution owl:disjointWith :SilicateDissolution .
+:Karstification owl:disjointWith :NonKarstProcess .
+:MobileOrganicMatter owl:disjointWith :FixedOrganicMatter .
+:Groundwater owl:disjointWith :SurfaceWater .
+:AgriculturalActivity owl:disjointWith :UrbanActivity .
+:GroundwaterEcosystem owl:disjointWith :SurfaceWaterEcosystem .
+:GeologicalStrata owl:disjointWith :ArtificialStrata .
+:GroundwaterPrecipitation owl:disjointWith :SurfacePrecipitation .
+:CatchmentArea owl:disjointWith :NonCatchmentArea .
+:InfiltrationArea owl:disjointWith :ImpermeableArea .
+:RockType owl:disjointWith :SedimentType .
+:Mineral owl:disjointWith :OrganicCompound .
+:OrganicGroundwaterComponent owl:disjointWith :InorganicGroundwaterComponent .
+:Biodiversity owl:disjointWith :Monoculture .
+:Vegetation owl:disjointWith :ArtificialSurface .
+:Terrain owl:disjointWith :FlatSurface .
+:ManagementPractice owl:disjointWith :NonManagementPractice .
+:MicrobialDynamics owl:disjointWith :PlantDynamics .
+:HainichCriticalZone owl:disjointWith :NonCriticalZone .
+:MolecularMarker owl:disjointWith :PhysicalMarker .
+:NitrogenTransformation owl:disjointWith :NonNitrogenProcess .
+:MarinePhage owl:disjointWith :TerrestrialPhage .
+:SoilTracerStudy owl:disjointWith :SurfaceTracerStudy .
+:DOM owl:disjointWith :POM .
+:Miz owl:disjointWith :NonBiomarker .
+:MolecularFormula owl:disjointWith :EmpiricalFormula .
+:SoilChemistry owl:disjointWith :WaterChemistry .
+:GroundwaterChemistry owl:disjointWith :SurfaceWaterChemistry .
+:CO2FixationPathway owl:disjointWith :CO2EmissionPathway .
+:RareSpeciesBiodiversity owl:disjointWith :CommonSpeciesBiodiversity .
+:HydrogeochemicalCharacterizationMethod owl:disjointWith :NonCharacterizationMethod .
+:MultilevelGroundwaterSystem owl:disjointWith :SingleLevelGroundwaterSystem .
+:Permeability owl:disjointWith :Impermeability .
+:GroundwaterVulnerability owl:disjointWith :GroundwaterSecurity .
+:GroundwaterContamination owl:disjointWith :GroundwaterPurity .
+:SeasonalVariation owl:disjointWith :ConstantCondition .
+:NitrogenCycle owl:disjointWith :CarbonCycle .
+:ForestEcosystem owl:disjointWith :DesertEcosystem .
+:VegetationCover owl:disjointWith :BareGround .
+:VegetationType owl:disjointWith :NonVegetationType .
+:SoilGroundwaterInteraction owl:disjointWith :SoilSurfaceInteraction .
+:MicrobialCommunity owl:disjointWith :PlantCommunity .
+:SoilWaterContent owl:disjointWith :DrySoil .
+:Production owl:disjointWith :Decomposition .
+:Consumption owl:disjointWith :Production .
+:TraceGas owl:disjointWith :MajorGas .
+:EnvironmentalSignal owl:disjointWith :Noise .
+:SamplingMethod owl:disjointWith :NonSamplingMethod .
+:AnalysisMethod owl:disjointWith :NonAnalysisMethod .
+:BioticFactor owl:disjointWith :AbioticFactor .
+:AbioticFactor owl:disjointWith :BioticFactor .
+:SpatialPattern owl:disjointWith :RandomPattern .
+:TemporalPattern owl:disjointWith :StaticCondition .
+:SoilOrganicMatter owl:disjointWith :InorganicMatter .
+:Bioturbation owl:disjointWith :Sedimentation .
+:AgriculturalPractice owl:disjointWith :NonAgriculturalPractice .
+:EnergyMetabolismPathway owl:disjointWith :NonMetabolicPathway .
+:MicrobialMechanism owl:disjointWith :PlantMechanism .
+:HydrologicalProperty owl:disjointWith :NonHydrologicalProperty .
+:MuschelkalkFormation owl:disjointWith :NonTriassicFormation .
+:GroundwaterFlow owl:disjointWith :SurfaceWaterFlow .
+:HydraulicProperty owl:disjointWith :NonHydraulicProperty .
+:WaterFlow owl:disjointWith :StagnantWater .
+:Fungi owl:disjointWith :Bacteria .
+:AquaticFungi owl:disjointWith :TerrestrialFungi .
+:AquaticMicrobes owl:disjointWith :TerrestrialMicrobes .
+:GroundwaterComparison owl:disjointWith :SurfaceWaterComparison .
+:SecondaryMinerals owl:disjointWith :PrimaryMinerals .
+:GroundwaterProtection owl:disjointWith :NonProtection .
+:GroundwaterPhysiochemicalParameters owl:disjointWith :NonPhysiochemicalParameters .
+:Geochemistry owl:disjointWith :NonGeochemistry .
+:Hydrochemistry owl:disjointWith :NonHydrochemistry .
+:Limestone owl:disjointWith :NonSedimentaryRock .
+:FracturedRockAquifer owl:disjointWith :SolidRockAquifer .
+:Karst owl:disjointWith :NonKarstFormation .
+:CarbonateDissortation owl:disjointWith :NonCarbonateProcess .
+:CatchmentArea owl:disjointWith :NonCatchment .
+:InfiltrationArea owl:disjointWith :NonInfiltrationArea .
+:WaterInput owl:disjointWith :WaterOutput .
+:ForestMicrohabitat owl:disjointWith :NonForestHabitat .
+:RareSpeciesBiodiversity owl:disjointWith :CommonSpeciesDiversity .
+:MicrobialCommunity owl:disjointWith :PlantCommunity .
+:TraceGas owl:disjointWith :NonTraceGas .
+:PhosphateMinerals owl:disjointWith :NonMineral .
+:RechargeZone owl:disjointWith :NonRechargeZone .
+:DesertSpring owl:disjointWith :NonSpring .
+:KarstSpringWater owl:disjointWith :NonKarstWater .
+:SeasonalWetland owl:disjointWith :NonWetland .
+:HydraulicConductivityStudy owl:disjointWith :NonConductivityStudy .
+:ChalkAquifer owl:disjointWith :NonAquiferSystem .
+:HighCalciumWater owl:disjointWith :LowCalciumWater .
+:AquiferFungiSample owl:disjointWith :NonFungiSample .
+:SubsurfaceBacterialCulture owl:disjointWith :SurfaceBacterialCulture .
+:DeepAquifer owl:disjointWith :ShallowAquifer .
+:IndustrialAgricultureArea owl:disjointWith :NonAgriculturalArea .
+:CO2ReductionPathway owl:disjointWith :NonCarbonFixationPathway .
+:AmazonRainforestSoil owl:disjointWith :NonRainforestSoil .
+:ContaminatedSite owl:disjointWith :CleanSite .
+:HainichCZObservatory owl:disjointWith :NonCriticalZoneObservatory .
+:AquaticMicrobialCommunity owl:disjointWith :TerrestrialMicrobialCommunity .
+:KarstAquiferSystem owl:disjointWith :NonKarstAquifer .
+
+### Symmetric Properties ###
+:interactWith rdf:type owl:SymmetricProperty .
+:isAssociatedWith rdf:type owl:SymmetricProperty .
+:isRelatedTo rdf:type owl:SymmetricProperty .
+
+### Transitive Properties ###
+:isAffectedBy rdf:type owl:TransitiveProperty .
+:isAssociatedWith rdf:type owl:TransitiveProperty .
+:occursIn rdf:type owl:TransitiveProperty .
+
+### Functional Properties ###
+:hasCharacteristic rdf:type owl:FunctionalProperty .
+:define rdf:type owl:FunctionalProperty .
+:hasComponent rdf:type owl:FunctionalProperty .
+:hasPhase rdf:type owl:FunctionalProperty .
+:usedIn rdf:type owl:FunctionalProperty .
+:existsIn rdf:type owl:FunctionalProperty .
+:isUsedFor rdf:type owl:FunctionalProperty .
+
+### Reflexive Properties ###
+:isRelatedTo rdf:type owl:ReflexiveProperty .
+:interactsWith rdf:type owl:ReflexiveProperty .
+
+### Instances ###
+:TriassicLimestone rdf:type :GeologicalFormation ; rdfs:comment "A specific limestone formation that originates from the Triassic period, typically porous and water-permeable." .
+:KarstAquiferSystem rdf:type :KarstAquifer ; rdfs:comment "An aquifer system within a karst landscape characterized by soluble rocks and underground drainage systems." .
+:FracturedRockAquifer rdf:type :GroundwaterQuality ; rdfs:comment "An aquifer influenced by fractured rock formations, affecting the water quality due to increased flow and potential contamination paths." .
+:AquaticMicrobialCommunity rdf:type :MicrobialCommunity ; rdfs:comment "A community of diverse microorganisms found in aquatic environments, often within groundwater ecosystems." .
+:AquiferFungiSample rdf:type :Fungi ; rdfs:comment "A sample of fungi collected from an aquifer, representing the fungal biodiversity within groundwater ecosystems." .
+:HighCalciumWater rdf:type :Groundwater ; rdfs:comment "Groundwater with a high concentration of calcium, typically found in limestone aquifers." .
+:ContaminatedSite rdf:type :GroundwaterContamination ; rdfs:comment "A location where groundwater has been adversely affected by pollutants, potentially harmful to ecosystems and human health." .
+:HainichCZObservatory rdf:type :HainichCriticalZone ; rdfs:comment "A research observatory in the Hainich region focusing on the critical zone, studying interactions within the subsurface biosphere and hydrosphere." .
+:CO2ReductionPathway rdf:type :CO2FixationPathway ; rdfs:comment "A biochemical pathway involved in reducing CO2 into organic compounds, significant in microbial metabolic processes." .
+:AmazonRainforestSoil rdf:type :SoilGroundwaterInteraction ; rdfs:comment "Soil from the Amazon rainforest, interacting strongly with groundwater through dense vegetation and frequent rainfall." .
+:KarstSpringWater rdf:type :Groundwater ; rdfs:comment "Water emerging from a karst spring, typically clear and filtered through limestone, but vulnerable to rapid contamination due to minimal filtration." .
+:IndustrialAgricultureArea rdf:type :AgriculturalActivity ; rdfs:comment "A region dominated by industrial-scale agriculture, often impacting local groundwater systems through chemical runoff and high water usage." .
+:DeepAquifer rdf:type :AquiferSystem ; rdfs:comment "A deep-seated aquifer, often less susceptible to surface contamination but crucial for providing long-term water supply." .
+:SubsurfaceBacterialCulture rdf:type :Microbes ; rdfs:comment "Cultures of bacteria isolated from subsurface environments, studied for their ecological roles and adaptations to low-nutrient conditions." .
+:SeasonalWetland rdf:type :GroundwaterPrecipitation ; rdfs:comment "A wetland area that experiences seasonal fluctuations in groundwater levels, affecting local biodiversity and hydrological dynamics." .
+:NitrateRichWater rdf:type :Groundwater ; rdfs:comment "Groundwater characterized by high nitrate levels, often a result of agricultural runoff or inadequate waste management practices." .
+:PhosphateMinerals rdf:type :Mineral ; rdfs:comment "Minerals containing phosphate, significant for their role in geochemical cycles and as indicators of mineral wealth." .
+:ChalkAquifer rdf:type :LimestoneAquifer ; rdfs:comment "An aquifer consisting of chalk, particularly permeable and capable of storing significant volumes of water." .
+:ForestMicrohabitat rdf:type :MicrobialCommunity ; rdfs:comment "A microbial community within a forest setting, influenced by the organic matter and moisture conditions of the forest floor." .
+:RechargeZone rdf:type :InfiltrationArea ; rdfs:comment "An area critical for the recharge of groundwater, where surface water is efficiently absorbed into the subsurface aquifer." .
+:DesertSpring rdf:type :Groundwater ; rdfs:comment "A spring located in a desert region, providing critical water resources for local ecosystems and human populations." .
+:HydraulicConductivityStudy rdf:type :HydrogeochemicalCharacterizationMethod ; rdfs:comment "A study measuring the rate at which water can pass through aquifer materials, essential for understanding groundwater flow dynamics." .
+
+### Annotations ###
+:Microbes rdfs:comment "Organisms that are microscopic, such as bacteria, archaea, and certain fungi, present in the aquifer systems." .
+:AquiferSystem rdfs:comment "An underground layer of water-bearing permeable rock or materials such as gravel, sand, or silt." .
+:ChemicalCompound rdfs:comment "A substance consisting of two or more different elements chemically bonded together, found in groundwater." .
+:KarstAquifer rdfs:comment "A type of aquifer characterized by soluble rock layers like limestone, leading to distinctive topographies and hydrology due to dissolution and water flow." .
+:MicrobialFunctionalGuilds rdfs:comment "Groups of microorganisms categorized by their metabolic or functional roles within ecological communities." .
+:AquiferChemistry rdfs:comment "Chemical characteristics and processes occurring within an aquifer, including solute transport and reactions." .
+:LimestoneAquifer rdfs:comment "An aquifer consisting predominantly of limestone, which is highly permeable due to the presence of dissolution-formed conduits." .
+:TriassicAquifer rdfs:comment "An aquifer system formed during the Triassic period, often characterized by specific sedimentary rock formations." .
+:GroundwaterQuality rdfs:comment "The condition of groundwater, often assessed by chemical, physical, and biological parameters to determine suitability for use." .
+:FracturedRock rdfs:comment "Rock formations that have significant fracture systems, influencing groundwater flow and storage." .
+:KarstSystem rdfs:comment "A geological system formed from the dissolution of soluble rocks including limestone, dolomite, and gypsum, characterized by sinkholes, caves, and underground drainage." .
+:CarbonateDissolution rdfs:comment "A process where carbonate minerals (e.g., calcite, dolomite) dissolve in water, significantly affecting karst aquifer systems." .
+:Karstification rdfs:comment "The process of creating karst landscapes through the dissolution of soluble rocks, leading to features like caves and underground rivers." .
+:MobileOrganicMatter rdfs:comment "Organic materials within the groundwater that are mobile and can transport nutrients or pollutants." .
+:Groundwater rdfs:comment "Water located beneath the earth's surface in soil pore spaces and in the fractures of rock formations." .
+:AgriculturalActivity rdfs:comment "Farming practices and operations that can impact environmental quality, including groundwater systems, through the use of fertilizers, pesticides, and water management." .
+:GroundwaterEcosystem rdfs:comment "An ecological system located below the earth's surface, encompassing interactions among water, microorganisms, chemicals, and geological materials." .
+:GeologicalStrata rdfs:comment "Layers of sedimentary rock or soil with consistent characteristics that can influence groundwater movement and storage." .
+:GroundwaterPrecipitation rdfs:comment "The process where water precipitates, either through chemical means within groundwater systems or as a part of the hydrological cycle impacting groundwater recharge." .
+:CatchmentArea rdfs:comment "The area from which rainfall and surface water flow into a particular river, lake, or reservoir." .
+:InfiltrationArea rdfs:comment "Areas of land where water permeates the soil surface to enter an aquifer, significantly impacting groundwater recharge and quality." .
+:RockType rdfs:comment "Categories of rocks based on their origin, texture, and mineral composition that influence geological and hydrological properties." .
+:Mineral rdfs:comment "Naturally occurring inorganic substances with a definite chemical composition and physical properties that are part of the earth's crust." .
+:OrganicGroundwaterComponent rdfs:comment "Organic substances found in groundwater, including both naturally occurring compounds and contaminants." .
+:Biodiversity rdfs:comment "The variety and variability of life forms within a given ecosystem, region, or on the entire Earth, important in assessing the health and function of ecosystems." .
+:Vegetation rdfs:comment "Plants and trees that cover a portion of the earth's surface, influencing ecological balances and processes including hydrology." .
+:Terrain rdfs:comment "The physical landscape including its elevation, slope, and orientation, which influences water flow and ecological conditions." .
+:ManagementPractice rdfs:comment "Approaches and techniques used in managing natural resources and environmental quality, including water resources." .
+:MicrobialDynamics rdfs:comment "Changes and interactions among microbial populations within an environment, often influenced by physical and chemical conditions." .
+:HainichCriticalZone rdfs:comment "A specific geographic area used for studying the critical zone, which includes the earth's outer skin where interactions occur between the lithosphere, atmosphere, hydrosphere, and biosphere." .
+:MolecularMarker rdfs:comment "Biomolecules used as markers to identify and track genetic material, species identification, or processes within ecosystems." .
+:NitrogenTransformation rdfs:comment "Biochemical processes that convert nitrogen into various chemical forms, critical in nutrient cycling and ecological balance." .
+:MarinePhage rdfs:comment "Viruses that infect marine bacteria, playing roles in marine ecosystems by influencing bacterial populations and nutrient cycles." .
+:SoilTracerStudy rdfs:comment "Research studies that use tracers to analyze soil properties, such as permeability and solute transport, to better understand soil-water interactions." .
+:DOM rdfs:comment "Dissolved organic matter in water, which includes a complex mixture of organic compounds that affects water chemistry and microbial activity." .
+:Miz rdfs:comment "A specific type of organic or chemical marker used in studies of environmental samples to track changes or origins of substances." .
+:MolecularFormula rdfs:comment "A representation of the number and type of atoms in a molecule, providing essential information about chemical structures in environmental studies." .
+:SoilChemistry rdfs:comment "The study of the chemical characteristics and processes of soil, including nutrient content, pH, and contaminant levels." .
+:GroundwaterChemistry rdfs:comment "The chemical composition and properties of groundwater, including solutes and gases, which affect its quality and ecological role." .
+:CO2FixationPathway rdfs:comment "Biochemical routes by which CO2 is converted into organic molecules by living organisms, crucial for carbon cycling and storage." .
+:RareSpeciesBiodiversity rdfs:comment "The presence and roles of rare species within an ecosystem, which can be indicators of environmental health and stability." .
+:HydrogeochemicalCharacterizationMethod rdfs:comment "Techniques used to assess the chemical properties and interactions in groundwater systems, important for understanding water quality and geological impacts." .
+:MultilevelGroundwaterSystem rdfs:comment "A groundwater system that includes multiple aquifer layers, often interconnected, allowing for complex flow and solute transport dynamics." .
+:Permeability rdfs:comment "A measure of the ability of a material (such as soil or rock) to allow fluids to pass through it, crucial for assessing aquifer recharge and water movement." .
+:GroundwaterVulnerability rdfs:comment "The susceptibility of groundwater to contamination, influenced by geological, hydrological, and chemical factors." .
+:GroundwaterContamination rdfs:comment "The presence of harmful substances in groundwater, which can compromise water quality and ecosystem health." .
+:SeasonalVariation rdfs:comment "Changes in environmental conditions or processes that occur on a seasonal cycle, affecting ecosystems and biological responses." .
+:NitrogenCycle rdfs:comment "The series of processes by which nitrogen is converted into its various chemical forms, crucial for life on Earth." .
+:ForestEcosystem rdfs:comment "An ecological system within a forest setting, encompassing the interactions among plants, animals, microorganisms, and their environment." .
+:VegetationCover rdfs:comment "The layer of vegetation that covers a portion of the earth's surface, providing habitat, regulating water flow, and influencing climate." .
+:VegetationType rdfs:comment "Categories of vegetation defined by the plant species composition, often associated with specific climatic, geographical, or ecological conditions." .
+:SoilGroundwaterInteraction rdfs:comment "The processes and relationships between soil characteristics and groundwater movement and quality, key for managing water resources and ecological health." .
+:MicrobialCommunity rdfs:comment "A community of microorganisms, including bacteria, fungi, and viruses, living in a shared environment, influencing ecological processes and cycles." .
+:SoilWaterContent rdfs:comment "The amount of water contained within the soil, crucial for understanding soil health, plant growth, and hydrological processes." .
+:Production rdfs:comment "The creation or manufacture of substances or materials, often used in the context of biological or chemical processes in environmental systems." .
+:Consumption rdfs:comment "The use or depletion of resources or energy, commonly in biological contexts such as metabolism or ecological interactions." .
+:TraceGas rdfs:comment "Gases present in small amounts in the atmosphere, significant for their roles in chemical processes and climate dynamics." .
+:EnvironmentalSignal rdfs:comment "Natural or anthropogenic indicators that provide information about environmental conditions or changes, used for monitoring and management purposes." .
+:SamplingMethod rdfs:comment "Techniques used to collect samples from environmental media (water, soil, air) for analysis or study." .
+:AnalysisMethod rdfs:comment "Techniques used to examine samples in order to discover their composition, structure, or properties, often used in scientific research." .
+:BioticFactor rdfs:comment "A living element of an ecosystem that influences or interacts with other organisms and the environment, such as plants, animals, and microorganisms." .
+:AbioticFactor rdfs:comment "Non-living chemical and physical parts of the environment that affect living organisms and the functioning of ecosystems." .
+:SpatialPattern rdfs:comment "The arrangement or distribution of particular phenomena or entities in physical space, significant in studies of ecology and geographical sciences." .
+:TemporalPattern rdfs:comment "The distribution of events or phenomena over time, relevant in ecological, geological, and climatological studies." .
+:SoilOrganicMatter rdfs:comment "Organic materials in soil, including decomposed plant and animal residues, which influence soil fertility, structure, and function." .
+:Bioturbation rdfs:comment "The disturbance of sedimentary deposits by living organisms, often affecting soil composition and structure." .
+:AgriculturalPractice rdfs:comment "Methods and techniques employed in cultivation and livestock rearing, which impact environmental quality and productivity." .
+:EnergyMetabolismPathway rdfs:comment "Biochemical routes by which organisms transform energy from one form to another, crucial for cellular processes and ecological dynamics." .
+:MicrobialMechanism rdfs:comment "Mechanisms or processes employed by microorganisms to interact with their environment, affecting ecological balances and nutrient cycles." .
+:HydrologicalProperty rdfs:comment "Characteristics of the movement, distribution, and quality of water through the Earth's atmosphere and surface, key to understanding hydrological cycles and systems." .
+:MuschelkalkFormation rdfs:comment "A geological formation consisting mainly of middle Triassic limestone, known for its distinct sedimentary characteristics." .
+:GroundwaterFlow rdfs:comment "The movement of water through aquifer systems, driven by gradients in pressure and elevation, crucial for water supply and ecosystem support." .
+:HydraulicProperty rdfs:comment "Properties of materials related to the movement and storage of fluids, particularly water, essential in hydrogeology and civil engineering." .
+:WaterFlow rdfs:comment "The flow of water within various environments, including rivers, aquifers, and engineered channels, vital for ecological and human activities." .
+
+### End ###
