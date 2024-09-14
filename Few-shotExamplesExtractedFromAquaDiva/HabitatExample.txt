@@ -124,3 +124,185 @@ CQ25: What is the synonym for sulphate-reducing sediment?
 Entity: ["Sulphate-Reducing Sediment", "Microbial Communities"]
 Property: ["CharacterizedBy"]
 Object Property: CharacterizedBy
+
+
+Data property with domain and range examples: 
+
+### Example 1: hasCode
+:hasCode rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :MeasuredValue ;
+    rdfs:comment "The hasCode property gives the underlying value (or coded representation) of a primitive value."@en .
+
+### Example 2: hasMultiplier
+:hasMultiplier rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :UnitConversion ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The hasMultiplier property gives the multiplier value in a unit conversion."@en .
+
+### Example 3: obo:IAO_0000115
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/ENVO_01000449> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A wet meadow is a type of wetland with soils that are saturated with water for part or all of the growing season."@en .
+
+### Example 4: obo:IAO_0000115 for acidification of an aquatic environment
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/ENVO_01000630> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Acidification of an aquatic environment is a process whereby the pH of an aquatic environment, biome, or water body is lowered."@en .
+
+### Example 5: obo:IAO_0000115 for algal bloom
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/ENVO_2000004> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A feature that arises from a rapid increase or accumulation in the population of algae (typically microscopic) in an aquatic system."@en .
+
+### Example 6: obo:IAO_0000115 for mesonephros
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/UBERON_0000080> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The second stage of the kidney. It serves as the main excretory organ of aquatic vertebrates and as a temporary embryonic kidney in higher vertebrates."@en .
+
+### Example 7: obo:IAO_0000115 for pathogen role
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/OBI_0000718> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Pathogen role is a role which inheres in an organism and realized in the process of disease course in the organism bearing host role caused by the organism bearing pathogen role."@en .
+
+### Example 8: obo:IAO_0000115 for tree (botany)
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.dataone.org/odo/ECSO_00000501> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "In botany, a tree is a perennial plant with an elongated stem, or trunk, supporting branches and leaves in most species."@en .
+
+### Example 9: obo:IAO_0000115 for nitrate
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/CHEBI_17632> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A nitrogen oxoanion formed by loss of a proton from nitric acid. Principal species present at pH 7.3."@en .
+
+### Example 10: obo:IAO_0000115 for cold desert
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/ENVO_01000382> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A cold desert is a desert which has hot summers and cold, dry winters with temperatures below 0 degrees Celsius."@en .
+
+### Example 11: obo:IAO_0000115 for marine eulittoral zone
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/ENVO_01000410> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The eulittoral zone extends from the spring high tide line, which is rarely inundated, to the spring low tide line, which is rarely not inundated."@en .
+
+### Example 12: obo:IAO_0000115 for cytometry time of flight assay
+obo:IAO_0000115 rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://purl.obolibrary.org/obo/OBI_0002115> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A cytometry assay in which the presence of molecules of interest on or in cells is indicated by binding of antibodies labeled with rare earth element tags which are detected by time-of-flight mass spectrometry."@en .
+### Example 1: Reductive Carboxylate Cycle
+:IEV_0001435 rdf:type owl:Class ;
+    rdfs:subClassOf :CHEBI_16526 , :IEV_0001552 ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty <http://www.aquadiva.uni-jena.de/ad-ontology/ad-ontology.0.0/ad-ontology-entities.owl#Affects> ;
+        owl:someValuesFrom <http://www.aquadiva.uni-jena.de/ad-ontology/ad-ontology.0.0/ad-ontology-entities.owl#AnoxicAquifer>
+    ] ;
+    rdfs:label "Reductive carboxylate cycle"@en ;
+    rdfs:synonym "CO2 fixation"@en , "Carbon dioxide fixation"@en .
+
+### Example 2: Anoxic Aquifer
+:AnoxicAquifer rdf:type owl:Class ;
+    rdfs:subClassOf :ENVO_00012408 , :IEV_0001435 ;
+    rdfs:label "Anoxic aquifer"@en .
+
+### Example 3: Aquifer Microbiome
+:AquiferMicrobiome rdf:type owl:Class ;
+    rdfs:subClassOf <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C68564> , :ENVO_00012408 , <http://www.aquadiva.uni-jena.de/ad-ontology/ad-ontology.0.0/ad-ontology-entities.owl#PlantCompound> ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty <http://www.aquadiva.uni-jena.de/ad-ontology/ad-ontology.0.0/ad-ontology-entities.owl#GrowOn> ;
+        owl:someValuesFrom <http://www.aquadiva.uni-jena.de/ad-ontology/ad-ontology.0.0/ad-ontology-entities.owl#PlantCompound>
+    ] ;
+    rdfs:label "Aquifer microbiome"@en .
+
+### Example 4: Groundwater Aquifer
+:GroundwaterAquifer rdf:type owl:Class ;
+    rdfs:subClassOf :ENVO_00012408 , <http://www.aquadiva.uni-jena.de/ad-ontology/ad-ontology.0.0/ad-ontology-entities.owl#GroundWater> ;
+    rdfs:label "Groundwater aquifer"@en .
+
+### Example 5: Lower Aquifer
+:LowerAquifer rdf:type owl:Class ;
+    rdfs:subClassOf :ENVO_00012408 ;
+    rdfs:label "Lower aquifer"@en .
+
+### Example 6: Upper Aquifer
+:UpperAquifer rdf:type owl:Class ;
+    rdfs:subClassOf :ENVO_00012408 ;
+    rdfs:label "Upper aquifer"@en .
+
+### Example 7: Differs From (ObjectProperty)
+:DiffersFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :NCBITaxon_2 ;
+    rdfs:range [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :LowerAquifer
+            :UpperAquifer
+        )
+    ] ;
+    rdfs:label "Differs from"@en ;
+    obo:IAO_0000118 "Differ from"@en .
+
+### Example 8: Grow On (ObjectProperty)
+:GrowOn rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain :AquiferMicrobiome ;
+    rdfs:range :PlantCompound ;
+    obo:IAO_0000118 "Settle on"@en ;
+    rdfs:label "Grow on"@en .
+
+### Example 9: ENVO_00000027 (Spring)
+:ENVO_00000027 rdf:type owl:Class ;
+    rdfs:subClassOf :ENVO_01000618 ;
+    obo:IAO_0000115 "A point where groundwater or steam flows out of the ground, and is thus where the aquifer surface meets the ground surface or where there is a fissure."@en ;
+    rdfs:label "spring"@en ;
+    oboInOwl:hasExactSynonym "SPRING"@en , "Spring"@en , "spring"@en ;
+    oboInOwl:hasDbXref "EcoLexicon:spring" , "FTT:982" , "Geonames:H.SPNG" , "SWEETRealm:Spring" , "TGN:21126" .
+
+### Example 10: Groundwater Discharge Process
+:ENVO_01001564 rdf:type owl:Class ;
+    rdfs:subClassOf :ENVO_01000982 ;
+    obo:IAO_0000115 "A water flow process during which water flows out of an aquifer."@en ;
+    rdfs:label "Groundwater discharge process"@en ;
+    rdfs:synonym "Groundwater discharge"@en .
+
+
+
+Meaningful individuals examples: 
+
+
+:IEV_0001435 rdf:type owl:NamedIndividual , :IEV_0001552 ;
+    rdfs:label "Reductive carboxylate cycle"@en ;
+    obo:IAO_0000115 "The reductive carboxylate cycle is a CO2 fixation pathway."@en ;
+    rdfs:synonym "CO2 fixation"@en ;
+    rdfs:synonym "Carbon dioxide fixation"@en .
+
+:AnoxicAquifer rdf:type owl:NamedIndividual , :ENVO_00012408 ;
+    rdfs:label "Anoxic aquifer"@en ;
+    obo:IAO_0000115 "An aquifer that lacks dissolved oxygen."@en .
+
+:GroundwaterAquifer rdf:type owl:NamedIndividual , :ENVO_00012408 ;
+    rdfs:label "Groundwater aquifer"@en ;
+    obo:IAO_0000115 "An underground layer of water-bearing permeable rock or unconsolidated material that can be useful for water extraction."@en .
+
+:LowerAquifer rdf:type owl:NamedIndividual , :ENVO_00012408 ;
+    rdfs:label "Lower aquifer"@en ;
+    obo:IAO_0000115 "A deeper layer of an aquifer."@en .
+
+:UpperAquifer rdf:type owl:NamedIndividual , :ENVO_00012408 ;
+    rdfs:label "Upper aquifer"@en ;
+    obo:IAO_0000115 "The topmost layer of an aquifer."@en .
+
+:AquiferMicrobiome rdf:type owl:NamedIndividual , :ENVO_00012408 ;
+    rdfs:label "Aquifer microbiome"@en ;
+    obo:IAO_0000115 "The community of microorganisms living within an aquifer."@en .
+
