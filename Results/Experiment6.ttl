@@ -1809,3 +1809,189 @@
 
 :MethaneOxidation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :WetlandEcosystem ] ;
     rdfs:comment "Methane oxidation processes often occur in wetland ecosystems, reducing methane emissions into the atmosphere."@en .
+
+#################################################################
+# Expanded Class Hierarchy and SubClassOf relationships
+#################################################################
+
+# Carbon and Nitrogen Cycle Processes
+
+:CO2Fixation rdf:type owl:Class ;
+    rdfs:subClassOf :CarbonCycleProcess ;
+    rdfs:comment "The process by which carbon dioxide is fixed by plants, bacteria, and algae."@en .
+
+:NitrogenFixation rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "A biological process converting atmospheric nitrogen to a form usable by plants."@en .
+
+:AmmoniaOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "Microbial oxidation of ammonia into nitrite, part of the nitrogen cycle."@en .
+
+:Denitrification rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "Reduction of nitrates/nitrites into nitrogen gas, completing the nitrogen cycle."@en .
+
+:AnammoxProcess rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCycleProcess ;
+    rdfs:comment "Anaerobic oxidation of ammonia, a major process in nitrogen removal in marine ecosystems."@en .
+
+:MethaneProduction rdf:type owl:Class ;
+    rdfs:subClassOf :CarbonCycleProcess ;
+    rdfs:comment "Production of methane during anaerobic decomposition of organic matter."@en .
+
+:MethaneOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :CarbonCycleProcess ;
+    rdfs:comment "The oxidation of methane into CO2, reducing methane emissions."@en .
+
+# Ecosystem Classes
+
+:ForestEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :TerrestrialEcosystem ;
+    rdfs:comment "An ecosystem dominated by trees, playing key roles in carbon and nitrogen cycling."@en .
+
+:TropicalRainforest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem ;
+    rdfs:comment "A rainforest ecosystem located in the tropics, with high biodiversity and carbon sequestration."@en .
+
+:TemperateForest rdf:type owl:Class ;
+    rdfs:subClassOf :ForestEcosystem ;
+    rdfs:comment "A forest ecosystem in temperate zones, with seasonal variations influencing nutrient cycling."@en .
+
+:PermafrostEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :TerrestrialEcosystem ;
+    rdfs:comment "Ecosystem characterized by permafrost, storing large amounts of frozen carbon."@en .
+
+:GroundwaterEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :AquaticEcosystem ;
+    rdfs:comment "An ecosystem located in groundwater systems, involved in nutrient and water cycling."@en .
+
+:KarstEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :GroundwaterEcosystem ;
+    rdfs:comment "A groundwater ecosystem located in karst landscapes, characterized by carbonate rock formations."@en .
+
+:RiparianZone rdf:type owl:Class ;
+    rdfs:subClassOf :TerrestrialEcosystem ;
+    rdfs:comment "The interface between land and a river or stream, important for nutrient cycling and water purification."@en .
+
+#################################################################
+# Expanded Object Properties
+#################################################################
+
+:mediatesBiogeochemicalProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :BiogeochemicalProcess ;
+    rdfs:comment "Represents the role of microbial communities in mediating biogeochemical processes like nitrogen fixation and denitrification."@en .
+
+:influencesWaterQuality rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :Water ;
+    rdfs:comment "Indicates that an environmental factor, such as nutrient concentration, influences water quality."@en .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Ecosystem ;
+    rdfs:range :Biome ;
+    rdfs:comment "Represents the relationship where an ecosystem is part of a larger biome."@en .
+
+:fixesNitrogen rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenFixation ;
+    rdfs:range :Nitrogen ;
+    rdfs:comment "Represents the biological fixation of nitrogen by microbes or plants into usable forms."@en .
+
+:occursIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :EnvironmentalMaterial ;
+    rdfs:comment "Represents the environment or material where a biogeochemical process occurs."@en .
+
+:producesTraceGas rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :TraceGas ;
+    rdfs:comment "Represents a biogeochemical process that results in the production of trace gases such as CO2 or CH4."@en .
+
+#################################################################
+# Expanded Data Properties
+#################################################################
+
+:hasCarbonContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Soil ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the carbon content of a soil sample, a key factor in carbon cycling studies."@en .
+
+:hasNitrogenContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Soil ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the nitrogen content in soil, relevant for understanding nitrogen cycling."@en .
+
+:hasPhosphateConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Water ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the concentration of phosphate in water, crucial for studying eutrophication and nutrient cycling."@en .
+
+:hasDissolvedOxygen rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Water ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the concentration of dissolved oxygen in water, critical for aquatic life and microbial processes."@en .
+
+#################################################################
+# Additional Individuals
+#################################################################
+
+:AmazonRainforest rdf:type :TropicalRainforest ;
+    rdfs:label "Amazon Rainforest"@en ;
+    rdfs:comment "The Amazon Rainforest, a tropical rainforest known for its role in carbon and nitrogen cycling."@en .
+
+:SiberianPermafrost rdf:type :PermafrostEcosystem ;
+    rdfs:label "Siberian Permafrost"@en ;
+    rdfs:comment "A permafrost ecosystem located in Siberia, storing large amounts of frozen carbon."@en .
+
+:KarstGroundwater rdf:type :KarstEcosystem ;
+    rdfs:label "Karst Groundwater System"@en ;
+    rdfs:comment "A groundwater system in a karst region, with unique hydrological properties and carbonate dissolution."@en .
+
+:AmmoniaOxidizingBacteria rdf:type :MicrobialCommunity ;
+    rdfs:label "Ammonia-Oxidizing Bacteria"@en ;
+    rdfs:comment "A community of bacteria involved in the oxidation of ammonia in soil and aquatic systems."@en .
+
+:Nitrosomonas rdf:type :AmmoniaOxidizingBacteria ;
+    rdfs:label "Nitrosomonas"@en ;
+    rdfs:comment "A genus of ammonia-oxidizing bacteria, playing a key role in nitrogen cycling in soil and water."@en .
+
+:WetlandMethaneEmitter rdf:type :MicrobialCommunity ;
+    rdfs:label "Wetland Methane Emitting Microbes"@en ;
+    rdfs:comment "A community of methanogenic microbes found in wetlands, responsible for methane emissions."@en .
+
+#################################################################
+# Expanded Equivalent and Disjoint Classes
+#################################################################
+
+:TropicalRainforest owl:equivalentClass :Rainforest ;
+    rdfs:comment "Tropical rainforests are equivalent to the broader class of rainforests, with high biodiversity and high carbon sequestration."@en .
+
+:PermafrostEcosystem owl:disjointWith :DesertEcosystem ;
+    rdfs:comment "Permafrost ecosystems and desert ecosystems are disjoint due to their contrasting climates and ecological characteristics."@en .
+
+:NitrogenFixation owl:disjointWith :AmmoniaOxidation ;
+    rdfs:comment "Nitrogen fixation and ammonia oxidation are distinct nitrogen cycle processes and thus disjoint."@en .
+
+#################################################################
+# General Concept Inclusion (GCI) and Hidden GCIs
+#################################################################
+
+:CO2Fixation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :ForestEcosystem ] ;
+    rdfs:comment "CO2 fixation primarily occurs in forest ecosystems, where plants and trees capture atmospheric carbon dioxide."@en .
+
+:Denitrification rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :Wetlands ] ;
+    rdfs:comment "Denitrification is a microbial process occurring in wetlands, releasing nitrogen gas back into the atmosphere."@en .
+
+:MethaneOxidation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :AquaticEcosystem ] ;
+    rdfs:comment "Methane oxidation processes often occur in aquatic ecosystems, reducing methane emissions into the atmosphere."@en .
+
+#################################################################
+# Additional Annotation Properties
+#################################################################
+
+:ForestEcosystem rdfs:comment "Ecosystems dominated by trees, which play crucial roles in global carbon and nitrogen cycles."@en .
+:GroundwaterEcosystem rdfs:comment "An ecosystem located in groundwater systems, characterized by nutrient transport and hydrological processes."@en .
+:CO2Fixation rdfs:comment "The process by which carbon dioxide is converted into organic matter by plants, algae, and bacteria."@en .
+:NitrogenFixation rdfs:comment "A microbial process that converts atmospheric nitrogen into a form usable by plants and other organisms."@en .
+:producesTraceGas rdfs:comment "Represents a biogeochemical process that leads to the production of trace gases, such as methane or nitrous oxide."@en .
