@@ -1127,3 +1127,164 @@ aqua:inhabits rdf:type owl:FunctionalProperty ;
 aqua:dependsOn rdf:type owl:FunctionalProperty ;
     rdfs:comment "Each microbial species depends on a unique set of environmental conditions for survival."@en .
 
+### Aquifer Ecosystem Hierarchy
+aqua:AquiferEcosystem rdf:type owl:Class ;
+    rdfs:comment "The entire ecosystem associated with an aquifer, including its biotic and abiotic components."@en .
+
+aqua:AquiferBiota rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferEcosystem ;
+    rdfs:comment "The living organisms that inhabit aquifers, including bacteria, fungi, and archaea."@en .
+
+aqua:AquiferAbioticFactors rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferEcosystem ;
+    rdfs:comment "The non-living environmental factors that influence the aquifer ecosystem, such as chemical concentrations and physical conditions."@en .
+
+aqua:HydrologicalFlow rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferAbioticFactors ;
+    rdfs:comment "The movement of groundwater through aquifers, influencing nutrient availability and microbial habitats."@en .
+
+aqua:WaterTemperature rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferAbioticFactors ;
+    rdfs:comment "The temperature of the water in an aquifer, which affects microbial metabolic rates and chemical reactions."@en .
+
+aqua:AquiferPorosity rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferAbioticFactors ;
+    rdfs:comment "The porosity of the aquifer, determining water flow and habitat availability for microorganisms."@en .
+
+aqua:AquiferPermeability rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferAbioticFactors ;
+    rdfs:comment "The ability of the aquifer to transmit water, which influences nutrient transport and microbial dispersion."@en .
+
+aqua:OrganicCarbonContent rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferAbioticFactors ;
+    rdfs:comment "The amount of organic carbon present in an aquifer, critical for heterotrophic microbial metabolism."@en .
+### Further Subclasses of Microbial Functional Guilds
+aqua:DenitrifyingMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:comment "Microbes that reduce nitrate to nitrogen gas under anaerobic conditions, contributing to nitrogen cycling."@en .
+
+aqua:SulfurOxidizingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:comment "Microbes that oxidize reduced sulfur compounds to sulfate, playing a key role in sulfur cycling."@en .
+
+aqua:AmmoniaOxidizingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:comment "Bacteria that oxidize ammonia to nitrite in the first step of nitrification."@en .
+
+aqua:AnaerobicMethanogens rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:comment "Archaea that produce methane as a byproduct of anaerobic respiration, contributing to methane cycling."@en .
+
+aqua:AerobicMethanotrophs rdf:type owl:Class ;
+    rdfs:subClassOf aqua:MicrobialFunctionalGuild ;
+    rdfs:comment "Bacteria that oxidize methane in aerobic environments, reducing methane emissions from aquifers."@en .
+### Biogeochemical Processes Hierarchy
+aqua:CarbonCycle rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling ;
+    rdfs:comment "The movement and transformation of carbon through various forms in the aquifer ecosystem."@en .
+
+aqua:NitrogenCycle rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling ;
+    rdfs:comment "The cycling of nitrogen through the ecosystem, including nitrogen fixation, nitrification, and denitrification."@en .
+
+aqua:SulfurCycle rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling ;
+    rdfs:comment "The cycling of sulfur through different oxidation states in the aquifer environment."@en .
+
+aqua:PhosphorusCycle rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling ;
+    rdfs:comment "The cycling of phosphorus through organic and inorganic forms in the aquifer ecosystem."@en .
+
+aqua:MethaneCycle rdf:type owl:Class ;
+    rdfs:subClassOf aqua:BiogeochemicalCycling ;
+    rdfs:comment "The production and consumption of methane by microbes in the aquifer environment."@en .
+### Object Properties for Microbial Interactions with Biogeochemical Processes
+aqua:mediates rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range aqua:BiogeochemicalCycling ;
+    rdfs:label "mediates"@en ;
+    rdfs:comment "Indicates that a microbial functional guild mediates a specific biogeochemical process, such as carbon cycling or nitrogen cycling."@en .
+
+aqua:utilizes rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:OrganicCarbonContent ;
+    rdfs:label "utilizes"@en ;
+    rdfs:comment "Specifies that microbes utilize organic carbon in the aquifer as a source of energy and carbon."@en .
+
+aqua:oxidizes rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:SulfurOxidizingBacteria ;
+    rdfs:range aqua:SulfurCycle ;
+    rdfs:label "oxidizes"@en ;
+    rdfs:comment "Relates sulfur-oxidizing bacteria to their role in oxidizing sulfur compounds within the sulfur cycle."@en .
+
+aqua:fixes rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:NitrogenFixingMicrobes ;
+    rdfs:range aqua:NitrogenCycle ;
+    rdfs:label "fixes"@en ;
+    rdfs:comment "Indicates that nitrogen-fixing microbes are involved in converting atmospheric nitrogen into bioavailable forms, such as ammonia."@en .
+
+### Object Properties for Biotic-Abiotic Interactions
+aqua:dependsOn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferBiota ;
+    rdfs:range aqua:AquiferAbioticFactors ;
+    rdfs:label "depends on"@en ;
+    rdfs:comment "Specifies that biota in aquifers depend on specific abiotic factors such as porosity, permeability, or temperature."@en .
+
+aqua:modifies rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:HydrologicalFlow ;
+    rdfs:label "modifies"@en ;
+    rdfs:comment "Indicates how microbial communities modify the hydrological flow through biogeochemical processes."@en .
+
+aqua:influences rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:EnvironmentalConditions ;
+    rdfs:range aqua:AquiferBiota ;
+    rdfs:label "influences"@en ;
+    rdfs:comment "Relates environmental conditions in the aquifer to their influence on the microbial communities present."@en .
+### Data Properties for Abiotic Factors
+aqua:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:WaterTemperature ;
+    rdfs:range xsd:float ;
+    rdfs:label "has temperature"@en ;
+    rdfs:comment "Represents the temperature of the aquifer water, which can influence microbial activity."@en .
+
+aqua:hasPorosity rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferPorosity ;
+    rdfs:range xsd:float ;
+    rdfs:label "has porosity"@en ;
+    rdfs:comment "Represents the porosity of the aquifer, determining water retention and microbial habitat availability."@en .
+
+aqua:hasPermeability rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferPermeability ;
+    rdfs:range xsd:float ;
+    rdfs:label "has permeability"@en ;
+    rdfs:comment "Represents the permeability of the aquifer, determining water flow and nutrient transport."@en .
+
+### Data Properties for Microbial Metabolism
+aqua:hasMethaneProductionRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AnaerobicMethanogens ;
+    rdfs:range xsd:float ;
+    rdfs:label "has methane production rate"@en ;
+    rdfs:comment "Represents the rate of methane production by anaerobic methanogens in the aquifer."@en .
+
+aqua:hasSulfurOxidationRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:SulfurOxidizingBacteria ;
+    rdfs:range xsd:float ;
+    rdfs:label "has sulfur oxidation rate"@en ;
+    rdfs:comment "Represents the rate of sulfur oxidation by sulfur-oxidizing bacteria in the aquifer."@en .
+### Equivalent Classes for Functional Roles
+aqua:DenitrifyingMicrobes rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:MicrobialFunctionalGuild
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:fixes ;
+                                                 owl:hasValue aqua:NitrogenCycle ] ) ] ;
+    rdfs:comment "Denitrifying microbes are equivalent to those that mediate denitrification within the nitrogen cycle."@en .
+
+aqua:AnaerobicMethanogens rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:MicrobialFunctionalGuild
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:mediates ;
+                                                 owl:hasValue aqua:MethaneCycle ] ) ] ;
+    rdfs:comment "Anaerobic methanogens are equivalent to those that mediate methane production in the methane cycle."@en .
