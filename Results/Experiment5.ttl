@@ -1786,3 +1786,151 @@ rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
     owl:disjointWith :SecondaryConsumer ;
     rdfs:comment "Decomposers and secondary consumers are distinct functional groups with different ecological roles." .
 
+### SubClassOf Axioms
+
+:SulfateReducingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf [
+        owl:intersectionOf (:MicrobialEntity :AnaerobicCondition) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Sulfate-reducing bacteria are a subclass of microbial entities that thrive in anaerobic conditions." .
+
+:IronOxide rdf:type :ChemicalEntity ;
+    rdfs:subClassOf [
+        owl:intersectionOf (:ChemicalEntity :WaterCondition) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Iron oxide is a subclass of chemical entities typically found in specific water conditions." .
+
+:Nitrate rdf:type :ChemicalEntity ;
+    rdfs:subClassOf [
+        owl:intersectionOf (:ChemicalEntity :WaterCondition) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Nitrate is a chemical entity involved in nitrogen cycling and is typically present in groundwater conditions." .
+
+:ThermophilicBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf [
+        owl:intersectionOf (:MicrobialEntity :HighTemperatureCondition) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Thermophilic bacteria are microbial entities that thrive in high-temperature environments." .
+
+:DenitrifyingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf [
+        owl:intersectionOf (:MicrobialEntity :AnaerobicCondition) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Denitrifying bacteria are a subclass of microbial entities involved in the nitrogen cycle, typically thriving in anaerobic conditions." .
+
+### EquivalentClass Axioms
+
+:SulfateReducingBacteria rdf:type owl:Class ;
+    owl:equivalentClass [
+        owl:intersectionOf (:AnaerobicCondition :MicrobialEntity :Sulfate) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Sulfate-reducing bacteria are equivalent to microbial entities that operate in anaerobic conditions and reduce sulfate." .
+
+:ThermophilicBacteria rdf:type owl:Class ;
+    owl:equivalentClass [
+        owl:intersectionOf (:HighTemperatureCondition :MicrobialEntity) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Thermophilic bacteria are equivalent to microbial entities found in high-temperature conditions." .
+
+:Nitrate rdf:type owl:Class ;
+    owl:equivalentClass [
+        owl:intersectionOf (:ChemicalEntity :NitrogenCycle) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Nitrate is equivalent to a chemical entity involved in the nitrogen cycle in groundwater." .
+
+:IronOxide rdf:type owl:Class ;
+    owl:equivalentClass [
+        owl:intersectionOf (:ChemicalEntity :IronCycle) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Iron oxide is equivalent to a chemical entity involved in the iron cycle in groundwater systems." .
+
+### DisjointClasses Axioms
+
+:PrimaryProducer rdf:type owl:Class ;
+    owl:disjointWith :PrimaryConsumer ;
+    rdfs:comment "Primary producers and primary consumers are disjoint in food chains." .
+
+:SecondaryConsumer rdf:type owl:Class ;
+    owl:disjointWith :Decomposer ;
+    rdfs:comment "Secondary consumers and decomposers are disjoint functional groups in ecosystems." .
+
+:ThermophilicBacteria rdf:type owl:Class ;
+    owl:disjointWith :DenitrifyingBacteria ;
+    rdfs:comment "Thermophilic bacteria and denitrifying bacteria occupy disjoint ecological roles due to different environmental requirements." .
+
+:AnaerobicCondition rdf:type owl:Class ;
+    owl:disjointWith :AerobicCondition ;
+    rdfs:comment "Anaerobic and aerobic conditions are disjoint environmental states." .
+
+:AcidicWater rdf:type owl:Class ;
+    owl:disjointWith :BasicWater ;
+    rdfs:comment "Acidic and basic water are disjoint water conditions." .
+
+### General Class Inclusion Axioms (GCIs)
+
+:WaterCondition rdf:type owl:Class ;
+    owl:subClassOf [
+        owl:unionOf (:AcidicWater :BasicWater :SalineWater :BrackishWater) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Water conditions include acidic, basic, saline, and brackish water conditions." .
+
+:MicrobialEntity rdf:type owl:Class ;
+    owl:subClassOf [
+        owl:intersectionOf (:Organism :BiologicalRole) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Microbial entities are organisms that play a biological role in ecosystems." .
+
+:DenitrifyingBacteria rdf:type :MicrobialEntity ;
+    owl:subClassOf [
+        owl:intersectionOf (:AnaerobicCondition :NitrogenCycle) ;
+        rdf:type owl:Class
+    ] ;
+    rdfs:comment "Denitrifying bacteria are involved in anaerobic conditions and the nitrogen cycle." .
+
+### Property Characteristics (Functional, Inverse, Symmetric, Transitive)
+
+:hasBiologicalRole rdf:type owl:ObjectProperty ;
+    owl:FunctionalProperty true ;
+    rdfs:comment "An organism can have only one primary biological role." .
+
+:hasEnvironmentalCondition rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isAffectedBy ;
+    rdfs:comment "An environmental condition affects or is affected by certain processes or organisms." .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    owl:TransitiveProperty true ;
+    rdfs:comment "The part-whole relationship is transitive. If A is part of B, and B is part of C, then A is part of C." .
+
+:interactsWith rdf:type owl:ObjectProperty ;
+    owl:SymmetricProperty true ;
+    rdfs:comment "If entity A interacts with entity B, then B also interacts with A, making the property symmetric." .
+
+### Complex Class Expressions Using Unions, Intersections, and Complements
+
+:AnaerobicMicrobialEntity rdf:type owl:Class ;
+    owl:intersectionOf (:MicrobialEntity :AnaerobicCondition) ;
+    rdfs:comment "Anaerobic microbial entities are microorganisms that exist in anaerobic conditions." .
+
+:ThermophilicMicrobialEntity rdf:type owl:Class ;
+    owl:intersectionOf (:MicrobialEntity :HighTemperatureCondition) ;
+    rdfs:comment "Thermophilic microbial entities thrive in high-temperature environments." .
+
+:DecomposerAndSymbiont rdf:type owl:Class ;
+    owl:intersectionOf (:Decomposer :SymbioticOrganism) ;
+    rdfs:comment "Decomposers that are also symbiotic organisms in certain ecosystems." .
+
+:ChemicalEntitiesExcludingOxygen rdf:type owl:Class ;
+    owl:complementOf :Oxygen ;
+    rdfs:comment "A class of chemical entities that exclude oxygen, focusing on non-oxygen chemical compounds in groundwater." .
+
