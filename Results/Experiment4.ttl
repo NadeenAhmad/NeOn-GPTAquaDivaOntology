@@ -984,4 +984,146 @@ aqua:SulfateReduction rdf:type owl:Class ;
 
 aqua:MetalReduction rdf:type owl:Class ;
     rdfs:comment "A metabolic process where microbes reduce metals like iron or manganese in anaerobic conditions."@en .
+### AquiferMicrobes Hierarchy
+aqua:SulfateReducingMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes ;
+    rdfs:label "Sulfate Reducing Microbes"@en ;
+    rdfs:comment "Microbes that reduce sulfate to hydrogen sulfide in anaerobic conditions."@en .
+
+aqua:IronReducingMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes ;
+    rdfs:label "Iron Reducing Microbes"@en ;
+    rdfs:comment "Microbes that reduce ferric iron to ferrous iron in anaerobic environments."@en .
+
+aqua:NitrogenFixingMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AquiferMicrobes ;
+    rdfs:label "Nitrogen Fixing Microbes"@en ;
+    rdfs:comment "Microbes that convert atmospheric nitrogen into bioavailable ammonia in aquatic ecosystems."@en .
+
+### EnvironmentalConditions Hierarchy
+aqua:AnoxicConditions rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EnvironmentalConditions ;
+    rdfs:label "Anoxic Conditions"@en ;
+    rdfs:comment "Conditions where oxygen is completely absent."@en .
+
+aqua:MicroaerophilicConditions rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EnvironmentalConditions ;
+    rdfs:label "Microaerophilic Conditions"@en ;
+    rdfs:comment "Low oxygen environments supporting microbes that need minimal oxygen."@en .
+
+aqua:OxicConditions rdf:type owl:Class ;
+    rdfs:subClassOf aqua:EnvironmentalConditions ;
+    rdfs:label "Oxic Conditions"@en ;
+    rdfs:comment "Aquifer environments rich in dissolved oxygen."@en .
+
+### MicrobialFunctionalGuild Hierarchy
+aqua:HeterotrophicDecomposers rdf:type owl:Class ;
+    rdfs:subClassOf aqua:HeterotrophicMicrobes ;
+    rdfs:label "Heterotrophic Decomposers"@en ;
+    rdfs:comment "Microbes that decompose organic matter by consuming carbon from external sources."@en .
+
+aqua:AutotrophicCarbonFixers rdf:type owl:Class ;
+    rdfs:subClassOf aqua:AutotrophicMicrobes ;
+    rdfs:label "Autotrophic Carbon Fixers"@en ;
+    rdfs:comment "Microbes that fix carbon dioxide through processes like photosynthesis or chemosynthesis."@en .
+### Object Properties for Microbial Interactions
+aqua:engagesIn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:MicrobialFunctionalGuild ;
+    rdfs:range aqua:BiogeochemicalCycling ;
+    rdfs:label "engages in"@en ;
+    rdfs:comment "Relates a microbial functional guild to a biogeochemical process it participates in."@en .
+
+aqua:inhabits rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:Aquifer ;
+    rdfs:label "inhabits"@en ;
+    rdfs:comment "Specifies the aquifer that a specific microbial community inhabits."@en .
+
+aqua:alters rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:EnvironmentalConditions ;
+    rdfs:label "alters"@en ;
+    rdfs:comment "Specifies how microbial activity alters or influences the environmental conditions."@en .
+
+aqua:dependsOn rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:EnvironmentalConditions ;
+    rdfs:label "depends on"@en ;
+    rdfs:comment "Specifies the environmental conditions that a microbial species depends on for survival."@en .
+
+### Object Properties for Environmental Impact
+aqua:modifies rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:EnvironmentalConditions ;
+    rdfs:range aqua:AquiferChemicalData ;
+    rdfs:label "modifies"@en ;
+    rdfs:comment "Relates environmental conditions to changes in chemical composition within the aquifer."@en .
+
+aqua:respondsTo rdf:type owl:ObjectProperty ;
+    rdfs:domain aqua:AquiferMicrobes ;
+    rdfs:range aqua:EnvironmentalConditions ;
+    rdfs:label "responds to"@en ;
+    rdfs:comment "Describes how microbial activity responds to environmental changes, such as pH or temperature."@en .
+### Data Properties for Environmental Parameters
+aqua:hasOxygenConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:label "has oxygen concentration"@en ;
+    rdfs:comment "Represents the oxygen concentration in an aquifer environment, typically in mg/L."@en .
+
+aqua:hasCarbonConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:label "has carbon concentration"@en ;
+    rdfs:comment "Represents the concentration of dissolved organic or inorganic carbon in an aquifer."@en .
+
+aqua:hasNitrogenConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain aqua:AquiferChemicalData ;
+    rdfs:range xsd:float ;
+    rdfs:label "has nitrogen concentration"@en ;
+    rdfs:comment "Represents the concentration of nitrogen compounds in the aquifer, such as ammonia or nitrate."@en .
+### Equivalent Classes for Microbial Roles
+aqua:HeterotrophicDecomposers rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:HeterotrophicMicrobes
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:playsRoleIn ;
+                                                 owl:hasValue aqua:OrganicMatterDecomposition ] ) ] ;
+    rdfs:comment "Heterotrophic decomposers are microbes that play a role in the decomposition of organic matter."@en .
+
+aqua:AutotrophicCarbonFixers rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:intersectionOf ( aqua:AutotrophicMicrobes
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty aqua:playsRoleIn ;
+                                                 owl:hasValue aqua:CarbonFixation ] ) ] ;
+    rdfs:comment "Autotrophic carbon fixers are microbes that fix carbon dioxide into organic matter."@en .
+### Disjoint Classes between Microbial Functional Guilds
+owl:AllDisjointClasses rdf:type owl:AllDisjointClasses ;
+    owl:members ( aqua:AutotrophicCarbonFixers
+                  aqua:HeterotrophicDecomposers ) ;
+    rdfs:comment "Autotrophic carbon fixers and heterotrophic decomposers are disjoint, performing distinct metabolic roles."@en .
+
+owl:AllDisjointClasses rdf:type owl:AllDisjointClasses ;
+    owl:members ( aqua:OxicConditions
+                  aqua:AnoxicConditions
+                  aqua:MicroaerophilicConditions ) ;
+    rdfs:comment "Oxic, anoxic, and microaerophilic conditions are disjoint environmental states."@en .
+### Transitive Properties for Environmental Interactions
+aqua:modifies rdf:type owl:TransitiveProperty ;
+    rdfs:comment "If environmental condition A modifies condition B, and condition B modifies condition C, then condition A modifies condition C."@en .
+
+aqua:respondsTo rdf:type owl:TransitiveProperty ;
+    rdfs:comment "If microbe A responds to environmental condition B, and condition B changes due to condition C, then microbe A responds to condition C."@en .
+### GCI for Environmental Effects
+aqua:EnvironmentalConditions rdf:type owl:Class ;
+    owl:hasSubClass [ rdf:type owl:Class ;
+                      owl:intersectionOf ( aqua:OxicConditions
+                                           aqua:MicroaerophilicConditions ) ] ;
+    rdfs:comment "Environmental conditions in the aquifer can be classified as either oxic or microaerophilic."@en .
+### Functional Properties for Unique Microbial Roles
+aqua:inhabits rdf:type owl:FunctionalProperty ;
+    rdfs:comment "Each microbial species inhabits one specific aquifer environment."@en .
+
+aqua:dependsOn rdf:type owl:FunctionalProperty ;
+    rdfs:comment "Each microbial species depends on a unique set of environmental conditions for survival."@en .
 
