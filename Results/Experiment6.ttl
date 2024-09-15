@@ -2165,3 +2165,184 @@
 :CO2Fixation rdfs:comment "A process where carbon dioxide is fixed into organic carbon through photosynthesis or chemosynthesis."@en .
 
 :Denitrification rdfs:comment "A process where nitrates are reduced to nitrogen gas by bacteria, contributing to the nitrogen cycle."@en .
+
+
+#################################################################
+# Expanded Class Hierarchy - Microbial Processes and Communities
+#################################################################
+
+:NitrogenFixingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "A community of bacteria that perform nitrogen fixation, converting nitrogen gas into organic nitrogen."@en .
+
+:AmmoniaOxidizingArchaea rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Archaea responsible for the oxidation of ammonia into nitrite during nitrification."@en .
+
+:SulfateReducingBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "A group of bacteria that reduce sulfate to sulfide under anaerobic conditions, playing a role in sulfur cycling."@en .
+
+:MethanotrophicBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Bacteria that oxidize methane, converting it into carbon dioxide in aerobic environments."@en .
+
+:MethanogenicArchaea rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Archaea that produce methane as a byproduct of anaerobic respiration, found in wetlands and other anoxic environments."@en .
+
+:DenitrifyingArchaea rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Archaea that carry out denitrification, converting nitrate into nitrogen gas under anaerobic conditions."@en .
+
+:AcidophilicMicrobes rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Microbes that thrive in acidic environments, involved in sulfur and iron cycling."@en .
+
+:HalophilicBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Bacteria adapted to high salinity environments, playing a role in nutrient cycling in salt flats and saline lakes."@en .
+
+:ThermophilicBacteria rdf:type owl:Class ;
+    rdfs:subClassOf :MicrobialCommunity ;
+    rdfs:comment "Bacteria that thrive at high temperatures, often found in hot springs and geothermal environments."@en .
+
+#################################################################
+# Expanded Class Hierarchy - Biogeochemical Processes
+#################################################################
+
+:SulfurCycleProcess rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalProcess ;
+    rdfs:comment "Processes involved in the transformation and movement of sulfur through the environment."@en .
+
+:SulfateReduction rdf:type owl:Class ;
+    rdfs:subClassOf :SulfurCycleProcess ;
+    rdfs:comment "The microbial reduction of sulfate to sulfide, typically occurring under anaerobic conditions."@en .
+
+:SulfideOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :SulfurCycleProcess ;
+    rdfs:comment "The oxidation of sulfide to sulfate, a key process in the sulfur cycle."@en .
+
+:IronCycleProcess rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalProcess ;
+    rdfs:comment "Processes that involve the transformation of iron between its oxidized and reduced forms in the environment."@en .
+
+:IronReduction rdf:type owl:Class ;
+    rdfs:subClassOf :IronCycleProcess ;
+    rdfs:comment "The microbial reduction of ferric iron (Fe3+) to ferrous iron (Fe2+) under anaerobic conditions."@en .
+
+:IronOxidation rdf:type owl:Class ;
+    rdfs:subClassOf :IronCycleProcess ;
+    rdfs:comment "The oxidation of ferrous iron (Fe2+) to ferric iron (Fe3+), often mediated by bacteria in aerobic environments."@en .
+
+:PhosphorusCycleProcess rdf:type owl:Class ;
+    rdfs:subClassOf :BiogeochemicalProcess ;
+    rdfs:comment "Processes that involve the cycling of phosphorus through different environmental reservoirs."@en .
+
+:PhosphateMineralization rdf:type owl:Class ;
+    rdfs:subClassOf :PhosphorusCycleProcess ;
+    rdfs:comment "The release of phosphate from organic matter during decomposition, making it available for plant uptake."@en .
+
+:PhosphorusPrecipitation rdf:type owl:Class ;
+    rdfs:subClassOf :PhosphorusCycleProcess ;
+    rdfs:comment "The process by which dissolved phosphorus forms solid mineral compounds, often occurring in aquatic environments."@en .
+
+#################################################################
+# Expanded Class Hierarchy - Ecosystems and Ecosystem Components
+#################################################################
+
+:SaltMarsh rdf:type owl:Class ;
+    rdfs:subClassOf :WetlandEcosystem ;
+    rdfs:comment "A coastal ecosystem characterized by salt-tolerant plants and regular tidal flooding, important for carbon sequestration."@en .
+
+:MangroveForest rdf:type owl:Class ;
+    rdfs:subClassOf :WetlandEcosystem ;
+    rdfs:comment "A coastal ecosystem dominated by mangrove trees, which play a significant role in carbon storage and nutrient cycling."@en .
+
+:AlkalineLake rdf:type owl:Class ;
+    rdfs:subClassOf :FreshwaterEcosystem ;
+    rdfs:comment "A lake with high pH levels, often containing unique microbial communities that contribute to biogeochemical cycling."@en .
+
+:HotSpringEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :AquaticEcosystem ;
+    rdfs:comment "An ecosystem associated with geothermal hot springs, supporting thermophilic organisms and unique chemical processes."@en .
+
+:PeatBog rdf:type owl:Class ;
+    rdfs:subClassOf :WetlandEcosystem ;
+    rdfs:comment "A type of wetland ecosystem characterized by waterlogged, acidic conditions and the accumulation of peat."@en .
+
+:OligotrophicLake rdf:type owl:Class ;
+    rdfs:subClassOf :FreshwaterEcosystem ;
+    rdfs:comment "A nutrient-poor lake with low productivity, often found in mountainous or northern regions."@en .
+
+:EutrophicLake rdf:type owl:Class ;
+    rdfs:subClassOf :FreshwaterEcosystem ;
+    rdfs:comment "A nutrient-rich lake with high biological productivity, often prone to algal blooms and oxygen depletion."@en .
+
+:CoralReef rdf:type owl:Class ;
+    rdfs:subClassOf :MarineEcosystem ;
+    rdfs:comment "A marine ecosystem dominated by coral structures, highly productive and biodiverse."@en .
+
+:HydrothermalVentEcosystem rdf:type owl:Class ;
+    rdfs:subClassOf :MarineEcosystem ;
+    rdfs:comment "An ecosystem found at deep-sea hydrothermal vents, where chemosynthetic organisms thrive in the absence of sunlight."@en .
+
+#################################################################
+# Expanded Class Hierarchy - Environmental Materials and Substances
+#################################################################
+
+:HumicSubstances rdf:type owl:Class ;
+    rdfs:subClassOf :OrganicMaterial ;
+    rdfs:comment "Complex organic molecules derived from the decomposition of plant material, found in soil and water."@en .
+
+:DissolvedOrganicCarbon rdf:type owl:Class ;
+    rdfs:subClassOf :OrganicCarbon ;
+    rdfs:comment "Organic carbon that is dissolved in water, playing a significant role in aquatic carbon cycling."@en .
+
+:ParticulateOrganicCarbon rdf:type owl:Class ;
+    rdfs:subClassOf :OrganicCarbon ;
+    rdfs:comment "Organic carbon in particulate form, often derived from the decomposition of plants and animals."@en .
+
+:InorganicPhosphate rdf:type owl:Class ;
+    rdfs:subClassOf :PhosphorusCompound ;
+    rdfs:comment "An inorganic form of phosphorus, commonly found in soils and water, available for plant uptake."@en .
+
+:Sulfate rdf:type owl:Class ;
+    rdfs:subClassOf :SulfurCompound ;
+    rdfs:comment "A form of sulfur, SO4, that is commonly found in soil and water, and is used by plants and microorganisms."@en .
+
+:SulfurDioxide rdf:type owl:Class ;
+    rdfs:subClassOf :SulfurCompound ;
+    rdfs:comment "A gaseous sulfur compound, SO2, released into the atmosphere during fossil fuel combustion and volcanic activity."@en .
+
+:IronOxide rdf:type owl:Class ;
+    rdfs:subClassOf :IronCompound ;
+    rdfs:comment "A compound formed by the oxidation of iron, commonly found in soils and aquatic sediments."@en .
+
+:PhosphateMineral rdf:type owl:Class ;
+    rdfs:subClassOf :PhosphorusCompound ;
+    rdfs:comment "A mineral form of phosphorus, important in soil chemistry and plant nutrition."@en .
+
+#################################################################
+# Expanded Object Properties for Ecosystem and Process Relationships
+#################################################################
+
+:occursInAquaticSystem rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :AquaticEcosystem ;
+    rdfs:comment "Represents a biogeochemical process that takes place in an aquatic system, such as lakes or oceans."@en .
+
+:mediatesSulfurCycle rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :SulfurCycleProcess ;
+    rdfs:comment "Represents the involvement of a microbial community in the cycling of sulfur, such as sulfate reduction."@en .
+
+:participatesInIronCycle rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :IronCycleProcess ;
+    rdfs:comment "Represents a microbial community involved in iron cycling processes, such as iron oxidation or reduction."@en .
+
+:releasesMethane rdf:type owl:ObjectProperty ;
+    rdfs:domain :AnaerobicDecomposition ;
+    rdfs:range :TraceGas ;
+    rdfs:comment "Represents the release of methane during anaerobic decomposition in wetlands or other anoxic environments."@en .
