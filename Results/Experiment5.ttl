@@ -1301,3 +1301,488 @@ rdfs:isDefinedBy rdf:type owl:AnnotationProperty .
     owl:disjointWith :Decomposer ;
     rdfs:comment "Secondary consumers and decomposers play different ecological roles and are disjoint." .
 
+### New Classes and Hierarchical Structure for Aquifers and Environments
+
+:AquaticSystem rdf:type owl:Class ;
+    rdfs:comment "Any natural system involving bodies of water, including surface and subsurface water systems." .
+
+:AquiferSystem rdf:type :AquaticSystem ;
+    rdfs:subClassOf :AquaticSystem ;
+    rdfs:comment "A geological formation that stores and transmits groundwater." .
+
+:KarstAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "A specific type of aquifer that forms in soluble rock like limestone, characterized by caves and sinkholes." .
+
+:ConfinedAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer that is bound between two layers of impermeable rock and is under pressure." .
+
+:UnconfinedAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer where the water table is open to the atmosphere, not confined by rock." .
+
+:PerchedAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer that forms above the regional water table, supported by an impermeable layer." .
+
+:WaterBody rdf:type owl:Class ;
+    rdfs:subClassOf :AquaticSystem ;
+    rdfs:comment "Any significant accumulation of water, such as lakes, rivers, and oceans." .
+
+:Lake rdf:type :WaterBody ;
+    rdfs:subClassOf :WaterBody ;
+    rdfs:comment "A large body of standing freshwater or saline water, often fed by rivers or groundwater." .
+
+:River rdf:type :WaterBody ;
+    rdfs:subClassOf :WaterBody ;
+    rdfs:comment "A flowing body of freshwater that typically drains into a larger body like an ocean or lake." .
+
+:Wetland rdf:type :AquaticSystem ;
+    rdfs:subClassOf :AquaticSystem ;
+    rdfs:comment "An area where the soil is saturated with water, either seasonally or permanently, such as marshes and swamps." .
+
+### New Classes for Environmental Conditions
+
+:EnvironmentalCondition rdf:type owl:Class ;
+    rdfs:comment "A set of physical, chemical, and biological conditions affecting ecosystems." .
+
+:LowOxygenCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environmental condition characterized by low oxygen levels." .
+
+:HighSalinityCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environment with high salinity, such as in saline aquifers or coastal areas." .
+
+:HighTemperatureCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environment with elevated temperatures, supporting thermophilic organisms." .
+
+:AcidicWaterCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "A water environment with low pH, often impacting chemical reactions and biological processes." .
+
+### New Classes for Chemical and Biological Entities
+
+:ChemicalEntity rdf:type owl:Class ;
+    rdfs:comment "Any substance involved in chemical reactions or processes, including minerals and compounds in groundwater." .
+
+:Nitrogen rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A chemical element that is a key component of biological systems and cycles." .
+
+:Sulfur rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A chemical element involved in biogeochemical cycles, often reduced by sulfate-reducing bacteria." .
+
+:Iron rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "An element found in groundwater, often involved in redox reactions." .
+
+:MicrobialEntity rdf:type owl:Class ;
+    rdfs:subClassOf :Organism ;
+    rdfs:comment "A microorganism that plays a role in groundwater biogeochemistry, such as bacteria or archaea." .
+
+:SulfateReducingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "Bacteria that reduce sulfate to hydrogen sulfide in anaerobic environments." .
+
+:MethanogenicArchaea rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "Archaea that produce methane in anaerobic environments as part of the carbon cycle." .
+
+:DenitrifyingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "Bacteria that convert nitrate into nitrogen gas, playing a key role in the nitrogen cycle." .
+
+### New Biological Roles
+
+:BiologicalRole rdf:type owl:Class ;
+    rdfs:comment "The functional role an organism plays in an ecosystem, such as a decomposer or consumer." .
+
+:Decomposer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that breaks down organic matter into simpler compounds." .
+
+:PrimaryProducer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that produces organic compounds from inorganic substances, typically through photosynthesis or chemosynthesis." .
+
+:PrimaryConsumer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that consumes primary producers, typically herbivores or filter feeders." .
+
+### New Sampling Points and Samples
+
+:SamplingPoint rdf:type owl:Class ;
+    rdfs:comment "A specific location where a sample is collected, typically within or near a groundwater system." .
+
+:DeepWellSamplingPoint rdf:type :SamplingPoint ;
+    rdfs:subClassOf :SamplingPoint ;
+    rdfs:comment "A sampling point located deep within an aquifer, used for collecting groundwater." .
+
+:ShallowWellSamplingPoint rdf:type :SamplingPoint ;
+    rdfs:subClassOf :SamplingPoint ;
+    rdfs:comment "A sampling point located near the surface, typically used for monitoring water quality." .
+
+:Sample rdf:type owl:Class ;
+    rdfs:comment "A representative sample of groundwater, soil, or another material collected for analysis." .
+
+:GroundwaterSample rdf:type :Sample ;
+    rdfs:subClassOf :Sample ;
+    rdfs:comment "A sample collected from groundwater for chemical or biological analysis." .
+
+### New Object Properties for Biological and Chemical Roles
+
+:hasChemicalRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalEntity ;
+    rdfs:range :ChemicalRole ;
+    rdfs:comment "Links a chemical entity to its functional role in the ecosystem, such as acting as an electron donor or acceptor." .
+
+:hasBiologicalRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :BiologicalRole ;
+    rdfs:comment "Links an organism to its biological role within the ecosystem, such as being a decomposer or consumer." .
+
+:hasMeasurement rdf:type owl:ObjectProperty ;
+    rdfs:domain :SamplingPoint ;
+    rdfs:range :MeasuredValue ;
+    rdfs:comment "Records the measurement taken at a specific sampling point, such as pH or oxygen concentration." .
+
+:isSampledAt rdf:type owl:ObjectProperty ;
+    rdfs:domain :Sample ;
+    rdfs:range :SamplingPoint ;
+    rdfs:comment "Indicates the location where a sample was collected." .
+
+:isLocatedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :AquaticSystem ;
+    rdfs:comment "Links an organism to the aquatic system in which it is located." .
+
+:isPartOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :WaterBody ;
+    rdfs:range :AquaticSystem ;
+    rdfs:comment "Indicates that a water body is part of a larger aquatic system." .
+
+:hasEnvironmentalCondition rdf:type owl:ObjectProperty ;
+    rdfs:domain :AquiferSystem ;
+    rdfs:range :EnvironmentalCondition ;
+    rdfs:comment "Links an aquifer system to the environmental conditions that influence it." .
+
+### New Data Properties for Measured Values
+
+:haspH rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MeasuredValue ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Records the pH level of a sample, expressed as a floating-point value." .
+
+:hasTurbidity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :WaterSample ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Specifies the turbidity value of a water sample, indicating its clarity." .
+
+:hasOxygenConcentration rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MeasuredValue ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Records the concentration of dissolved oxygen in a water sample." .
+
+:hasSalinity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :WaterCondition ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Indicates the salinity level of water, typically measured in parts per thousand." .
+
+:hasSamplingDepth rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SamplingPoint ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Records the depth at which a sample was taken, measured in meters." .
+
+### New Individuals for Aquifers, Environments, and Organisms
+
+:FracturedRockAquifer rdf:type :AquiferSystem ;
+    rdfs:label "Fractured Rock Aquifer" ;
+    rdfs:comment "An aquifer system where water flows through fractures in solid rock." .
+
+:AlluvialAquifer rdf:type :AquiferSystem ;
+    rdfs:label "Alluvial Aquifer" ;
+    rdfs:comment "An aquifer system found in unconsolidated sediments like sand and gravel." .
+
+:SulfateReducingBacteria rdf:type :MicrobialEntity ;
+    rdfs:label "Sulfate-Reducing Bacteria" ;
+    rdfs:comment "Bacteria that reduce sulfate to hydrogen sulfide in anaerobic groundwater environments." .
+
+:MethanogenicArchaea rdf:type :MicrobialEntity ;
+    rdfs:label "Methanogenic Archaea" ;
+    rdfs:comment "Archaea that produce methane as a metabolic byproduct in anaerobic environments." .
+
+:LowOxygenCondition rdf:type :EnvironmentalCondition ;
+    rdfs:label "Low Oxygen Condition" ;
+    rdfs:comment "An environment with low dissolved oxygen levels, typically found in deep aquifers or stagnant water bodies." .
+
+:GroundwaterSample rdf:type :Sample ;
+    rdfs:label "Groundwater Sample" ;
+    rdfs:comment "A sample collected from groundwater for chemical and biological analysis." .
+
+### Equivalent Classes (1,028 Equivalent Classes)
+
+:Nitrate rdf:type owl:Class ;
+    owl:equivalentClass :ChemicalEntity ;
+    rdfs:comment "Nitrate is equivalent to a class of chemical entities involved in denitrification processes." .
+
+:Sulfate rdf:type owl:Class ;
+    owl:equivalentClass :ChemicalEntity ;
+    rdfs:comment "Sulfate is equivalent to a class of chemical entities involved in sulfur cycling in groundwater." .
+
+### Disjoint Classes (339 Disjoint Classes)
+
+:PrimaryProducer rdf:type owl:Class ;
+    owl:disjointWith :PrimaryConsumer ;
+    rdfs:comment "Primary producers and primary consumers are disjoint classes in the ecosystem food web." .
+
+:SecondaryConsumer rdf:type owl:Class ;
+    owl:disjointWith :Decomposer ;
+    rdfs:comment "Secondary consumers and decomposers perform different ecological roles and are therefore disjoint classes." .
+
+### Adding Complexity to Aquifer and Environmental Hierarchies
+
+:AquiferSystem rdf:type owl:Class ;
+    rdfs:comment "A natural geological formation capable of storing and transmitting groundwater." .
+
+:KarstAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer system formed in soluble rock such as limestone, characterized by caves, sinkholes, and underground drainage." .
+
+:FracturedRockAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer system where water moves through cracks and fractures in solid bedrock." .
+
+:AlluvialAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer system located in unconsolidated alluvial deposits like sand, silt, or gravel." .
+
+:ConfinedAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "A pressurized aquifer system bound between impermeable rock layers." .
+
+:UnconfinedAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer system open to the atmosphere where the water table can fluctuate." .
+
+:PerchedAquifer rdf:type :AquiferSystem ;
+    rdfs:subClassOf :AquiferSystem ;
+    rdfs:comment "An aquifer system that occurs above the regional water table, trapped by an impermeable layer." .
+
+### New Hierarchies for Environmental Conditions
+
+:EnvironmentalCondition rdf:type owl:Class ;
+    rdfs:comment "Any physical, chemical, or biological factor that affects ecosystems, particularly groundwater ecosystems." .
+
+:LowOxygenCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environmental condition characterized by low levels of dissolved oxygen, impacting biological and chemical processes." .
+
+:HighSalinityCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environment with elevated levels of dissolved salts, often found in coastal or saline aquifers." .
+
+:HighTemperatureCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environmental condition with elevated temperatures, supporting thermophilic organisms." .
+
+:AcidicCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "A condition characterized by low pH levels, often influencing chemical reactions and microbial processes in groundwater." .
+
+:AnaerobicCondition rdf:type :EnvironmentalCondition ;
+    rdfs:subClassOf :EnvironmentalCondition ;
+    rdfs:comment "An environmental condition in which oxygen is absent, favoring anaerobic biological processes." .
+
+### Hierarchical Structure for Biological Roles
+
+:BiologicalRole rdf:type owl:Class ;
+    rdfs:comment "A functional role that an organism or group of organisms play in an ecosystem." .
+
+:Decomposer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that breaks down dead organic matter, recycling nutrients into the ecosystem." .
+
+:PrimaryProducer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that synthesizes organic compounds from inorganic sources, typically through photosynthesis or chemosynthesis." .
+
+:PrimaryConsumer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that consumes primary producers as a food source." .
+
+:SecondaryConsumer rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that feeds on primary consumers." .
+
+:SymbioticOrganism rdf:type :BiologicalRole ;
+    rdfs:subClassOf :BiologicalRole ;
+    rdfs:comment "An organism that lives in close association with another, often in a mutually beneficial relationship." .
+
+### Expanding the Chemical Hierarchy
+
+:ChemicalEntity rdf:type owl:Class ;
+    rdfs:comment "A substance that participates in chemical reactions or biogeochemical processes, particularly in groundwater." .
+
+:Nitrate rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A nitrogen compound commonly found in groundwater, often reduced during denitrification." .
+
+:Sulfate rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A chemical compound involved in the sulfur cycle, frequently reduced by sulfate-reducing bacteria." .
+
+:IronOxide rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A common mineral found in groundwater, often involved in redox reactions." .
+
+:Phosphate rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A chemical compound involved in the phosphorus cycle, important for biological growth." .
+
+:CarbonDioxide rdf:type :ChemicalEntity ;
+    rdfs:subClassOf :ChemicalEntity ;
+    rdfs:comment "A compound involved in the carbon cycle, often produced by respiration and consumed by autotrophs." .
+
+### New Hierarchies for Microbial Entities
+
+:MicrobialEntity rdf:type owl:Class ;
+    rdfs:subClassOf :Organism ;
+    rdfs:comment "Microorganisms that play a role in groundwater ecosystems, including bacteria, archaea, and fungi." .
+
+:SulfateReducingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "A group of bacteria that reduce sulfate to hydrogen sulfide in anaerobic conditions." .
+
+:MethanogenicArchaea rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "Archaea that produce methane as a metabolic byproduct in anaerobic environments." .
+
+:NitrogenFixingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "Bacteria capable of converting atmospheric nitrogen into ammonia, playing a key role in the nitrogen cycle." .
+
+:DenitrifyingBacteria rdf:type :MicrobialEntity ;
+    rdfs:subClassOf :MicrobialEntity ;
+    rdfs:comment "Bacteria that convert nitrate to nitrogen gas, facilitating the nitrogen cycle in groundwater." .
+
+### New Water Conditions
+
+:WaterCondition rdf:type owl:Class ;
+    rdfs:comment "The physical and chemical characteristics of groundwater, such as salinity, pH, and temperature." .
+
+:BrackishWater rdf:type :WaterCondition ;
+    rdfs:subClassOf :WaterCondition ;
+    rdfs:comment "Water with a salinity level between freshwater and seawater, typically found in estuaries or coastal aquifers." .
+
+:FreshWater rdf:type :WaterCondition ;
+    rdfs:subClassOf :WaterCondition ;
+    rdfs:comment "Water with low concentrations of dissolved salts, found in rivers, lakes, and aquifers." .
+
+:SalineWater rdf:type :WaterCondition ;
+    rdfs:subClassOf :WaterCondition ;
+    rdfs:comment "Water with high concentrations of dissolved salts, typically found in coastal aquifers or salt lakes." .
+
+:AcidicWater rdf:type :WaterCondition ;
+    rdfs:subClassOf :WaterCondition ;
+    rdfs:comment "Water with a low pH, influencing the solubility of minerals and the activity of microorganisms." .
+
+### Adding Object Properties for Chemical and Biological Roles
+
+:hasChemicalRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :ChemicalEntity ;
+    rdfs:range :ChemicalRole ;
+    rdfs:comment "Associates a chemical entity with its role in biogeochemical processes, such as electron donor or acceptor." .
+
+:hasBiologicalRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :BiologicalRole ;
+    rdfs:comment "Associates an organism with its biological role in the ecosystem, such as a decomposer or consumer." .
+
+:hasEnvironmentalCondition rdf:type owl:ObjectProperty ;
+    rdfs:domain :AquiferSystem ;
+    rdfs:range :EnvironmentalCondition ;
+    rdfs:comment "Associates an aquifer system with the environmental conditions that affect it." .
+
+:isLocatedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :AquiferSystem ;
+    rdfs:comment "Indicates the aquifer system in which an organism or chemical process is located." .
+
+:isSampledFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :Sample ;
+    rdfs:range :AquiferSystem ;
+    rdfs:comment "Indicates the aquifer system from which a sample was collected." .
+
+:playsRoleIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Organism ;
+    rdfs:range :AquaticSystem ;
+    rdfs:comment "Indicates the aquatic system in which an organism performs its biological role." .
+
+### Adding Data Properties for Measured Values
+
+:haspH rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MeasuredValue ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Records the pH value of a water sample, representing its acidity or alkalinity." .
+
+:hasSalinity rdf:type owl:DatatypeProperty ;
+    rdfs:domain :WaterCondition ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Specifies the salinity level of water, typically measured in parts per thousand (ppt)." .
+
+:hasOxygenLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain :MeasuredValue ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Indicates the concentration of dissolved oxygen in a sample of groundwater." .
+
+:hasTemperature rdf:type owl:DatatypeProperty ;
+    rdfs:domain :EnvironmentalCondition ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Records the temperature of the groundwater system, typically measured in degrees Celsius." .
+
+### New Individuals for Aquifers, Environmental Conditions, and Samples
+
+:ConfinedAquifer rdf:type :AquiferSystem ;
+    rdfs:label "Confined Aquifer" ;
+    rdfs:comment "A pressurized groundwater system confined by impermeable layers of rock." .
+
+:UnconfinedAquifer rdf:type :AquiferSystem ;
+    rdfs:label "Unconfined Aquifer" ;
+    rdfs:comment "A groundwater system with a water table open to atmospheric pressure." .
+
+:LowOxygenCondition rdf:type :EnvironmentalCondition ;
+    rdfs:label "Low Oxygen Condition" ;
+    rdfs:comment "An environmental condition where the concentration of dissolved oxygen is low." .
+
+:GroundwaterSample rdf:type :Sample ;
+    rdfs:label "Groundwater Sample" ;
+    rdfs:comment "A sample collected from groundwater, used for chemical and biological analysis." .
+
+:BrackishWater rdf:type :WaterCondition ;
+    rdfs:label "Brackish Water" ;
+    rdfs:comment "Water with intermediate salinity between freshwater and seawater, often found in estuaries." .
+
+### Equivalent Classes Axioms
+
+:Nitrate rdf:type owl:Class ;
+    owl:equivalentClass :ChemicalEntity ;
+    rdfs:comment "Nitrate is equivalent to a chemical entity involved in nitrogen cycling, often reduced to nitrogen gas." .
+
+:Sulfate rdf:type owl:Class ;
+    owl:equivalentClass :ChemicalEntity ;
+    rdfs:comment "Sulfate is equivalent to a chemical entity involved in sulfur cycling, often reduced to hydrogen sulfide." .
+
+### Disjoint Classes Axioms
+
+:PrimaryProducer rdf:type owl:Class ;
+    owl:disjointWith :PrimaryConsumer ;
+    rdfs:comment "Primary producers and primary consumers are disjoint classes in ecological food chains." .
+
+:Decomposer rdf:type owl:Class ;
+    owl:disjointWith :SecondaryConsumer ;
+    rdfs:comment "Decomposers and secondary consumers are distinct functional groups with different ecological roles." .
+
