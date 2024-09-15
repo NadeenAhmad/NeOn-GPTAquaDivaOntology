@@ -1674,3 +1674,138 @@
 :NitrogenFixation rdfs:comment "A microbial process that converts atmospheric nitrogen into a form usable by plants and other organisms."@en .
 :producesTraceGas rdfs:comment "Represents a biogeochemical process that leads to the production of trace gases, such as methane or nitrous oxide."@en .
 
+#################################################################
+# Expanded Class Hierarchy and SubClassOf relationships
+#################################################################
+
+:OrganicCarbon rdf:type owl:Class ;
+    rdfs:subClassOf :CarbonCompound ;
+    rdfs:comment "A carbon-based compound found in organic matter."@en ;
+    :Thesaurus:P97 "A substance relating to or containing elemental carbon or carbon compounds."@en ;
+    :Thesaurus:code "C63848" ;
+    rdfs:label "Organic Carbon"@en .
+
+:InorganicNitrogen rdf:type owl:Class ;
+    rdfs:subClassOf :NitrogenCompound ;
+    rdfs:comment "Relating or belonging to the class of nitrogen compounds not having a carbon basis."@en ;
+    :Thesaurus:P97 "Relating or belonging to the class of compounds not having a carbon basis."@en ;
+    :Thesaurus:code "C66829" ;
+    rdfs:label "Inorganic Nitrogen"@en .
+
+:CarbonNitrogenRatio rdf:type owl:Class ;
+    rdfs:subClassOf :Measurement ;
+    rdfs:subClassOf :ChemicalRatio ;
+    rdfs:comment "Carbon-to-nitrogen ratio is a ratio of the mass of carbon to the mass of nitrogen in a substance. This ratio is crucial for understanding nitrogen limitation in ecosystems and analyzing sediment composition."@en ;
+    :Thesaurus:P90 "Carbon-nitrogen ratio"@en ;
+    rdfs:label "Carbon to nitrogen ratio"@en ;
+    rdfs:synonym "C to N ratio"@en .
+
+:Hydrogencarbonate rdf:type owl:Class ;
+    rdfs:subClassOf :Carbonate ;
+    rdfs:label "Hydrogencarbonate"@en ;
+    rdfs:comment "Hydrogencarbonate is a common ion in natural waters that plays a critical role in buffering systems."@en .
+
+:OrganicChemical rdf:type owl:Class ;
+    rdfs:subClassOf :ChemicalCompound ;
+    rdfs:comment "A molecule that contains atoms of the element carbon, usually combined with other elements such as hydrogen, oxygen, nitrogen, sulfur, or phosphorus."@en ;
+    :Thesaurus:P97 "Molecule that contains atoms of the element carbon, excluding carbides, carbonates, and oxides."@en ;
+    :Thesaurus:code "C718" ;
+    rdfs:label "Organic Chemical"@en ;
+    :Thesaurus:P366 "Organic_Chemical"@en ;
+    :Thesaurus:P368 "CHEBI:50860"@en .
+
+#################################################################
+# Expanded Object Properties
+#################################################################
+
+:mediatesCarbonCycle rdf:type owl:ObjectProperty ;
+    rdfs:domain :MicrobialCommunity ;
+    rdfs:range :CarbonCycleProcess ;
+    rdfs:comment "Represents microbial communities that mediate processes in the carbon cycle, such as methanogenesis or organic carbon decomposition."@en .
+
+:influencesNutrientFlux rdf:type owl:ObjectProperty ;
+    rdfs:domain :EnvironmentalFactor ;
+    rdfs:range :NutrientFlux ;
+    rdfs:comment "Indicates that an environmental factor, such as temperature or moisture, influences the flux of nutrients between different ecosystem compartments."@en .
+
+:occursDuring rdf:type owl:ObjectProperty ;
+    rdfs:domain :BiogeochemicalProcess ;
+    rdfs:range :SeasonalCycle ;
+    rdfs:comment "Indicates that a biogeochemical process, such as nitrogen fixation or carbon sequestration, occurs during a specific seasonal cycle."@en .
+
+:fixesCarbon rdf:type owl:ObjectProperty ;
+    rdfs:domain :CO2Fixation ;
+    rdfs:range :OrganicCarbon ;
+    rdfs:comment "Indicates the fixation of carbon dioxide into organic carbon during the process of CO2 fixation."@en .
+
+:transformsNitrogen rdf:type owl:ObjectProperty ;
+    rdfs:domain :NitrogenCycleProcess ;
+    rdfs:range :InorganicNitrogen ;
+    rdfs:comment "Represents processes in the nitrogen cycle that transform nitrogen compounds, such as nitrification or denitrification."@en .
+
+#################################################################
+# Expanded Data Properties
+#################################################################
+
+:hasCNRatio rdf:type owl:DatatypeProperty ;
+    rdfs:domain :OrganicMatter ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the carbon-to-nitrogen ratio in organic matter, which is critical for understanding the decomposition rate and nutrient availability."@en .
+
+:hasSoilMoisture rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Soil ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the soil moisture content, influencing microbial activity and nutrient cycling in soil ecosystems."@en .
+
+:hasMethaneEmissionRate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :WetlandEcosystem ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the rate of methane emissions from wetland ecosystems, a key factor in the global methane cycle."@en .
+
+#################################################################
+# Expanded Individuals
+#################################################################
+
+# New individuals representing ecosystems and processes
+
+:AmazonRainforest rdf:type :TropicalRainforest ;
+    rdfs:label "Amazon Rainforest"@en ;
+    rdfs:comment "The Amazon Rainforest, a tropical ecosystem known for its role in global carbon and nitrogen cycles."@en .
+
+:NorthSea rdf:type :MarineEcosystem ;
+    rdfs:label "North Sea"@en ;
+    rdfs:comment "A marine ecosystem characterized by nutrient cycling and significant human impacts on water quality."@en .
+
+:WetlandMethaneEmittingMicrobes rdf:type :MicrobialCommunity ;
+    rdfs:label "Wetland Methane Emitting Microbes"@en ;
+    rdfs:comment "A microbial community found in wetlands responsible for producing methane during anaerobic decomposition."@en .
+
+:SiberianPermafrost rdf:type :PermafrostEcosystem ;
+    rdfs:label "Siberian Permafrost"@en ;
+    rdfs:comment "A permafrost ecosystem in Siberia storing large amounts of frozen carbon and undergoing thawing due to climate change."@en .
+
+#################################################################
+# Expanded Equivalent and Disjoint Classes
+#################################################################
+
+:TropicalRainforest owl:equivalentClass :Rainforest ;
+    rdfs:comment "Tropical rainforests are a type of rainforest located near the equator, known for high biodiversity and carbon sequestration."@en .
+
+:PermafrostEcosystem owl:disjointWith :DesertEcosystem ;
+    rdfs:comment "Permafrost and desert ecosystems are disjoint due to their contrasting climate conditions and ecological characteristics."@en .
+
+:CO2Fixation owl:disjointWith :RespirationProcess ;
+    rdfs:comment "CO2 fixation and respiration are opposing processes in the carbon cycle, thus they are disjoint classes."@en .
+
+#################################################################
+# General Concept Inclusion (GCI) and Hidden GCIs
+#################################################################
+
+:CarbonSequestration rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :ForestEcosystem ] ;
+    rdfs:comment "Carbon sequestration processes typically occur in forest ecosystems where large amounts of CO2 are stored."@en .
+
+:NitrogenFixation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :Soil ] ;
+    rdfs:comment "Nitrogen fixation primarily occurs in soils, where plants and microbes convert nitrogen gas into usable forms."@en .
+
+:MethaneOxidation rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :occursIn ; owl:someValuesFrom :WetlandEcosystem ] ;
+    rdfs:comment "Methane oxidation processes often occur in wetland ecosystems, reducing methane emissions into the atmosphere."@en .
