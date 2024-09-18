@@ -661,10 +661,7 @@
     rdfs:range xsd:float ;
     rdfs:comment "The concentration of trace gases such as CO2, CH4, or N2O in an environment, important for understanding gas fluxes."@en ;
     rdfs:label "has_trace_gas_concentration"@en .
-@prefix : <http://example.org/cncycle#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
 
 #################################################################
 # Individuals for Ecoregions, Environments, and Processes
@@ -759,10 +756,7 @@
 :DenitrifyingBacteria rdf:type :MicrobialCommunity ;
     rdfs:label "Denitrifying Bacteria"@en ;
     rdfs:comment "A microbial community responsible for the denitrification process in various ecosystems."@en .
-@prefix : <http://example.org/cncycle#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
 
 #################################################################
 # Class Comments
