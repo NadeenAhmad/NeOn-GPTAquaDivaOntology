@@ -351,10 +351,7 @@
     rdfs:label "has insight from" ;
     rdfs:domain :BiogeochemicalProcess ;
     rdfs:range :Isotope .
-@prefix : <http://example.org/cncycle#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
 
 #################################################################
 # Reflexive Object Properties
@@ -415,10 +412,7 @@
 # provides_insight_into (reflexive: certain scientific processes can provide insight into themselves)
 :provides_insight_into rdf:type owl:ReflexiveProperty ;
     rdfs:label "provides insight into (self)" .
-@prefix : <http://example.org/cncycle#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
 
 #################################################################
 # Symmetric Object Properties
@@ -463,10 +457,7 @@
 # traces (symmetric: tracing relationships could be bidirectional in scientific analyses)
 :traces rdf:type owl:SymmetricProperty ;
     rdfs:label "traces (symmetric)" .
-@prefix : <http://example.org/cncycle#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
 
 #################################################################
 # Functional Object Properties
@@ -523,10 +514,7 @@
 # consumes (functional: an entity can consume only one specific resource at a time)
 :consumes rdf:type owl:FunctionalProperty ;
     rdfs:label "consumes (functional)" .
-@prefix : <http://example.org/cncycle#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
 
 #################################################################
 # Transitive Object Properties
@@ -571,11 +559,6 @@
 # is_related_to (transitive: if A is related to B, and B is related to C, then A is related to C, especially in related processes)
 :is_related_to rdf:type owl:TransitiveProperty ;
     rdfs:label "is related to (transitive)" .
-@prefix : <http://example.org/cncycle#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #################################################################
 # Data Properties
