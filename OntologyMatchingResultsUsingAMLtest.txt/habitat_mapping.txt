@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment'
+	 xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+	 xmlns:xsd='http://www.w3.org/2001/XMLSchema#' 
+	 alignmentSource='AgreementMakerLight'>
+
+<Alignment>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>??</type>
+	<onto1>http://example.org/aquadiva</onto1>
+	<onto2>http://purl.obolibrary.org/obo/envo.owl</onto2>
+	<uri1>http://example.org/aquadiva</uri1>
+	<uri2>http://purl.obolibrary.org/obo/envo.owl</uri2>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#BiogeochemicalCycling"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500009"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9633</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#CarbonCycling"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500010"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Fungi"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Aquifer"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00012408"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#WaterTemperature"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_09200014"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8811</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#NitrogenCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001330"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#SulfurCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001331"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#CarbonCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500010"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#OrganicMatter"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_04000008"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7198</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#EnvironmentalConditions"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000203"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.688</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#PhosphorusCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001332"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6668</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#AquiferPermeability"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000970"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6227</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#AquiferBiota"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_06105012"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.604</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+</Alignment>
+</rdf:RDF>

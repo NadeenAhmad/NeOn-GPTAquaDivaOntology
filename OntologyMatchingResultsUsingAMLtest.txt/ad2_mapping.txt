@@ -1,0 +1,529 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment'
+	 xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+	 xmlns:xsd='http://www.w3.org/2001/XMLSchema#' 
+	 alignmentSource='AgreementMakerLight'>
+
+<Alignment>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>??</type>
+	<onto1>http://example.org/aquadiva</onto1>
+	<onto2>http://purl.obolibrary.org/obo/envo.owl</onto2>
+	<uri1>http://example.org/aquadiva</uri1>
+	<uri2>http://purl.obolibrary.org/obo/envo.owl</uri2>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Permeability"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000970"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9643</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Limestone"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002053"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.964</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#SedimentaryRock"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002016"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9635</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Biomarker"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_59163"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9628</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#MicrobialCommunity"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/PCO_1000004"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9609</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Noise"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_03500022"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9599</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Site"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000029"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.959</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Ecosystem"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001110"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.958</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#BiogeochemicalProcess"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500030"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9575</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#SoilOrganicMatter"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_04000008"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9573</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#SurfaceWater"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002042"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9562</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#HydrologicalProcess"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500031"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9522</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Water"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15377"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9506</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Soil"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001998"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9491</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#ForestEcosystem"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9478</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#DesertEcosystem"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001780"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.945</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#DesertSpring"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02000139"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9449</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#GroundwaterFlow"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001632"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9385</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#StagnantWater"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_03501370"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#SpatialPattern"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Landform"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001886"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Spring"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000027"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Agriculture"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001442"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Aquifer"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00012408"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Karst"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000175"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Groundwater"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001004"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Fungi"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Bacteria"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Mineral"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46662"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#DrySoil"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00005748"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9213</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Wetland"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001209"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8811</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Gas"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_03510007"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8712</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#SoilWaterContent"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_09000026"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8613</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#BiogeochemicalCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500009"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8366</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Agriculture"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001248"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Agriculture"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001246"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Gas"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001155"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#NitrogenCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001330"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Pattern"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#CarbonCycle"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500010"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Wetland"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000107"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8316</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#ChemicalCompound"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37577"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8217</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#EnvironmentalManagement"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001170"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8217</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Precipitation"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001363"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8118</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Landform"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8118</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#GeologicalFeature"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8118</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Minerals"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46662"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8019</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#ContaminatedSite"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_03600073"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7574</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#KarstSystem"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00004683"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6781</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#WaterFlow"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000982"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6763</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#KarstSpringWater"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_03600065"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6303</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#RainforestSoil"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002261"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6299</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#OrganicCompound"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50047"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.627</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#ChalkAquifer"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002054"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.624</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#OrganicMatter"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000137"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6197</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#Observatory"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001470"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6111</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://example.org/aquadiva#ChemicalProcess"/>
+			<entity2 rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000725"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6025</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+</Alignment>
+</rdf:RDF>
