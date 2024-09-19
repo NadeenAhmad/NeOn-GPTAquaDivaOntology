@@ -1854,596 +1854,103 @@
 
 
 
-
-# Carbon and Nitrogen Cycling Classes
-:CO2FixationPathway rdf:type owl:Class ;
-    rdfs:label "CO2 Fixation Pathway" ;
-    rdfs:subClassOf :CarbonCycleProcess .
-
-:CarbonCycleProcess rdf:type owl:Class ;
-    rdfs:label "Carbon Cycle Process" ;
-    rdfs:subClassOf :BiogeochemicalProcess .
-
-:NitrogenCycleProcess rdf:type owl:Class ;
-    rdfs:label "Nitrogen Cycle Process" ;
-    rdfs:subClassOf :BiogeochemicalProcess .
-
-:CarbonFixation rdf:type owl:Class ;
-    rdfs:label "Carbon Fixation" ;
-    rdfs:subClassOf :CO2FixationPathway .
-
-:CarbonSequestration rdf:type owl:Class ;
-    rdfs:label "Carbon Sequestration" ;
-    rdfs:subClassOf :CarbonFixation .
-
-:AmmoniaOxidation rdf:type owl:Class ;
-    rdfs:label "Ammonia Oxidation" ;
-    rdfs:subClassOf :NitrogenCycleProcess .
-
-:Denitrification rdf:type owl:Class ;
-    rdfs:label "Denitrification" ;
-    rdfs:subClassOf :NitrogenCycleProcess .
-
-:NitrogenFixation rdf:type owl:Class ;
-    rdfs:label "Nitrogen Fixation" ;
-    rdfs:subClassOf :NitrogenCycleProcess .
-
-:TraceGasProduction rdf:type owl:Class ;
-    rdfs:label "Trace Gas Production" ;
-    rdfs:subClassOf :BiogeochemicalProcess .
-
-:TraceGasConsumption rdf:type owl:Class ;
-    rdfs:label "Trace Gas Consumption" ;
-    rdfs:subClassOf :BiogeochemicalProcess .
-
-# Environmental and Ecological Classes
-:ForestEcosystem rdf:type owl:Class ;
-    rdfs:label "Forest Ecosystem" ;
-    rdfs:subClassOf :Ecosystem .
-
-:BeechForest rdf:type owl:Class ;
-    rdfs:label "Beech Forest" ;
-    rdfs:subClassOf :ForestEcosystem .
-
-:GroundwaterSystem rdf:type owl:Class ;
-    rdfs:label "Groundwater System" ;
-    rdfs:subClassOf :AquaticSystem .
-
-:KarstSystem rdf:type owl:Class ;
-    rdfs:label "Karst System" ;
-    rdfs:subClassOf :GroundwaterSystem .
-
-:MicrobialCommunity rdf:type owl:Class ;
-    rdfs:label "Microbial Community" ;
-    rdfs:subClassOf :BiologicalEntity .
-
-# Biochemical Classes
-:Rubisco rdf:type owl:Class ;
-    rdfs:label "Rubisco" ;
-    rdfs:subClassOf :BiochemicalEntity .
-
-:CarbonIsotope rdf:type owl:Class ;
-    rdfs:label "Carbon Isotope" ;
-    rdfs:subClassOf :Isotope .
-
-:NitrogenIsotope rdf:type owl:Class ;
-    rdfs:label "Nitrogen Isotope" ;
-    rdfs:subClassOf :Isotope .
-
-:CO2 rdf:type owl:Class ;
-    rdfs:label "CO2" ;
-    rdfs:subClassOf :TraceGas .
-
-:CH4 rdf:type owl:Class ;
-    rdfs:label "Methane (CH4)" ;
-    rdfs:subClassOf :TraceGas .
-
-:N2O rdf:type owl:Class ;
-    rdfs:label "Nitrous Oxide (N2O)" ;
-    rdfs:subClassOf :TraceGas .
-
-:Soil rdf:type owl:Class ;
-    rdfs:label "Soil" ;
-    rdfs:subClassOf :EnvironmentalMaterial .
-
-:Water rdf:type owl:Class ;
-    rdfs:label "Water" ;
-    rdfs:subClassOf :EnvironmentalMaterial .
-
-# Biogeochemical Process Class
-:BiogeochemicalProcess rdf:type owl:Class ;
-    rdfs:label "Biogeochemical Process" .
-
-
-# New classes and subclass relationships
-:TerrestrialEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :Ecosystem ;
-    rdfs:comment "An ecosystem that occurs on land, such as forests, deserts, and grasslands."@en .
-
-:AquaticEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :Ecosystem ;
-    rdfs:comment "An ecosystem in water, including freshwater and marine ecosystems."@en .
-
-:FreshwaterEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An aquatic ecosystem that includes rivers, lakes, and streams with freshwater."@en .
-
-:MarineEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem in oceans and seas, including saltwater environments."@en .
-
-:TropicalRainforest rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A dense forest located in tropical regions, characterized by high rainfall and biodiversity."@en .
-
-:TemperateForest rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A forest ecosystem in temperate regions, experiencing seasonal changes in temperature."@en .
-
-:Taiga rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A forest biome also known as boreal forest, consisting mostly of coniferous trees."@en .
-
-:CarbonCycleProcess rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "A process involved in the cycling of carbon through ecosystems."@en .
-
-:NitrogenCycleProcess rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "A process involved in the cycling of nitrogen through ecosystems."@en .
-
-:DecompositionProcess rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process by which organic substances are broken down into simpler matter, releasing carbon."@en .
-
-:TerrestrialEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :Ecosystem ;
-    rdfs:comment "An ecosystem occurring on land, including forests, grasslands, and deserts."@en .
-
-:MarineEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem located in marine environments such as oceans and seas."@en .
-
-:FreshwaterEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem in freshwater environments such as rivers, lakes, and wetlands."@en .
-
-:GroundwaterEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem located in groundwater systems, including aquifers and karst systems."@en .
-
-:KarstEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :GroundwaterEcosystem ;
-    rdfs:comment "An ecosystem located in karst landscapes, with unique hydrological properties."@en .
-
-:CarbonCycle rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalCycle ;
-    rdfs:comment "The cycle through which carbon is exchanged between the biosphere, geosphere, hydrosphere, and atmosphere."@en .
-
-:NitrogenCycle rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalCycle ;
-    rdfs:comment "The cycle through which nitrogen is converted into various chemical forms, essential for life."@en .
-
-:CO2FixationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process in which carbon dioxide is fixed by plants, algae, or bacteria into organic compounds."@en .
-
-:NitrogenFixationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A process by which nitrogen gas is converted into a biologically usable form by microbes or industrial processes."@en .
-
-:DenitrificationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A process in which nitrates are reduced and released into the atmosphere as nitrogen gas."@en .
-
-:AmmoniaOxidationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A microbial process in which ammonia is oxidized to nitrite, contributing to the nitrogen cycle."@en .
-
-:TraceGasExchange rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "A process involving the exchange of trace gases like CO2, CH4, and N2O between ecosystems and the atmosphere."@en .
-
-:RespirationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process in which organisms convert organic carbon into carbon dioxide through metabolic processes."@en .
-
-
-# Classes related to ecosystems, biogeochemical cycles, and processes
-:TerrestrialEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :Ecosystem ;
-    rdfs:comment "Ecosystems occurring on land, such as forests, grasslands, and deserts."@en .
-
-:ForestEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "A terrestrial ecosystem dominated by trees, involved in carbon and nitrogen cycling."@en .
-
-:TropicalRainforest rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A forest ecosystem in tropical regions with high biodiversity and carbon sequestration."@en .
-
-:TemperateForest rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A forest ecosystem in temperate regions with seasonal variations."@en .
-
-:DesertEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "A terrestrial ecosystem with sparse vegetation and low precipitation."@en .
-
-:AquaticEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :Ecosystem ;
-    rdfs:comment "Ecosystems that occur in water, including freshwater and marine systems."@en .
-
-:GroundwaterEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem located within groundwater, including aquifers and subsurface water systems."@en .
-
-:KarstEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :GroundwaterEcosystem ;
-    rdfs:comment "An ecosystem located in karst landscapes, characterized by underground water movement and nutrient transport."@en .
-
-# Classes related to biogeochemical processes
-:CarbonCycleProcess rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "A process involved in the cycling of carbon through ecosystems."@en .
-
-:NitrogenCycleProcess rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "A process involved in the transformation of nitrogen into different chemical forms within ecosystems."@en .
-
-:CO2FixationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process where carbon dioxide is fixed into organic compounds by plants, algae, or bacteria."@en .
-
-:NitrogenFixationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A process where nitrogen gas is converted into biologically usable forms by microbes or plants."@en .
-
-:DenitrificationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A process in which nitrates are reduced to nitrogen gas, returning nitrogen to the atmosphere."@en .
-
-:AmmoniaOxidationProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A microbial process in which ammonia is oxidized into nitrite and nitrate."@en .
-
-:DecompositionProcess rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process by which organic materials are broken down, releasing carbon back into the environment."@en .
-
-:TraceGasExchange rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "A process involving the exchange of trace gases like CO2, CH4, and N2O between the environment and the atmosphere."@en .
-
-:KarstHydrology rdf:type owl:Class ;
-    rdfs:subClassOf :GroundwaterEcosystem ;
-    rdfs:comment "The study of water movement through karst systems, including aquifers and caves."@en .
-
-:NitrogenTransformation rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "Processes that alter the chemical forms of nitrogen, such as nitrification and denitrification."@en .
-
-:Anammox rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "The anaerobic oxidation of ammonia, a significant nitrogen removal pathway in marine and freshwater systems."@en .
-
-:Methanogenesis rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process in which microbes produce methane (CH4) as a byproduct of anaerobic respiration."@en .
-
-:MethaneOxidation rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "A process in which methane is oxidized, typically in the presence of oxygen, reducing methane emissions."@en .
-
-:CarbonSequestration rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycle ;
-    rdfs:comment "The long-term storage of carbon in soils, oceans, and vegetation to mitigate carbon emissions."@en .
-
-:OrganicMatterDecomposition rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "The breakdown of organic material, releasing nutrients and carbon dioxide."@en .
-
-:PermafrostEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "Ecosystems in permafrost regions that store significant amounts of carbon in frozen soil."@en .
-
-:ForestFireEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "An ecosystem where fire plays a role in nutrient cycling and landscape dynamics."@en .
-
-
-:OrganicCarbon rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCompound ;
-    rdfs:comment "A carbon-based compound found in organic matter."@en ;
-    :Thesaurus:P97 "A substance relating to or containing elemental carbon or carbon compounds."@en ;
-    :Thesaurus:code "C63848" ;
-    rdfs:label "Organic Carbon"@en .
-
-:InorganicNitrogen rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCompound ;
-    rdfs:comment "Relating or belonging to the class of nitrogen compounds not having a carbon basis."@en ;
-    :Thesaurus:P97 "Relating or belonging to the class of compounds not having a carbon basis."@en ;
-    :Thesaurus:code "C66829" ;
-    rdfs:label "Inorganic Nitrogen"@en .
-
-:CarbonNitrogenRatio rdf:type owl:Class ;
-    rdfs:subClassOf :Measurement ;
-    rdfs:subClassOf :ChemicalRatio ;
-    rdfs:comment "Carbon-to-nitrogen ratio is a ratio of the mass of carbon to the mass of nitrogen in a substance. This ratio is crucial for understanding nitrogen limitation in ecosystems and analyzing sediment composition."@en ;
-    :Thesaurus:P90 "Carbon-nitrogen ratio"@en ;
-    rdfs:label "Carbon to nitrogen ratio"@en ;
-    rdfs:synonym "C to N ratio"@en .
-
-:Hydrogencarbonate rdf:type owl:Class ;
-    rdfs:subClassOf :Carbonate ;
-    rdfs:label "Hydrogencarbonate"@en ;
-    rdfs:comment "Hydrogencarbonate is a common ion in natural waters that plays a critical role in buffering systems."@en .
-
-:OrganicChemical rdf:type owl:Class ;
-    rdfs:subClassOf :ChemicalCompound ;
-    rdfs:comment "A molecule that contains atoms of the element carbon, usually combined with other elements such as hydrogen, oxygen, nitrogen, sulfur, or phosphorus."@en ;
-    :Thesaurus:P97 "Molecule that contains atoms of the element carbon, excluding carbides, carbonates, and oxides."@en ;
-    :Thesaurus:code "C718" ;
-    rdfs:label "Organic Chemical"@en ;
-    :Thesaurus:P366 "Organic_Chemical"@en ;
-    :Thesaurus:P368 "CHEBI:50860"@en .
-
-
-
-:CO2Fixation rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "The process by which carbon dioxide is fixed by plants, bacteria, and algae."@en .
-
-:NitrogenFixation rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "A biological process converting atmospheric nitrogen to a form usable by plants."@en .
-
-:AmmoniaOxidation rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "Microbial oxidation of ammonia into nitrite, part of the nitrogen cycle."@en .
-
-:Denitrification rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "Reduction of nitrates/nitrites into nitrogen gas, completing the nitrogen cycle."@en .
-
-:AnammoxProcess rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "Anaerobic oxidation of ammonia, a major process in nitrogen removal in marine ecosystems."@en .
-
-:MethaneProduction rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "Production of methane during anaerobic decomposition of organic matter."@en .
-
-:MethaneOxidation rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "The oxidation of methane into CO2, reducing methane emissions."@en .
-
-# Ecosystem Classes
-
-:ForestEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "An ecosystem dominated by trees, playing key roles in carbon and nitrogen cycling."@en .
-
-:TropicalRainforest rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A rainforest ecosystem located in the tropics, with high biodiversity and carbon sequestration."@en .
-
-:TemperateForest rdf:type owl:Class ;
-    rdfs:subClassOf :ForestEcosystem ;
-    rdfs:comment "A forest ecosystem in temperate zones, with seasonal variations influencing nutrient cycling."@en .
-
-:PermafrostEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "Ecosystem characterized by permafrost, storing large amounts of frozen carbon."@en .
-
-:GroundwaterEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem located in groundwater systems, involved in nutrient and water cycling."@en .
-
-:KarstEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :GroundwaterEcosystem ;
-    rdfs:comment "A groundwater ecosystem located in karst landscapes, characterized by carbonate rock formations."@en .
-
-:RiparianZone rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystem ;
-    rdfs:comment "The interface between land and a river or stream, important for nutrient cycling and water purification."@en .
-
-:OrganicNitrogen rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCompound ;
-    rdfs:comment "Organic forms of nitrogen such as amino acids and proteins, involved in nutrient cycling."@en .
-
-:Ammonium rdf:type owl:Class ;
-    rdfs:subClassOf :InorganicNitrogen ;
-    rdfs:comment "A form of inorganic nitrogen, NH4+, commonly found in soil and water."@en .
-
-:Nitrate rdf:type owl:Class ;
-    rdfs:subClassOf :InorganicNitrogen ;
-    rdfs:comment "A form of nitrogen, NO3-, commonly found in soil and water, important in nitrogen cycling."@en .
-
-:Nitrite rdf:type owl:Class ;
-    rdfs:subClassOf :InorganicNitrogen ;
-    rdfs:comment "A form of nitrogen, NO2-, that occurs during the nitrification and denitrification processes."@en .
-
-:Decomposition rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "The breakdown of organic matter into simpler compounds, releasing carbon dioxide and nutrients."@en .
-
-:Nitrification rdf:type owl:Class ;
-    rdfs:subClassOf :NitrogenCycleProcess ;
-    rdfs:comment "The microbial process by which ammonia is oxidized to nitrate via nitrite."@en .
-
-:ForestFloor rdf:type owl:Class ;
-    rdfs:subClassOf :TerrestrialEcosystemComponent ;
-    rdfs:comment "The layer of organic material on the forest floor, involved in carbon and nitrogen cycling."@en .
-
-:RootExudation rdf:type owl:Class ;
-    rdfs:subClassOf :PlantProcess ;
-    rdfs:comment "The process by which plants release organic compounds into the soil, influencing microbial activity."@en .
-
-:Respiration rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "The metabolic process by which organisms convert organic carbon into carbon dioxide."@en .
-
-:CarbonSequestration rdf:type owl:Class ;
-    rdfs:subClassOf :CarbonCycleProcess ;
-    rdfs:comment "The long-term storage of carbon in soils, plants, and oceans to mitigate climate change."@en .
-
-:AnaerobicDecomposition rdf:type owl:Class ;
-    rdfs:subClassOf :Decomposition ;
-    rdfs:comment "Decomposition that occurs in the absence of oxygen, leading to the production of methane."@en .
-
-:KarstHydrology rdf:type owl:Class ;
-    rdfs:subClassOf :GroundwaterHydrology ;
-    rdfs:comment "Hydrological processes occurring in karst landscapes, including water flow through limestone and caves."@en .
-
-
-:NitrogenFixingBacteria rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "A community of bacteria that perform nitrogen fixation, converting nitrogen gas into organic nitrogen."@en .
-
-:AmmoniaOxidizingArchaea rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Archaea responsible for the oxidation of ammonia into nitrite during nitrification."@en .
-
-:SulfateReducingBacteria rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "A group of bacteria that reduce sulfate to sulfide under anaerobic conditions, playing a role in sulfur cycling."@en .
-
-:MethanotrophicBacteria rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Bacteria that oxidize methane, converting it into carbon dioxide in aerobic environments."@en .
-
-:MethanogenicArchaea rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Archaea that produce methane as a byproduct of anaerobic respiration, found in wetlands and other anoxic environments."@en .
-
-:DenitrifyingArchaea rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Archaea that carry out denitrification, converting nitrate into nitrogen gas under anaerobic conditions."@en .
-
-:AcidophilicMicrobes rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Microbes that thrive in acidic environments, involved in sulfur and iron cycling."@en .
-
-:HalophilicBacteria rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Bacteria adapted to high salinity environments, playing a role in nutrient cycling in salt flats and saline lakes."@en .
-
-:ThermophilicBacteria rdf:type owl:Class ;
-    rdfs:subClassOf :MicrobialCommunity ;
-    rdfs:comment "Bacteria that thrive at high temperatures, often found in hot springs and geothermal environments."@en .
-
-#################################################################
-# Expanded Class Hierarchy - Biogeochemical Processes
-#################################################################
-
-:SulfurCycleProcess rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "Processes involved in the transformation and movement of sulfur through the environment."@en .
-
-:SulfateReduction rdf:type owl:Class ;
-    rdfs:subClassOf :SulfurCycleProcess ;
-    rdfs:comment "The microbial reduction of sulfate to sulfide, typically occurring under anaerobic conditions."@en .
-
-:SulfideOxidation rdf:type owl:Class ;
-    rdfs:subClassOf :SulfurCycleProcess ;
-    rdfs:comment "The oxidation of sulfide to sulfate, a key process in the sulfur cycle."@en .
-
-:IronCycleProcess rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "Processes that involve the transformation of iron between its oxidized and reduced forms in the environment."@en .
-
-:IronReduction rdf:type owl:Class ;
-    rdfs:subClassOf :IronCycleProcess ;
-    rdfs:comment "The microbial reduction of ferric iron (Fe3+) to ferrous iron (Fe2+) under anaerobic conditions."@en .
-
-:IronOxidation rdf:type owl:Class ;
-    rdfs:subClassOf :IronCycleProcess ;
-    rdfs:comment "The oxidation of ferrous iron (Fe2+) to ferric iron (Fe3+), often mediated by bacteria in aerobic environments."@en .
-
-:PhosphorusCycleProcess rdf:type owl:Class ;
-    rdfs:subClassOf :BiogeochemicalProcess ;
-    rdfs:comment "Processes that involve the cycling of phosphorus through different environmental reservoirs."@en .
-
-:PhosphateMineralization rdf:type owl:Class ;
-    rdfs:subClassOf :PhosphorusCycleProcess ;
-    rdfs:comment "The release of phosphate from organic matter during decomposition, making it available for plant uptake."@en .
-
-:PhosphorusPrecipitation rdf:type owl:Class ;
-    rdfs:subClassOf :PhosphorusCycleProcess ;
-    rdfs:comment "The process by which dissolved phosphorus forms solid mineral compounds, often occurring in aquatic environments."@en .
-
-#################################################################
-# Expanded Class Hierarchy - Ecosystems and Ecosystem Components
-#################################################################
-
-:SaltMarsh rdf:type owl:Class ;
-    rdfs:subClassOf :WetlandEcosystem ;
-    rdfs:comment "A coastal ecosystem characterized by salt-tolerant plants and regular tidal flooding, important for carbon sequestration."@en .
-
-:MangroveForest rdf:type owl:Class ;
-    rdfs:subClassOf :WetlandEcosystem ;
-    rdfs:comment "A coastal ecosystem dominated by mangrove trees, which play a significant role in carbon storage and nutrient cycling."@en .
-
-:AlkalineLake rdf:type owl:Class ;
-    rdfs:subClassOf :FreshwaterEcosystem ;
-    rdfs:comment "A lake with high pH levels, often containing unique microbial communities that contribute to biogeochemical cycling."@en .
-
-:HotSpringEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :AquaticEcosystem ;
-    rdfs:comment "An ecosystem associated with geothermal hot springs, supporting thermophilic organisms and unique chemical processes."@en .
-
-:PeatBog rdf:type owl:Class ;
-    rdfs:subClassOf :WetlandEcosystem ;
-    rdfs:comment "A type of wetland ecosystem characterized by waterlogged, acidic conditions and the accumulation of peat."@en .
-
-:OligotrophicLake rdf:type owl:Class ;
-    rdfs:subClassOf :FreshwaterEcosystem ;
-    rdfs:comment "A nutrient-poor lake with low productivity, often found in mountainous or northern regions."@en .
-
-:EutrophicLake rdf:type owl:Class ;
-    rdfs:subClassOf :FreshwaterEcosystem ;
-    rdfs:comment "A nutrient-rich lake with high biological productivity, often prone to algal blooms and oxygen depletion."@en .
-
-:CoralReef rdf:type owl:Class ;
-    rdfs:subClassOf :MarineEcosystem ;
-    rdfs:comment "A marine ecosystem dominated by coral structures, highly productive and biodiverse."@en .
-
-:HydrothermalVentEcosystem rdf:type owl:Class ;
-    rdfs:subClassOf :MarineEcosystem ;
-    rdfs:comment "An ecosystem found at deep-sea hydrothermal vents, where chemosynthetic organisms thrive in the absence of sunlight."@en .
-
-#################################################################
-# Expanded Class Hierarchy - Environmental Materials and Substances
-#################################################################
-
-:HumicSubstances rdf:type owl:Class ;
-    rdfs:subClassOf :OrganicMaterial ;
-    rdfs:comment "Complex organic molecules derived from the decomposition of plant material, found in soil and water."@en .
-
-:DissolvedOrganicCarbon rdf:type owl:Class ;
-    rdfs:subClassOf :OrganicCarbon ;
-    rdfs:comment "Organic carbon that is dissolved in water, playing a significant role in aquatic carbon cycling."@en .
-
-:ParticulateOrganicCarbon rdf:type owl:Class ;
-    rdfs:subClassOf :OrganicCarbon ;
-    rdfs:comment "Organic carbon in particulate form, often derived from the decomposition of plants and animals."@en .
-
-:InorganicPhosphate rdf:type owl:Class ;
-    rdfs:subClassOf :PhosphorusCompound ;
-    rdfs:comment "An inorganic form of phosphorus, commonly found in soils and water, available for plant uptake."@en .
-
-:Sulfate rdf:type owl:Class ;
-    rdfs:subClassOf :SulfurCompound ;
-    rdfs:comment "A form of sulfur, SO4, that is commonly found in soil and water, and is used by plants and microorganisms."@en .
-
-:SulfurDioxide rdf:type owl:Class ;
-    rdfs:subClassOf :SulfurCompound ;
-    rdfs:comment "A gaseous sulfur compound, SO2, released into the atmosphere during fossil fuel combustion and volcanic activity."@en .
-
-:IronOxide rdf:type owl:Class ;
-    rdfs:subClassOf :IronCompound ;
-    rdfs:comment "A compound formed by the oxidation of iron, commonly found in soils and aquatic sediments."@en .
-
-:PhosphateMineral rdf:type owl:Class ;
-    rdfs:subClassOf :PhosphorusCompound ;
-    rdfs:comment "A mineral form of phosphorus, important in soil chemistry and plant nutrition."@en .
+:CO2FixationPathway a owl:Class .
+:CarbonCycleProcess a owl:Class .
+:NitrogenCycleProcess a owl:Class .
+:CarbonFixation a owl:Class .
+:CarbonSequestration a owl:Class .
+:AmmoniaOxidation a owl:Class .
+:Denitrification a owl:Class .
+:NitrogenFixation a owl:Class .
+:TraceGasProduction a owl:Class .
+:TraceGasConsumption a owl:Class .
+:ForestEcosystem a owl:Class .
+:BeechForest a owl:Class .
+:GroundwaterSystem a owl:Class .
+:KarstSystem a owl:Class .
+:MicrobialCommunity a owl:Class .
+:Rubisco a owl:Class .
+:CarbonIsotope a owl:Class .
+:NitrogenIsotope a owl:Class .
+:CO2 a owl:Class .
+:CH4 a owl:Class .
+:N2O a owl:Class .
+:Soil a owl:Class .
+:Water a owl:Class .
+:BiogeochemicalProcess a owl:Class .
+:TerrestrialEcosystem a owl:Class .
+:AquaticEcosystem a owl:Class .
+:FreshwaterEcosystem a owl:Class .
+:MarineEcosystem a owl:Class .
+:TropicalRainforest a owl:Class .
+:TemperateForest a owl:Class .
+:Taiga a owl:Class .
+:DecompositionProcess a owl:Class .
+:GroundwaterEcosystem a owl:Class .
+:KarstEcosystem a owl:Class .
+:CarbonCycle a owl:Class .
+:NitrogenCycle a owl:Class .
+:CO2FixationProcess a owl:Class .
+:NitrogenFixationProcess a owl:Class .
+:DenitrificationProcess a owl:Class .
+:AmmoniaOxidationProcess a owl:Class .
+:TraceGasExchange a owl:Class .
+:RespirationProcess a owl:Class .
+:DesertEcosystem a owl:Class .
+:OrganicMatterDecomposition a owl:Class .
+:PermafrostEcosystem a owl:Class .
+:ForestFireEcosystem a owl:Class .
+:OrganicCarbon a owl:Class .
+:InorganicNitrogen a owl:Class .
+:CarbonNitrogenRatio a owl:Class .
+:Hydrogencarbonate a owl:Class .
+:OrganicChemical a owl:Class .
+:AnammoxProcess a owl:Class .
+:MethaneProduction a owl:Class .
+:MethaneOxidation a owl:Class .
+:RiparianZone a owl:Class .
+:OrganicNitrogen a owl:Class .
+:Ammonium a owl:Class .
+:Nitrate a owl:Class .
+:Nitrite a owl:Class .
+:Decomposition a owl:Class .
+:Nitrification a owl:Class .
+:ForestFloor a owl:Class .
+:RootExudation a owl:Class .
+:AnaerobicDecomposition a owl:Class .
+:NitrogenFixingBacteria a owl:Class .
+:AmmoniaOxidizingArchaea a owl:Class .
+:SulfateReducingBacteria a owl:Class .
+:MethanotrophicBacteria a owl:Class .
+:MethanogenicArchaea a owl:Class .
+:DenitrifyingArchaea a owl:Class .
+:AcidophilicMicrobes a owl:Class .
+:HalophilicBacteria a owl:Class .
+:ThermophilicBacteria a owl:Class .
+:SulfurCycleProcess a owl:Class .
+:SulfateReduction a owl:Class .
+:SulfideOxidation a owl:Class .
+:IronCycleProcess a owl:Class .
+:IronReduction a owl:Class .
+:IronOxidation a owl:Class .
+:PhosphorusCycleProcess a owl:Class .
+:PhosphateMineralization a owl:Class .
+:PhosphorusPrecipitation a owl:Class .
+:SaltMarsh a owl:Class .
+:MangroveForest a owl:Class .
+:AlkalineLake a owl:Class .
+:HotSpringEcosystem a owl:Class .
+:PeatBog a owl:Class .
+:OligotrophicLake a owl:Class .
+:EutrophicLake a owl:Class .
+:CoralReef a owl:Class .
+:HydrothermalVentEcosystem a owl:Class .
+:HumicSubstances a owl:Class .
+:DissolvedOrganicCarbon a owl:Class .
+:ParticulateOrganicCarbon a owl:Class .
+:InorganicPhosphate a owl:Class .
+:Sulfate a owl:Class .
+:SulfurDioxide a owl:Class .
+:IronOxide a owl:Class .
+:PhosphateMineral a owl:Class .
 
