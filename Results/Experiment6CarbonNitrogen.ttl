@@ -1,9 +1,8 @@
-@prefix : <http://example.org/cncycle#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix : <http://example.org/cncycle#> .
 
 # Ontology declaration
 <http://example.org/cncycle> rdf:type owl:Ontology ;
